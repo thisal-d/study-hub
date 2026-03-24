@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let marks = parseInt(prompt("Please enter your marks:"));
+        let valid = false;
+        let grade = "f";
+        if (Number.isInteger(marks) && marks >= 0 && marks <= 100) {
+            valid = true;
+            if (marks > 75){
+                grade = "A";
+            } else if (marks > 50){
+                grade = "B";
+            }
+        }
+
+        if (valid){
+            alert("Your marks is valid");
+            alert("Your grade is " + grade);
+            document.write("Your marks is valid");
+            document.write("Your grade is " + grade);
+        }
+
+        else {
+            alert("Your marks is invalid");
+            document.write("Your marks is invalid");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Float Layouts - Fixed and Fluid</title>
+  <style>
+    * {
+        box-sizing: border-box;
+    }
+
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+      background: #f8f9fa;
+      line-height: 1.5;
+    }
+
+    h1, h2 {
+      color: #333;
+    }
+
+    /* Common container styles */
+    .container {
+      border: 2px solid #999;
+      background: #fff;
+      margin-bottom: 40px;
+      overflow: hidden; /* helps contain floated elements */
+    }
+
+    /* Fixed layout section */
+    .fixed-layout {
+      width: 900px; /* fixed size layout */
+      margin: 0 auto;
+    }
+
+    .fixed-layout .sidebar {
+      float: inline-start;
+      width: 200px;
+      background: #3498db;
+      color: white;
+      padding: 10px;
+      height: 200px;
+    }
+
+    .fixed-layout .content {
+      float: right;
+      width: 480px; /* total = 200 + 480 + borders/padding fits container */
+      background: #e67e22;
+      color: white;
+      padding: 10px;
+      height: 200px;
+    }
+
+    /* Fluid layout section */
+    .fluid-layout {
+      width: 90%; /* fluid layout adapts to screen */
+      margin: 0 auto;
+    }
+
+    .fluid-layout .sidebar {
+      float: left;
+      width: 30%; /* % based = fluid */
+      background: #9b59b6;
+      color: white;
+      padding: 10px;
+      height: 200px;
+    }
+
+    .fluid-layout .content {
+      float: right;
+      width: 70%;
+      background: #2ecc71;
+      color: white;
+      padding: 10px;
+      height: 200px;
+    }
+
+    .info {
+      background: #f0f0f0;
+      padding: 10px;
+      border-left: 4px solid #3498db;
+      margin-bottom: 20px;
+    }
+
+    p {
+      margin: 0 0 10px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>CSS Float Layout Demonstration</h1>
+
+  <div class="info">
+    <p><strong>Fixed Layout:</strong> Uses pixel widths. The layout does not change when resizing the window.</p>
+    <p><strong>Fluid Layout:</strong> Uses percentage widths. The layout adjusts based on browser size.</p>
+  </div>
+
+  <!-- FIXED LAYOUT -->
+  <h2>1️⃣ Fixed Layout (Pixel-based)</h2>
+  <div class="container fixed-layout">
+    <div class="sidebar">Sidebar (200px wide)</div>
+    <div class="content">
+      Main Content (480px wide)<br><br>
+      Try resizing your window — the layout width stays the same.
+    </div>
+  </div>
+
+  <!-- FLUID LAYOUT -->
+  <h2>2️⃣ Fluid Layout (Percentage-based)</h2>
+  <div class="container fluid-layout">
+    <div class="sidebar">Sidebar (30%)</div>
+    <div class="content">
+      Main Content (70%)<br><br>
+      Try resizing your browser — this layout shrinks and expands fluidly.
+    </div>
+  </div>
+
+</body>
+</html>

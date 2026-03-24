@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let num1Valid = false;
+        let userNumber1;
+        do {
+            userNumber1 = parseInt(prompt("Please choose a number betwee 1 and 59:"));
+            if (!(Number.isInteger(userNumber1))) {
+                alert("Error: The number you entered is not an integer");
+            } else if ((userNumber1 < 1) || (userNumber1> 59)) {
+                alert("Error: The number must be between 1 and 59");
+            } else {
+                num1Valid = true;
+            }
+        } while (num1Valid != true);
+
+    </script>
+</body>
+</html>

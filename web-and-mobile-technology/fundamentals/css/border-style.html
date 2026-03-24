@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Shared box appearance */
+        .box {
+            width: 240px;
+            padding: 6px; 
+        }
+
+        .none   { border-style: none;   border-width: 4px; border-color: #e74c3c; }
+        .hidden { border-style: hidden; border-width: 4px; border-color: #e74c3c; }
+        .dotted { border-style: dotted; border-width: 4px; border-color: #e74c3c; }
+        .dashed { border-style: dashed; border-width: 4px; border-color: #e74c3c; }
+        .solid  { border-style: solid;  border-width: 4px; border-color: #e74c3c; }
+        .double { border-style: double; border-width: 6px; border-color: #e74c3c; }
+        .groove { border-style: groove; border-width: 6px; border-color: #e74c3c; }
+        .ridge  { border-style: ridge;  border-width: 6px; border-color: #e74c3c; }
+        .inset  { border-style: inset;  border-width: 6px; border-color: #e74c3c; }
+        .outset { border-style: outset; border-width: 6px; border-color: #e74c3c; }
+
+        .cusom-border-solid {
+            border-style: solid;
+            border-right-width: 10px;
+            border-top-width: 20px;
+            padding: 10px;
+            border-top-color: #e74c3c;
+        }
+
+        p.margin {
+            margin-top: 40px;
+        }
+
+        .cusom-border-dotted {
+            border-style: solid;
+            border-bottom-width: 5px;
+            border-left-width: 10px;
+            padding: 10px;
+            border-bottom-color: #e74c3c;
+        }
+
+        .cusom-border-dashed{
+            border: thick dashed #e74c3c; /* thin, medium, thick */
+            padding: 10px;
+        }
+
+        .custom-border {
+            border-top: 5px dotted #e74c3c;
+            border-right: 3px dashed #e74c3c;
+            border-bottom: 15px solid #e74c3c;
+            border-left: 20px none #e74c3c;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1> Border Style Examples </h1>
+
+    <p class="box none"><span class="label">none</span></p>
+    <p class="box hidden"><span class="label">hidden border</span></p>
+    <p class="box dotted"><span class="label">dotted border</span></p>
+    <p class="box dashed"><span class="label">dashed border</span></p>
+    <p class="box solid"><span class="label">solid border</span></p>
+    <p class="box double"><span class="label">double border</span></p>
+    <p class="box groove"><span class="label">groove border</span></p>
+    <p class="box ridge"><span class="label">ridge border</span></p>
+    <p class="box inset"><span class="label">inset border</span></p>
+    <p class="box outset"><span class="label">outset bordert</span></p>
+
+    <h1> Custom border sizes </h1>
+
+    <p class="margin"><span class="cusom-border-solid"> Solid Border top width:20px & border right width: 10px</span></p>
+    <p class="margin"><span class="cusom-border-dotted"> Solid Border bottom width:5px & border left width: 10px</span></p>
+    <p class="margin"><span class="cusom-border-dashed"> dashed Border with thick border</span></p>
+
+    <p class="margin"><span class="custom-border"> Custom Border</span></p>
+</body>
+</html>

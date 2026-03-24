@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            border: 2px solid #999;
+            background: #fff;
+            margin-bottom: 40px;
+            overflow: hidden; /* helps contain floated elements */
+        }
+
+        .border-box .left-container, .border-box .right-container {
+            box-sizing: border-box;
+        }
+
+        .content-box .left-container, .content-box .right-container {
+            box-sizing: content-box;
+        }
+
+        .left-container {
+            float: left;
+            width: 30%;
+            background: #3498db;
+            color: white;
+            padding: 20px;
+            height: 200px;
+        }
+
+        .right-container {
+            float: right;
+            width: 70%;
+            background: #e67e22;
+            color: white;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="border-box container">
+        <div class="left-container">
+            <p>Left Container with border-box sizing width 30% padding 20px</p>
+        </div>
+        <div class="right-container">
+            <p>Left Container with border-box sizing width 70% padding 20px</p>
+        </div>
+    </div>
+
+    <div class="content-box container">
+        <div class="left-container">
+            <p>Left Container with content-box sizing width 30% padding 20px</p>
+        </div>
+        <div class="right-container">
+            <p>Left Container with content-box sizing width 70% padding 20px</p>
+        </div>
+    </div>
+</body>
+</html>

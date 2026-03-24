@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Float and Clear Example</title>
+  <style>
+    .box {
+      width: 150px;
+      height: 100px;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      line-height: 100px;
+      font-weight: bold;
+    }
+
+    .left {
+      background: #3498db;
+      float: left;
+    }
+
+    .right {
+      background: #e67e22;
+      float: right;
+    }
+
+    .text {
+      background: #2ecc71;
+      padding: 10px;
+    }
+
+    .clear {
+      clear: both;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box left">Left Float</div>
+  <div class="box right">Right Float</div>
+
+  <p class="text">
+    This paragraph wraps around the floated boxes because we haven’t cleared yet.
+  </p>
+
+  <p class="text clear">
+    This paragraph uses <b>clear: both;</b> so it drops below both floated elements.
+  </p>
+
+</body>
+</html>

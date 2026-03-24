@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        alert("Are you sure ? ")
+    
+        let age = prompt("What is your age ?")
+        console.log("Your age is " + (age>18));
+
+        if (!parseInt(age)){
+           console.log("Age can not be 0.");       
+        } else if(parseInt(age) < 18){
+            console.log("You are not allowed to view this content.");
+        } else if(parseInt(age) >= 18){
+            console.log("You are allowed to view this content.");
+        }
+
+        let answer = confirm("Are you sure you want view this content ?")
+        if (answer){
+            console.log("View the content");
+        }
+        else{
+            console.log("Cancel view the content");
+        }
+    </script>
+    
+</body>
+</html>
