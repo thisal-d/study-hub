@@ -4,35 +4,81 @@
 
 ## 🔹 Part 1: Basic Concepts & Short Questions
 
-### 1. Step Counting
-Analyze the following nested loop using the RAM model. Determine the total complexity as a function of `n`.
-* Initializing `count = 0` takes 1 step.
-* Initializing `i = 0` takes 1 step. (Outside the first loop)
-* The comparison `i < n` in the first loop takes `n+1` steps.
-* Each iteration of the inner loop takes `m` steps where `m` is proportional to `n`.
-* Assuming `n = 5`, how many total steps are required?
+### 1. Step Counting Challenges
+Determine the total number of iterations or steps for each of the following algorithms. Assume standard operation costs (1 step each for assignment, comparison, and calculation).
 
-**Algorithm:**
+**a)** Simple nested loop:
 ```python
 count = 0
 for i in range(1, 6): # i = 1 to 5
     for j in range(1, 6): # j = 1 to 5
-        count = count + 1 # 2 steps (add + assign)
+        count = count + 1 
+```
+
+**b)** Modulo arithmetic inside a loop:
+```python
+for i from 1 to 10:
+    if i % 3 == 0:
+        print(i)
+```
+
+**c)** Descending while loop:
+```python
+i = 10
+while i > 0:
+    i = i - 2
+    print(i)
+```
+
+**d)** Independent nested loops:
+```python
+sum = 0
+for i from 1 to 3:
+    for j from 1 to 4:
+        sum = i + j
+```
+
+**e)** While loop with multi-path increment:
+```python
+count = 0
+while count < 10:
+    if count < 5:
+        count = count + 1
+    else:
+        count = count + 2
+```
+
+**f)** Dependent nested structure (Hard):
+```python
+for i from 1 to 5:
+    j = i
+    while j > 0:
+        print(j)
+        j = j - 1
+```
+
+**g)** Logarithmic growth analysis:
+```python
+n = 100
+j = 1
+while j < n:
+    print(j)
+    j = j * 2
 ```
 
 ### 2. Binary Tree (Fill in the Blanks)
 Given a partially completed Binary Search Tree (BST) with values: `50, 20, 70, 10, 30, 60, 80`.
-Insert the value **25** and **75** into the correct positions.
 
-```text
-          50
-        /    \
-      20      70
-     /  \    /  \
-    10  30  60  80
-       /       /
-     (  )    (  )  <- Insert 25 and 75 here
-```
+*   **Tree Diagram:**
+    ```text
+              50
+            /    \
+          20      70
+         /  \    /  \
+        10  30  60  80
+    ```
+
+*   **Task:** Determine where the values **25** and **75** should be inserted.
 
 
 ### 3. Queue Operations (Circular Queue)
@@ -67,48 +113,22 @@ b) The final content of the stack from bottom to top.
 
 ## 🔹 Part 2: Essay / Long Questions
 
-### 1. Binary Tree: Insertion & Deletion
-A binary search tree is created by inserting the following sequence of integers:
-`45, 25, 65, 15, 35, 55, 75, 40, 50`
+### 1. Scenario: Hospital Patient Record System
+A hospital emergency department uses a **Binary Search Tree (BST)** to manage patient records by their unique **Patient ID** for quick retrieval during emergencies. Patients are registered in the following order:
 
-a) **Drawing the Tree:** Draw the initial BST structure.
+**Patient IDs registered:** `45, 25, 65, 15, 35, 55, 75, 40, 50`
 
-```text
-            45
-          /    \
-        25      65
-       /  \    /  \
-      15  35  55  75
-            \  /
-            40 50
-```
-*(40 is right child of 35, 50 is left child of 55)*
+a) **Building the Record System:** Draw the BST that represents the patient database after all patients have been registered.
 
-b) **Insertion:** Show the updated tree after inserting **5** and **20**. Briefly explain the traversal process used to locate their positions.
+*[Draw your tree here]*
 
-```text
-               45
-             /    \
-           25      65
-         /  \    /  \
-        15  35  55  75
-       /  \   \  /
-      5    20  40 50
-```
-*(5 is left child of 15, 20 is right child of 15)*
+b) **New Admissions:** Two new patients arrive with **ID 5** (infant) and **ID 20** (elderly). Show the updated tree after inserting both records. Briefly explain the traversal the system performs to find the correct position for each patient record.
 
-c) **Deletion:** Remove node **25** from the updated tree. This is a node with two children. Explain which node (inorder successor or predecessor) you choose to replace it with and show the resulting tree.
+*[Show updated tree and path here]*
 
-```text
-               45
-             /    \
-           35      65
-         /  \    /  \
-        15  40  55  75
-       / \      /
-      5  20    50
-```
-*(Node 25 replaced by its inorder successor 35)*
+c) **Patient Discharge:** Patient **ID 25** is discharged. This record has two sub-branches (two children). Explain whether you use the **inorder successor** or **predecessor** to replace it in the system, and show the resulting tree structure.
+
+*[Show final tree and explanation here]*
 
 ---
 
@@ -120,4 +140,8 @@ Perform a step-by-step **Quick Sort** on the following array:
 * Clearly show the "Partitioning" step, showing how elements are rearranged around the pivot.
 * Identify the final position of the pivot and the resulting sub-arrays.
 * Repeat the process for one of the sub-arrays.
+
+---
+
+[📄 **View Answer Sheet**](../answers/answer-02.md)
 

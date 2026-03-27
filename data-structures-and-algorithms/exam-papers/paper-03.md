@@ -4,34 +4,72 @@
 
 ## 🔹 Part 1: Basic Concepts & Short Questions
 
-### 1. Step Counting
-Using the RAM model, find the total number of steps to display even numbers from 10 to 20.
-* Loop starts at 10 and ends at 20.
-* Condition `(i % 2 == 0)` takes 2 steps (modulo + comparison).
-* `print(i)` takes 1 step (only for even numbers).
-* Increment `i = i + 1` takes 2 steps.
-* How many times does the loop body execute?
+### 1. Step Counting Challenges
+Determine the total number of steps or iterations for each algorithm. Assume each basic operation (assignment, addition, comparison, print) takes 1 step unless specified otherwise.
 
-**Algorithm:**
+**a)** Loop with modulo condition:
 ```python
 for i in range(10, 21): # i = 10 to 20
     if i % 2 == 0:
         print(i)
 ```
 
+**b)** Dependent nested loops (Sum of First N):
+```python
+for i from 1 to 5:
+    for j from 1 to i:
+        print(i + j)
+```
+
+**c)** Logarithmic reduction (While loop):
+```python
+x = 16
+while x > 1:
+    print(x)
+    x = x / 2
+```
+
+**d)** Conditional nested loops:
+```python
+for i from 1 to 10:
+    if i % 2 == 0:
+        for j from 1 to 2:
+            print(j)
+```
+
+**e)** Sequential loops (Loops in succession):
+```python
+a = 0
+for i from 1 to 5:
+    a = a + i
+    
+while a > 0:
+    print(a)
+    a = a - 5
+```
+
+**f)** Cubed complexity pattern (Triple nested):
+```python
+count = 0
+for i from 1 to 3:
+    for j from 1 to 3:
+        for k from 1 to 3:
+            count = count + 1
+```
+
 ### 2. Binary Tree (Fill in the Blanks)
 Given a BST with root node 60. Left child 40, right child 80. Node 40 has left child 30, right child 50. Node 80 has left child 70, right child 90.
-Insert the value **35** and **75** into the correct positions.
 
-```text
-          60
-        /    \
-      40      80
-     /  \    /  \
-    30  50  70  90
-     \       \
-    ( )     ( ) <- Insert 35 and 75 here
-```
+*   **Tree Diagram:**
+    ```text
+              60
+            /    \
+          40      80
+         /  \    /  \
+        30  50  70  90
+    ```
+
+*   **Task:** Determine where the values **35** and **75** should be inserted.
 
 
 
@@ -60,40 +98,23 @@ b) Which character remains at the top of the stack?
 
 ## 🔹 Part 2: Essay / Long Questions
 
-### 1. Binary Tree: Traversal & Deletion
-A binary search tree is constructed by inserting the following sequence:
-`280, 308, 180, 416, 298, 350, 156, 255, 580`
+### 1. Scenario: Company Employee Directory
+A tech company organizes its employee directory using a **Binary Search Tree (BST)**, where each employee is stored by their unique **Employee Number**. The HR department registers employees in the following order:
 
-a) **Drawing the Tree:** Draw the initial BST structure.
+**Employee Numbers:** `280, 308, 180, 416, 298, 350, 156, 255, 580`
 
-```text
-            280
-          /     \
-        180     308
-       /   \    /  \
-     156   255 298 416
-                   /  \
-                 350  580
-```
+a) **Building the Directory:** Draw the BST that represents the company's employee directory after all employees are registered.
 
+*[Draw your tree here]*
 
-b) **Traversal:** Write down the sequence of elements visited during the following traversals of the tree from part (a):
-* **In-order**
-* **Pre-order**
-* **Post-order**
+b) **Generating Reports:** The management needs three different reports. Write down the sequence of employee numbers visited during:
+* **In-order Traversal** (for a sorted employee list)
+* **Pre-order Traversal** (for backing up the tree structure)
+* **Post-order Traversal** (for deleting the tree from leaves up)
 
-c) **Deletion:** Remove node **180** from the tree. This is a node with two children. Explain the process of finding the inorder successor and show the final tree.
+c) **Employee Resignation:** Employee **#180** (a department head) resigns. This employee's node has two sub-departments (two children). Explain the process of finding the **inorder successor** to replace this employee and show the reorganized directory tree.
 
-```text
-            280
-          /     \
-        255     308
-       /       /  \
-     156      298 416
-                  /  \
-                350  580
-```
-*(Node 180 replaced by its inorder successor 255)*
+*[Show final tree and explanation here]*
 
 
 ---
@@ -106,4 +127,8 @@ Perform a step-by-step **Merge Sort** on the following array:
 * Show the merge process for each level.
 * Clearly indicate the indices being compared and merged into the temporary array.
 * Draw the state of the array after the final merge operation.
+
+---
+
+[📄 **View Answer Sheet**](../answers/answer-03.md)
 

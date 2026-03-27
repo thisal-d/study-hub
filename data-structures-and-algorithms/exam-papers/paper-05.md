@@ -4,15 +4,10 @@
 
 ## 🔹 Part 1: Basic Concepts & Short Questions
 
-### 1. Step Counting
-Using the RAM model, find the total number of steps to execute the following algorithm. Assume:
-* `x = 10, y = 20` (2 steps initialization).
-* `while x < y:` (1 step for each comparison).
-* `if x % 3 == 0:` (2 steps for each iteration).
-* `print(x)` (1 step for matching iterations).
-* `x = x + 1` (2 steps for every iteration).
+### 1. Step Counting Challenges
+Using the RAM model, find the total number of steps or iterations to execute the following algorithms. Assume each basic operation (assignment, comparison, arithmetic, print) takes 1 step.
 
-**Algorithm:**
+**a)** While loop with conditional:
 ```python
 x = 10
 y = 20
@@ -22,19 +17,66 @@ while x < y:
     x = x + 1
 ```
 
+**b)** Triple nested structure (For + Double While):
+```python
+for i from 1 to 2:
+    j = 1
+    while j <= 2:
+        k = 1
+        while k <= 2:
+            print(i, j, k)
+            k = k + 1
+        j = j + 1
+```
+
+**c)** Multi-level branching inside loop:
+```python
+for i from 1 to 10:
+    if i % 2 == 0:
+        print(i)
+    else:
+        if i % 3 == 0:
+            print(i * 2)
+```
+
+**d)** Reduction with nested accumulation (Hard):
+```python
+n = 8
+while n > 1:
+    for i from 1 to n:
+        print(i)
+    n = n / 2
+```
+
+**e)** Decrementing dependent nested loop:
+```python
+for i from 1 to 5:
+    for j from 5 down to i:
+        print(j)
+```
+
+**f)** State-dependent execution:
+```python
+count = 0
+for i from 1 to 4:
+    while count < i:
+        print("Increasing count")
+        count = count + 1
+```
+
 ### 2. Binary Tree (Fill in the Blanks)
 Given a BST with root node 50. Left child 30, right child 70. Node 30 has left child 10, right child 40. Node 70 has left child 60, right child 90.
-Insert the values **5** and **45** into the correct positions.
 
-```text
-            50
-          /    \
-        30      70
-       /  \    /  \
-      10  40  60  90
-     /      \
-    ( )    ( )  <- Insert 5 and 45 here
-```
+*   **Tree Diagram:**
+    ```text
+                50
+              /    \
+            30      70
+           /  \    /  \
+          10  40  60  90
+    ```
+
+*   **Task:** Determine where the values **5** and **45** should be inserted.
 
 
 
@@ -63,51 +105,22 @@ b) The sequence of values popped from the stack.
 
 ## 🔹 Part 2: Essay / Long Questions
 
-### 1. Binary Tree: Insertion & Deletion
-A binary search tree is constructed from the following sequence:
-`40, 20, 60, 10, 30, 50, 70, 5, 15, 25, 35, 45, 55, 65, 75`
+### 1. Scenario: School Student Records System
+A school administration uses a **Binary Search Tree (BST)** to manage student records by their unique **Student ID** for quick grade lookups during exam season. Students are enrolled in the following order:
 
-a) **Drawing the Tree:** Draw the resulting binary search tree.
+**Student IDs enrolled:** `40, 20, 60, 10, 30, 50, 70, 5, 15, 25, 35, 45, 55, 65, 75`
 
-```text
-                 40
-              /      \
-            20        60
-          /    \    /    \
-         10    30  50    70
-        /  \  / \  / \  /  \
-        5  15 25 35 45 55 65 75
-```
+a) **Building the Records System:** Draw the BST that represents the student database after all students are enrolled.
 
+*[Draw your tree here]*
 
-b) **Insertion:** Show how searching for node **32** would occur. Highlight every path taken from the root down to the insertion point.
+b) **New Enrollment:** A new student with **ID 32** enrolls mid-semester. Show how the system searches from the root to find the correct position. Highlight every node visited along the path and show the updated tree.
 
-```text
-                 40
-              /      \
-            20        60
-          /    \    /    \
-         10    30  50    70
-        /  \  / \  / \  /  \
-        5  15 25 35 45 55 65 75
-                /
-               32
-```
-*(Nodes searched: 40 -> 20 -> 30 -> 35 -> 32)*
+*[Show updated tree and path here]*
 
+c) **Student Transfer:** Student **ID 40** (who happens to be at the root of the system) transfers to another school. Explain the process of replacing the **root node** using its **inorder successor** and show the final reorganized student records tree.
 
-c) **Deletion:** Remove node **40** (the root node). Explain the process of replacing the root with its inorder successor and show the final tree structure.
-
-```text
-                 45
-              /      \
-            20        60
-          /    \    /    \
-         10    30  50    70
-        /  \  / \    \  /  \
-        5  15 25 35  55 65 75
-```
-*(Node 40 replaced by its inorder successor 45)*
+*[Show final tree and explanation here]*
 
 
 ---
@@ -120,4 +133,8 @@ Perform a step-by-step **Merge Sort** on the following array:
 * Show the "Merge" process, including the temporary arrays and comparison steps.
 * Highlight the state of the array after the first level merge.
 * Provide the final sorted array.
+
+---
+
+[📄 **View Answer Sheet**](../answers/answer-05.md)
 

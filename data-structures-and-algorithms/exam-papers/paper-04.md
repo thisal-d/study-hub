@@ -4,35 +4,71 @@
 
 ## 🔹 Part 1: Basic Concepts & Short Questions
 
-### 1. Step Counting
-Using the RAM model, find the total number of steps to execute the following algorithm. Assume:
-* Initializing `count = 0` takes 1 step.
-* Loop initialization `i = 1` takes 1 step.
-* Comparison `i <= 10` takes 1 step (each iteration).
-* `count = count + i` takes 2 steps (add + assign).
-* Increment `i = i + 2` takes 2 steps (add + assign).
-* How many total comparisons are done?
+### 1. Step Counting Challenges
+Analyze the following algorithms and determine the total number of steps or iterations. Assume standard operation costs (1 step each).
 
-**Algorithm:**
+**a)** Simple step-based for loop:
 ```python
 count = 0
 for i in range(1, 11, 2): # i = 1 to 10 with step 2
     count = count + i
 ```
 
+**b)** Independent nested loops:
+```python
+for i from 1 to 5:
+    for j from 1 to 10:
+        print(j)
+```
+
+**c)** Exponential growth (Logarithmic iterations):
+```python
+x = 1
+while x < 100:
+    print(x)
+    x = x + x
+```
+
+**d)** Selective nested execution:
+```python
+for i from 1 to 5:
+    if i == 3:
+        for j from 1 to 5:
+            print(j)
+    else:
+        print(i)
+```
+
+**e)** Dependant loop structure:
+```python
+for i from 1 to 4:
+    j = 1
+    while j <= i:
+        print(j)
+        j = j + 1
+```
+
+**f)** Boolean condition in nested loops:
+```python
+for i from 1 to 3:
+    for j from 1 to 3:
+        if i + j > 4:
+            print("Target Reached")
+```
+
 ### 2. Binary Tree (Fill in the Blanks)
 Given a BST with root node 100. Left child 80, right child 120. Node 80 has left child 70, right child 90. Node 120 has left child 110, right child 130.
-Insert the values **65** and **115** into the correct positions.
 
-```text
-            100
-          /     \
-        80       120
-       /  \     /   \
-      70   90  110   130
-     /        /
-    ( )      ( )  <- Insert 65 and 115 here
-```
+*   **Tree Diagram:**
+    ```text
+                100
+              /     \
+            80       120
+           /  \     /   \
+          70   90  110   130
+    ```
+
+*   **Task:** Determine where the values **65** and **115** should be inserted.
 
 
 
@@ -61,49 +97,22 @@ b) Which values are currently in the stack (bottom to top)?
 
 ## 🔹 Part 2: Essay / Long Questions
 
-### 1. Binary Tree: Insertion & Deletion
-A binary search tree is constructed from the following sequence:
-`500, 300, 700, 200, 400, 600, 800, 100, 900`
+### 1. Scenario: E-Commerce Product Catalog
+An online shopping platform manages its product catalog using a **Binary Search Tree (BST)**, where each product is indexed by its unique **Product Code**. Products are added to the system in the following order:
 
-a) **Drawing the Tree:** Draw the resulting binary search tree.
+**Product Codes:** `500, 300, 700, 200, 400, 600, 800, 100, 900`
 
-```text
-              500
-            /     \
-          300      700
-         /   \    /   \
-       200   400 600   800
-      /                  \
-    100                  900
-```
+a) **Building the Catalog:** Draw the BST that represents the product catalog after all products are listed.
 
+*[Draw your tree here]*
 
-b) **Insertion:** Insert node **350** into the tree. Show the new structure and list the nodes visited during search.
+b) **New Product Launch:** A new product with **Code 350** is launched on the platform. Show the updated catalog tree and list every product node the system visits while searching for the correct position.
 
-```text
-              500
-            /     \
-          300      700
-         /   \    /   \
-       200   400 600   800
-      /     /            \
-    100    350           900
-```
-*(Nodes visited: 500 -> 300 -> 400 -> 350)*
+*[Show updated tree and path here]*
 
+c) **Discontinuing a Product:** Product **Code 300** is discontinued. This product node has two sub-categories (two children). Explain the two replacement strategies (**inorder predecessor** vs. **inorder successor**) and show the resulting catalog after replacing it with its **inorder successor**.
 
-c) **Deletion:** Remove node **300** from the tree. Explain the two options for replacing this node (predecessor or successor) and show the result after replacing it with its inorder successor.
-
-```text
-              500
-            /     \
-          350      700
-         /   \    /   \
-       200   400 600   800
-      /                  \
-    100                  900
-```
-*(Node 300 replaced by its inorder successor 350)*
+*[Show final tree and explanation here]*
 
 
 ---
@@ -116,4 +125,8 @@ Perform a step-by-step **Quick Sort** on the following array:
 * Clearly show the "Partitioning" steps until the array is sorted.
 * Identify the left and right sub-arrays in each partition.
 * Highlight the pivot's final position after each pass.
+
+---
+
+[📄 **View Answer Sheet**](../answers/answer-04.md)
 
