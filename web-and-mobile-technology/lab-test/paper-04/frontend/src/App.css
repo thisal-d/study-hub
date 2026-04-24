@@ -1,0 +1,58 @@
+/* ── Layout ──────────────────────────── */
+.app { max-width: 1000px; margin: 0 auto; padding: 24px 16px; }
+.app-header { text-align: center; margin-bottom: 28px; }
+.app-header h1 { font-size: 1.9rem; color: #1565c0; }
+.app-header p { color: #666; margin-top: 4px; }
+
+/* ── Form ────────────────────────────── */
+.patient-form { background: #fff; border-radius: 12px; padding: 24px; margin-bottom: 28px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+.patient-form h2 { font-size: 1.15rem; color: #1565c0; margin-bottom: 14px; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 14px; }
+.form-group { display: flex; flex-direction: column; gap: 4px; }
+.form-group label { font-size: 0.82rem; font-weight: 600; color: #555; }
+.form-group input, .form-group select, .form-group textarea { padding: 9px 11px; border: 1px solid #ddd; border-radius: 6px; font-size: 0.92rem; outline: none; font-family: inherit; }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: #1565c0; }
+.form-group textarea { resize: vertical; }
+.span-2 { grid-column: span 2; }
+.char-count { font-size: 0.75rem; color: #999; text-align: right; }
+.btn-submit { background: #1565c0; color: #fff; border: none; padding: 10px 24px; border-radius: 6px; font-size: 0.95rem; cursor: pointer; }
+.btn-submit:hover { background: #0d47a1; }
+.error-msg { color: #b71c1c; background: #ffebee; padding: 8px 12px; border-radius: 6px; margin-bottom: 10px; font-size: 0.9rem; }
+.success-msg { color: #1b5e20; background: #e8f5e9; padding: 8px 12px; border-radius: 6px; margin-bottom: 10px; font-size: 0.9rem; }
+
+/* ── Dashboard ───────────────────────── */
+.dashboard h2 { font-size: 1.15rem; color: #1565c0; margin-bottom: 12px; }
+.summary-bar { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
+.summary-chip { padding: 4px 14px; background: #e3f2fd; border-radius: 20px; font-size: 0.85rem; }
+.filter-bar { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+.filter-btn { padding: 6px 16px; border: 2px solid #ddd; border-radius: 20px; background: #fff; cursor: pointer; font-size: 0.87rem; transition: all 0.2s; }
+.filter-btn.active { background: #1565c0; color: #fff; border-color: #1565c0; }
+.empty-msg { text-align: center; color: #888; padding: 40px; background: #fff; border-radius: 12px; }
+
+/* ── Patient card ────────────────────── */
+.patient-card { background: #fff; border-radius: 10px; padding: 16px 20px; margin-bottom: 12px; box-shadow: 0 1px 4px rgba(0,0,0,0.07); border-left: 5px solid #90a4ae; }
+.patient-card.priority-Low { border-left-color: #4caf50; }
+.patient-card.priority-Medium { border-left-color: #ff9800; }
+.patient-card.priority-High { border-left-color: #f44336; }
+.patient-card.priority-Critical { border-left-color: #9c27b0; }
+.patient-card.discharged { opacity: 0.65; background: #f5f5f5; }
+.card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
+.card-top h3 { font-size: 1.05rem; color: #222; }
+.priority-badge { font-size: 0.75rem; font-weight: 700; padding: 3px 10px; border-radius: 12px; color: #fff; }
+.priority-badge.Low { background: #4caf50; }
+.priority-badge.Medium { background: #ff9800; }
+.priority-badge.High { background: #f44336; }
+.priority-badge.Critical { background: #9c27b0; }
+.card-info p { font-size: 0.87rem; color: #555; margin-bottom: 4px; }
+.status-row { display: flex; align-items: center; gap: 10px; margin: 8px 0; flex-wrap: wrap; }
+.status-badge { font-size: 0.8rem; font-weight: 700; padding: 3px 10px; border-radius: 12px; }
+.status-Admitted { background: #e3f2fd; color: #1565c0; }
+.status-Under-Treatment { background: #fff3e0; color: #e65100; }
+.status-Recovering { background: #e8f5e9; color: #2e7d32; }
+.status-Discharged { background: #eeeeee; color: #757575; }
+.card-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+.btn-discharge { background: #e8f5e9; color: #2e7d32; border: none; padding: 7px 14px; border-radius: 6px; cursor: pointer; font-size: 0.85rem; font-weight: 600; }
+.btn-discharge:hover { background: #c8e6c9; }
+.btn-delete { background: #ffebee; color: #c62828; border: none; padding: 7px 14px; border-radius: 6px; cursor: pointer; font-size: 0.85rem; font-weight: 600; }
+.btn-delete:hover { background: #ffcdd2; }
+.status-select { padding: 6px 10px; border: 1px solid #ddd; border-radius: 6px; font-size: 0.85rem; }
