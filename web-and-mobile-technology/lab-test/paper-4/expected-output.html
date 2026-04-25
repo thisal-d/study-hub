@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recipe Manager — Paper 4 Expected Output</title>
+  <style>
+    * { box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; margin: 0; padding: 0; }
+    body { background: #faf8f5; color: #333; }
+    .navbar { display: flex; justify-content: space-between; align-items: center; padding: 18px 40px; background: #d35400; color: white; }
+    .brand { font-size: 1.3rem; font-weight: bold; }
+    .nav-links a { color: white; text-decoration: none; margin-left: 20px; font-weight: 600; cursor: pointer; padding: 6px 0; border-bottom: 2px solid transparent; transition: border-color 0.2s; }
+    .nav-links a.active { border-bottom-color: #fff; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 30px 20px; }
+    .page { display: none; }
+    .page.active { display: block; }
+    .hero { background: white; padding: 24px; border-radius: 14px; margin-bottom: 24px; box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+    .hero h1 { margin-bottom: 6px; }
+    .hero p { color: #555; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 20px; }
+    .card { background: white; border-radius: 14px; padding: 18px; box-shadow: 0 8px 24px rgba(0,0,0,0.06); transition: transform 0.2s; }
+    .card:hover { transform: translateY(-3px); }
+    .card-image { width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin-bottom: 12px; }
+    .card h3 { margin-bottom: 8px; font-size: 1.15rem; color: #d35400; }
+    .card p { margin: 4px 0; font-size: 0.95rem; color: #444; }
+    .card-actions { display: flex; gap: 10px; margin-top: 14px; }
+    
+    .badge-easy { background: #27ae60; color: white; padding: 4px 10px; border-radius: 12px; font-size: 0.8rem; font-weight: bold; }
+    .badge-medium { background: #f39c12; color: white; padding: 4px 10px; border-radius: 12px; font-size: 0.8rem; font-weight: bold; }
+    .badge-hard { background: #c0392b; color: white; padding: 4px 10px; border-radius: 12px; font-size: 0.8rem; font-weight: bold; }
+
+    .empty-state { text-align: center; padding: 60px 20px; color: #888; font-size: 1.1rem; }
+    .form-card { background: white; border-radius: 14px; padding: 28px; max-width: 650px; margin: 0 auto; box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+    .form-card h2 { margin-bottom: 20px; color: #d35400; }
+    .form-card label { display: block; font-weight: bold; margin-top: 14px; margin-bottom: 6px; font-size: 0.95rem; }
+    .form-card input, .form-card textarea, .form-card select { width: 100%; padding: 10px 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 0.95rem; transition: border-color 0.2s; }
+    .form-card input:focus, .form-card textarea:focus, .form-card select:focus { outline: none; border-color: #d35400; }
+    .btn { border: none; padding: 10px 16px; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 0.9rem; transition: opacity 0.2s; }
+    .btn:hover { opacity: 0.85; }
+    .btn.primary { background: #d35400; color: white; margin-top: 18px; display: block; width: 100%; }
+    .btn.secondary { background: #e2e8f0; color: #222; }
+    .btn.danger { background: #c0392b; color: white; }
+    .toast { position: fixed; bottom: 24px; right: 24px; background: #333; color: white; padding: 12px 22px; border-radius: 10px; box-shadow: 0 4px 16px rgba(0,0,0,0.2); font-size: 0.9rem; opacity: 0; transform: translateY(10px); transition: all 0.3s; z-index: 999; }
+    .toast.show { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="brand">🍳 Recipe Manager</div>
+  <div class="nav-links">
+    <a id="nav-home" class="active" onclick="showPage('home')">Home</a>
+    <a id="nav-add" onclick="showPage('add')">Add Recipe</a>
+  </div>
+</nav>
+
+<div class="container">
+
+  <!-- HOME PAGE -->
+  <div id="page-home" class="page active">
+    <div class="hero">
+      <h1>Recipe Collection</h1>
+      <p>Explore, manage, and share your favorite culinary creations.</p>
+    </div>
+    
+    <div id="recipe-grid" class="grid"></div>
+    <div id="empty-state" class="empty-state" style="display:none;">
+      📭 No recipes yet. Click <strong>Add Recipe</strong> to get started.
+    </div>
+  </div>
+
+  <!-- ADD / EDIT RECIPE PAGE -->
+  <div id="page-add" class="page">
+    <div class="form-card">
+      <h2 id="form-title">Add Recipe</h2>
+      <form id="recipe-form" novalidate>
+        <input type="hidden" id="edit-id" />
+
+        <label for="f-title">Recipe Title <span style="color:red">*</span></label>
+        <input id="f-title" type="text" placeholder="e.g. Spaghetti Bolognese" required />
+
+        <label for="f-cuisine">Cuisine <span style="color:red">*</span></label>
+        <input id="f-cuisine" type="text" placeholder="e.g. Italian" required />
+
+        <!-- ★ NEW FIELDS — Prep Time & Difficulty (Task 02) -->
+        <label for="f-preptime">Prep Time (minutes) <span style="color:red">*</span></label>
+        <input id="f-preptime" type="number" min="1" placeholder="e.g. 30" required />
+
+        <label for="f-difficulty">Difficulty <span style="color:red">*</span></label>
+        <select id="f-difficulty" required>
+          <option value="Easy">Easy</option>
+          <option value="Medium">Medium</option>
+          <option value="Hard">Hard</option>
+        </select>
+
+        <label for="f-ingredients">Ingredients <span style="color:red">*</span></label>
+        <textarea id="f-ingredients" rows="4" placeholder="Pasta, Tomato Sauce, Minced Meat..." required></textarea>
+
+        <label for="f-image">Image URL (optional)</label>
+        <input id="f-image" type="url" placeholder="https://..." />
+
+        <button type="submit" class="btn primary" id="submit-btn">Add Recipe</button>
+      </form>
+    </div>
+  </div>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+  const STORAGE_KEY = "paper4_recipes";
+
+  function loadRecipes() { return JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]"); }
+  function saveRecipes(r) { localStorage.setItem(STORAGE_KEY, JSON.stringify(r)); }
+  function generateId() { return Date.now().toString(36) + Math.random().toString(36).slice(2); }
+
+  function showPage(page) {
+    document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
+    document.querySelectorAll(".nav-links a").forEach(a => a.classList.remove("active"));
+    if (page === "home") {
+      document.getElementById("page-home").classList.add("active");
+      document.getElementById("nav-home").classList.add("active");
+      renderRecipes();
+    } else {
+      document.getElementById("page-add").classList.add("active");
+      document.getElementById("nav-add").classList.add("active");
+      resetForm();
+    }
+  }
+
+  function renderRecipes() {
+    const recipes = loadRecipes();
+    const grid = document.getElementById("recipe-grid");
+    const empty = document.getElementById("empty-state");
+
+    if (recipes.length === 0) { grid.innerHTML = ""; empty.style.display = "block"; return; }
+    empty.style.display = "none";
+
+    grid.innerHTML = recipes.map(r => {
+      // ★ Task 02: Conditional Badge
+      let badgeClass = "badge-easy";
+      if (r.difficulty === "Medium") badgeClass = "badge-medium";
+      else if (r.difficulty === "Hard") badgeClass = "badge-hard";
+
+      return `
+      <div class="card">
+        <img class="card-image"
+          src="${r.imageUrl || 'https://via.placeholder.com/400x200/d35400/ffffff?text=Recipe'}"
+          alt="${escHtml(r.title)}"
+          onerror="this.src='https://via.placeholder.com/400x200/d35400/ffffff?text=Recipe'"
+        />
+        <h3>${escHtml(r.title)}</h3>
+        <p><strong>Cuisine:</strong> ${escHtml(r.cuisine)}</p>
+        <p><strong>Prep Time:</strong> ${r.prepTime} mins</p>
+        <p><strong>Difficulty:</strong> <span class="${badgeClass}">${escHtml(r.difficulty)}</span></p>
+        <p style="margin-top:8px;"><strong>Ingredients:</strong></p>
+        <p style="color:#666;font-size:0.88rem;">${escHtml(r.ingredients)}</p>
+        <div class="card-actions">
+          <button class="btn secondary" onclick="editRecipe('${r.id}')">Edit</button>
+          <button class="btn danger" onclick="deleteRecipe('${r.id}')">Delete</button>
+        </div>
+      </div>`;
+    }).join("");
+  }
+
+  function resetForm() {
+    document.getElementById("recipe-form").reset();
+    document.getElementById("edit-id").value = "";
+    document.getElementById("f-difficulty").value = "Easy";
+    document.getElementById("form-title").textContent = "Add Recipe";
+    document.getElementById("submit-btn").textContent = "Add Recipe";
+  }
+
+  document.getElementById("recipe-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const title  = document.getElementById("f-title").value.trim();
+    const cuisine = document.getElementById("f-cuisine").value.trim();
+    const prepTime = parseInt(document.getElementById("f-preptime").value);
+    const difficulty = document.getElementById("f-difficulty").value;
+    const ingredients = document.getElementById("f-ingredients").value.trim();
+    const imageUrl = document.getElementById("f-image").value.trim();
+    const editId = document.getElementById("edit-id").value;
+
+    if (!title || !cuisine || isNaN(prepTime) || !difficulty || !ingredients) {
+      showToast("⚠️ Fill in all required fields."); return;
+    }
+
+    const recipes = loadRecipes();
+    if (editId) {
+      const idx = recipes.findIndex(r => r.id === editId);
+      if (idx !== -1) { recipes[idx] = { ...recipes[idx], title, cuisine, prepTime, difficulty, ingredients, imageUrl }; }
+      saveRecipes(recipes);
+      showToast("✅ Recipe updated!");
+    } else {
+      recipes.unshift({ id: generateId(), title, cuisine, prepTime, difficulty, ingredients, imageUrl, createdAt: new Date().toISOString() });
+      saveRecipes(recipes);
+      showToast("✅ Recipe added!");
+    }
+    showPage("home");
+  });
+
+  function editRecipe(id) {
+    const r = loadRecipes().find(r => r.id === id);
+    if (!r) return;
+    showPage('add');
+    document.getElementById("edit-id").value  = r.id;
+    document.getElementById("f-title").value  = r.title;
+    document.getElementById("f-cuisine").value = r.cuisine;
+    document.getElementById("f-preptime").value = r.prepTime;
+    document.getElementById("f-difficulty").value = r.difficulty;
+    document.getElementById("f-ingredients").value = r.ingredients;
+    document.getElementById("f-image").value  = r.imageUrl || "";
+    document.getElementById("form-title").textContent  = "Edit Recipe";
+    document.getElementById("submit-btn").textContent  = "Update Recipe";
+  }
+
+  function deleteRecipe(id) {
+    if (!confirm("Delete this recipe?")) return;
+    saveRecipes(loadRecipes().filter(r => r.id !== id));
+    renderRecipes();
+    showToast("🗑️ Recipe deleted.");
+  }
+
+  function showToast(msg) {
+    const t = document.getElementById("toast");
+    t.textContent = msg;
+    t.classList.add("show");
+    setTimeout(() => t.classList.remove("show"), 2800);
+  }
+
+  function escHtml(str) {
+    return String(str).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+  }
+
+  renderRecipes();
+</script>
+</body>
+</html>

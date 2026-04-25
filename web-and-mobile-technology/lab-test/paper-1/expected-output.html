@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Manager — Paper 1 Expected Output</title>
+  <style>
+    * { box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; margin: 0; padding: 0; }
+    body { background: #f5f7fb; color: #222; }
+
+    /* ── Navbar ── */
+    .navbar {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 18px 40px; background: #1a3c5e; color: white;
+    }
+    .brand { font-size: 1.3rem; font-weight: bold; }
+    .nav-links a {
+      color: white; text-decoration: none; margin-left: 20px;
+      font-weight: 600; cursor: pointer; padding: 6px 0;
+      border-bottom: 2px solid transparent; transition: border-color 0.2s;
+    }
+    .nav-links a.active { border-bottom-color: #fff; }
+    .nav-links a:hover { border-bottom-color: rgba(255,255,255,0.6); }
+
+    /* ── Layout ── */
+    .container { max-width: 1100px; margin: 0 auto; padding: 30px 20px; }
+    .page { display: none; }
+    .page.active { display: block; }
+
+    /* ── Hero ── */
+    .hero {
+      background: white; padding: 24px; border-radius: 14px;
+      margin-bottom: 24px; box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+    .hero h1 { margin-bottom: 6px; }
+    .hero p { color: #555; }
+
+    /* ── Grid / Cards ── */
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 20px; }
+    .card {
+      background: white; border-radius: 14px; padding: 18px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08); transition: transform 0.2s;
+    }
+    .card:hover { transform: translateY(-3px); }
+    .card-image { width: 100%; height: 180px; object-fit: cover; border-radius: 10px; margin-bottom: 12px; }
+    .card h3 { margin-bottom: 8px; }
+    .card p { margin: 4px 0; font-size: 0.92rem; color: #444; }
+    .card-actions { display: flex; gap: 10px; margin-top: 14px; }
+    .empty-state { text-align: center; padding: 60px 20px; color: #888; font-size: 1.1rem; }
+
+    /* ── Form ── */
+    .form-card {
+      background: white; border-radius: 14px; padding: 28px;
+      max-width: 650px; margin: 0 auto; box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+    .form-card h2 { margin-bottom: 20px; color: #1a3c5e; }
+    .form-card label { display: block; font-weight: bold; margin-top: 14px; margin-bottom: 6px; font-size: 0.9rem; }
+    .form-card input, .form-card textarea, .form-card select {
+      width: 100%; padding: 10px 12px; border: 1px solid #cfd6e4;
+      border-radius: 8px; font-size: 0.95rem; transition: border-color 0.2s;
+    }
+    .form-card input:focus, .form-card textarea:focus, .form-card select:focus {
+      outline: none; border-color: #1a3c5e;
+    }
+    .form-card textarea { resize: vertical; }
+
+    /* ── Buttons ── */
+    .btn {
+      border: none; padding: 10px 16px; border-radius: 8px;
+      cursor: pointer; font-weight: 600; font-size: 0.9rem; transition: opacity 0.2s;
+    }
+    .btn:hover { opacity: 0.85; }
+    .btn.primary { background: #1a3c5e; color: white; margin-top: 18px; display: block; width: 100%; }
+    .btn.secondary { background: #e2e8f0; color: #222; text-decoration: none; }
+    .btn.danger { background: #c0392b; color: white; }
+
+    /* ── Badge ── */
+    .badge {
+      display: inline-block; padding: 3px 10px; border-radius: 20px;
+      font-size: 0.78rem; font-weight: 600; background: #e8f0fe; color: #1a3c5e;
+      margin-top: 4px;
+    }
+
+    /* ── Toast ── */
+    .toast {
+      position: fixed; bottom: 24px; right: 24px; background: #1a3c5e;
+      color: white; padding: 12px 22px; border-radius: 10px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2); font-size: 0.9rem;
+      opacity: 0; transform: translateY(10px); transition: all 0.3s; z-index: 999;
+    }
+    .toast.show { opacity: 1; transform: translateY(0); }
+
+    /* ── Stats bar ── */
+    .stats-bar {
+      display: flex; gap: 16px; margin-bottom: 20px; flex-wrap: wrap;
+    }
+    .stat-pill {
+      background: white; border-radius: 10px; padding: 10px 18px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06); font-size: 0.88rem;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .stat-pill span { font-weight: 700; font-size: 1.1rem; color: #1a3c5e; }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="brand">📚 Book Manager</div>
+  <div class="nav-links">
+    <a id="nav-home" class="active" onclick="showPage('home')">Home</a>
+    <a id="nav-add" onclick="showPage('add')">Add Book</a>
+  </div>
+</nav>
+
+<div class="container">
+
+  <!-- ─── HOME PAGE ─── -->
+  <div id="page-home" class="page active">
+    <div class="hero">
+      <h1>Book Collection</h1>
+      <p>View, manage, edit, and remove books from the library.</p>
+    </div>
+
+    <div class="stats-bar" id="stats-bar">
+      <div class="stat-pill">Total Books: <span id="total-count">0</span></div>
+    </div>
+
+    <div id="book-grid" class="grid"></div>
+    <div id="empty-state" class="empty-state" style="display:none;">
+      📭 No books yet. Click <strong>Add Book</strong> to get started.
+    </div>
+  </div>
+
+  <!-- ─── ADD BOOK PAGE ─── -->
+  <div id="page-add" class="page">
+    <div class="form-card">
+      <h2 id="form-title">Add Book</h2>
+      <form id="book-form" novalidate>
+        <input type="hidden" id="edit-id" />
+
+        <label for="f-title">Book Title <span style="color:red">*</span></label>
+        <input id="f-title" type="text" placeholder="e.g. The Great Gatsby" required />
+
+        <label for="f-author">Author <span style="color:red">*</span></label>
+        <input id="f-author" type="text" placeholder="e.g. F. Scott Fitzgerald" required />
+
+        <label for="f-price">Price (USD) <span style="color:red">*</span></label>
+        <input id="f-price" type="number" min="0" step="0.01" placeholder="e.g. 12.99" required />
+
+        <label for="f-description">Description <span style="color:red">*</span></label>
+        <textarea id="f-description" rows="4" placeholder="Brief description of the book..." required></textarea>
+
+        <!-- ★ NEW FIELD — Genre (Task 02) -->
+        <label for="f-genre">Genre <span style="color:red">*</span></label>
+        <input id="f-genre" type="text" placeholder="e.g. Fiction, Science, History" required />
+
+        <label for="f-image">Image URL (optional)</label>
+        <input id="f-image" type="url" placeholder="https://..." />
+
+        <button type="submit" class="btn primary" id="submit-btn">Add Book</button>
+      </form>
+    </div>
+  </div>
+
+</div><!-- /container -->
+
+<!-- Toast notification -->
+<div class="toast" id="toast"></div>
+
+<script>
+  // ─────────────────────────────────────────────
+  //  DATA — using LocalStorage to simulate backend
+  // ─────────────────────────────────────────────
+  const STORAGE_KEY = "paper1_books";
+
+  function loadBooks() {
+    return JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+  }
+
+  function saveBooks(books) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(books));
+  }
+
+  function generateId() {
+    return Date.now().toString(36) + Math.random().toString(36).slice(2);
+  }
+
+  // ─────────────────────────────────────────────
+  //  NAVIGATION
+  // ─────────────────────────────────────────────
+  function showPage(page) {
+    document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
+    document.querySelectorAll(".nav-links a").forEach(a => a.classList.remove("active"));
+
+    if (page === "home") {
+      document.getElementById("page-home").classList.add("active");
+      document.getElementById("nav-home").classList.add("active");
+      renderBooks();
+    } else if (page === "add") {
+      document.getElementById("page-add").classList.add("active");
+      document.getElementById("nav-add").classList.add("active");
+      resetForm();
+    }
+  }
+
+  // ─────────────────────────────────────────────
+  //  RENDER BOOKS
+  // ─────────────────────────────────────────────
+  function renderBooks() {
+    const books = loadBooks();
+    const grid = document.getElementById("book-grid");
+    const empty = document.getElementById("empty-state");
+    const totalCount = document.getElementById("total-count");
+
+    totalCount.textContent = books.length;
+
+    if (books.length === 0) {
+      grid.innerHTML = "";
+      empty.style.display = "block";
+      return;
+    }
+    empty.style.display = "none";
+
+    grid.innerHTML = books.map(book => `
+      <div class="card" id="card-${book.id}">
+        <img
+          class="card-image"
+          src="${book.imageUrl || 'https://via.placeholder.com/400x220/1a3c5e/ffffff?text=Book'}"
+          alt="${escHtml(book.title)}"
+          onerror="this.src='https://via.placeholder.com/400x220/1a3c5e/ffffff?text=Book'"
+        />
+        <h3>${escHtml(book.title)}</h3>
+        <p><strong>Author:</strong> ${escHtml(book.author)}</p>
+        <p><strong>Price:</strong> $${parseFloat(book.price).toFixed(2)}</p>
+        <!-- ★ Genre field displayed (Task 02) -->
+        <p><strong>Genre:</strong> <span class="badge">${escHtml(book.genre)}</span></p>
+        <p style="color:#666;font-size:0.88rem;margin-top:6px;">${escHtml(book.description)}</p>
+        <div class="card-actions">
+          <button class="btn secondary" onclick="editBook('${book.id}')">Edit</button>
+          <button class="btn danger" onclick="deleteBook('${book.id}')">Delete</button>
+        </div>
+      </div>
+    `).join("");
+  }
+
+  // ─────────────────────────────────────────────
+  //  FORM HANDLING
+  // ─────────────────────────────────────────────
+  function resetForm() {
+    document.getElementById("book-form").reset();
+    document.getElementById("edit-id").value = "";
+    document.getElementById("form-title").textContent = "Add Book";
+    document.getElementById("submit-btn").textContent = "Add Book";
+  }
+
+  document.getElementById("book-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const title       = document.getElementById("f-title").value.trim();
+    const author      = document.getElementById("f-author").value.trim();
+    const price       = parseFloat(document.getElementById("f-price").value);
+    const description = document.getElementById("f-description").value.trim();
+    const genre       = document.getElementById("f-genre").value.trim();  // ★ Task 02
+    const imageUrl    = document.getElementById("f-image").value.trim();
+    const editId      = document.getElementById("edit-id").value;
+
+    // Basic validation
+    if (!title || !author || isNaN(price) || !description || !genre) {
+      showToast("⚠️ Please fill in all required fields.", true);
+      return;
+    }
+    if (price < 0) {
+      showToast("⚠️ Price cannot be negative.", true);
+      return;
+    }
+
+    const books = loadBooks();
+
+    if (editId) {
+      // UPDATE existing book
+      const idx = books.findIndex(b => b.id === editId);
+      if (idx !== -1) {
+        books[idx] = { ...books[idx], title, author, price, description, genre, imageUrl };
+        saveBooks(books);
+        showToast("✅ Book updated successfully!");
+      }
+    } else {
+      // CREATE new book
+      const newBook = {
+        id: generateId(),
+        title, author, price, description, genre, imageUrl,
+        createdAt: new Date().toISOString()
+      };
+      books.unshift(newBook);
+      saveBooks(books);
+      showToast("✅ Book added successfully!");
+    }
+
+    showPage("home");
+  });
+
+  // ─────────────────────────────────────────────
+  //  EDIT BOOK — pre-fills the form
+  // ─────────────────────────────────────────────
+  function editBook(id) {
+    const books = loadBooks();
+    const book = books.find(b => b.id === id);
+    if (!book) return;
+
+    // Switch to Add/Edit page
+    document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
+    document.querySelectorAll(".nav-links a").forEach(a => a.classList.remove("active"));
+    document.getElementById("page-add").classList.add("active");
+
+    // Fill form fields
+    document.getElementById("edit-id").value     = book.id;
+    document.getElementById("f-title").value     = book.title;
+    document.getElementById("f-author").value    = book.author;
+    document.getElementById("f-price").value     = book.price;
+    document.getElementById("f-description").value = book.description;
+    document.getElementById("f-genre").value     = book.genre;   // ★ Task 02
+    document.getElementById("f-image").value     = book.imageUrl || "";
+    document.getElementById("form-title").textContent = "Edit Book";
+    document.getElementById("submit-btn").textContent = "Update Book";
+  }
+
+  // ─────────────────────────────────────────────
+  //  DELETE BOOK
+  // ─────────────────────────────────────────────
+  function deleteBook(id) {
+    if (!confirm("Are you sure you want to delete this book?")) return;
+    const books = loadBooks().filter(b => b.id !== id);
+    saveBooks(books);
+    renderBooks();
+    showToast("🗑️ Book deleted.");
+  }
+
+  // ─────────────────────────────────────────────
+  //  TOAST NOTIFICATION
+  // ─────────────────────────────────────────────
+  function showToast(msg, isError = false) {
+    const toast = document.getElementById("toast");
+    toast.textContent = msg;
+    toast.style.background = isError ? "#c0392b" : "#1a3c5e";
+    toast.classList.add("show");
+    setTimeout(() => toast.classList.remove("show"), 2800);
+  }
+
+  // ─────────────────────────────────────────────
+  //  HELPER
+  // ─────────────────────────────────────────────
+  function escHtml(str) {
+    return String(str)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+
+  // ─────────────────────────────────────────────
+  //  INIT — render books on load
+  // ─────────────────────────────────────────────
+  renderBooks();
+</script>
+</body>
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Manager — Paper 2 Expected Output</title>
+  <style>
+    * { box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; margin: 0; padding: 0; }
+    body { background: #f0f7f4; color: #222; }
+    .navbar { display: flex; justify-content: space-between; align-items: center; padding: 18px 40px; background: #2d6a4f; color: white; }
+    .brand { font-size: 1.3rem; font-weight: bold; }
+    .nav-links a { color: white; text-decoration: none; margin-left: 20px; font-weight: 600; cursor: pointer; padding: 6px 0; border-bottom: 2px solid transparent; transition: border-color 0.2s; }
+    .nav-links a.active { border-bottom-color: #fff; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 30px 20px; }
+    .page { display: none; }
+    .page.active { display: block; }
+    .hero { background: white; padding: 24px; border-radius: 14px; margin-bottom: 24px; box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+    .hero h1 { margin-bottom: 6px; }
+    .hero p { color: #555; }
+    .stats-bar { display: flex; gap: 16px; margin-bottom: 20px; flex-wrap: wrap; }
+    .stat-pill { background: white; border-radius: 10px; padding: 10px 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); font-size: 0.88rem; display: flex; align-items: center; gap: 8px; }
+    .stat-pill span { font-weight: 700; font-size: 1.1rem; color: #2d6a4f; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px,1fr)); gap: 20px; }
+    .card { background: white; border-radius: 14px; padding: 18px; box-shadow: 0 8px 24px rgba(0,0,0,0.08); transition: transform 0.2s; }
+    .card:hover { transform: translateY(-3px); }
+    .card-image { width: 100%; height: 160px; object-fit: cover; border-radius: 10px; margin-bottom: 12px; }
+    .card h3 { margin-bottom: 8px; font-size: 1.05rem; }
+    .card p { margin: 4px 0; font-size: 0.9rem; color: #444; }
+    .card-actions { display: flex; gap: 10px; margin-top: 14px; }
+    .gpa-badge { display: inline-flex; align-items: center; gap: 6px; background: linear-gradient(135deg,#2d6a4f,#40916c); color: white; border-radius: 20px; padding: 4px 14px; font-size: 0.82rem; font-weight: 700; margin-top: 6px; }
+    .empty-state { text-align: center; padding: 60px 20px; color: #888; font-size: 1.1rem; }
+    .form-card { background: white; border-radius: 14px; padding: 28px; max-width: 650px; margin: 0 auto; box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+    .form-card h2 { margin-bottom: 20px; color: #2d6a4f; }
+    .form-card label { display: block; font-weight: bold; margin-top: 14px; margin-bottom: 6px; font-size: 0.9rem; }
+    .form-card input, .form-card textarea, .form-card select { width: 100%; padding: 10px 12px; border: 1px solid #cfd6e4; border-radius: 8px; font-size: 0.95rem; transition: border-color 0.2s; }
+    .form-card input:focus, .form-card select:focus { outline: none; border-color: #2d6a4f; }
+    .gpa-hint { font-size: 0.8rem; color: #888; margin-top: 4px; }
+    .btn { border: none; padding: 10px 16px; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 0.9rem; transition: opacity 0.2s; }
+    .btn:hover { opacity: 0.85; }
+    .btn.primary { background: #2d6a4f; color: white; margin-top: 18px; display: block; width: 100%; }
+    .btn.secondary { background: #e2e8f0; color: #222; }
+    .btn.danger { background: #c0392b; color: white; }
+    .toast { position: fixed; bottom: 24px; right: 24px; background: #2d6a4f; color: white; padding: 12px 22px; border-radius: 10px; box-shadow: 0 4px 16px rgba(0,0,0,0.2); font-size: 0.9rem; opacity: 0; transform: translateY(10px); transition: all 0.3s; z-index: 999; }
+    .toast.show { opacity: 1; transform: translateY(0); }
+    .gpa-bar-wrap { background: #e8f5e9; border-radius: 4px; height: 6px; margin-top: 6px; overflow: hidden; }
+    .gpa-bar { height: 100%; background: #2d6a4f; border-radius: 4px; transition: width 0.4s; }
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="brand">🎓 Student Manager</div>
+  <div class="nav-links">
+    <a id="nav-home" class="active" onclick="showPage('home')">Home</a>
+    <a id="nav-add" onclick="showPage('add')">Add Student</a>
+  </div>
+</nav>
+
+<div class="container">
+
+  <!-- HOME PAGE -->
+  <div id="page-home" class="page active">
+    <div class="hero">
+      <h1>Student Directory</h1>
+      <p>View, manage, edit, and remove student records.</p>
+    </div>
+    <div class="stats-bar">
+      <div class="stat-pill">Total Students: <span id="total-count">0</span></div>
+      <div class="stat-pill">Avg GPA: <span id="avg-gpa">—</span></div>
+    </div>
+    <div id="student-grid" class="grid"></div>
+    <div id="empty-state" class="empty-state" style="display:none;">
+      📭 No students yet. Click <strong>Add Student</strong> to get started.
+    </div>
+  </div>
+
+  <!-- ADD / EDIT STUDENT PAGE -->
+  <div id="page-add" class="page">
+    <div class="form-card">
+      <h2 id="form-title">Add Student</h2>
+      <form id="student-form" novalidate>
+        <input type="hidden" id="edit-id" />
+
+        <label for="f-name">Full Name <span style="color:red">*</span></label>
+        <input id="f-name" type="text" placeholder="e.g. Kavindu Perera" required />
+
+        <label for="f-faculty">Faculty <span style="color:red">*</span></label>
+        <input id="f-faculty" type="text" placeholder="e.g. Computing" required />
+
+        <label for="f-year">Year (1–4) <span style="color:red">*</span></label>
+        <input id="f-year" type="number" min="1" max="4" placeholder="e.g. 2" required />
+
+        <label for="f-email">Email <span style="color:red">*</span></label>
+        <input id="f-email" type="email" placeholder="e.g. it@sliit.lk" required />
+
+        <!-- ★ NEW FIELD — GPA (Task 02) -->
+        <label for="f-gpa">GPA (0.0 – 4.0) <span style="color:red">*</span></label>
+        <input id="f-gpa" type="number" min="0" max="4" step="0.01" placeholder="e.g. 3.75" required />
+        <p class="gpa-hint">Enter a value between 0.00 and 4.00</p>
+
+        <label for="f-image">Photo URL (optional)</label>
+        <input id="f-image" type="url" placeholder="https://..." />
+
+        <button type="submit" class="btn primary" id="submit-btn">Add Student</button>
+      </form>
+    </div>
+  </div>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+  const STORAGE_KEY = "paper2_students";
+
+  function loadStudents() { return JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]"); }
+  function saveStudents(s) { localStorage.setItem(STORAGE_KEY, JSON.stringify(s)); }
+  function generateId() { return Date.now().toString(36) + Math.random().toString(36).slice(2); }
+
+  function showPage(page) {
+    document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
+    document.querySelectorAll(".nav-links a").forEach(a => a.classList.remove("active"));
+    if (page === "home") {
+      document.getElementById("page-home").classList.add("active");
+      document.getElementById("nav-home").classList.add("active");
+      renderStudents();
+    } else {
+      document.getElementById("page-add").classList.add("active");
+      document.getElementById("nav-add").classList.add("active");
+      resetForm();
+    }
+  }
+
+  // ── Render GPA progress bar colour
+  function gpaColor(gpa) {
+    if (gpa >= 3.5) return "#2d6a4f";
+    if (gpa >= 2.5) return "#40916c";
+    if (gpa >= 1.5) return "#f4a261";
+    return "#c0392b";
+  }
+
+  function renderStudents() {
+    const students = loadStudents();
+    const grid = document.getElementById("student-grid");
+    const empty = document.getElementById("empty-state");
+    document.getElementById("total-count").textContent = students.length;
+
+    if (students.length > 0) {
+      const avg = (students.reduce((s, st) => s + parseFloat(st.gpa), 0) / students.length).toFixed(2);
+      document.getElementById("avg-gpa").textContent = avg;
+    } else {
+      document.getElementById("avg-gpa").textContent = "—";
+    }
+
+    if (students.length === 0) { grid.innerHTML = ""; empty.style.display = "block"; return; }
+    empty.style.display = "none";
+
+    grid.innerHTML = students.map(s => {
+      const gpaPct = (parseFloat(s.gpa) / 4 * 100).toFixed(1);
+      const color  = gpaColor(parseFloat(s.gpa));
+      return `
+      <div class="card">
+        <img class="card-image"
+          src="${s.imageUrl || 'https://via.placeholder.com/400x160/2d6a4f/ffffff?text=Student'}"
+          alt="${escHtml(s.fullName)}"
+          onerror="this.src='https://via.placeholder.com/400x160/2d6a4f/ffffff?text=Student'"
+        />
+        <h3>${escHtml(s.fullName)}</h3>
+        <p><strong>Faculty:</strong> ${escHtml(s.faculty)}</p>
+        <p><strong>Year:</strong> ${s.year}</p>
+        <p><strong>Email:</strong> ${escHtml(s.email)}</p>
+        <!-- ★ GPA display (Task 02) -->
+        <div class="gpa-badge" style="background:${color};">🎯 GPA: ${parseFloat(s.gpa).toFixed(2)} / 4.00</div>
+        <div class="gpa-bar-wrap"><div class="gpa-bar" style="width:${gpaPct}%;background:${color};"></div></div>
+        <div class="card-actions" style="margin-top:14px;">
+          <button class="btn secondary" onclick="editStudent('${s.id}')">Edit</button>
+          <button class="btn danger" onclick="deleteStudent('${s.id}')">Delete</button>
+        </div>
+      </div>`;
+    }).join("");
+  }
+
+  function resetForm() {
+    document.getElementById("student-form").reset();
+    document.getElementById("edit-id").value = "";
+    document.getElementById("form-title").textContent = "Add Student";
+    document.getElementById("submit-btn").textContent = "Add Student";
+  }
+
+  document.getElementById("student-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const fullName = document.getElementById("f-name").value.trim();
+    const faculty  = document.getElementById("f-faculty").value.trim();
+    const year     = parseInt(document.getElementById("f-year").value);
+    const email    = document.getElementById("f-email").value.trim();
+    const gpa      = parseFloat(document.getElementById("f-gpa").value);
+    const imageUrl = document.getElementById("f-image").value.trim();
+    const editId   = document.getElementById("edit-id").value;
+
+    if (!fullName || !faculty || isNaN(year) || !email || isNaN(gpa)) { showToast("⚠️ Fill in all required fields.", true); return; }
+    if (year < 1 || year > 4) { showToast("⚠️ Year must be between 1 and 4.", true); return; }
+    if (gpa < 0 || gpa > 4) { showToast("⚠️ GPA must be between 0.0 and 4.0.", true); return; }
+
+    const students = loadStudents();
+    if (editId) {
+      const idx = students.findIndex(s => s.id === editId);
+      if (idx !== -1) { students[idx] = { ...students[idx], fullName, faculty, year, email, gpa, imageUrl }; }
+      saveStudents(students);
+      showToast("✅ Student updated!");
+    } else {
+      students.unshift({ id: generateId(), fullName, faculty, year, email, gpa, imageUrl, createdAt: new Date().toISOString() });
+      saveStudents(students);
+      showToast("✅ Student added!");
+    }
+    showPage("home");
+  });
+
+  function editStudent(id) {
+    const s = loadStudents().find(s => s.id === id);
+    if (!s) return;
+    document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
+    document.getElementById("page-add").classList.add("active");
+    document.getElementById("edit-id").value  = s.id;
+    document.getElementById("f-name").value   = s.fullName;
+    document.getElementById("f-faculty").value = s.faculty;
+    document.getElementById("f-year").value   = s.year;
+    document.getElementById("f-email").value  = s.email;
+    document.getElementById("f-gpa").value    = s.gpa;
+    document.getElementById("f-image").value  = s.imageUrl || "";
+    document.getElementById("form-title").textContent  = "Edit Student";
+    document.getElementById("submit-btn").textContent  = "Update Student";
+  }
+
+  function deleteStudent(id) {
+    if (!confirm("Delete this student?")) return;
+    saveStudents(loadStudents().filter(s => s.id !== id));
+    renderStudents();
+    showToast("🗑️ Student deleted.");
+  }
+
+  function showToast(msg, err = false) {
+    const t = document.getElementById("toast");
+    t.textContent = msg;
+    t.style.background = err ? "#c0392b" : "#2d6a4f";
+    t.classList.add("show");
+    setTimeout(() => t.classList.remove("show"), 2800);
+  }
+
+  function escHtml(str) {
+    return String(str).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+  }
+
+  renderStudents();
+</script>
+</body>
+</html>

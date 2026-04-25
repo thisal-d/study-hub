@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Manager — Paper 3 Expected Output</title>
+  <style>
+    * { box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; margin: 0; padding: 0; }
+    body { background: #fdfbf7; color: #333; }
+    .navbar { display: flex; justify-content: space-between; align-items: center; padding: 18px 40px; background: #e67e22; color: white; }
+    .brand { font-size: 1.3rem; font-weight: bold; }
+    .nav-links a { color: white; text-decoration: none; margin-left: 20px; font-weight: 600; cursor: pointer; padding: 6px 0; border-bottom: 2px solid transparent; transition: border-color 0.2s; }
+    .nav-links a.active { border-bottom-color: #fff; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 30px 20px; }
+    .page { display: none; }
+    .page.active { display: block; }
+    .hero { background: white; padding: 24px; border-radius: 14px; margin-bottom: 24px; box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+    .hero h1 { margin-bottom: 6px; }
+    .hero p { color: #555; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 20px; }
+    .card { background: white; border-radius: 14px; padding: 18px; box-shadow: 0 8px 24px rgba(0,0,0,0.06); transition: transform 0.2s; }
+    .card:hover { transform: translateY(-3px); }
+    .card-image { width: 100%; height: 200px; object-fit: contain; background: #f5f5f5; border-radius: 10px; margin-bottom: 12px; }
+    .card h3 { margin-bottom: 8px; font-size: 1.1rem; }
+    .card p { margin: 4px 0; font-size: 0.95rem; color: #444; }
+    .card-actions { display: flex; gap: 10px; margin-top: 14px; }
+    
+    .stock-normal { color: #27ae60; font-weight: bold; }
+    .stock-low { color: #f39c12; font-weight: bold; }
+    .stock-out { color: #e74c3c; font-weight: bold; }
+
+    .empty-state { text-align: center; padding: 60px 20px; color: #888; font-size: 1.1rem; }
+    .form-card { background: white; border-radius: 14px; padding: 28px; max-width: 650px; margin: 0 auto; box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+    .form-card h2 { margin-bottom: 20px; color: #e67e22; }
+    .form-card label { display: block; font-weight: bold; margin-top: 14px; margin-bottom: 6px; font-size: 0.95rem; }
+    .form-card input, .form-card textarea { width: 100%; padding: 10px 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 0.95rem; transition: border-color 0.2s; }
+    .form-card input:focus, .form-card textarea:focus { outline: none; border-color: #e67e22; }
+    .btn { border: none; padding: 10px 16px; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 0.9rem; transition: opacity 0.2s; }
+    .btn:hover { opacity: 0.85; }
+    .btn.primary { background: #e67e22; color: white; margin-top: 18px; display: block; width: 100%; }
+    .btn.secondary { background: #e2e8f0; color: #222; }
+    .btn.danger { background: #e74c3c; color: white; }
+    .toast { position: fixed; bottom: 24px; right: 24px; background: #333; color: white; padding: 12px 22px; border-radius: 10px; box-shadow: 0 4px 16px rgba(0,0,0,0.2); font-size: 0.9rem; opacity: 0; transform: translateY(10px); transition: all 0.3s; z-index: 999; }
+    .toast.show { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="brand">🛒 Product Manager</div>
+  <div class="nav-links">
+    <a id="nav-home" class="active" onclick="showPage('home')">Home</a>
+    <a id="nav-add" onclick="showPage('add')">Add Product</a>
+  </div>
+</nav>
+
+<div class="container">
+
+  <!-- HOME PAGE -->
+  <div id="page-home" class="page active">
+    <div class="hero">
+      <h1>Product Catalog</h1>
+      <p>View, manage, edit, and remove products from the inventory.</p>
+    </div>
+    
+    <div id="product-grid" class="grid"></div>
+    <div id="empty-state" class="empty-state" style="display:none;">
+      📭 No products yet. Click <strong>Add Product</strong> to get started.
+    </div>
+  </div>
+
+  <!-- ADD / EDIT PRODUCT PAGE -->
+  <div id="page-add" class="page">
+    <div class="form-card">
+      <h2 id="form-title">Add Product</h2>
+      <form id="product-form" novalidate>
+        <input type="hidden" id="edit-id" />
+
+        <label for="f-name">Product Name <span style="color:red">*</span></label>
+        <input id="f-name" type="text" placeholder="e.g. Wireless Mouse" required />
+
+        <label for="f-brand">Brand <span style="color:red">*</span></label>
+        <input id="f-brand" type="text" placeholder="e.g. Logitech" required />
+
+        <label for="f-price">Price ($) <span style="color:red">*</span></label>
+        <input id="f-price" type="number" min="0" step="0.01" placeholder="e.g. 29.99" required />
+
+        <!-- ★ NEW FIELD — Stock Quantity (Task 02) -->
+        <label for="f-stock">Stock Quantity <span style="color:red">*</span></label>
+        <input id="f-stock" type="number" min="0" placeholder="e.g. 50" required />
+
+        <label for="f-desc">Description <span style="color:red">*</span></label>
+        <textarea id="f-desc" rows="4" placeholder="Brief description..." required></textarea>
+
+        <label for="f-image">Image URL (optional)</label>
+        <input id="f-image" type="url" placeholder="https://..." />
+
+        <button type="submit" class="btn primary" id="submit-btn">Add Product</button>
+      </form>
+    </div>
+  </div>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+  const STORAGE_KEY = "paper3_products";
+
+  function loadProducts() { return JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]"); }
+  function saveProducts(p) { localStorage.setItem(STORAGE_KEY, JSON.stringify(p)); }
+  function generateId() { return Date.now().toString(36) + Math.random().toString(36).slice(2); }
+
+  function showPage(page) {
+    document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
+    document.querySelectorAll(".nav-links a").forEach(a => a.classList.remove("active"));
+    if (page === "home") {
+      document.getElementById("page-home").classList.add("active");
+      document.getElementById("nav-home").classList.add("active");
+      renderProducts();
+    } else {
+      document.getElementById("page-add").classList.add("active");
+      document.getElementById("nav-add").classList.add("active");
+      resetForm();
+    }
+  }
+
+  function renderProducts() {
+    const products = loadProducts();
+    const grid = document.getElementById("product-grid");
+    const empty = document.getElementById("empty-state");
+
+    if (products.length === 0) { grid.innerHTML = ""; empty.style.display = "block"; return; }
+    empty.style.display = "none";
+
+    grid.innerHTML = products.map(p => {
+      // ★ Task 02: Conditional Logic for Stock
+      let stockHtml = '';
+      const stock = parseInt(p.stockQuantity);
+      if (stock > 10) {
+        stockHtml = `<span class="stock-normal">In Stock: ${stock}</span>`;
+      } else if (stock > 0 && stock <= 10) {
+        stockHtml = `<span class="stock-low">Low Stock: ${stock}</span>`;
+      } else {
+        stockHtml = `<span class="stock-out">Out of Stock</span>`;
+      }
+
+      return `
+      <div class="card">
+        <img class="card-image"
+          src="${p.imageUrl || 'https://via.placeholder.com/400x200/e67e22/ffffff?text=Product'}"
+          alt="${escHtml(p.name)}"
+          onerror="this.src='https://via.placeholder.com/400x200/e67e22/ffffff?text=Product'"
+        />
+        <h3>${escHtml(p.name)}</h3>
+        <p><strong>Brand:</strong> ${escHtml(p.brand)}</p>
+        <p><strong>Price:</strong> $${parseFloat(p.price).toFixed(2)}</p>
+        <p><strong>Status:</strong> ${stockHtml}</p>
+        <p style="color:#666;font-size:0.88rem;margin-top:6px;">${escHtml(p.description)}</p>
+        <div class="card-actions">
+          <button class="btn secondary" onclick="editProduct('${p.id}')">Edit</button>
+          <button class="btn danger" onclick="deleteProduct('${p.id}')">Delete</button>
+        </div>
+      </div>`;
+    }).join("");
+  }
+
+  function resetForm() {
+    document.getElementById("product-form").reset();
+    document.getElementById("edit-id").value = "";
+    document.getElementById("form-title").textContent = "Add Product";
+    document.getElementById("submit-btn").textContent = "Add Product";
+  }
+
+  document.getElementById("product-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const name  = document.getElementById("f-name").value.trim();
+    const brand = document.getElementById("f-brand").value.trim();
+    const price = parseFloat(document.getElementById("f-price").value);
+    const stockQuantity = parseInt(document.getElementById("f-stock").value);
+    const description = document.getElementById("f-desc").value.trim();
+    const imageUrl = document.getElementById("f-image").value.trim();
+    const editId = document.getElementById("edit-id").value;
+
+    if (!name || !brand || isNaN(price) || isNaN(stockQuantity) || !description) {
+      showToast("⚠️ Fill in all required fields."); return;
+    }
+
+    const products = loadProducts();
+    if (editId) {
+      const idx = products.findIndex(p => p.id === editId);
+      if (idx !== -1) { products[idx] = { ...products[idx], name, brand, price, stockQuantity, description, imageUrl }; }
+      saveProducts(products);
+      showToast("✅ Product updated!");
+    } else {
+      products.unshift({ id: generateId(), name, brand, price, stockQuantity, description, imageUrl, createdAt: new Date().toISOString() });
+      saveProducts(products);
+      showToast("✅ Product added!");
+    }
+    showPage("home");
+  });
+
+  function editProduct(id) {
+    const p = loadProducts().find(p => p.id === id);
+    if (!p) return;
+    showPage('add');
+    document.getElementById("edit-id").value  = p.id;
+    document.getElementById("f-name").value   = p.name;
+    document.getElementById("f-brand").value  = p.brand;
+    document.getElementById("f-price").value  = p.price;
+    document.getElementById("f-stock").value  = p.stockQuantity;
+    document.getElementById("f-desc").value   = p.description;
+    document.getElementById("f-image").value  = p.imageUrl || "";
+    document.getElementById("form-title").textContent  = "Edit Product";
+    document.getElementById("submit-btn").textContent  = "Update Product";
+  }
+
+  function deleteProduct(id) {
+    if (!confirm("Delete this product?")) return;
+    saveProducts(loadProducts().filter(p => p.id !== id));
+    renderProducts();
+    showToast("🗑️ Product deleted.");
+  }
+
+  function showToast(msg) {
+    const t = document.getElementById("toast");
+    t.textContent = msg;
+    t.classList.add("show");
+    setTimeout(() => t.classList.remove("show"), 2800);
+  }
+
+  function escHtml(str) {
+    return String(str).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+  }
+
+  renderProducts();
+</script>
+</body>
+</html>
