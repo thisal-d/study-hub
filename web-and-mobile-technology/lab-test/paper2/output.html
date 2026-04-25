@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Notes — Interactive Prototype (Paper 2)</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #fdf6e3 0%, #fffbf0 100%); min-height: 100vh; }
+    .container { max-width: 820px; margin: 40px auto; padding: 0 20px; }
+    h1 { text-align: center; font-size: 2.1rem; color: #2c3e50; margin-bottom: 6px; }
+    .subtitle { text-align: center; color: #999; margin-bottom: 32px; font-size: 0.9rem; }
+    .card { background: white; border-radius: 14px; padding: 26px; margin-bottom: 22px; box-shadow: 0 3px 16px rgba(0,0,0,0.07); }
+    .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; padding-bottom: 8px; border-bottom: 2px solid #fef3e2; }
+    .card-header h2 { color: #e67e22; font-size: 1.1rem; }
+    .note-count { font-size: 0.82rem; color: #e67e22; background: #fef3e2; padding: 3px 10px; border-radius: 12px; font-weight: 700; }
+    .form-row { margin-bottom: 14px; }
+    label { display: block; font-weight: 600; color: #666; margin-bottom: 5px; font-size: 0.88rem; text-transform: uppercase; letter-spacing: 0.5px; }
+    input, select, textarea {
+      width: 100%; padding: 10px 13px; border: 1.5px solid #e8d8c0;
+      border-radius: 8px; font-size: 0.93rem; background: #fffdf8;
+      transition: border-color 0.2s; font-family: inherit;
+    }
+    input:focus, select:focus, textarea:focus { outline: none; border-color: #e67e22; }
+    textarea { resize: vertical; min-height: 80px; }
+    .btn-add { background: linear-gradient(90deg, #e67e22, #f39c12); color: white; border: none; padding: 11px 26px; border-radius: 8px; font-weight: 700; cursor: pointer; transition: transform 0.1s; }
+    .btn-add:hover { transform: translateY(-1px); }
+    .notes-grid { display: flex; flex-direction: column; gap: 12px; }
+    .note-card {
+      background: #fffdf8; border: 1.5px solid #f0e0c0;
+      border-radius: 12px; padding: 18px 20px;
+      display: flex; justify-content: space-between; align-items: flex-start;
+      animation: slideIn 0.3s ease; transition: box-shadow 0.2s;
+    }
+    .note-card:hover { box-shadow: 0 4px 12px rgba(230,126,34,0.12); }
+    @keyframes slideIn { from { opacity: 0; transform: translateX(-10px); } to { opacity: 1; transform: translateX(0); } }
+    .note-card.high-priority { border-left: 4px solid #e74c3c; }
+    .note-card.medium-priority { border-left: 4px solid #f39c12; }
+    .note-card.low-priority { border-left: 4px solid #2ecc71; }
+    .note-body { flex: 1; }
+    .note-title { font-weight: 700; color: #2c3e50; margin-bottom: 6px; font-size: 0.97rem; }
+    .note-content { color: #888; font-size: 0.88rem; margin-bottom: 10px; line-height: 1.5; }
+    .badges { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+    .badge { padding: 3px 10px; border-radius: 20px; font-size: 0.77rem; font-weight: 700; }
+    .badge-subject { background: #e8f4fd; color: #2980b9; }
+    .badge-high { background: #fce8e8; color: #c0392b; }
+    .badge-medium { background: #fef3c7; color: #d97706; }
+    .badge-low { background: #d1fae5; color: #059669; }
+    .priority-select { padding: 4px 8px; border: 1px solid #e0d0b8; border-radius: 6px; font-size: 0.8rem; background: white; cursor: pointer; width: auto; }
+    .note-actions { display: flex; flex-direction: column; gap: 8px; align-items: flex-end; margin-left: 14px; }
+    .btn-delete { background: #e74c3c; color: white; border: none; padding: 6px 14px; border-radius: 6px; font-size: 0.84rem; cursor: pointer; font-weight: 600; white-space: nowrap; }
+    .btn-delete:hover { background: #c0392b; }
+    .empty-state { text-align: center; color: #ccc; padding: 28px; font-style: italic; }
+    .error { border-color: #e74c3c !important; }
+    .error-msg { color: #e74c3c; font-size: 0.78rem; margin-top: 3px; }
+    .toast { position: fixed; bottom: 24px; right: 24px; background: #2c3e50; color: white; padding: 11px 20px; border-radius: 8px; font-size: 0.88rem; font-weight: 600; box-shadow: 0 4px 14px rgba(0,0,0,0.2); transform: translateY(80px); opacity: 0; transition: all 0.3s; z-index: 999; }
+    .toast.show { transform: translateY(0); opacity: 1; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📝 Student Notes</h1>
+    <p class="subtitle">Paper 2 — Interactive Prototype · Data saved in LocalStorage</p>
+
+    <!-- Add Note Form -->
+    <div class="card">
+      <div class="card-header"><h2>📌 Add New Note</h2></div>
+      <div class="form-row">
+        <label>Title</label>
+        <input type="text" id="note-title" placeholder="e.g. React useState Hook"/>
+        <span class="error-msg" id="title-err"></span>
+      </div>
+      <div class="form-row">
+        <label>Content</label>
+        <textarea id="note-content" placeholder="Write your note here..."></textarea>
+        <span class="error-msg" id="content-err"></span>
+      </div>
+      <div class="form-row">
+        <label>Subject</label>
+        <select id="note-subject">
+          <option>Maths</option>
+          <option>Science</option>
+          <option>History</option>
+          <option>English</option>
+          <option selected>Programming</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label>Priority</label>
+        <select id="note-priority">
+          <option>Low</option>
+          <option selected>Medium</option>
+          <option>High</option>
+        </select>
+      </div>
+      <button class="btn-add" onclick="addNote()">+ Save Note</button>
+    </div>
+
+    <!-- Notes List -->
+    <div class="card">
+      <div class="card-header">
+        <h2>📚 My Notes</h2>
+        <span class="note-count" id="note-count">0 notes</span>
+      </div>
+      <div class="notes-grid" id="notes-grid">
+        <div class="empty-state">No notes yet. Add one above! 📝</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script>
+    const STORAGE_KEY = 'paper2_notes';
+
+    // ── Priority helpers ──────────────────────────────────────────────
+    const priorityClass = { High: 'high-priority', Medium: 'medium-priority', Low: 'low-priority' };
+    const priorityBadge = { High: 'badge-high', Medium: 'badge-medium', Low: 'badge-low' };
+    const priorityIcon  = { High: '🔴', Medium: '🟡', Low: '🟢' };
+
+    function getNotes() { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'); }
+    function saveNotes(n) { localStorage.setItem(STORAGE_KEY, JSON.stringify(n)); }
+
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      t.textContent = msg; t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 2400);
+    }
+
+    function validate() {
+      let ok = true;
+      ['title-err','content-err'].forEach(id => document.getElementById(id).textContent = '');
+      ['note-title','note-content'].forEach(id => document.getElementById(id).classList.remove('error'));
+
+      if (!document.getElementById('note-title').value.trim()) {
+        document.getElementById('note-title').classList.add('error');
+        document.getElementById('title-err').textContent = 'Title is required.';
+        ok = false;
+      }
+      if (!document.getElementById('note-content').value.trim()) {
+        document.getElementById('note-content').classList.add('error');
+        document.getElementById('content-err').textContent = 'Content is required.';
+        ok = false;
+      }
+      return ok;
+    }
+
+    function addNote() {
+      if (!validate()) return;
+
+      const note = {
+        id: Date.now(),
+        title: document.getElementById('note-title').value.trim(),
+        content: document.getElementById('note-content').value.trim(),
+        subject: document.getElementById('note-subject').value,
+        priority: document.getElementById('note-priority').value,
+      };
+
+      const notes = getNotes();
+      notes.unshift(note);
+      saveNotes(notes);
+
+      // Reset form
+      document.getElementById('note-title').value = '';
+      document.getElementById('note-content').value = '';
+      document.getElementById('note-subject').value = 'Programming';
+      document.getElementById('note-priority').value = 'Medium';
+
+      renderNotes();
+      showToast('Note saved!');
+    }
+
+    function deleteNote(id) {
+      saveNotes(getNotes().filter(n => n.id !== id));
+      renderNotes();
+      showToast('Note deleted.');
+    }
+
+    // ── Update priority in-place (simulates PATCH /api/notes/:id) ────
+    function updatePriority(id, newPriority) {
+      const notes = getNotes();
+      const note = notes.find(n => n.id === id);
+      if (note) {
+        note.priority = newPriority;
+        saveNotes(notes);
+        renderNotes();   // re-render so the accent border & badge update
+        showToast(`Priority updated to ${newPriority}.`);
+      }
+    }
+
+    function renderNotes() {
+      const notes = getNotes();
+      const grid = document.getElementById('notes-grid');
+      document.getElementById('note-count').textContent = `${notes.length} note${notes.length !== 1 ? 's' : ''}`;
+
+      if (notes.length === 0) {
+        grid.innerHTML = '<div class="empty-state">No notes yet. Add one above! 📝</div>';
+        return;
+      }
+
+      grid.innerHTML = notes.map(note => `
+        <div class="note-card ${priorityClass[note.priority]}">
+          <div class="note-body">
+            <p class="note-title">${escHtml(note.title)}</p>
+            <p class="note-content">${escHtml(note.content)}</p>
+            <div class="badges">
+              <span class="badge badge-subject">${escHtml(note.subject)}</span>
+              <span class="badge ${priorityBadge[note.priority]}">${priorityIcon[note.priority]} ${note.priority}</span>
+              <!-- Inline priority update dropdown — simulates PATCH route -->
+              <select class="priority-select" onchange="updatePriority(${note.id}, this.value)">
+                <option ${note.priority==='Low'?'selected':''}>Low</option>
+                <option ${note.priority==='Medium'?'selected':''}>Medium</option>
+                <option ${note.priority==='High'?'selected':''}>High</option>
+              </select>
+            </div>
+          </div>
+          <div class="note-actions">
+            <button class="btn-delete" onclick="deleteNote(${note.id})">Delete</button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function escHtml(s) {
+      return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
+
+    // ── Seed demo data on first visit ────────────────────────────────
+    if (getNotes().length === 0) {
+      const demos = [
+        { id: 1, title: 'Exam: Database Design', content: 'Study ER diagrams, normalization, and SQL joins before Friday.', subject: 'Maths', priority: 'High' },
+        { id: 2, title: 'React useState Hook', content: 'useState is a React Hook that lets you add state to functional components.', subject: 'Programming', priority: 'Medium' },
+        { id: 3, title: 'Chapter 3 Summary', content: 'Light waves, electromagnetic spectrum, refraction and reflection.', subject: 'Science', priority: 'Low' },
+      ];
+      saveNotes(demos);
+    }
+
+    renderNotes();
+  </script>
+</body>
+</html>

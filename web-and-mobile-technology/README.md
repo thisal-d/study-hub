@@ -43,14 +43,15 @@ web-and-mobile-technology/
 │   ├── 13-authentication.md
 │   └── 14-deployment-next-steps.md
 │
-└── 📁 lab-test/              # Lab test practice system (5 full MERN practice papers)
-    ├── CHEAT-SHEET.md        #   Quick reference for exam day
-    ├── paper-01/             #   Product Inventory Manager  ⭐⭐
-    ├── paper-02/             #   Book Library Manager       ⭐⭐⭐
-    ├── paper-03/             #   Movie Review Manager       ⭐⭐⭐
-    ├── paper-04/             #   Patient Records Manager    ⭐⭐⭐⭐
-    └── paper-05/             #   Order Tracker              ⭐⭐⭐⭐
-```
+├── 📁 lab-test/              # Lab test preparation (5 full MERN practice papers)
+│   ├── README.md             #   Master guide — study plan, concept table, exam-day checklist
+│   ├── example/              #   Official example lab test (starter project)
+│   ├── paper1/               #   📚 Book Tracker       ⭐ Easy
+│   ├── paper2/               #   📝 Notes Manager      ⭐⭐ Easy-Medium
+│   ├── paper3/               #   🛒 Product Inventory  ⭐⭐⭐ Medium
+│   ├── paper4/               #   ✅ Task Manager       ⭐⭐⭐⭐ Medium-Hard
+│   └── paper5/               #   🎉 Event Registration ⭐⭐⭐⭐⭐ Hard
+
 
 ---
 
@@ -87,21 +88,21 @@ A progressive, beginner-friendly learning path covering:
 
 A complete set of **5 exam-style MERN practice papers** designed to simulate the real 2-hour lab test. Each paper includes:
 
-- **Full working backend** — Express server, Mongoose model, and all CRUD routes
-- **Full working frontend** — React + Vite project with components, CSS, and state management
-- **New fields to add** — each paper extends a starter model (mirrors real test format)
-- **Deployment walkthrough** — step-by-step Render (backend) + Netlify (frontend) guide
-- **Cheat sheet** — exam-day quick reference with templates and common error fixes
+- **`question.md`** — Formal exam paper with marks breakdown per task
+- **`backend/`** — Express + Mongoose starter with `// TODO (Student):` comments to complete
+- **`frontend/src/App.jsx`** — React (Vite) starter with marked TODOs
+- **`output.html`** — Interactive single-file prototype (open in browser, uses LocalStorage)
+- **Deployment** — All papers include Render (backend) + Vercel/Netlify (frontend) submission steps
 
-| Paper | Theme | Difficulty | Key Skills |
-|-------|-------|------------|------------|
-| [Paper 01](./lab-test/paper-01/README.md) | 📦 Product Inventory | ⭐⭐ | MERN basics, add `price` + `category`, deploy |
-| [Paper 02](./lab-test/paper-02/README.md) | 📚 Book Library | ⭐⭐⭐ | `enum`, `unique`, borrow/return toggle, filter |
-| [Paper 03](./lab-test/paper-03/README.md) | 🎬 Movie Reviews | ⭐⭐⭐ | `$regex` search, star ratings, watched toggle |
-| [Paper 04](./lab-test/paper-04/README.md) | 🏥 Patient Records | ⭐⭐⭐⭐ | Complex schema, status workflow, date arithmetic |
-| [Paper 05](./lab-test/paper-05/README.md) | 🛒 Order Tracker | ⭐⭐⭐⭐ | Full MERN from scratch, CORS, revenue totals, deploy |
+| Paper | Theme | Difficulty | Key New Concepts |
+|-------|-------|------------|------------------|
+| [Paper 1](./lab-test/paper1/question.md) | 📚 Book Tracker | ⭐ Easy | 2 new fields, `DELETE`, checkbox, basic CRUD |
+| [Paper 2](./lab-test/paper2/question.md) | 📝 Notes Manager | ⭐⭐ Easy-Medium | `PATCH` partial update, inline priority change |
+| [Paper 3](./lab-test/paper3/question.md) | 🛒 Product Inventory | ⭐⭐⭐ Medium | `GET /search?q=` regex, component extraction |
+| [Paper 4](./lab-test/paper4/question.md) | ✅ Task Manager | ⭐⭐⭐⭐ Medium-Hard | `PUT` full update, edit modal, Kanban board |
+| [Paper 5](./lab-test/paper5/question.md) | 🎉 Event Registration | ⭐⭐⭐⭐⭐ Hard | Capacity validation, `$inc`, `GET /?category=` filter |
 
-> See [`lab-test/CHEAT-SHEET.md`](./lab-test/CHEAT-SHEET.md) for the exam-day quick reference.
+> Start with [`lab-test/README.md`](./lab-test/README.md) for the full study plan, concept coverage table, and exam-day checklist.
 
 ---
 
