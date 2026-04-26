@@ -13,6 +13,7 @@ function BookCard({ book, onDelete }) {
       <p><strong>Price:</strong> ${book.price}</p>
       {/* TODO (Task 02): Display Genre here once added */}
       {/* <p><strong>Genre:</strong> {book.genre}</p> */}
+      <p>{book.genre}</p>
       <p>{book.description}</p>
 
       <div className="card-actions">

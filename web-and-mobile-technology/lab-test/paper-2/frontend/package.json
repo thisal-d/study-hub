@@ -1,7 +1,7 @@
 {
-  "name": "recipe-manager-frontend",
+  "name": "student-manager-frontend",
   "version": "1.0.0",
-  "description": "Recipe Manager MERN Frontend - Practice Paper 4",
+  "description": "Student Manager MERN Frontend - Practice Paper 2",
   "type": "module",
   "scripts": {
     "dev": "vite",

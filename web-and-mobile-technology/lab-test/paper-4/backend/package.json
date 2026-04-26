@@ -1,6 +1,8 @@
 {
   "name": "recipe-manager-backend",
   "version": "1.0.0",
+  "description": "Recipe Manager MERN Backend - Practice Paper 4",
+  "main": "server.js",
   "type": "module",
   "scripts": {
     "start": "node server.js",

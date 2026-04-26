@@ -1,6 +1,8 @@
 {
   "name": "employee-manager-backend",
   "version": "1.0.0",
+  "description": "Employee Manager MERN Backend - Practice Paper 5",
+  "main": "server.js",
   "type": "module",
   "scripts": {
     "start": "node server.js",
