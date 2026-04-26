@@ -7,8 +7,7 @@ function ProductForm({ initialValues, onSubmit, submitText }) {
       brand: "",
       price: "",
       description: "",
-      imageUrl: "",
-      // TODO (Task 02): Add stockQuantity to initial state
+      imageUrl: ""
     }
   );
 
@@ -22,8 +21,6 @@ function ProductForm({ initialValues, onSubmit, submitText }) {
     onSubmit({
       ...formData,
       price: Number(formData.price),
-      // TODO (Task 02): Parse stockQuantity as Number
-      // stockQuantity: Number(formData.stockQuantity),
     });
   };
 
@@ -47,10 +44,6 @@ function ProductForm({ initialValues, onSubmit, submitText }) {
         step="0.01"
         required
       />
-
-      {/* TODO (Task 02): Add Stock Quantity input field here */}
-      {/* <label>Stock Quantity</label> */}
-      {/* <input type="number" name="stockQuantity" value={formData.stockQuantity} onChange={handleChange} min="0" required /> */}
 
       <label>Description</label>
       <textarea

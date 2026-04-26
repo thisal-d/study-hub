@@ -26,13 +26,7 @@ const productSchema = new mongoose.Schema(
       type: String,
       default: "",
       trim: true,
-    },
-    // TODO (Task 02): Add the stockQuantity field here
-    // stockQuantity: {
-    //   type: Number,
-    //   required: [true, "Stock quantity is required"],
-    //   min: [0, "Stock quantity cannot be negative"],
-    // },
+    }
   },
   { timestamps: true }
 );

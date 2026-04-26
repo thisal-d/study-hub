@@ -7,9 +7,6 @@ function EmployeeForm({ initialValues, onSubmit, submitText }) {
       position: "",
       email: "",
       imageUrl: "",
-      // TODO (Task 02): Add department and salary to initial state
-      // department: "Engineering", // Provide a default enum value
-      // salary: "",
     }
   );
 
@@ -22,8 +19,6 @@ function EmployeeForm({ initialValues, onSubmit, submitText }) {
     e.preventDefault();
     onSubmit({
       ...formData,
-      // TODO (Task 02): Parse salary as Number
-      // salary: Number(formData.salary),
     });
   };
 
@@ -39,19 +34,6 @@ function EmployeeForm({ initialValues, onSubmit, submitText }) {
 
       <label>Email</label>
       <input type="email" name="email" value={formData.email} onChange={handleChange} required />
-
-      {/* TODO (Task 02): Add Department dropdown field here */}
-      {/* <label>Department</label> */}
-      {/* <select name="department" value={formData.department} onChange={handleChange} required>
-            <option value="HR">HR</option>
-            <option value="Engineering">Engineering</option>
-            <option value="Marketing">Marketing</option>
-            <option value="Sales">Sales</option>
-          </select> */}
-
-      {/* TODO (Task 02): Add Salary input field here */}
-      {/* <label>Annual Salary ($)</label> */}
-      {/* <input type="number" name="salary" value={formData.salary} onChange={handleChange} min="0" required /> */}
 
       <label>Photo URL (optional)</label>
       <input name="imageUrl" value={formData.imageUrl} onChange={handleChange} />

@@ -4,7 +4,6 @@ function StudentForm({ initialValues, onSubmit, submitText }) {
   const [formData, setFormData] = useState(
     initialValues || {
       fullName: "", faculty: "", year: "", email: "", imageUrl: "",
-      // TODO (Task 02): Add gpa: "" to initial state
     }
   );
 
@@ -34,9 +33,6 @@ function StudentForm({ initialValues, onSubmit, submitText }) {
       <label>Email</label>
       <input type="email" name="email" value={formData.email} onChange={handleChange} required />
 
-      {/* TODO (Task 02): Add GPA input field here */}
-      {/* <label>GPA (0.0 – 4.0)</label> */}
-      {/* <input type="number" name="gpa" min="0" max="4" step="0.01" value={formData.gpa} onChange={handleChange} required /> */}
 
       <label>Photo URL (optional)</label>
       <input name="imageUrl" value={formData.imageUrl} onChange={handleChange} />

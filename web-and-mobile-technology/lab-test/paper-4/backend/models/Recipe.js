@@ -22,16 +22,6 @@ const recipeSchema = new mongoose.Schema(
       default: "",
       trim: true,
     },
-    // TODO (Task 02): Add prepTime (Number) and difficulty (String Enum) fields here
-    // prepTime: {
-    //   type: Number,
-    //   required: [true, "Prep time is required"],
-    // },
-    // difficulty: {
-    //   type: String,
-    //   enum: ['Easy', 'Medium', 'Hard'],
-    //   required: [true, "Difficulty is required"],
-    // }
   },
   { timestamps: true }
 );

@@ -46,11 +46,11 @@ web-and-mobile-technology/
 ├── 📁 lab-test/              # Lab test preparation (5 full MERN practice papers)
 │   ├── README.md             #   Master guide — study plan, concept table, exam-day checklist
 │   ├── example/              #   Official example lab test (starter project)
-│   ├── paper1/               #   📚 Book Tracker       ⭐ Easy
-│   ├── paper2/               #   📝 Notes Manager      ⭐⭐ Easy-Medium
-│   ├── paper3/               #   🛒 Product Inventory  ⭐⭐⭐ Medium
-│   ├── paper4/               #   ✅ Task Manager       ⭐⭐⭐⭐ Medium-Hard
-│   └── paper5/               #   🎉 Event Registration ⭐⭐⭐⭐⭐ Hard
+│   ├── paper-1/              #   📚 Book Tracker       ⭐ Easy
+│   ├── paper-2/              #   📝 Notes Manager      ⭐⭐ Easy-Medium
+│   ├── paper-3/              #   🛒 Product Inventory  ⭐⭐⭐ Medium
+│   ├── paper-4/              #   ✅ Task Manager       ⭐⭐⭐⭐ Medium-Hard
+│   └── paper-5/              #   🎉 Event Registration ⭐⭐⭐⭐⭐ Hard
 
 
 ---
@@ -96,11 +96,11 @@ A complete set of **5 exam-style MERN practice papers** designed to simulate the
 
 | Paper | Theme | Difficulty | Key New Concepts |
 |-------|-------|------------|------------------|
-| [Paper 1](./lab-test/paper1/question.md) | 📚 Book Tracker | ⭐ Easy | 2 new fields, `DELETE`, checkbox, basic CRUD |
-| [Paper 2](./lab-test/paper2/question.md) | 📝 Notes Manager | ⭐⭐ Easy-Medium | `PATCH` partial update, inline priority change |
-| [Paper 3](./lab-test/paper3/question.md) | 🛒 Product Inventory | ⭐⭐⭐ Medium | `GET /search?q=` regex, component extraction |
-| [Paper 4](./lab-test/paper4/question.md) | ✅ Task Manager | ⭐⭐⭐⭐ Medium-Hard | `PUT` full update, edit modal, Kanban board |
-| [Paper 5](./lab-test/paper5/question.md) | 🎉 Event Registration | ⭐⭐⭐⭐⭐ Hard | Capacity validation, `$inc`, `GET /?category=` filter |
+| [Paper 1](./lab-test/paper-1/question.md) | 📚 Book Tracker | ⭐ Easy | 2 new fields, `DELETE`, checkbox, basic CRUD |
+| [Paper 2](./lab-test/paper-2/question.md) | 📝 Notes Manager | ⭐⭐ Easy-Medium | `PATCH` partial update, inline priority change |
+| [Paper 3](./lab-test/paper-3/question.md) | 🛒 Product Inventory | ⭐⭐⭐ Medium | `GET /search?q=` regex, component extraction |
+| [Paper 4](./lab-test/paper-4/question.md) | ✅ Task Manager | ⭐⭐⭐⭐ Medium-Hard | `PUT` full update, edit modal, Kanban board |
+| [Paper 5](./lab-test/paper-5/question.md) | 🎉 Event Registration | ⭐⭐⭐⭐⭐ Hard | Capacity validation, `$inc`, `GET /?category=` filter |
 
 > Start with [`lab-test/README.md`](./lab-test/README.md) for the full study plan, concept coverage table, and exam-day checklist.
 

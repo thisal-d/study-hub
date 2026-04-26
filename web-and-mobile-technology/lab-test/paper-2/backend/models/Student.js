@@ -27,14 +27,7 @@ const studentSchema = new mongoose.Schema(
       type: String,
       default: "",
       trim: true,
-    },
-    // TODO (Task 02): Add the GPA field here
-    // gpa: {
-    //   type: Number,
-    //   required: [true, "GPA is required"],
-    //   min: [0, "GPA cannot be less than 0.0"],
-    //   max: [4, "GPA cannot exceed 4.0"],
-    // },
+    }
   },
   { timestamps: true }
 );

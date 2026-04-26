@@ -27,12 +27,6 @@ const bookSchema = new mongoose.Schema(
       default: "",
       trim: true,
     }
-    // TODO (Task 02): Add the Genre field here
-    // genre: {
-    //   type: String,
-    //   required: [true, "Genre is required"],
-    //   trim: true,
-    // },
   },
   { timestamps: true }
 );

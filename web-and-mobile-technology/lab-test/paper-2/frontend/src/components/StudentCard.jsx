@@ -12,8 +12,6 @@ function StudentCard({ student, onDelete }) {
       <p><strong>Faculty:</strong> {student.faculty}</p>
       <p><strong>Year:</strong> {student.year}</p>
       <p><strong>Email:</strong> {student.email}</p>
-      {/* TODO (Task 02): Display GPA here once added */}
-      {/* <p><strong>GPA:</strong> {student.gpa?.toFixed(2)} / 4.00</p> */}
 
       <div className="card-actions">
         <Link className="btn secondary" to={`/edit-student/${student._id}`}>Edit</Link>

@@ -21,18 +21,7 @@ const employeeSchema = new mongoose.Schema(
       type: String,
       default: "",
       trim: true,
-    },
-    // TODO (Task 02): Add department and salary fields here
-    // department: {
-    //   type: String,
-    //   enum: ['HR', 'Engineering', 'Marketing', 'Sales'],
-    //   required: [true, "Department is required"],
-    // },
-    // salary: {
-    //   type: Number,
-    //   required: [true, "Salary is required"],
-    //   min: [0, "Salary cannot be negative"],
-    // }
+    }
   },
   { timestamps: true }
 );

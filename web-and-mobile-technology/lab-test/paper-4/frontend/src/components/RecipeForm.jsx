@@ -7,9 +7,6 @@ function RecipeForm({ initialValues, onSubmit, submitText }) {
       cuisine: "",
       ingredients: "",
       imageUrl: "",
-      // TODO (Task 02): Add prepTime and difficulty to initial state
-      // prepTime: "",
-      // difficulty: "Easy", // Default value for dropdown
     }
   );
 
@@ -22,8 +19,6 @@ function RecipeForm({ initialValues, onSubmit, submitText }) {
     e.preventDefault();
     onSubmit({
       ...formData,
-      // TODO (Task 02): Parse prepTime as Number
-      // prepTime: Number(formData.prepTime),
     });
   };
 
@@ -36,18 +31,6 @@ function RecipeForm({ initialValues, onSubmit, submitText }) {
 
       <label>Cuisine</label>
       <input name="cuisine" value={formData.cuisine} onChange={handleChange} placeholder="e.g. Italian, Indian" required />
-
-      {/* TODO (Task 02): Add Prep Time input field here */}
-      {/* <label>Prep Time (minutes)</label> */}
-      {/* <input type="number" name="prepTime" value={formData.prepTime} onChange={handleChange} min="1" required /> */}
-
-      {/* TODO (Task 02): Add Difficulty dropdown field here */}
-      {/* <label>Difficulty</label> */}
-      {/* <select name="difficulty" value={formData.difficulty} onChange={handleChange} required>
-            <option value="Easy">Easy</option>
-            <option value="Medium">Medium</option>
-            <option value="Hard">Hard</option>
-          </select> */}
 
       <label>Ingredients (comma separated)</label>
       <textarea

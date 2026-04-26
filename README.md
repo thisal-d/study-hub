@@ -50,13 +50,15 @@ study-hub/
 │   ├── procedures/            ← Stored procedure exercises
 │   └── functions/             ← SQL function exercises
 │
-└── web-and-mobile-technology/
-    ├── fundamentals/          ← HTML, CSS, JavaScript code examples
-    └── exam-practice/         ← Lectures, labs, tutorials & exam papers
-
-├── professional-skills/
-│   ├── lectures/              ← Comprehensive lecture notes
-│   └── short-notes/           ← Condensed lecture summaries
+├── web-and-mobile-technology/
+│   ├── fundamentals/          ← HTML, CSS, JavaScript code examples
+│   ├── mern-learning/         ← Self-study MERN stack learning path
+│   ├── lab-test/              ← Lab test practice (5 MERN papers)
+│   └── exam-practice/         ← Lectures, labs, tutorials & exam papers
+│
+└── professional-skills/
+    ├── lectures/              ← Comprehensive lecture notes
+    └── short-notes/           ← Condensed lecture summaries
 ```
 
 ---

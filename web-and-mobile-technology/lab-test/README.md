@@ -9,18 +9,18 @@
 
 | Paper | Scenario | Key Concepts | Difficulty |
 |-------|----------|--------------|-----------|
-| [Paper 1](./paper1/question.md) | 📚 Book Tracker | Basic CRUD + 2 new fields + Delete | ⭐ Easy |
-| [Paper 2](./paper2/question.md) | 📝 Notes Manager | Full CRUD + Update (PATCH) + Priority badges | ⭐⭐ Easy-Medium |
-| [Paper 3](./paper3/question.md) | 🛒 Product Inventory | CRUD + Search API + Component extraction | ⭐⭐⭐ Medium |
-| [Paper 4](./paper4/question.md) | ✅ Task Manager | CRUD + PUT (full update) + Edit modal + Kanban | ⭐⭐⭐⭐ Medium-Hard |
-| [Paper 5](./paper5/question.md) | 🎉 Event Registration | CRUD + Register logic + Capacity validation + Filter | ⭐⭐⭐⭐⭐ Hard |
+| [Paper 1](./paper-1/question.md) | 📚 Book Tracker | Basic CRUD + 2 new fields + Delete | ⭐ Easy |
+| [Paper 2](./paper-2/question.md) | 📝 Notes Manager | Full CRUD + Update (PATCH) + Priority badges | ⭐⭐ Easy-Medium |
+| [Paper 3](./paper-3/question.md) | 🛒 Product Inventory | CRUD + Search API + Component extraction | ⭐⭐⭐ Medium |
+| [Paper 4](./paper-4/question.md) | ✅ Task Manager | CRUD + PUT (full update) + Edit modal + Kanban | ⭐⭐⭐⭐ Medium-Hard |
+| [Paper 5](./paper-5/question.md) | 🎉 Event Registration | CRUD + Register logic + Capacity validation + Filter | ⭐⭐⭐⭐⭐ Hard |
 
 ---
 
 ## 📁 Each Paper Contains
 
 ```
-paperN/
+paper-N/
 ├── question.md          ← The exam question (read this first!)
 ├── output.html          ← Open in browser to see the expected UI
 ├── backend/
@@ -28,10 +28,10 @@ paperN/
 │   ├── package.json     ← Run `npm install` to set up
 │   ├── .env.example     ← Copy to .env and add your MONGO_URI
 │   ├── models/          ← Mongoose schema (extend this!)
-│   └── routes/          ← Express routes (implement TODOs!)
+│   └── routes/          ← Express routes
 └── frontend/
     └── src/
-        └── App.jsx      ← React starter (implement TODOs!)
+        └── App.jsx      ← React starter
 ```
 
 ---
@@ -46,7 +46,7 @@ Open `output.html` in your browser to see what the final UI should look like.
 
 ### Step 3 — Set Up the Backend
 ```bash
-cd paperN/backend
+cd paper-N/backend
 npm install
 cp .env.example .env
 # Edit .env and paste your MongoDB Atlas connection string
@@ -56,7 +56,7 @@ npm run dev
 ### Step 4 — Set Up the Frontend
 ```bash
 # Create a new Vite React app in the frontend folder
-cd paperN/frontend
+cd paper-N/frontend
 npm create vite@latest . -- --template react
 npm install
 npm install axios
@@ -64,8 +64,7 @@ npm install axios
 npm run dev
 ```
 
-### Step 5 — Work Through the TODOs
-Search for `// TODO (Student):` comments in the code — these mark every task you need to complete.
+
 
 ---
 

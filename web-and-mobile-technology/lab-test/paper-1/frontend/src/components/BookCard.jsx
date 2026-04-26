@@ -11,8 +11,6 @@ function BookCard({ book, onDelete }) {
       <h3>{book.title}</h3>
       <p><strong>Author:</strong> {book.author}</p>
       <p><strong>Price:</strong> ${book.price}</p>
-      {/* TODO (Task 02): Display Genre here once added */}
-      {/* <p><strong>Genre:</strong> {book.genre}</p> */}
       <p>{book.description}</p>
 
       <div className="card-actions">
