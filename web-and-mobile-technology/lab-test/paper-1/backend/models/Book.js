@@ -26,10 +26,6 @@ const bookSchema = new mongoose.Schema(
       type: String,
       default: "",
       trim: true,
-    },
-    genre: {
-      type: String,
-      required: [true, "Genre is required"],
     }
     // TODO (Task 02): Add the Genre field here
     // genre: {

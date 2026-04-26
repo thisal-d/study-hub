@@ -8,7 +8,6 @@ function BookForm({ initialValues, onSubmit, submitText }) {
       price: "",
       description: "",
       imageUrl: "",
-      genre: ""
       // TODO (Task 02): Add genre to initial state
       // genre: "",
     }
@@ -54,16 +53,6 @@ function BookForm({ initialValues, onSubmit, submitText }) {
         onChange={handleChange}
         required
       />
-
-      <label>Genre</label>
-      <input
-        type="text"
-        name="genre"
-        value={formData.genre}
-        onChange={handleChange}
-        required
-      />
-
 
       {/* TODO (Task 02): Add Genre input field here */}
       {/* <label>Genre</label> */}
