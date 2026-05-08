@@ -10,35 +10,34 @@
 
 </div>
 
-## Duration: 2 Hours &nbsp;|&nbsp; Difficulty: ⭐⭐⭐⭐⭐ Hard
+## Duration: 2 Hours &nbsp;|&nbsp; Difficulty: ⭐⭐⭐⭐ Medium–Hard
 
 ---
 
-## Employee Manager MERN Application Enhancement and Deployment
+## Event Manager MERN Application Enhancement and Deployment
 
 ---
 
 ## 1. Lab Test Overview
 
-You are provided with a starter MERN **Employee Manager** project. Your task is to complete the given project, extend it by adding **two** new fields: **Department** (dropdown) and **Salary** (number), test it locally using your own MongoDB connection string, publish the source code to a public GitHub repository, and deploy the frontend and backend separately using free hosting platforms.
+You are provided with a starter MERN **Event Manager** project. Your task is to complete the given project, extend it by adding **two** new fields: **Event Date** (date picker) and **Location Type** (dropdown), test it locally using your own MongoDB connection string, publish the source code to a public GitHub repository, and deploy the frontend and backend separately using free hosting platforms.
 
 ---
 
 ## 2. Expected Skills Demonstrated
 
-- Modifying the full MERN stack to support two simultaneous new data fields of different types.
-- Managing advanced React component state for multiple inputs.
-- Validating Mongoose models with enumerations and numerical constraints.
-- Displaying calculated or formatted data based on the new fields.
+- Modifying the full MERN stack to support Date objects and Enums.
+- Working with HTML5 `<input type="date">` and properly formatting dates in React.
+- Mongoose validation for dates (e.g., ensuring an event date is not in the past if required).
 - Full Git workflow and separate deployment.
 
 ---
 
 ## 3. Resources Provided
 
-- Frontend project of the Employee Manager application (React + Vite).
-- Backend project of the Employee Manager application (Node.js + Express + MongoDB).
-- Basic CRUD functionality already included in the starter project.
+- Frontend project of the Event Manager application (React + Vite).
+- Backend project of the Event Manager application (Node.js + Express + MongoDB).
+- Basic CRUD functionality already included in the starter project (Add / View / Edit / Delete Events).
 - You are expected to complete, test, and deploy the provided codebase during the lab test.
 
 ---
@@ -72,23 +71,23 @@ You are provided with a starter MERN **Employee Manager** project. Your task is 
 - Verify the following:
   - Application loads successfully.
   - You can navigate between pages.
-  - Existing features (Add / View / Edit / Delete Employee) are working.
+  - Existing features (Add / View / Edit / Delete Event) are working.
 
 ---
 
 ### Task 02 — Functional Enhancement
 
-Modify the application by adding **two** new fields to the Add Employee form:
-1. **Department**: A dropdown (`<select>`) field.
-2. **Salary**: A numeric input field.
+Modify the application by adding **two** new fields to the Add Event form:
+1. **Event Date**: A Date input field (`<input type="date">`).
+2. **Location Type**: A dropdown (`<select>`) field.
 
 **Requirements:**
 - Update the frontend form to collect both values from the user.
 - Update the backend model, controller logic, and API flow to save them correctly.
-  - **Department options**: 'HR', 'Engineering', 'Marketing', 'Sales'. (Must be enforced using a Mongoose `enum`).
-  - **Salary validation**: Minimum $0.
-- Display both fields on the Home page together with the other employee details (Name, Position, Email).
-- Format the Salary correctly on the frontend (e.g., "$85,000" or "$85000.00").
+  - **Event Date type**: Must be a `Date` type in Mongoose.
+  - **Location Type options**: 'In-Person', 'Online', 'Hybrid'. (Must be enforced using a Mongoose `enum`).
+- Display both fields on the Home page inside each event card alongside existing details (Event Name, Organizer, Description).
+- **Date Formatting**: Format the Date correctly on the frontend so it is readable (e.g., "October 15, 2024" or "YYYY-MM-DD"). Avoid displaying raw ISO strings like `2024-10-15T00:00:00.000Z`.
 - Make sure the new fields behave correctly during **add**, **read**, and **update** operations.
 
 ---
@@ -117,10 +116,10 @@ Your submitted Word document must include all of the following items, clearly an
 - Student Name
 - Student ID
 - GitHub Repository Link(s)
-- Screenshot of the locally running **existing** project — Add Employee page
+- Screenshot of the locally running **existing** project — Add Event page
 - Screenshot of the locally running **existing** project — Home page
-- Screenshot of the locally running **updated** project — Add Employee page *(showing Department and Salary fields)*
-- Screenshot of the locally running **updated** project — Home page *(showing the formatted Salary and Department)*
+- Screenshot of the locally running **updated** project — Add Event page *(showing Event Date and Location Type fields)*
+- Screenshot of the locally running **updated** project — Home page *(showing the formatted Event Date and Location Type)*
 - Frontend Live URL
 - Backend Live URL
 - Brief deployment notes including the platforms used
@@ -136,8 +135,8 @@ Your submitted Word document must include all of the following items, clearly an
 | Component | Description | Marks | Notes |
 |---|---|---|---|
 | Local setup and MongoDB configuration | Correctly configures the connection URL and verifies the project locally. | 10 | System should run without major local errors. |
-| Multiple field integration (Dept, Salary) | Adds both fields and updates frontend and backend correctly. | 20 | Handled Mongoose enums and Number fields. |
-| Formatting and Display | Salary formatted correctly and Department shown clearly. | 10 | Visible evidence must match the implementation. |
+| Multiple field integration (Date, Location Type) | Adds both fields and updates frontend and backend correctly. | 20 | Handled Mongoose Date types and Enums. |
+| Formatting and Display | Date is formatted in a readable way and Location Type shown clearly. | 10 | Visible evidence must match the implementation. |
 | GitHub repository management | Creates a public repository and pushes the complete project. | 10 | Repository must be accessible. |
 | Backend deployment | Deploys the backend successfully and provides a valid live URL. | 20 | Backend should support live requests. |
 | Frontend deployment and integration | Deploys the frontend and connects it to the live backend correctly. | 25 | Live application should function end to end. |
