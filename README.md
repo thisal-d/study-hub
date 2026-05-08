@@ -42,6 +42,7 @@ study-hub/
 │
 ├── operating-systems/
 │   ├── cpu-scheduling/        ← Questions, answers & exam papers for 5 algorithms
+│   ├── memory-addressing/     ← Beginner's guide, practice questions & worksheets
 │   └── unix-and-c-programming/ ← Guides, lab sheets, questions & C code examples
 │
 ├── sql/

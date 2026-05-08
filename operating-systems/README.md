@@ -10,6 +10,7 @@
 |---------|-------------|
 | [🔄 CPU Scheduling](./cpu-scheduling/README.md) | Practice questions, answers, and exam papers for 5 scheduling algorithms |
 | [🖥️ Unix & C Programming](./unix-and-c-programming/README.md) | Guides, lab sheets, practice questions, and C code examples |
+| [🧠 Memory Addressing](./memory-addressing/README.md) | Comprehensive beginner's guide to memory locations, words, frames, and offsets |
 
 ---
 
