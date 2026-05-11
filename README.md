@@ -11,7 +11,7 @@
 |---------|-------------|
 | [📊 Data Structures & Algorithms](./data-structures-and-algorithms/README.md) | Lecture notes, tutorials, exam papers, and Java implementations |
 | [🧩 Object-Oriented Programming](./object-oriented-programming/README.md) | Practice questions, concept exercises, and exam papers in Java |
-| [⚙️ Operating Systems](./operating-systems/README.md) | CPU scheduling practice and Unix/C programming lab prep |
+| [⚙️ Operating Systems](./operating-systems/README.md) | CPU scheduling, memory management, and 6 final practice exam papers |
 | [🗄️ SQL](./sql/README.md) | SQL practice questions covering selection, triggers, procedures, and functions |
 | [🌐 Web & Mobile Technology](./web-and-mobile-technology/README.md) | HTML, CSS, JavaScript fundamentals and exam practice papers |
 | [💼 Professional Skills](./professional-skills/README.md) | Comprehensive lecture notes and concise summary notes |
@@ -43,7 +43,10 @@ study-hub/
 ├── operating-systems/
 │   ├── cpu-scheduling/        ← Questions, answers & exam papers for 5 algorithms
 │   ├── memory-addressing/     ← Beginner's guide, practice questions & worksheets
-│   └── unix-and-c-programming/ ← Guides, lab sheets, questions & C code examples
+│   ├── unix-and-c-programming/ ← Guides, lab sheets, questions & C code examples
+│   ├── final-papers/          ← 6 final exam papers with diagrams (1 model + 5 predicted)
+│   ├── lab-sheets/            ← Source lab practicals for OSSA
+│   └── lectures/              ← Source lecture notes for OSSA
 │
 ├── sql/
 │   ├── selection/             ← Single & multi-table SELECT queries
