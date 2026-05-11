@@ -63,6 +63,8 @@ iv. How many entries are there in the page table?
 
 <div style='text-align: center;'><img src="./assets/paper-1/q2.png"/></div>
 
+## Question 3
+
 a. List the four necessary conditions to have a deadlock in a system.
 
 b. Propose two solutions to prevent the dadlock by deny the hold and wait condition.
