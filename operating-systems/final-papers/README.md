@@ -1,6 +1,7 @@
 # 📝 OSSA Final Exam Papers
 
 > A collection of 6 high-quality practice exam papers for the Operating Systems & System Administration (OSSA) course, designed to match the official exam standard.
+> Full model answers are available in the [📋 answers/](./answers/README.md) folder.
 
 ---
 
