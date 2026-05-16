@@ -58,7 +58,8 @@ study-hub/
 │   ├── fundamentals/          ← HTML, CSS, JavaScript code examples
 │   ├── mern-learning/         ← Self-study MERN stack learning path
 │   ├── lab-test/              ← Lab test practice (5 MERN papers)
-│   └── exam-practice/         ← Lectures, labs, tutorials & exam papers
+│   ├── exam-practice/         ← Lectures, labs, tutorials & exam papers
+│   └── final-papers/          ← 5 final exam practice papers + model paper
 │
 └── professional-skills/
     ├── lectures/              ← Comprehensive lecture notes

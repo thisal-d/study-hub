@@ -26,6 +26,14 @@ web-and-mobile-technology/
 │   ├── model-paper-based/    #   Practice papers based on model paper style (4 papers)
 │   └── old-syllabus-based/   #   Practice papers based on old syllabus (7 papers + question bank)
 │
+├── 📁 final-papers/          # Final exam practice papers
+│   ├── model-paper/          #   Model paper and answers
+│   ├── practice-paper-1/     #   Web Foundations + Backend Basics
+│   ├── practice-paper-2/     #   Context API, Redux, MongoDB Aggregation, Event Loop
+│   ├── practice-paper-3/     #   Full-Stack Integration
+│   ├── practice-paper-4/     #   Backend Deep Dive & React State
+│   └── practice-paper-5/     #   Comprehensive Exam Simulation
+│
 ├── 📁 mern-learning/         # Self-study MERN stack learning path (15 modules)
 │   ├── 00-prerequisites.md
 │   ├── 01-javascript-foundations.md
@@ -64,6 +72,7 @@ web-and-mobile-technology/
 | [🧪 Lab Sheets](./lab-sheets/) | Labs 01–10 | Hands-on lab exercises and worksheets |
 | [📋 Tutorials](./tutorials/) | Tutorials 01–03 | Tutorial question sheets |
 | [📝 Exam Practice](./exam-practice/README.md) | Model & past papers | Exam-style practice with model and old-syllabus papers |
+| [📝 Final Papers](./final-papers/README.md) | 5 Practice Papers + Model Paper | Comprehensive final exam simulation papers with answers |
 | [🚀 MERN Learning](./mern-learning/README.md) | 15 modules | Structured self-study path from JS basics to full-stack MERN deployment |
 | [🧪 Lab Test Practice](./lab-test/README.md) | 5 full papers | Complete MERN practice papers with working code, Vite frontend, and deployment guides |
 
