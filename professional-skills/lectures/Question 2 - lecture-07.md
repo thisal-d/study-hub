@@ -443,3 +443,18 @@ Sanjeeva Perera - Senior Academic Fellow Department of Computer Systems Engineer
 - Enhances trust among team members
 
 Questions?
+
+
+## Model Paper Question 2
+
+(a) Explain professional ethics and the purpose of a code of conduct in IT.
+
+(b) Analyze how the lack of inclusion can affect:
+- employee motivation
+- teamwork
+- communication.
+(6 marks)
+
+(c) Analyze how diversity can improve creativity and decision-making in a team. Also explain one possible negative impact.
+
+(d) Apply the concept of inclusion to improve team collaboration and analyze its impact on employee engagement and performance.

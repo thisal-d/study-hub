@@ -295,3 +295,18 @@ You will pay meticulous and diligent attention to work competently for your stak
 Task 1: Answer All 3 Questions.
 
 Questions?
+
+
+## Model Paper Question 2
+
+(a) Explain professional ethics and the purpose of a code of conduct in IT.
+
+(b) Analyze how the lack of inclusion can affect:
+- employee motivation
+- teamwork
+- communication.
+(6 marks)
+
+(c) Analyze how diversity can improve creativity and decision-making in a team. Also explain one possible negative impact.
+
+(d) Apply the concept of inclusion to improve team collaboration and analyze its impact on employee engagement and performance.

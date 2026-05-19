@@ -171,3 +171,15 @@ Corporations hold significant influence over digital ecosystems. Their decisions
 - Ensure fairness, accessibility, sustainability.
 
 Questions?
+
+
+## Model Paper Question 4
+
+(a) What is meant by sustainability in IT? Explain how IT systems can be designed to reduce harm to society and the environment.
+
+(b) Discuss two environmental issues caused by the use of IT systems. Explain how organizations can reduce these issues.
+
+(c) Analyze how lack of digital inclusion can affect individuals and communities. Explain two key challenges.
+
+(d) Using Corporate Social Responsibility (CSR) principles, propose three initiatives that organizations can implement to improve digital access and social well-being. Explain the benefits of each initiative.
+(7 marks)

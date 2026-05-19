@@ -577,3 +577,14 @@ The future is banking on us
 - Whistleblowing channels.
 
 Questions?
+
+
+## Model Paper Question 3 - Legal Responsibility, Data Privacy & Intellectual Property (25 Marks)
+
+(a) Explain the concept of data privacy and discuss why it is important in IT systems.
+
+(b) Identify two legal responsibilities of organizations when handling user data. Explain the importance of each responsibility.
+
+(c) Analyze the risks of using intellectual property (such as software code) without proper permission in software development. Explain how these risks affect both organizations and individual developers.
+
+(d) Apply relevant data protection principles (e.g., consent, security, transparency) to demonstrate how organizations can ensure responsible data handling.

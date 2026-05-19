@@ -661,3 +661,29 @@ Creativity, solutions alternatives, new ideas
 <div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F20260506131931fe69a9ead1ac45d8%2Fcrop_1_1778044818905.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=3XktxPUFz%2FHAYyWgOcTTMAHRrYc%3D&Expires=1778649618' alt='OCR图片'/></div>
 
 Questions?
+
+
+## Model Paper Question 1
+
+Read the following case study and answer the questions below.
+
+A Sri Lankan IT company called NextGen Lanka Pvt Ltd is developing a cloud-based system for a government e-service platform. The project team consists of 10 members, including senior engineers, fresh graduates, and UI designers.
+
+The team leader, Sanduni, is technically strong but has limited leadership experience. She prefers to make quick decisions on her own to meet deadlines. As a result, team meetings are rare, and most decisions are communicated through emails without discussion.
+
+Some junior team members feel they are not given opportunities to contribute ideas. At the same time, senior members dominate technical discussions when meetings happen. This has created a gap between team members, and collaboration is weak.
+
+Recently, the team faced a critical decision: whether to use new cloud technology or continue with the existing system. The team was divided. Senior engineers preferred the old system for stability, while younger members wanted the new technology for innovation.
+
+Instead of discussing the options, Sanduni made the final decision alone. Later, the team faced performance issues, delays, and disagreements about responsibility. Trust in leadership has decreased, and team motivation is low.
+
+(a) Explain the concept of team decision-making and why it is important for team success.
+
+(b) Identify the leadership and decision-making issues in this case study. Explain how these issues affect team performance.
+(6 marks)
+
+(c) Analyze how different leadership styles (e.g., directive, supportive, participative) could be applied to improve this situation.
+(6 marks)
+
+(d) As a project consultant, propose a detailed improvement plan to enhance leadership effectiveness, team participation, and decision-making in NextGen Lanka Pvt Ltd.
+(7 marks)
