@@ -10,6 +10,7 @@
 |---------|-------------|
 | [📖 Full Lectures](./lectures/README.md) | Comprehensive lecture notes covering all topics |
 | [⚡ Short Notes](./short-notes/README.md) | Condensed, exam-focused summaries for quick revision |
+| [📝 Model Paper](./model-paper/model-paper.md) | Sample exam paper with questions mapped to corresponding lectures |
 
 ---
 
