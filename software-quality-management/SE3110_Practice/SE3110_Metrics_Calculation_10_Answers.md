@@ -486,10 +486,9 @@ From Lecture 4, a control structure AT LEVEL N assigns Wn = N to **itself and al
 
 ## ANSWER: Q-CALC-10 | Inheritance + User/Non-User Method Calls
 
-### Part A — Animal class (Wi = 0, root class)
+### Part A — Animal class (Wi = 1, base class)
 
-> Rule 17: "For a program which does **not** have a built-in root class, Wi begins at 1."
-> However, if we **explicitly designate** `Animal` as the root class (no parent), Wi = 0.
+> **Inheritance Weight Rule (Rule 17):** Base class starts at **Wi = 1**. Therefore, for `Animal` (the base class), **Wi = 1** for all statements.
 
 **Line A2:** `public void eat()` → void, eat() → **S = 2**
 
@@ -497,11 +496,13 @@ From Lecture 4, a control structure AT LEVEL N assigns Wn = N to **itself and al
 
 | Line | Statement | Tokens | S | Wc | Wn | Wi | Wt | WC |
 |------|-----------|--------|---|----|----|----|----|-----|
-| A2 | `public void eat()` | void, eat() | 2 | 0 | 0 | **0** (root) | **0** | **0** |
-| A3 | `System.out.println("Eating")` | System, ·, out, ·, println(), "Eating" | 6 | 0 | 1 (inside eat's body) | **0** | **1** | **6** |
-| | | | | | | | **WCC_Animal** | **6** |
+| A2 | `public void eat()` | void, eat() | 2 | 0 | 0 | **1** (base) | **1** | **2** |
+| A3 | `System.out.println("Eating")` | System, ·, out, ·, println(), "Eating" | 6 | 0 | 1 (inside eat's body) | **1** | **2** | **12** |
+| | | | | | | | **WCC_Animal** | **14** |
 
-### Part B — Dog class (Wi = 1, first derived class)
+### Part B — Dog class (Wi = 2, first derived class)
+
+> **Inheritance Weight Rule:** Since `Animal` is the base class (Wi = 1), `Dog` is the first derived class (first subclass / 1st inheritance), so **Wi = 2** for all statements in `Dog`.
 
 ### Rule 8 Deep-Dive: user-defined vs non-user-defined methods
 
@@ -536,14 +537,14 @@ From Lecture 4, a control structure AT LEVEL N assigns Wn = N to **itself and al
 
 | Line | Statement | Tokens | S | Wc | Wn | Wi | Wt | WC |
 |------|-----------|--------|---|----|----|----|----|-----|
-| D2 | `public void bark(int times)` | void, bark() | 2 | 0 | 0 | **1** | **1** | **2** |
-| D3 | `for (int i = 0; i < times; i++)` | for(), int, i, =, 0, i, <, times, i, ++ | 10 | 2 | 1 (1st level) | **1** | **4** | **40** |
-| D4 | `System.out.println("Woof")` | System, ·, out, ·, println(), "Woof" | 6 | 0 | 1 (inside for) | **1** | **2** | **12** |
-| D5 | `public void perform()` | void, perform() | 2 | 0 | 0 | **1** | **1** | **2** |
-| D6 | `eat()` | eat() | 1 | 0 | 0 | **1** | **1** | **1** |
-| D7 | `bark(3)` | bark() | 1 | 0 | 0 | **1** | **1** | **1** |
-| D8 | `System.out.println("Done")` | System, ·, out, ·, println(), "Done" | 6 | 0 | 0 | **1** | **1** | **6** |
-| | | | | | | | **WCC_Dog** | **64** |
+| D2 | `public void bark(int times)` | void, bark() | 2 | 0 | 0 | **2** | **2** | **4** |
+| D3 | `for (int i = 0; i < times; i++)` | for(), int, i, =, 0, i, <, times, i, ++ | 10 | 2 | 1 (1st level) | **2** | **5** | **50** |
+| D4 | `System.out.println("Woof")` | System, ·, out, ·, println(), "Woof" | 6 | 0 | 1 (inside for) | **2** | **3** | **18** |
+| D5 | `public void perform()` | void, perform() | 2 | 0 | 0 | **2** | **2** | **4** |
+| D6 | `eat()` | eat() | 1 | 0 | 0 | **2** | **2** | **2** |
+| D7 | `bark(3)` | bark() | 1 | 0 | 0 | **2** | **2** | **2** |
+| D8 | `System.out.println("Done")` | System, ·, out, ·, println(), "Done" | 6 | 0 | 0 | **2** | **2** | **12** |
+| | | | | | | | **WCC_Dog** | **92** |
 
 ### V(G) per method and Vg
 
@@ -579,7 +580,7 @@ Vg = Σ(di + 1) = (1+1) + (0+1) = 2 + 1 = 3
 | Q-CALC-07 | `switch` (4 cases) | **78** | 4 | 4 |
 | Q-CALC-08 | `try-catch` | **41** | 2 | 2 |
 | Q-CALC-09 | Nested for+if (3 levels) | **136** | 4 | 4 |
-| Q-CALC-10 | Inheritance + method calls | WCC_A=6, WCC_D=64 | Various | Vg_A=1, Vg_D=3 |
+| Q-CALC-10 | Inheritance + method calls | WCC_A=14, WCC_D=92 | Various | Vg_A=1, Vg_D=3 |
 
 > **Key insight from the WCC values:** Nesting is the dominant cost factor.
 > Q-CALC-09 (nested loops) scores 136 vs Q-CALC-02's 38 for a similar amount of code —

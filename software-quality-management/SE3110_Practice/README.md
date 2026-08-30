@@ -70,7 +70,7 @@
 | [Q-CALC-07](./SE3110_Metrics_Calculation_10_Questions.md#q-calc-07--switch-statement--root-class) | `switch` | 78 | 4 | `case:` / `default:` tokens |
 | [Q-CALC-08](./SE3110_Metrics_Calculation_10_Questions.md#q-calc-08--try-catch--root-class) | `try-catch` | 41 | 2 | `try` not a token; `catch()` |
 | [Q-CALC-09](./SE3110_Metrics_Calculation_10_Questions.md#q-calc-09--nested-for--nested-if-3-nesting-levels--root-class) | Nested for + if | 136 | 4 | Wn = 1, 2, 3 |
-| [Q-CALC-10](./SE3110_Metrics_Calculation_10_Questions.md#q-calc-10--multi-method-class--inheritance--base-class--derived-class) | Inheritance | 70 | varies | Wi=0 vs Wi=1; Rule 8 user vs library |
+| [Q-CALC-10](./SE3110_Metrics_Calculation_10_Questions.md#q-calc-10--multi-method-class--inheritance--base-class--derived-class) | Inheritance | 106 (A:14, D:92) | varies | Wi=1 (base) vs Wi=2 (1st derived); Rule 8 user vs library |
 
 ---
 

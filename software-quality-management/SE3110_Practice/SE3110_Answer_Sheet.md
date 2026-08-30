@@ -141,13 +141,13 @@ Since `int x` and `int y` inside the method signature are parameter **declaratio
 
 | Inheritance Level | Wi Weight |
 |------------------|-----------|
-| Statements inside the base class / root class | **0** |
-| Statements inside the first derived class | **1** |
-| Statements inside the second derived class | **2** |
-| Statements inside the nth derived class | **n** |
+| Statements inside the base class / root class | **1** |
+| Statements inside the first derived class (1st subclass / 1st inheritance) | **2** |
+| Statements inside the second derived class (2nd subclass / 2nd inheritance) | **3** |
+| Statements inside the nth derived class | **n + 1** |
 
 > **⚠️ Guideline Rule 17:** *"For a program which does not have a built-in root class, the weight allocation of the Wi attribute begins at 1."*
-> This means: if Java's implicit Object superclass is NOT counted, then the class being written is treated as the first derived class (Wi = 1), not the root (Wi = 0). This is how the lecture examples work — even a standalone class has Wi = 1 for its statements.
+> This means: the base class starts at **Wi = 1**. The first derived class (first subclass) has **Wi = 2**, the second derived class has **Wi = 3**, and so on.
 
 **(d) Formula for Wt:**
 $$W_t = W_c + W_n + W_i$$
@@ -350,20 +350,20 @@ Tokens: for(), i, <, data, ·, length, i, ++ → **S = 8**
 
 **Wc, Wn, Wi assignments:**
 
-- Line 2 (`analyse()` declaration): sequential, nesting=0, Wi=1 (first derived class)
-- Line 3 (`for` loop): iterative → Wc=2, nesting=1 (inside class method but at outermost control level), Wi=1
-- Line 4 (`if` inside for): branch → Wc=1, nesting=2 (inside the for loop = second level), Wi=1
-- Line 5 (`println` inside if): sequential → Wc=0, nesting=2 (still inside the if which is inside the for = second level), Wi=1
+- Line 2 (`analyse()` declaration): sequential, nesting=0, Wi=2 (first derived class / first subclass)
+- Line 3 (`for` loop): iterative → Wc=2, nesting=1 (inside class method but at outermost control level), Wi=2
+- Line 4 (`if` inside for): branch → Wc=1, nesting=2 (inside the for loop = second level), Wi=2
+- Line 5 (`println` inside if): sequential → Wc=0, nesting=2 (still inside the if which is inside the for = second level), Wi=2
 
 | Line | Statement | Tokens | S | Wc | Wn | Wi | Wt | WC |
 |------|-----------|--------|---|----|----|----|----|-----|
-| 2 | `public void analyse(int[] data)` | void, analyse() | 2 | 0 | 0 | 1 | 1 | **2** |
-| 3 | `for(int i=0; i<data.length; i++)` | for(), i, <, data, ·, length, i, ++ | 8 | 2 | 1 | 1 | 4 | **32** |
-| 4 | `if(data[i] > 0)` | if(), data[i], >, 0 | 4 | 1 | 2 | 1 | 4 | **16** |
-| 5 | `System.out.println(data[i])` | System, ·, out, ·, println(), data[i] | 6 | 0 | 2 | 1 | 3 | **18** |
-| | | | | | | | **WCC** | **68** |
+| 2 | `public void analyse(int[] data)` | void, analyse() | 2 | 0 | 0 | 2 | 2 | **4** |
+| 3 | `for(int i=0; i<data.length; i++)` | for(), i, <, data, ·, length, i, ++ | 8 | 2 | 1 | 2 | 5 | **40** |
+| 4 | `if(data[i] > 0)` | if(), data[i], >, 0 | 4 | 1 | 2 | 2 | 5 | **20** |
+| 5 | `System.out.println(data[i])` | System, ·, out, ·, println(), data[i] | 6 | 0 | 2 | 2 | 4 | **24** |
+| | | | | | | | **WCC** | **88** |
 
-**(b) WCC = 2 + 32 + 16 + 18 = 68**
+**(b) WCC = 4 + 40 + 20 + 24 = 88**
 
 **(c) Nesting level of Line 5:**
 Line 5 is `System.out.println(data[i])`, which sits:

@@ -30,7 +30,7 @@
 | **S** (Size) | Number of tokens in a statement | Guidelines Rule 2 |
 | **Wc** | Sequential=0, Branch=1, Iterative=2, Switch=n | Lecture 4 |
 | **Wn** | Method level=0, 1st control level=1, 2nd=2, nth=n | Lecture 4 |
-| **Wi** | Root/base class=0, 1st derived=1, nth derived=n | Lecture 4 |
+| **Wi** | Base class=1, 1st derived (subclass)=2, 2nd derived=3, nth derived=n+1 | Lecture 4 / Rule 17 |
 | **Wt** | Wc + Wn + Wi | Lecture 4 |
 | **WC** | S × Wt | Lecture 4 |
 | **WCC** | Σ WC (sum of all WC values) | Lecture 4 |
@@ -38,7 +38,7 @@
 | **Vg** | Σ(di + 1) = n + Σdi  (class level) | Lecture 3 |
 
 **NOT tokens:** `public`, `private`, `static`, `else`, `do`, `return`, `;`, `{`, `}`
-**Rule 17:** If no explicit built-in root class → Wi starts at **1** (not 0)
+**Inheritance Weight Rule (Rule 17):** Base class starts at **Wi = 1**, 1st derived class (first subclass) has **Wi = 2**, 2nd derived class has **Wi = 3**, nth derived has **Wi = n + 1**.
 
 ---
 
@@ -360,19 +360,19 @@ public class MatrixChecker {
 This question covers:
 - **User-defined method call WITH argument** → argument is NOT a token (Rule 8)
 - **Non-user-defined method call** → argument IS a token (Rule 8)
-- **Inheritance**: base class (Wi=0) and first derived class (Wi=1)
+- **Inheritance**: base class (Wi=1) and first derived class (Wi=2)
 - **Multiple methods in one class** → compute Vg
 
 ```java
 // ── BASE CLASS ──────────────────────────────────────────
-public class Animal {                                // (Root class: Wi = 0)
+public class Animal {                                // (Base class: Wi = 1)
     public void eat() {                              // Line A2
         System.out.println("Eating");               // Line A3
     }
 }
 
 // ── DERIVED CLASS ────────────────────────────────────────
-public class Dog extends Animal {                    // (1st derived: Wi = 1)
+public class Dog extends Animal {                    // (1st derived class: Wi = 2)
     public void bark(int times) {                    // Line D2
         for (int i = 0; i < times; i++) {           // Line D3
             System.out.println("Woof");              // Line D4
@@ -386,25 +386,25 @@ public class Dog extends Animal {                    // (1st derived: Wi = 1)
 }
 ```
 
-**Part A — Animal class table (Wi = 0 for root class):**
+**Part A — Animal class table (Wi = 1 for base class):**
 
 | Line | Statement | Tokens | S | Wc | Wn | Wi | Wt | WC |
 |------|-----------|--------|---|----|----|----|----|-----|
-| A2 | `public void eat()` | | | | | 0 | | |
-| A3 | `System.out.println("Eating")` | | | | | 0 | | |
+| A2 | `public void eat()` | | | | | 1 | | |
+| A3 | `System.out.println("Eating")` | | | | | 1 | | |
 | | | | | | | | **WCC_Animal =** | |
 
-**Part B — Dog class table (Wi = 1 for first derived class):**
+**Part B — Dog class table (Wi = 2 for first derived class):**
 
 | Line | Statement | Tokens | S | Wc | Wn | Wi | Wt | WC |
 |------|-----------|--------|---|----|----|----|----|-----|
-| D2 | `public void bark(int times)` | | | | | 1 | | |
-| D3 | `for (int i = 0; i < times; i++)` | | | | | 1 | | |
-| D4 | `System.out.println("Woof")` | | | | | 1 | | |
-| D5 | `public void perform()` | | | | | 1 | | |
-| D6 | `eat()` | | | | | 1 | | |
-| D7 | `bark(3)` | | | | | 1 | | |
-| D8 | `System.out.println("Done")` | | | | | 1 | | |
+| D2 | `public void bark(int times)` | | | | | 2 | | |
+| D3 | `for (int i = 0; i < times; i++)` | | | | | 2 | | |
+| D4 | `System.out.println("Woof")` | | | | | 2 | | |
+| D5 | `public void perform()` | | | | | 2 | | |
+| D6 | `eat()` | | | | | 2 | | |
+| D7 | `bark(3)` | | | | | 2 | | |
+| D8 | `System.out.println("Done")` | | | | | 2 | | |
 | | | | | | | | **WCC_Dog =** | |
 
 > **Critical hints for D6 and D7:**

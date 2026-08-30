@@ -82,12 +82,12 @@ WC  = S × Wt              (per-statement complexity)
 
 | Wi — Inheritance Level | Weight |
 |------------------------|--------|
-| Root / base class | 0 |
-| 1st derived class | 1 |
-| 2nd derived class | 2 |
-| nth derived class | n |
+| Base class / root class | **1** |
+| 1st derived class (1st subclass / 1st inheritance) | **2** |
+| 2nd derived class (2nd subclass / 2nd inheritance) | **3** |
+| nth derived class | **n + 1** |
 
-> **Rule 17:** For programs with no explicit built-in root class, Wi starts at **1**.
+> **Inheritance Weight Rule (Rule 17):** In Java/OOP where there is no built-in root class counted, Wi begins at **1** for the base class, **2** for the first derived class (first subclass), **3** for the second derived class, and increments accordingly.
 
 ---
 
