@@ -15,6 +15,7 @@
 | [🗄️ SQL](./sql/README.md) | SQL practice questions covering selection, triggers, procedures, and functions |
 | [🌐 Web & Mobile Technology](./web-and-mobile-technology/README.md) | HTML, CSS, JavaScript fundamentals and exam practice papers |
 | [💼 Professional Skills](./professional-skills/README.md) | Comprehensive lecture notes and concise summary notes |
+| [📏 Software Quality Management](./software-quality-management/README.md) | Cyclomatic Complexity, WCC metric, CFG drawing, and 25 practice questions (SE3110) |
 
 ---
 
@@ -61,9 +62,20 @@ study-hub/
 │   ├── exam-practice/         ← Lectures, labs, tutorials & exam papers
 │   └── final-papers/          ← 5 final exam practice papers + model paper
 │
-└── professional-skills/
-    ├── lectures/              ← Comprehensive lecture notes
-    └── short-notes/           ← Condensed lecture summaries
+├── professional-skills/
+│   ├── lectures/              ← Comprehensive lecture notes
+│   └── short-notes/           ← Condensed lecture summaries
+│
+└── software-quality-management/
+    ├── SE3110_Lecture_3_Cyclomatic_Complexity.md  ← V(G), CFG, Vg
+    ├── SE3110_Lecture_4_WCC_Metric.md             ← S, Wc, Wn, Wi, Wt, WC, WCC
+    ├── SE3110_WCC_Tokenisation_Guidelines.md      ← All 17 token rules
+    ├── SE3090_Lab5_Agentic_AI.md                  ← SE3090 Lab 5 (separate subject)
+    └── SE3110_Practice/                           ← 25 practice questions + answers
+        ├── SE3110_Practice_Questions.md           ← 15 mixed questions
+        ├── SE3110_Answer_Sheet.md                 ← Answers for 15 mixed
+        ├── SE3110_Metrics_Calculation_10_Questions.md  ← 10 pure calculation
+        └── SE3110_Metrics_Calculation_10_Answers.md    ← Answers for 10 calc
 ```
 
 ---
