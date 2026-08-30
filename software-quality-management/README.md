@@ -13,8 +13,7 @@
 | 1 | [📖 Lecture 3 — Cyclomatic Complexity](./SE3110_Lecture_3_Cyclomatic_Complexity.md) | Lecture | V(G) = e−n+2, d+1, Vg for classes, CFG drawing rules |
 | 2 | [📖 Lecture 4 — WCC Metric](./SE3110_Lecture_4_WCC_Metric.md) | Lecture | S, Wc, Wn, Wi, Wt, WC, WCC — full worked example |
 | 3 | [📋 WCC Tokenisation Guidelines](./SE3110_WCC_Tokenisation_Guidelines.md) | Reference | All 17 rules for counting tokens (what IS and is NOT a token) |
-| 4 | [🤖 SE3090 Lab 5 — Agentic AI](./SE3090_Lab5_Agentic_AI.md) | Lab (SE3090) | LangChain, LangGraph, tool-calling agent loop |
-| 5 | [📁 Practice Set →](./SE3110_Practice/) | Folder | All practice questions + answer sheets |
+| 4 | [📁 Practice Set →](./SE3110_Practice/) | Folder | All practice questions + answer sheets |
 
 ---
 
