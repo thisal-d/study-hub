@@ -15,6 +15,8 @@
 | [SE3110_Answer_Sheet.md](./SE3110_Answer_Sheet.md) | 15 | Answers | Step-by-step working for all 15 mixed questions |
 | [SE3110_Metrics_Calculation_10_Questions.md](./SE3110_Metrics_Calculation_10_Questions.md) | 10 | Pure Calc ⭐ | One question per control structure; fill-in metric tables |
 | [SE3110_Metrics_Calculation_10_Answers.md](./SE3110_Metrics_Calculation_10_Answers.md) | 10 | Answers ⭐ | Full token lists, WCC tables, V(G) and Vg with rule citations |
+| [SE3110_Lecture_5_CFS_Questions_and_Answers.md](./SE3110_Lecture_5_CFS_Questions_and_Answers.md) | 10 | Lecture 5 Q&A ⭐ | Cognitive Functional Size, BCS weights, nested Wc, Ni, No, Sf [CWU] |
+| [SE3110_Comprehensive_MCQ_Exam.md](./SE3110_Comprehensive_MCQ_Exam.md) | **60** | **MCQ Exam** 🏆 | **Full exam covering Lectures 3, 4, 5 & Token Guidelines + Answer Key** |
 
 ---
 

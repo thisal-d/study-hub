@@ -13,7 +13,8 @@
 | 1 | [📖 Lecture 3 — Cyclomatic Complexity](./SE3110_Lecture_3_Cyclomatic_Complexity.md) | Lecture | V(G) = e−n+2, d+1, Vg for classes, CFG drawing rules |
 | 2 | [📖 Lecture 4 — WCC Metric](./SE3110_Lecture_4_WCC_Metric.md) | Lecture | S, Wc, Wn, Wi, Wt, WC, WCC — full worked example |
 | 3 | [📋 WCC Tokenisation Guidelines](./SE3110_WCC_Tokenisation_Guidelines.md) | Reference | All 17 rules for counting tokens (what IS and is NOT a token) |
-| 4 | [📁 Practice Set →](./SE3110_Practice/) | Folder | All practice questions + answer sheets |
+| 4 | [📖 Lecture 5 — Cognitive Functional Size (CFS)](./SE3110_Lecture_5_Cognitive_Functional_Size.md) | Lecture | BCS cognitive weights, Ni, No, Sf = (Ni + No) × Wc [CWU] |
+| 5 | [📁 Practice Set →](./SE3110_Practice/) | Folder | All practice questions, calculations, and 60 MCQ exam |
 
 ---
 
@@ -25,6 +26,8 @@
 | [SE3110_Answer_Sheet.md](./SE3110_Practice/SE3110_Answer_Sheet.md) | Answers | 15 | Full step-by-step working for all 15 mixed questions |
 | [SE3110_Metrics_Calculation_10_Questions.md](./SE3110_Practice/SE3110_Metrics_Calculation_10_Questions.md) | Pure Calc | **10 Qs** | One question per control structure — compute Tokens, S, Wc, Wn, Wi, Wt, WC, WCC, V(G), Vg |
 | [SE3110_Metrics_Calculation_10_Answers.md](./SE3110_Practice/SE3110_Metrics_Calculation_10_Answers.md) | Answers | 10 | Token-by-token working, full WCC tables, CFG counts, rule citations |
+| [SE3110_Lecture_5_CFS_Questions_and_Answers.md](./SE3110_Practice/SE3110_Lecture_5_CFS_Questions_and_Answers.md) | Lecture 5 Q&A | **10 Qs** | Cognitive Functional Size, BCS weights, linear/nested Wc, Ni, No, Sf in CWU |
+| [SE3110_Comprehensive_MCQ_Exam.md](./SE3110_Practice/SE3110_Comprehensive_MCQ_Exam.md) | MCQ Exam ⭐ | **60 MCQs** | Full exam covering Lectures 3, 4, 5 & Token Guidelines + Answer Key |
 
 ---
 
@@ -117,12 +120,36 @@ WC  = S × Wt              (per-statement complexity)
 
 ---
 
+### Cognitive Functional Size Metric (Lecture 5)
+
+```
+Sf = (Ni + No) × Wc           (Basic component / single method, in CWU)
+Sf(c) = Σ Sf(c)               (Complex component with n methods)
+Ŝf = Σ Sf(k)                  (Component-based software system with p components)
+```
+
+#### BCS Cognitive Weights:
+| Category | Structure | Weight ($W_c$) |
+|---|---|:---:|
+| Sequence | Sequence (`SEQ`) | **1** |
+| Branch | If-then-[else] (`ITE`) | **2** |
+| Branch | Case (`CASE`) | **3** |
+| Iteration | For-do (`Ri`), Do-while (`R1`), While-do (`R0`) | **3** |
+| Embedded | Function Call (`FC`) | **2** |
+| Embedded | Recursion (`REC`) | **3** |
+
+* **Linear blocks:** $W_c = \sum W_c(i)$ (sum weights)
+* **Nested blocks:** $W_c = \sum [\prod \sum W_c]$ (weights multiply across nesting layers)
+* **$N_i$:** Number of inputs (parameters, scanner reads)
+* **$N_o$:** Number of outputs (return values, single output executed at a given time)
+
+---
+
 ## ⚠️ Topics Not Yet in Uploaded Material
 
 | Symbol | Status |
 |--------|--------|
 | Halstead Metrics (n1, n2, N1, N2, V, D, E, B) | ❌ Not in uploaded lectures — upload Halstead slides to add questions |
-| Ni, No, Sf | ❌ Not defined anywhere in Lecture 3, Lecture 4, or Guidelines |
 
 ---
 

@@ -67,15 +67,17 @@ study-hub/
 │   └── short-notes/           ← Condensed lecture summaries
 │
 └── software-quality-management/
-    ├── SE3110_Lecture_3_Cyclomatic_Complexity.md  ← V(G), CFG, Vg
-    ├── SE3110_Lecture_4_WCC_Metric.md             ← S, Wc, Wn, Wi, Wt, WC, WCC
-    ├── SE3110_WCC_Tokenisation_Guidelines.md      ← All 17 token rules
-    ├── SE3090_Lab5_Agentic_AI.md                  ← SE3090 Lab 5 (separate subject)
-    └── SE3110_Practice/                           ← 25 practice questions + answers
-        ├── SE3110_Practice_Questions.md           ← 15 mixed questions
-        ├── SE3110_Answer_Sheet.md                 ← Answers for 15 mixed
-        ├── SE3110_Metrics_Calculation_10_Questions.md  ← 10 pure calculation
-        └── SE3110_Metrics_Calculation_10_Answers.md    ← Answers for 10 calc
+    ├── SE3110_Lecture_3_Cyclomatic_Complexity.md       ← V(G), CFG, Vg
+    ├── SE3110_Lecture_4_WCC_Metric.md                  ← S, Wc, Wn, Wi, Wt, WC, WCC
+    ├── SE3110_Lecture_5_Cognitive_Functional_Size.md   ← BCS weights, Ni, No, Sf [CWU]
+    ├── SE3110_WCC_Tokenisation_Guidelines.md           ← All 17 token rules
+    └── SE3110_Practice/                                ← Practice papers & solutions
+        ├── SE3110_Practice_Questions.md                ← 15 mixed questions
+        ├── SE3110_Answer_Sheet.md                      ← Answers for 15 mixed
+        ├── SE3110_Metrics_Calculation_10_Questions.md  ← 10 pure calculation Qs
+        ├── SE3110_Metrics_Calculation_10_Answers.md    ← Answers for 10 calc Qs
+        ├── SE3110_Lecture_5_CFS_Questions_and_Answers.md ← 10 Lecture 5 Q&A
+        └── SE3110_Comprehensive_MCQ_Exam.md            ← 60 MCQs + Answer Key
 ```
 
 ---
