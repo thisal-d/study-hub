@@ -14,7 +14,8 @@
 | 2 | [📖 Lecture 4 — WCC Metric](./SE3110_Lecture_4_WCC_Metric.md) | Lecture | S, Wc, Wn, Wi, Wt, WC, WCC — full worked example |
 | 3 | [📋 WCC Tokenisation Guidelines](./SE3110_WCC_Tokenisation_Guidelines.md) | Reference | All 17 rules for counting tokens (what IS and is NOT a token) |
 | 4 | [📖 Lecture 5 — Cognitive Functional Size (CFS)](./SE3110_Lecture_5_Cognitive_Functional_Size.md) | Lecture | BCS cognitive weights, Ni, No, Sf = (Ni + No) × Wc [CWU] |
-| 5 | [📁 Practice Set →](./SE3110_Practice/) | Folder | All practice questions, calculations, and 60 MCQ exam |
+| 5 | [🧠 The "Why" Behind Software Metrics Guide](./SE3110_Why_We_Calculate_Metrics_README.md) | Study Guide ⭐ | Explains WHY we calculate Wi, Wc, Wn, Wt, WCC, Sf, etc., rather than how to calculate them |
+| 6 | [📁 Practice Set →](./SE3110_Practice/) | Folder | All practice questions, calculations, and 60 MCQ exam |
 
 ---
 
