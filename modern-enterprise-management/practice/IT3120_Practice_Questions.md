@@ -18,9 +18,9 @@ Financial accounting primarily prepares reports for external stakeholders. Which
 
 ### Question 2 (Short Answer Concept Analysis)
 Define and clearly contrast the following accounting pairs:
-1. **Revenue** vs. **Income** (Explain why one is known as the "top line" and the other as the "bottom line").
-2. **Expense** vs. **Expenditure** (Give an IT example of an expenditure that is not recorded as an immediate expense).
-3. **Net Profit** vs. **Operating Cash Flow** (Explain how a software startup could report a LKR 5,000,000 net profit but still face immediate insolvency).
+
+1. **Expense** vs. **Expenditure** (Give an IT example of an expenditure that is not recorded as an immediate expense).
+2. **Net Profit** vs. **Operating Cash Flow** (Explain how a software startup could report a LKR 5,000,000 net profit but still face immediate insolvency).
 
 ---
 
