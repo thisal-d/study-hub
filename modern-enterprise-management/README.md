@@ -12,9 +12,10 @@
 |---|----------------|------|-------------|
 | 1 | [📖 Lecture 5 — Introduction to Financial Accounting](./lectures/lecture-05.md) | Lecture | Complete lecture notes, accounting equation, financial statements, profit levels, and Dialog Axiata PLC case study |
 | 2 | [⚡ Lecture 5 — Summary & Formula Cheat-Sheet](./short-notes/IT3120_Lecture_05_Summary_CheatSheet.md) | Short Notes | High-yield summary, key terms (Top/Bottom line, Expense vs Expenditure), and core formulas |
-| 3 | [📝 Practice Questions & Calculation Exercises](./practice/IT3120_Practice_Questions.md) | Practice | 5-part comprehensive practice set covering theory, equation filling, classification, P&L, Cash Flow, and Ratios |
-| 4 | [🔑 Complete Step-by-Step Answer Sheet](./practice/IT3120_Answer_Sheet.md) | Solutions | Detailed worked solutions, calculation steps, and interpretation guide for all practice questions |
-| 5 | [🎯 Comprehensive MCQ Exam & Self-Test](./practice/IT3120_Comprehensive_MCQ_Exam.md) | MCQ Exam | 30 multiple-choice exam questions with instant answer key and rationale |
+| 3 | [📝 Practice Questions & Calculation Exercises](./practice/IT3120_Practice_Questions.md) | Practice | 8-part comprehensive practice set covering theory, practical dimensions, P&L, Cash Flow, and Ratios |
+| 4 | [🔑 Complete Step-by-Step Answer Sheet](./practice/IT3120_Answer_Sheet.md) | Solutions | Detailed worked solutions, calculation steps, and interpretation guide for all 13 practice questions |
+| 5 | [🎯 Comprehensive MCQ Exam (Self-Test)](./practice/IT3120_Comprehensive_MCQ_Exam.md) | MCQ Exam | 35 multiple-choice exam questions for self-testing |
+| 6 | [📊 MCQ Answer Sheet & In-Depth Solutions](./practice/IT3120_Comprehensive_MCQ_Answers.md) | MCQ Solutions | Complete answer key and concept explanations for all 35 MCQs |
 
 ---
 

@@ -87,9 +87,10 @@ study-hub/
     ├── short-notes/
     │   └── IT3120_Lecture_05_Summary_CheatSheet.md     ← High-yield revision summary
     └── practice/
-        ├── IT3120_Practice_Questions.md                ← 5-part comprehensive question set
+        ├── IT3120_Practice_Questions.md                ← 8-part comprehensive question set
         ├── IT3120_Answer_Sheet.md                      ← Detailed step-by-step solutions
-        └── IT3120_Comprehensive_MCQ_Exam.md            ← 30 MCQs + Answer Key
+        ├── IT3120_Comprehensive_MCQ_Exam.md            ← 35 MCQs (Self-Test Paper)
+        └── IT3120_Comprehensive_MCQ_Answers.md         ← Full MCQ Answer Key & Explanations
 ```
 
 ---
