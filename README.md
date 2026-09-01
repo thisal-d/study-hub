@@ -16,6 +16,7 @@
 | [🌐 Web & Mobile Technology](./web-and-mobile-technology/README.md) | HTML, CSS, JavaScript fundamentals and exam practice papers |
 | [💼 Professional Skills](./professional-skills/README.md) | Comprehensive lecture notes and concise summary notes |
 | [📏 Software Quality Management](./software-quality-management/README.md) | Cyclomatic Complexity, WCC metric, CFG drawing, and 25 practice questions (SE3110) |
+| [💰 Financial Accounting](./financial-accounting/README.md) | Balance Sheet, Income Statement (P&L), Cash Flows, and Financial Ratio Analysis (IT3120) |
 
 ---
 
@@ -66,18 +67,29 @@ study-hub/
 │   ├── lectures/              ← Comprehensive lecture notes
 │   └── short-notes/           ← Condensed lecture summaries
 │
-└── software-quality-management/
-    ├── SE3110_Lecture_3_Cyclomatic_Complexity.md       ← V(G), CFG, Vg
-    ├── SE3110_Lecture_4_WCC_Metric.md                  ← S, Wc, Wn, Wi, Wt, WC, WCC
-    ├── SE3110_Lecture_5_Cognitive_Functional_Size.md   ← BCS weights, Ni, No, Sf [CWU]
-    ├── SE3110_WCC_Tokenisation_Guidelines.md           ← All 17 token rules
-    └── SE3110_Practice/                                ← Practice papers & solutions
-        ├── SE3110_Practice_Questions.md                ← 15 mixed questions
-        ├── SE3110_Answer_Sheet.md                      ← Answers for 15 mixed
-        ├── SE3110_Metrics_Calculation_10_Questions.md  ← 10 pure calculation Qs
-        ├── SE3110_Metrics_Calculation_10_Answers.md    ← Answers for 10 calc Qs
-        ├── SE3110_Lecture_5_CFS_Questions_and_Answers.md ← 10 Lecture 5 Q&A
-        └── SE3110_Comprehensive_MCQ_Exam.md            ← 60 MCQs + Answer Key
+├── software-quality-management/
+│   ├── SE3110_Lecture_3_Cyclomatic_Complexity.md       ← V(G), CFG, Vg
+│   ├── SE3110_Lecture_4_WCC_Metric.md                  ← S, Wc, Wn, Wi, Wt, WC, WCC
+│   ├── SE3110_Lecture_5_Cognitive_Functional_Size.md   ← BCS weights, Ni, No, Sf [CWU]
+│   ├── SE3110_WCC_Tokenisation_Guidelines.md           ← All 17 token rules
+│   └── SE3110_Practice/                                ← Practice papers & solutions
+│       ├── SE3110_Practice_Questions.md                ← 15 mixed questions
+│       ├── SE3110_Answer_Sheet.md                      ← Answers for 15 mixed
+│       ├── SE3110_Metrics_Calculation_10_Questions.md  ← 10 pure calculation Qs
+│       ├── SE3110_Metrics_Calculation_10_Answers.md    ← Answers for 10 calc Qs
+│       ├── SE3110_Lecture_5_CFS_Questions_and_Answers.md ← 10 Lecture 5 Q&A
+│       └── SE3110_Comprehensive_MCQ_Exam.md            ← 60 MCQs + Answer Key
+│
+└── financial-accounting/
+    ├── README.md                                       ← Subject overview & formula cheat-sheet
+    ├── lectures/
+    │   └── lecture-05.md                               ← Lecture 5: Intro to Financial Accounting
+    ├── short-notes/
+    │   └── IT3120_Lecture_05_Summary_CheatSheet.md     ← High-yield revision summary
+    └── practice/
+        ├── IT3120_Practice_Questions.md                ← 5-part comprehensive question set
+        ├── IT3120_Answer_Sheet.md                      ← Detailed step-by-step solutions
+        └── IT3120_Comprehensive_MCQ_Exam.md            ← 30 MCQs + Answer Key
 ```
 
 ---
