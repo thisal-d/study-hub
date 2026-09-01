@@ -1,7 +1,7 @@
-# 🎯 IT3120 Financial Accounting — Comprehensive MCQ Exam
+# 🎯 IT3120 Modern Enterprise Management — Comprehensive MCQ Exam
 
-> **30 Questions** covering all concepts from Lecture 5: Accounting basics, Financial Statements, Profit Tiers, Cash Flow Categorization, and Financial Ratios.  
-> *Test yourself, then review the Answer Key at the end.*
+> **Subject:** IT3120 — Modern Enterprise Management  
+> **Topic:** Lecture 5 — Financial Accounting for Decision Makers (30 Questions + Full Answer Key)
 
 ---
 
@@ -286,4 +286,4 @@
 
 ---
 
-## ⬆️ [Back to Financial Accounting Index](../README.md)
+## ⬆️ [Back to Modern Enterprise Management](../README.md)

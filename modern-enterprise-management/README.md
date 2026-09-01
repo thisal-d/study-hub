@@ -1,8 +1,8 @@
-# 💰 Financial Accounting
-### IT3120 — Financial Accounting for Decision Makers
+# 🏢 Modern Enterprise Management
+### IT3120 — Modern Enterprise Management
 
-> Comprehensive study resources for the **IT3120 Financial Accounting** module.  
-> Includes detailed lecture notes, condensed revision summaries, calculation worksheets, and practice question sets covering the **Balance Sheet**, **Income Statement (P&L)**, **Cash Flow Statement**, and **Financial Ratio Analysis**.
+> Comprehensive study resources for the **IT3120 Modern Enterprise Management** module.  
+> Includes detailed lecture notes, condensed revision summaries, calculation worksheets, and practice question sets covering **Financial Accounting for Decision Makers** (Balance Sheet, Income Statement / P&L, Cash Flow Statement, and Financial Ratio Analysis).
 
 ---
 
@@ -18,7 +18,7 @@
 
 ---
 
-## 🔑 Key Formula & Concept Reference
+## 🔑 Key Formula & Concept Reference (Lecture 5: Financial Accounting)
 
 ### 1. Fundamental Accounting Equation (Balance Sheet)
 $$\text{Assets} = \text{Liabilities} + \text{Equity}$$

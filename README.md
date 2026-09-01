@@ -16,7 +16,7 @@
 | [🌐 Web & Mobile Technology](./web-and-mobile-technology/README.md) | HTML, CSS, JavaScript fundamentals and exam practice papers |
 | [💼 Professional Skills](./professional-skills/README.md) | Comprehensive lecture notes and concise summary notes |
 | [📏 Software Quality Management](./software-quality-management/README.md) | Cyclomatic Complexity, WCC metric, CFG drawing, and 25 practice questions (SE3110) |
-| [💰 Financial Accounting](./financial-accounting/README.md) | Balance Sheet, Income Statement (P&L), Cash Flows, and Financial Ratio Analysis (IT3120) |
+| [🏢 Modern Enterprise Management](./modern-enterprise-management/README.md) | Financial accounting, statements, and decision-making ratios (IT3120) |
 
 ---
 
@@ -80,7 +80,7 @@ study-hub/
 │       ├── SE3110_Lecture_5_CFS_Questions_and_Answers.md ← 10 Lecture 5 Q&A
 │       └── SE3110_Comprehensive_MCQ_Exam.md            ← 60 MCQs + Answer Key
 │
-└── financial-accounting/
+└── modern-enterprise-management/
     ├── README.md                                       ← Subject overview & formula cheat-sheet
     ├── lectures/
     │   └── lecture-05.md                               ← Lecture 5: Intro to Financial Accounting

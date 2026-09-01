@@ -1,6 +1,6 @@
-# 📝 IT3120 Financial Accounting — Comprehensive Practice Questions
+# 📝 IT3120 Modern Enterprise Management — Comprehensive Practice Questions
 
-> **Subject:** IT3120 — Financial Accounting for Decision Makers  
+> **Subject:** IT3120 — Modern Enterprise Management  
 > **Topic:** Lecture 5 — Introduction to Financial Accounting (Balance Sheet, Income Statement, Cash Flow Statement, Financial Ratios)
 
 ---
@@ -164,4 +164,4 @@ Classify each cash transaction as **Operating (O)**, **Investing (I)**, or **Fin
 
 ---
 
-## ⬆️ [Back to Financial Accounting Index](../README.md)
+## ⬆️ [Back to Modern Enterprise Management](../README.md)

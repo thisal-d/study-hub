@@ -1,5 +1,5 @@
-# ⚡ IT3120 Financial Accounting — Summary Cheat-Sheet
-### Lecture 5: Core Revision Notes for Quick Recall
+# ⚡ IT3120 Modern Enterprise Management — Summary Cheat-Sheet
+### Lecture 5: Financial Accounting for Decision Makers (Core Revision Notes)
 
 ---
 
@@ -98,4 +98,4 @@ $$\begin{aligned}
 
 ---
 
-## ⬆️ [Back to Financial Accounting Index](../README.md)
+## ⬆️ [Back to Modern Enterprise Management](../README.md)

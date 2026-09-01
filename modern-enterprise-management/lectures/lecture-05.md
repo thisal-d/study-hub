@@ -1,7 +1,7 @@
 <div align="center">
 
-# IT3120 — Financial Accounting for Decision Makers
-## Lecture 5: Introduction to Financial Accounting
+# IT3120 — Modern Enterprise Management
+## Lecture 5: Introduction to Financial Accounting (Financial Accounting for Decision Makers)
 
 </div>
 
@@ -244,4 +244,4 @@ Dialog Axiata PLC is Sri Lanka's leading telecommunications and digital services
 
 ---
 
-## ⬆️ [Back to Financial Accounting Index](../README.md)
+## ⬆️ [Back to Modern Enterprise Management](../README.md)

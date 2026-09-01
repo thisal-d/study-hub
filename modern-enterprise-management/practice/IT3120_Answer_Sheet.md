@@ -1,6 +1,6 @@
-# 🔑 IT3120 Financial Accounting — Complete Answer Sheet & Solutions
+# 🔑 IT3120 Modern Enterprise Management — Complete Answer Sheet & Solutions
 
-> **Subject:** IT3120 — Financial Accounting for Decision Makers  
+> **Subject:** IT3120 — Modern Enterprise Management  
 > **Topic:** Lecture 5 — Introduction to Financial Accounting Solutions & Marking Guide
 
 ---
@@ -150,4 +150,4 @@ Using $\text{Assets} = \text{Liabilities} + \text{Equity}$ or $\text{Equity} = \
 
 ---
 
-## ⬆️ [Back to Financial Accounting Index](../README.md)
+## ⬆️ [Back to Modern Enterprise Management](../README.md)
