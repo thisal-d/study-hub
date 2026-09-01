@@ -121,7 +121,31 @@ $$\text{Equity} = \text{Assets} - \text{Liabilities}$$
 
 ---
 
-## 5. Income Statement Profit Levels
+## 5. Interpreting the Balance Sheet
+
+The Balance Sheet provides 5 key practical insights into a business's health:
+
+1. **Financial Position:** Shows what the business **owns (assets)** and **owes (liabilities)** at a specific point in time.
+2. **Liquidity:** By comparing **current assets** and **current liabilities**, users assess the company's ability to meet short-term debt obligations.
+3. **Financial Structure:** Reveals how the business is financed—through **borrowed debt (liabilities)** or **owner's funds (equity)**.
+4. **Solvency and Risk:** Higher levels of debt compared to equity indicate greater financial leverage and default risk.
+5. **Resource Allocation:** Helps evaluate how effectively capital is invested in productive assets (e.g. servers, tech infrastructure) to support IT operations.
+
+> **Key Takeaway:** The Balance Sheet evaluates the enterprise's stability, risk profile, and ability to meet obligations.
+
+---
+
+## 6. Key Insights from the Income Statement
+
+1. **Profitability:** Confirms whether the company generated an operational profit or loss, and by how much.
+2. **Revenue Generation:** Measures commercial success in generating top-line cash/receivables from business services.
+3. **Cost Control:** Highlights how effectively operational expenses and cost of sales are managed relative to revenue.
+4. **Operational Performance:** **Operating Profit (EBIT)** reveals how well core activities perform without debt/tax distortions.
+5. **Trends Over Time:** Comparing performance across quarters/years helps identify growth, stagnation, or declining margins.
+
+---
+
+## 7. Income Statement Profit Levels
 
 The Income Statement breaks profit down into distinct tiers to isolate operational efficiency from tax and financing effects:
 
@@ -141,7 +165,13 @@ Total Sales Revenue (Top Line)
 
 ---
 
-## 6. The Three Cash Flow Activities
+## 8. The Three Cash Flow Activities & Why Cash Flow Matters
+
+### Why Cash Flow Matters:
+- **Ensures Liquidity:** Confirms there is enough liquid cash to pay staff, suppliers, and rent on time.
+- **Supports Survival:** A business can be profitable on paper but still go bankrupt if cash dries up.
+- **Indicates Financial Health:** Strong operating cash flow proves the core IT business model is self-funding.
+- **Improves Decision-Making:** Guides management in planning technology CapEx and financing needs.
 
 ```mermaid
 flowchart TD
@@ -164,7 +194,7 @@ $$\text{Net Cash Flow} = \text{Operating Cash Flow} + \text{Investing Cash Flow}
 
 ---
 
-## 7. Financial Ratio Analysis
+## 9. Financial Ratio Analysis
 
 Financial ratios establish relationships between key numbers across the Balance Sheet and Income Statement to assess health and efficiency:
 
@@ -190,7 +220,7 @@ Financial ratios establish relationships between key numbers across the Balance 
 
 ---
 
-## 8. Real-World Case Study: Dialog Axiata PLC
+## 10. Real-World Case Study: Dialog Axiata PLC
 
 Dialog Axiata PLC is Sri Lanka's leading telecommunications and digital services conglomerate.
 

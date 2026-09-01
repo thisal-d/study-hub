@@ -33,7 +33,29 @@
 
 ---
 
-## 3. Account Classification Matrix
+## 3. Key Balance Sheet Dimensions (Practical Decision-Making)
+
+| Dimension | Core Question & Managerial Meaning |
+| :--- | :--- |
+| **1. Financial Position** | What the business **owns (assets)** and **owes (liabilities)** at a specific point in time. |
+| **2. Liquidity** | Ability to meet short-term commitments by comparing **Current Assets** to **Current Liabilities** (Target: $\ge 2:1$). |
+| **3. Financial Structure** | How the company is funded—through **debt (liabilities)** vs. **owners' funds (equity)**. |
+| **4. Solvency & Risk** | Evaluates default risk—higher debt compared to equity increases financial vulnerability. |
+| **5. Resource Allocation** | How effectively capital is invested across productive assets (e.g. servers, equipment) to support operations. |
+
+---
+
+## 4. Key Income Statement Insights
+
+1. **Profitability:** Confirms whether the company generated a net profit or suffered a loss over the period.
+2. **Revenue Generation:** Evaluates top-line commercial sales growth and earning power.
+3. **Cost Control:** Highlights how efficiently operating costs and cost of sales are managed relative to revenue.
+4. **Operational Performance:** Operating Profit (EBIT) isolates core IT business health from interest and taxes.
+5. **Trends Over Time:** Comparing performance across quarters/years shows business growth or contraction.
+
+---
+
+## 5. Account Classification Matrix
 
 ```
 ┌──────────────────────────────────────┬──────────────────────────────────────┐
