@@ -22,10 +22,12 @@
 
 | # | Material | Description | Link |
 | :-: | :--- | :--- | :--- |
-| **01** | **Practice Questions** | Comprehensive practice questions covering theory, P&L, Cash Flow, and Ratios | [📝 View Questions](./practice/01-practice-questions.md) |
-| **02** | **Answer Sheet** | Step-by-step worked answers and calculation solutions | [🔑 View Solutions](./practice/02-answer-sheet.md) |
-| **03** | **35-Question MCQ Exam** | Full self-assessment multiple-choice test | [🎯 Start MCQ Exam](./practice/03-mcq-exam.md) |
-| **04** | **MCQ Solutions Key** | Detailed answers and reasoning for all 35 MCQs | [📊 View MCQ Answers](./practice/04-mcq-answers.md) |
+| **01** | **Accounting Practice Questions** | Comprehensive practice questions covering theory, P&L, Cash Flow, and Ratios | [📝 View Questions](./practice/01-practice-questions.md) |
+| **02** | **Accounting Answer Sheet** | Step-by-step worked answers and calculation solutions | [🔑 View Solutions](./practice/02-answer-sheet.md) |
+| **03** | **Accounting 35-MCQ Exam** | Full self-assessment multiple-choice test | [🎯 Start MCQ Exam](./practice/03-mcq-exam.md) |
+| **04** | **Accounting MCQ Solutions** | Detailed answers and reasoning for all 35 MCQs | [📊 View MCQ Answers](./practice/04-mcq-answers.md) |
+| **05** | **Marketing Scenario MCQs** | 10 scenario-based multi-select questions with 5 options (A–E) & detailed solutions | [🎯 Start Marketing MCQs](./practice/05-marketing-scenario-mcqs.md) |
+| **06** | **HRM Scenario MCQs** | 10 scenario-based multi-select questions with 5 options (A–E) & detailed solutions | [🎯 Start HRM MCQs](./practice/06-hrm-scenario-mcqs.md) |
 | 📑 | **Practice Hub Index** | Complete overview and instructions | [📂 Practice Hub](./practice/README.md) |
 
 ---
