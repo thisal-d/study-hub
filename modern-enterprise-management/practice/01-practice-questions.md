@@ -3,8 +3,8 @@
 > **Subject:** IT3120 — Modern Enterprise Management  
 > **Topic:** Lecture 5 — Introduction to Financial Accounting (Financial Accounting for Decision Makers)  
 > **Coverage:** Practical Financial Statement Interpretation, Managerial Decision-Making, Balance Sheet, Income Statement, Cash Flows, and Financial Ratios.  
-> 💡 **Full Worked Solutions:** All answers & steps are in [**`IT3120_Answer_Sheet.md`**](./IT3120_Answer_Sheet.md)  
-> 🎯 **35-Question MCQ Exam:** Test your recall in [**`IT3120_Comprehensive_MCQ_Exam.md`**](./IT3120_Comprehensive_MCQ_Exam.md)
+> 💡 **Full Worked Solutions:** All answers & steps are in [**`02-answer-sheet.md`**](./02-answer-sheet.md)  
+> 🎯 **35-Question MCQ Exam:** Test your recall in [**`03-mcq-exam.md`**](./03-mcq-exam.md)
 
 ---
 

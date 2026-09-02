@@ -3,7 +3,7 @@
 > **Subject:** IT3120 — Modern Enterprise Management  
 > **Topic:** Lecture 5 — Financial Accounting for Decision Makers (35 Questions)  
 > *Includes conceptual, practical Balance Sheet/P&L/Cash Flow dimensions, and calculation questions.*  
-> 💡 **Dedicated Answer Sheet & Explanations:** View full answers in [**`IT3120_Comprehensive_MCQ_Answers.md`**](./IT3120_Comprehensive_MCQ_Answers.md)
+> 💡 **Dedicated Answer Sheet & Explanations:** View full answers in [**`04-mcq-answers.md`**](./04-mcq-answers.md)
 
 ---
 

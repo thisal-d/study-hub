@@ -2,7 +2,7 @@
 
 > **Subject:** IT3120 — Modern Enterprise Management  
 > **Topic:** Lecture 5 — Introduction to Financial Accounting (Financial Accounting for Decision Makers)  
-> **Target Document:** Answers and In-Depth Explanations for [**`IT3120_Comprehensive_MCQ_Exam.md`**](./IT3120_Comprehensive_MCQ_Exam.md) (Questions 1 to 35)
+> **Target Document:** Answers and In-Depth Explanations for [**`03-mcq-exam.md`**](./03-mcq-exam.md) (Questions 1 to 35)
 
 ---
 

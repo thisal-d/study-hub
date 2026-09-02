@@ -1,64 +1,48 @@
 # 🏢 Modern Enterprise Management
-### IT3120 — Modern Enterprise Management
 
-> Comprehensive study resources for the **IT3120 Modern Enterprise Management** module.  
-> Includes detailed lecture notes, condensed revision summaries, calculation worksheets, and practice question sets covering **Financial Accounting for Decision Makers** (Balance Sheet, Income Statement / P&L, Cash Flow Statement, and Financial Ratio Analysis).
-
----
-
-## 🗂️ Quick Navigation
-
-| # | Section / File | Type | Description |
-|---|----------------|------|-------------|
-| 1 | [📖 Lecture 5 — Introduction to Financial Accounting](./lectures/lecture-05.md) | Lecture | Complete lecture notes, accounting equation, financial statements, profit levels, and Dialog Axiata PLC case study |
-| 2 | [⚡ Lecture 5 — Summary & Formula Cheat-Sheet](./short-notes/IT3120_Lecture_05_Summary_CheatSheet.md) | Short Notes | High-yield summary, key terms (Top/Bottom line, Expense vs Expenditure), and core formulas |
-| 3 | [📝 Practice Questions & Calculation Exercises](./practice/IT3120_Practice_Questions.md) | Practice | 8-part comprehensive practice set covering theory, practical dimensions, P&L, Cash Flow, and Ratios |
-| 4 | [🔑 Complete Step-by-Step Answer Sheet](./practice/IT3120_Answer_Sheet.md) | Solutions | Detailed worked solutions, calculation steps, and interpretation guide for all 13 practice questions |
-| 5 | [🎯 Comprehensive MCQ Exam (Self-Test)](./practice/IT3120_Comprehensive_MCQ_Exam.md) | MCQ Exam | 35 multiple-choice exam questions for self-testing |
-| 6 | [📊 MCQ Answer Sheet & In-Depth Solutions](./practice/IT3120_Comprehensive_MCQ_Answers.md) | MCQ Solutions | Complete answer key and concept explanations for all 35 MCQs |
+> Comprehensive study hub for the **Modern Enterprise Management** module.  
+> Includes detailed lecture notes, condensed table-wise revision summaries, calculation worksheets, and practice question sets.
 
 ---
 
-## 🔑 Key Formula & Concept Reference (Lecture 5: Financial Accounting)
+## 🗂️ Module Lectures & Short Notes
+
+| # | Topic | 📖 Full Lecture Notes | ⚡ Quick Revision Short Note |
+| :-: | :--- | :--- | :--- |
+| **01** | **Management Concepts** | [📖 Lecture 01](./lectures/01-management-concepts.md) | [⚡ Short Note](./short-notes/01-management-concepts.md) |
+| **02** | **Economics for Managers** | [📖 Lecture 02](./lectures/02-economics.md) | [⚡ Short Note](./short-notes/02-economics.md) |
+| **03** | **Marketing & Digital Strategy** | [📖 Lecture 03](./lectures/03-marketing.md) | [⚡ Short Note](./short-notes/03-marketing.md) |
+| **04** | **Human Resource Management** | [📖 Lecture 04](./lectures/04-human-resource-management.md) | [⚡ Short Note](./short-notes/04-human-resource-management.md) |
+| **05** | **Financial Accounting** | [📖 Lecture 05](./lectures/05-financial-accounting.md) | [⚡ Short Note](./short-notes/05-financial-accounting.md) |
+| **07** | **Legal & Ethical Issues in IT** | [📖 Lecture 07](./lectures/07-legal-and-ethical-issues.md) | [⚡ Short Note](./short-notes/07-legal-and-ethical-issues.md) |
+
+---
+
+## 📝 Practice & Self-Test Questions
+
+| # | Material | Description | Link |
+| :-: | :--- | :--- | :--- |
+| **01** | **Practice Questions** | Comprehensive practice questions covering theory, P&L, Cash Flow, and Ratios | [📝 View Questions](./practice/01-practice-questions.md) |
+| **02** | **Answer Sheet** | Step-by-step worked answers and calculation solutions | [🔑 View Solutions](./practice/02-answer-sheet.md) |
+| **03** | **35-Question MCQ Exam** | Full self-assessment multiple-choice test | [🎯 Start MCQ Exam](./practice/03-mcq-exam.md) |
+| **04** | **MCQ Solutions Key** | Detailed answers and reasoning for all 35 MCQs | [📊 View MCQ Answers](./practice/04-mcq-answers.md) |
+| 📑 | **Practice Hub Index** | Complete overview and instructions | [📂 Practice Hub](./practice/README.md) |
+
+---
+
+## 🔑 Core Formula Reference (Lecture 05: Financial Accounting)
 
 ### 1. Fundamental Accounting Equation (Balance Sheet)
 $$\text{Assets} = \text{Liabilities} + \text{Equity}$$
 $$\text{Equity} = \text{Assets} - \text{Liabilities}$$
 
-* **Assets:** Resources owned (Current: $< 1$ yr like Cash, Accounts Receivable, Inventory; Fixed/Non-current: Server hardware, buildings; Intangible: Patents, Software IP, Goodwill).
-* **Liabilities:** Financial debts owed to outside parties (Current: Accounts Payable, short-term debt; Long-term: Bank loans, mortgages).
-* **Equity:** Owners' stake in the business (Owner contributions + Retained earnings + Shareholder value).
-
----
-
 ### 2. Profit Levels (Income Statement / P&L)
-$$\text{Gross Profit} = \text{Revenue} - \text{Cost of Sales (COGS)}$$
-$$\text{Operating Profit} = \text{Gross Profit} - \text{Operating Expenses}$$
+$$\text{Gross Profit} = \text{Revenue} - \text{Cost of Goods Sold (COGS)}$$
+$$\text{Operating Profit (EBIT)} = \text{Gross Profit} - \text{Operating Expenses}$$
 $$\text{Net Profit} = \text{Operating Profit} - (\text{Finance Costs/Interest} + \text{Taxes})$$
-
-* **Revenue ("Top Line"):** Total money earned before deducting any expenses.
-* **Net Profit / Income ("Bottom Line"):** Residual profit remaining after all costs, expenses, interest, and taxes.
-
----
 
 ### 3. Three Cash Flow Activities
 $$\text{Net Cash Flow} = \text{Cash Flow from Operations (CFO)} + \text{Cash Flow from Investing (CFI)} + \text{Cash Flow from Financing (CFF)}$$
-
-1. **Operating Activities (O):** Cash from core business (customer receipts, salaries, vendor software/cloud bills, day-to-day operations).
-2. **Investing Activities (I):** Buying or selling long-term fixed assets (server infrastructure, hardware, patent purchases).
-3. **Financing Activities (F):** Raising or repaying capital (bank loans taken, loan principal repayments, issuing equity shares, paying cash dividends).
-
----
-
-### 4. Financial Ratio Categories
-
-| Category | Ratio | Formula | Operational Insight |
-| :--- | :--- | :--- | :--- |
-| **Profitability** | **Gross Profit Margin** | $\frac{\text{Gross Profit}}{\text{Revenue}} \times 100$ | Production/delivery efficiency |
-| **Profitability** | **Net Profit Margin** | $\frac{\text{Net Profit}}{\text{Revenue}} \times 100$ | Overall business profitability percentage |
-| **Liquidity** | **Current Ratio** | $\frac{\text{Current Assets}}{\text{Current Liabilities}}$ | Ability to pay short-term debts (Target $\ge 2:1$) |
-| **Gearing / Risk** | **Debt-to-Equity** | $\frac{\text{Total Borrowings (Debt)}}{\text{Shareholders' Equity}}$ | Reliance on debt vs equity capital |
-| **Efficiency** | **Receivables / Payables** | Qualitative / Turnover speed | Speed of customer collection vs supplier payments |
 
 ---
 
