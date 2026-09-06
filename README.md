@@ -98,7 +98,7 @@ study-hub/
     ├── lecs/                                           ← 5 source lecture slide notes
     ├── short-notes/                                    ← High-yield revision short notes
     │   ├── README.md                                   ← Short notes catalog
-    │   └── lecture-01-short.md                         ← Lecture 1: Intro to Software Architecture
+    │   └── lecture-01-short.md ... lecture-05-short.md ← Complete Lecture 01-05 Study Guides
     └── mcq/                                            ← Practice MCQ papers & exams (200+ Qs)
         ├── README.md                                   ← 10-paper catalog & index
         ├── example-paper.md                            ← Official sample paper from LIC
