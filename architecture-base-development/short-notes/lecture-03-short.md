@@ -6,11 +6,11 @@
 ## 1. Learning Outcomes (ඉගෙනුම් ඵල)
 
 By studying this lecture guide, you will be able to:
-* **Explain modularity (මොඩියුලර්භාවය)** and use **Cohesion (සංගතිභාවය)**, **Coupling (පරායත්තතාව)**, and **Connascence (සහජාතීත්වය)** to evaluate software structure.
-* **Calculate and interpret architectural metrics**: Afferent Coupling ($C_a$), Efferent Coupling ($C_e$), Instability ($I$), Abstractness ($A$), and Distance from the Main Sequence ($D$).
+* **Explain modularity (මොඩියුලර්භාවය)**, **Cohesion (සංගතිභාවය)**, **Coupling (පරායත්තතාව)**, and **Connascence (සහජාතීත්වය)** to evaluate module boundaries.
+* **Explain Coupling** using **Afferent Coupling ($C_a$)** and **Efferent Coupling ($C_e$)** to understand how changes propagate through a system.
 * **Compare Technical Partitioning (තාක්ෂණික පාදක බෙදීම)** and **Domain Partitioning (ක්ෂේත්‍ර පාදක බෙදීම)** at the top architectural level.
 * **Explain how Quality Attribute Scope relates to Architectural Quanta (ගෘහ නිර්මාණ ක්වොන්ටාව)**.
-* **Determine when to choose a Monolithic Architecture vs. a Distributed Architecture** based on quanta analysis.
+* **Relate Architectural Quanta to Monolithic and Distributed Architectures** to make informed architectural decisions.
 
 ---
 
@@ -57,87 +57,61 @@ Architects evaluate the health of modular boundaries using three interconnected 
 
 ---
 
-## 4. Cohesion: Types and Spectrum (සංගතිතා මට්ටම් වර්ගීකරණය)
+## 4. Cohesion (සංගතිභාවය)
 
-Cohesion is ranked from **Strongest (Most Desirable)** to **Weakest (Anti-Pattern)**. High cohesion ensures that a module has a single, well-defined responsibility.
+* **Definition (නිර්වචනය):** Cohesion refers to **how closely the parts of a module belong together (මොඩියුලයක කොටස් එකිනෙක කොතරම් සමීපව අයිති වන්නේද යන්න)**.
+* **A Highly Cohesive Module (ඉහළ සංගතිභාවයක් සහිත මොඩියුලයක්):**
+  1. **Contains strongly related behaviour (දැඩි ලෙස සම්බන්ධිත හැසිරීම් අඩංගු වේ):** The elements inside the module work together to implement related functionality.
+  2. **Represents a meaningful purpose (අර්ථවත් අරමුණක් නියෝජනය කරයි):** The module fulfills a clear, distinct domain or architectural responsibility.
+  3. **Contains the elements necessary to perform that purpose (එම අරමුණ ඉටු කිරීමට අවශ්‍ය අංග අඩංගු වේ):** Everything required to accomplish its purpose is present within the module.
 
-### The 7 Types of Cohesion Table
+### Modularity Versus Granularity (මොඩියුලර්භාවය සහ කැටිතිභාවය)
+* Dividing something that is naturally cohesive may introduce **additional coupling** between the resulting modules.
+* **The Architectural Goal:** Generally to create modules containing elements that **meaningfully belong together**.
+* **Connection to Architectural Quantum:** Within an architectural quantum, related functionality must remain together and exhibit **high functional cohesion (ඉහළ ක්‍රියාකාරී සංගතිභාවය)**.
 
-| Cohesion Type (සංගතිතා වර්ගය) | Strength | Description & Operating Principle | Simple Real-World Scenario |
-| :--- | :---: | :--- | :--- |
-| **1. Functional (ක්‍රියාකාරී)** | **Strongest (Best)** | Every element in the module contributes exclusively to performing a single well-defined task. | A `CompoundInterestCalculator` class containing only formulas for computing compound interest. |
-| **2. Sequential (අනුක්‍රමික)** | **Strong** | The output of one processing step serves as the direct input to the next step (assembly line pipeline). | An image processing pipeline: `RawPixelReader` $\rightarrow$ `ContrastEnhancer` $\rightarrow$ `EdgeDetector`. |
-| **3. Communicational (සන්නිවේදනාත්මක)** | **Moderate-High** | Distinct operations execute on the exact same input dataset or contribute to the same output data. | A `CustomerRecordManager` taking a `CustomerID` to fetch details, check credit limit, and list orders. |
-| **4. Procedural (ක්‍රියාපටිපාටික)** | **Moderate** | Operations are grouped together because they must execute in a specific sequential order, even if they operate on different data. | A wizard script: `checkDiskSpace()` $\rightarrow$ `backupDatabase()` $\rightarrow$ `emailAdministrator()`. |
-| **5. Temporal (කාලීන)** | **Moderate-Low** | Tasks are grouped together purely because they execute at the same moment in time. | An application startup routine: `loadConfigFiles()`, `initDatabase()`, `displaySplashScreen()`. |
-| **6. Logical (තාර්කික)** | **Weak** | Unrelated operations are grouped into a single routine, selecting which to execute based on a control flag. | A method `process(int flag)` that formats dates if `flag=1`, prints PDF if `flag=2`, sends email if `flag=3`. |
-| **7. Coincidental (අහඹු)** | **Weakest (Worst)** | Elements are placed together completely at random with no meaningful relationship ("God Object"). | A generic `AppUtils` class containing tax math, string reversals, hardware mouse battery checks, and MP3 decoders. |
+### Cohesion Concepts in Lecture Table
 
-> 💡 **Architectural Goal:** Always strive for **High Functional Cohesion** and avoid **Logical / Coincidental Cohesion**!
-
----
-
-## 5. Coupling Metrics: Afferent, Efferent & Instability
-
-Coupling helps architects understand how changes propagate through a codebase. Robert C. Martin developed mathematical metrics to quantify package coupling.
-
-### A. Afferent vs. Efferent Coupling
-
-```
-      [Other Packages]                       [This Package]
-             │                                     │
-             ▼ (Ca = Incoming)                     ▼ (Ce = Outgoing)
-      ┌──────────────┐                       ┌──────────────┐
-      │ This Package │                       │Other Package │
-      └──────────────┘                       └──────────────┘
-```
-
-* **Afferent Coupling ($C_a$ - Incoming):** Measures the number of classes outside this package that depend on classes inside this package (*"Who depends on me?"*). Indicates **responsibility**.
-* **Efferent Coupling ($C_e$ - Outgoing):** Measures the number of classes inside this package that depend on classes outside this package (*"Who do I depend on?"*). Indicates **dependency / vulnerability**.
+| Concept / Aspect | Lecture Principle & Meaning (දේශනයේ මූලධර්මය) | Simple Real-World Scenario (සරල ප්‍රායෝගික උදාහරණය) |
+| :--- | :--- | :--- |
+| **Highly Cohesive Module** | Contains strongly related behaviour, represents a meaningful purpose, and holds all necessary elements. | A `PaymentProcessing` module containing only payment verification, gateway communication, and transaction logging. |
+| **Modularity vs. Granularity** | Breaking up a naturally unified feature into too many micro-parts creates excessive coupling between them. | Splitting user registration into 4 separate modules (`NameCollector`, `EmailValidator`, `PasswordHasher`, `UserSaver`), causing complex cross-module dependencies. |
+| **Functional Cohesion in Quanta** | An architectural quantum must perform a meaningful purpose with high internal cohesion. | An independently deployable `OrderFulfillment` service containing all steps required to pack, label, and dispatch an order. |
 
 ---
 
-### B. Instability Index ($I$)
-The **Instability Index ($I$)** measures a module's resilience to change:
-$$I = \frac{C_e}{C_a + C_e}$$
+## 5. Coupling: Afferent and Efferent (පරායත්තතාව)
 
-* **$I = 0.0$ (Maximally Stable / උපරිම ලෙස ස්ථාවර):** $C_e = 0$. Many components depend on this package ($C_a > 0$), but it depends on nothing. It is difficult to change without breaking other modules (e.g., core domain entities).
-* **$I = 1.0$ (Maximally Instable / උපරිම ලෙස අස්ථාවර):** $C_a = 0$. No other packages depend on it, but it depends on outside packages ($C_e > 0$). It is very easy and safe to change (e.g., top-level UI controllers).
+* **Coupling (පරායත්තතාව)** concerns **dependencies between software elements (මෘදුකාංග අංග අතර පවතින රඳාපැවැත්මවල්)**.
+* Coupling helps architects understand **how changes can propagate through a system (පද්ධතියක් හරහා වෙනස්කම් පැතිරී යා හැකි ආකාරය)**.
 
----
-
-### C. Abstractness ($A$) & Distance from the Main Sequence ($D$)
-* **Abstractness ($A$):** Ratio of interfaces/abstract classes to total types:
-  $$A = \frac{\sum m_a}{\sum m_c}$$
-  ($A = 0.0$ is completely concrete code; $A = 1.0$ is pure interfaces).
-* **The Main Sequence Line:** The ideal balance where Abstractness and Instability balance each other:
-  $$A + I = 1$$
-* **Normalized Distance from the Main Sequence ($D$):**
-  $$D = |A + I - 1|$$
-  (Goal: $D \approx 0.0$, on the Main Sequence).
+### Afferent vs. Efferent Coupling
 
 ```
-   Abstractness (A)
-      1.0 ┌─────────────────────────┐ (Zone of Uselessness: A=1, I=1)
-          │\                        │  Pure interfaces, nobody uses them!
-          │ \                       │
-          │  \                      │
-          │   \  Main Sequence      │
-          │    \ (A + I = 1)        │
-          │     \                   │
-          │      \                  │
-      0.0 └───────\─────────────────┘
-         (Zone of Pain)            1.0 Instability (I)
-         (A=0, I=0: Rigid, concrete, heavily depended on!)
+      [Other Packages / Modules]             [This Module / Artifact]
+                  │                                     │
+                  ▼ (Ca = Incoming)                     ▼ (Ce = Outgoing)
+       ┌───────────────────────┐             ┌───────────────────────┐
+       │ This Module / Artifact│             │Other Modules / Services│
+       └───────────────────────┘             └───────────────────────┘
 ```
 
-### The Extreme Danger Zones Table
+* **Afferent Coupling ($C_a$ - Incoming Connections / ලැබෙන සබඳතා):**
+  * **Incoming connections** to a software artifact.
+  * Measures how many external classes, packages, or services depend on this artifact (*"Who depends on me?"*).
+  * Indicates **responsibility** and impact on the rest of the system.
+* **Efferent Coupling ($C_e$ - Outgoing Connections / පිටතට යන සබඳතා):**
+  * **Outgoing connections** from a software artifact.
+  * Measures how many external classes, packages, or services this artifact depends upon (*"Who do I depend on?"*).
+  * Indicates **external dependence** and vulnerability to outside changes.
 
-| Zone | Metrics Profile | Architectural Consequence & Danger | Real-World Scenario |
-| :--- | :---: | :--- | :--- |
-| **Zone of Pain (වේදනා කලාපය)** | $A \approx 0.0$<br>$I \approx 0.0$<br>($D \approx 1.0$) | Highly stable (many incoming dependents) but completely concrete (no interfaces). Rigid and painful to modify; changes trigger massive ripple breaks. | A raw SQL database class with 80 dependent modules and zero interface abstractions. |
-| **Zone of Uselessness (නිෂ්ඵල කලාපය)** | $A \approx 1.0$<br>$I \approx 1.0$<br>($D \approx 1.0$) | Highly abstract (pure interfaces) but maximally instable (zero dependents). Represents over-engineered, dead boilerplate code. | A giant tree of 50 abstract interfaces written by an architect that no implementation ever uses. |
-| **The Main Sequence (ප්‍රධාන අනුක්‍රමය)** | $A + I = 1.0$<br>($D = 0.0$) | Ideal architectural health: Concrete packages are flexible/instable, and stable packages are properly abstracted via interfaces. | Well-architected domain models and decoupled repository interfaces. |
+### Coupling Comparison Table
+
+| Coupling Dimension | Lecture Definition | What it Reveals About the Architecture | Real-World Scenario |
+| :--- | :--- | :--- | :--- |
+| **Afferent Coupling ($C_a$)** | **Incoming connections** to a software artifact. | Indicates how critical this artifact is; modifying it may cause widespread ripple effects across all dependents. | A shared `AuthenticationService` used by 20 distinct business services ($C_a = 20$). |
+| **Efferent Coupling ($C_e$)** | **Outgoing connections** from a software artifact. | Indicates how vulnerable this artifact is to changes made in outside components it depends on. | A `CheckoutController` that calls 6 external APIs, a payment gateway, and an inventory service ($C_e = 8$). |
+| **Change Propagation (වෙනස්කම් පැතිරීම)** | The path and extent to which modifying one software artifact forces modifications in other artifacts. | Understanding coupling allows architects to design boundaries that contain changes and prevent cascade failures. | Changing a shared API contract in an upstream service with high afferent coupling breaks all downstream callers. |
 
 ---
 
@@ -277,14 +251,12 @@ When moving to distributed architectures, architects must never assume:
 
 ## 12. Quick Revision Summary Table (කෙටි පුනරීක්ෂණ සාරාංශ වගුව)
 
-| Concept / Metric | Mathematical Formula / Core Definition | Exam Takeaways to Memorize |
+| Concept / Metric | Core Definition in Lecture | Exam Takeaways to Memorize |
 | :--- | :--- | :--- |
-| **Cohesion** | Internal relatedness of a module's elements. | Spectrum from **Functional** (strongest, best) to **Coincidental** (weakest, worst). |
-| **Afferent Coupling ($C_a$)** | Incoming connections to a package (*"Who calls me?"*). | Measures responsibility and stability. High $C_a$ means many depend on it. |
-| **Efferent Coupling ($C_e$)** | Outgoing connections from a package (*"Who do I call?"*). | Measures dependency and vulnerability to outside ripple effects. |
-| **Instability Index ($I$)** | $I = \frac{C_e}{C_a + C_e}$ (Ranges $0.0$ to $1.0$). | $I=0.0$ is **Maximally Stable** (hard to change); $I=1.0$ is **Maximally Instable** (flexible, easy to change). |
-| **Abstractness ($A$)** | $A = \frac{\sum m_a}{\sum m_c}$ (Ranges $0.0$ to $1.0$). | $A=0$ is completely concrete; $A=1$ is pure interfaces/abstract classes. |
-| **Main Sequence & Distance ($D$)** | $D = \|A + I - 1\|$ (Balanced when $D \approx 0$). | **Zone of Pain** ($A=0, I=0$): concrete, stable, rigid.<br>**Zone of Uselessness** ($A=1, I=1$): unused abstract code. |
+| **Cohesion (සංගතිභාවය)** | How closely parts of a module belong together. | Highly cohesive module has strongly related behaviour, meaningful purpose, and necessary elements. Over-dividing naturally cohesive code increases external coupling (Modularity vs Granularity). |
+| **Coupling (පරායත්තතාව)** | Dependencies between software elements. | Evaluates how changes propagate through a system. Strive for high cohesion and low external coupling. |
+| **Afferent Coupling ($C_a$)** | Incoming connections to a software artifact (*"Who depends on me?"*). | Measures responsibility and impact of changes on dependent modules. |
+| **Efferent Coupling ($C_e$)** | Outgoing connections from a software artifact (*"Who do I depend on?"*). | Measures vulnerability to changes made in outside components. |
 | **Connascence** | Coupling where changing X forces Y to change to preserve correctness. | Properties: **Strength** (form), **Locality** (distance), **Degree** (number of affected parts). |
 | **Static vs. Dynamic Connascence** | Compile-time source code vs. runtime execution flow. | Static: **Name $\rightarrow$ Type $\rightarrow$ Meaning $\rightarrow$ Position $\rightarrow$ Algorithm**.<br>Dynamic: **Execution, Timing, Values, Identity**. |
 | **Rule of Locality** | *"As distance increases, connascence strength must decrease."* | Strong coupling is fine inside a private class; weak coupling is mandatory across network services. |

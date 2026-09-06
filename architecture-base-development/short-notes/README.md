@@ -10,7 +10,7 @@
 |---|------|-------|----------------------|
 | 01 | [lecture-01-short.md](./lecture-01-short.md) | Lecture 01 – Introduction to Software Architecture | Definition, Architecture vs Design, 4 Dimensions, Conway's Law, Architecture Laws |
 | 02 | [lecture-02-short.md](./lecture-02-short.md) | Lecture 02 – Quality Attributes, Scenarios & Tactics | Functional vs Quality Attributes, 6-Part Scenarios, Tactics for Availability, Security, Performance |
-| 03 | [lecture-03-short.md](./lecture-03-short.md) | Lecture 03 – Architectural Thinking | Modularity, Cohesion, Coupling metrics (Ca, Ce, I, A, D), Connascence, Technical vs Domain Partitioning, Architectural Quanta |
+| 03 | [lecture-03-short.md](./lecture-03-short.md) | Lecture 03 – Architectural Thinking | Modularity, Cohesion, Coupling (Afferent & Efferent), Connascence, Technical vs Domain Partitioning, Architectural Quanta |
 | 04 | [lecture-04-short.md](./lecture-04-short.md) | Lecture 04 – Monolithic Architectural Styles | Layered (Closed/Open Layers, Sinkhole Anti-pattern), Modular Monolith, Microkernel / Plug-in Architecture |
 | 05 | [lecture-05-short.md](./lecture-05-short.md) | Lecture 05 – Distributed Architectural Styles | 8 Fallacies of Distributed Computing, Service-Based, Microservices, Event-Driven (Broker vs Mediator), Space-Based |
 
