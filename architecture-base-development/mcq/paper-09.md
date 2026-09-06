@@ -1,6 +1,6 @@
 # SE3100: Architecture Based Development
 # Practice Exam Paper 09 (පුහුණු විභාග ප්‍රශ්න පත්‍රය 09)
-## Focus: Lecture 05 — Microservices Architecture (Sagas, Distributed Transactions & Resilience)
+## Focus: Lecture 05 — Microservices Architecture (Principles, Bounded Context, Granularity & Trade-offs)
 
 ---
 
@@ -9,110 +9,110 @@
 ---
 
 ### Question 1: Core Principles of Microservices (ක්ෂුද්‍ර සේවා ගෘහ නිර්මාණ ශිල්පයේ මූලික ලක්ෂණ)
-Which of the following statements represent fundamental principles of the **Microservices Architecture Style**?  
+According to the lecture slides, how does **Microservices Architecture** decompose an application system?  
 *[Select THREE correct answers]*
 
-- [ ] **A.** **Single Responsibility / High Cohesion (තනි වගකීම):** Each microservice models a single, well-defined business capability or bounded context.
-- [ ] **B.** **Database-per-Service (සේවාවකට වෙනම දත්ත සමුදායක්):** Each microservice exclusively owns and encapsulates its private database/datastore; direct cross-service database access is prohibited.
-- [ ] **C.** **Independent Deployability (ස්වාධීන ස්ථාපන හැකියාව):** Each service can be built, tested, containerized, and deployed to production independently without redeploying other services.
-- [ ] **D.** All microservices must be compiled together into a single monolithic `.war` file.
-- [ ] **E.** All microservices must share a single, global MySQL database table without any passwords.
+- [ ] **A.** It decomposes the system into **small, single-purpose services (කුඩා, තනි අරමුණක් සහිත සේවා)**.
+- [ ] **B.** Each service is **independently deployable (ස්වාධීනව ස්ථාපනය කළ හැකි)**.
+- [ ] **C.** Each service normally runs in its **own process, virtual machine, or container (තමන්ගේම ක්‍රියාවලියක් හෝ කන්ටේනරයක් තුළ ධාවනය වේ)**.
+- [ ] **D.** All business services must be bundled into a single monolithic `.war` or `.exe` file.
+- [ ] **E.** All services are strictly prohibited from communicating across computer networks.
 
 **ANSWER:** A, B, C
 
 **Explanation (විග්‍රහය):**
-* **Why A, B & C are CORRECT:** Microservices mandate single responsibility (bounded context), private database-per-service (data encapsulation), and independent deployment pipelines.
-* **Why D & E are INCORRECT:** Compiling into a single WAR and sharing raw database tables are defining traits of monoliths, directly violating microservice principles.
+* **Why A, B & C are CORRECT:** The lecture explicitly states: *"Microservices Architecture decomposes the system into small, independently deployable, single-purpose services"* and *"Each service normally runs in its own process, virtual machine or container."*
+* **Why D & E are INCORRECT:** Bundling everything into a single archive is the definition of a monolithic architecture, and microservices are inherently distributed and communicate over networks.
 
 ---
 
-### Question 2: Why Avoid Two-Phase Commit (2PC) in Microservices?
-Why is the classic distributed transaction protocol **Two-Phase Commit (2PC / XA Transactions)** considered an **Anti-Pattern** in modern Microservices?  
+### Question 2: Typical Characteristics of Microservices Style (ක්ෂුද්‍ර සේවා විලාසයේ ප්‍රධාන ලක්ෂණ)
+Which of the following are recognized in the lecture as **typical characteristics** of the Microservices Architecture style?  
+*[Select FOUR correct answers]*
+
+- [ ] **A.** **Highly distributed (ඉහළ මට්ටමකින් බෙදාහැරුණු ස්වභාවය)** and **Fine-grained services (සියුම් ලෙස වෙන්කළ සේවා)**.
+- [ ] **B.** **Domain partitioning (වසම් පාදක බෙදීම)** based on business capabilities.
+- [ ] **C.** **Independent deployment (ස්වාධීන ස්ථාපනය)** and **Independent scalability (ස්වාධීන පරිමාණනය)**.
+- [ ] **D.** **Strong data ownership (ශක්තිමත් දත්ත හිමිකාරිත්වය)** and **Heavy reliance on operational automation (මෙහෙයුම් ස්වයංක්‍රීයකරණය මත දැඩිව රඳා පැවතීම)**.
+- [ ] **E.** Complete reliance on a single centrally shared relational database table for all services.
+
+**ANSWER:** A, B, C, D
+
+**Explanation (විග්‍රහය):**
+* **Why A, B, C & D are CORRECT:** The lecture slide explicitly lists the typical characteristics of Microservices: Highly distributed, Fine-grained services, Domain partitioning, Independent deployment, Independent scalability, Strong data ownership, and Heavy reliance on operational automation.
+* **Why E is INCORRECT:** Microservices avoids shared databases and instead enforces strong data ownership (database per service).
+
+---
+
+### Question 3: Domain-Driven Design and the Bounded Context (වසම්-පාදක නිර්මාණය සහ සීමාසහිත සන්දර්භය)
+The lecture states that Microservices is strongly influenced by **Domain-Driven Design (DDD)** and its key concept of the **Bounded Context**. How does a Bounded Context govern service design?  
 *[Select TWO correct answers]*
 
-- [ ] **A.** **Performance & Latency Bottleneck:** 2PC holds synchronous database locks across distributed network nodes during the prepare and commit phases, creating severe latency and throughput bottlenecks.
-- [ ] **B.** **Availability Penalty (CAP Theorem):** If any single service or network link becomes unreachable during the commit phase, the entire transaction blocks, crippling system availability.
-- [ ] **C.** 2PC was declared illegal by the United Nations.
-- [ ] **D.** 2PC speeds up transactions by 1,000,000% and makes code too fast to read.
-- [ ] **E.** 2PC is only supported on mechanical typewriter machines.
+- [ ] **A.** A bounded context keeps domain concepts, code, and data **internally consistent** within an architectural boundary.
+- [ ] **B.** **Inside** that bounded context, implementation details may be coupled; but **outside** that boundary, other services should **not depend** on internal code, schemas, or database structures.
+- [ ] **C.** A bounded context forces all microservices across the entire enterprise to share the same internal Java class files.
+- [ ] **D.** A bounded context requires all software engineers to sit in the same physical room without chairs.
+- [ ] **E.** A bounded context eliminates the need for any business logic in software.
 
 **ANSWER:** A, B
 
 **Explanation (විග්‍රහය):**
-* **Why A & B are CORRECT:** 2PC holds synchronous distributed locks across networks. If a single node is slow or fails, all locks remain held, destroying throughput and availability across services.
-* **Why C, D & E are INCORRECT:** 2PC is a technical database protocol (not an illegal UN ban); it slows transactions down (not speeds them up); and typewriters do not run transactions.
+* **Why A & B are CORRECT:** The lecture explicitly states: *"A bounded context keeps domain concepts, code and data internally consistent within a boundary. Inside a bounded context, implementation details may be coupled. Outside that boundary, other services should not depend on internal code schema or database structures."*
+* **Why C, D & E are INCORRECT:** Bounded contexts prevent sharing internal classes across boundaries; chairs and physical furniture are irrelevant; and business logic remains core to the domain.
 
 ---
 
-### Question 3: The Saga Pattern for Distributed Transactions (සාගා රටාව)
-How does the **Saga Pattern (සාගා රටාව)** manage distributed business transactions across multiple microservices without distributed database locks?  
+### Question 4: Domain Partitioning in Microservices (ක්ෂුද්‍ර සේවාවල වසම් පාදක බෙදීම)
+How does **Domain Partitioning** structure a microservices application compared to technical layering?  
 *[Select TWO correct answers]*
 
-- [ ] **A.** It decomposes a distributed transaction into a sequence of **local database transactions** across participating services.
-- [ ] **B.** Each local transaction updates its private database and publishes an event or message that triggers the next local transaction in the saga.
-- [ ] **C.** It forces all microservices to merge back into a single monolithic SQL table.
-- [ ] **D.** It requires human bank managers to manually click buttons for every database record.
-- [ ] **E.** It guarantees that transactions execute in negative zero seconds.
+- [ ] **A.** Services are organized around **Business capabilities, Domains, Subdomains, and Workflows** rather than technical layers (e.g., presentation, business, persistence).
+- [ ] **B.** Domain partitioning allows cross-functional teams to **own functionality end-to-end** within a domain boundary.
+- [ ] **C.** Domain partitioning mandates that all services must be written strictly in HTML.
+- [ ] **D.** Domain partitioning groups all database tables into one service and all user interfaces into another.
+- [ ] **E.** Domain partitioning forbids teams from communicating with each other.
 
 **ANSWER:** A, B
 
 **Explanation (විග්‍රහය):**
-* **Why A & B are CORRECT:** A Saga coordinates transactions as a sequence of local transactions: each service executes its own local ACID transaction and emits an event to trigger the next service, achieving eventual consistency without global distributed locks.
-* **Why C, D & E are INCORRECT:** Sagas do not merge databases into monoliths, require no manual human clicking, and execute within normal time.
+* **Why A & B are CORRECT:** The lecture slide states: *"Microservices uses domain partitioning, with bounded contexts defining the boundaries of each partition (service). Services are organized around Business capabilities, Domains, Subdomains, Workflows etc. rather than technical layers. This allows teams to own functionality end-to-end within a domain boundary."*
+* **Why C, D & E are INCORRECT:** Microservices are polyglot; separating UI and database into distinct tiers is technical layering (monolithic/layered architecture); and team communication is essential.
 
 ---
 
-### Question 4: Compensating Transactions in a Saga (වන්දි ගෙවීමේ ගනුදෙනු)
-In a Saga, if a step fails midway (e.g., payment succeeds, but inventory reservation fails), how does the system recover to a consistent state?  
+### Question 5: Choreography vs. Orchestration in Microservices (නර්තනය සහ වාද්‍ය වෘන්ද සංවිධානය)
+According to the lecture comparison table, how do **Choreography** and **Orchestration** differ when coordinating business workflows across microservices?  
 *[Select TWO correct answers]*
 
-- [ ] **A.** The system executes a series of **Compensating Transactions (වන්දි ගෙවීමේ ගනුදෙනු)** that semantically reverse/undo the effects of previously completed local transactions (e.g., issuing a refund for the charged payment).
-- [ ] **B.** It achieves **Eventual Consistency (අවසාන අනුකූලතාව)** rather than immediate atomic rollback.
-- [ ] **C.** The server hardware self-destructs and catches fire to erase the error.
-- [ ] **D.** The system ignores the failure and ships empty boxes to the customer.
-- [ ] **E.** The system permanently deletes the customer's home address.
+- [ ] **A.** **Choreography (නර්තනය):** Has no central coordinator; each service calls or reacts to other services as needed, preserving the highly decoupled philosophy of microservices, but error handling and coordination become more complex.
+- [ ] **B.** **Orchestration (වාද්‍ය වෘන්දය):** Uses a localized mediator or orchestration service to coordinate calls, concentrating workflow coordination in a single service, which creates additional coupling between participating services and the orchestrator.
+- [ ] **C.** Choreography is only used for playing sound files, while orchestration is used for video files.
+- [ ] **D.** Orchestration eliminates all software coupling completely from the architecture.
+- [ ] **E.** Both approaches mandate that a human operator manually clicks every service call.
 
 **ANSWER:** A, B
 
 **Explanation (විග්‍රහය):**
-* **Why A & B are CORRECT:** In a Saga, you cannot automatically rollback a committed local transaction. Instead, compensating transactions execute semantic reversals (e.g., refunding a card, canceling a reservation) to achieve eventual consistency.
-* **Why C, D & E are INCORRECT:** Hardware does not ignite; shipping empty boxes is fraudulent; and deleting addresses is destructive.
+* **Why A & B are CORRECT:** The comparison table in Lecture 05 directly contrasts: Choreography (no central coordinator, each service reacts, preserves decoupling, error handling more complex) vs. Orchestration (uses localized mediator/orchestration service, coordinates calls, concentrates coordination, creates additional coupling, useful when complex process needs explicit coordination).
+* **Why C, D & E are INCORRECT:** Multimedia metaphors, zero coupling claims, and manual human clicking are incorrect.
 
 ---
 
-### Question 5: Choreography vs. Orchestration Sagas
-What is the difference between a **Choreographed Saga** and an **Orchestrated Saga**?  
-*[Select TWO correct answers]*
-
-- [ ] **A.** **Choreographed Saga (නර්තනමය සාගා):** Services react independently to domain events published by other services without any central coordinator.
-- [ ] **B.** **Orchestrated Saga (වාද්‍ය වෘන්ද සාගා):** A centralized orchestrator service (Saga Execution Coordinator - SEC) explicitly sends command messages to each participating service, instructing them which local transaction to execute next.
-- [ ] **C.** Choreographed sagas can only be used by ballet dancing schools.
-- [ ] **D.** Orchestrated sagas require the company CEO to play a musical instrument.
-- [ ] **E.** Both types of sagas require all services to run on a single computer monitor.
-
-**ANSWER:** A, B
-
-**Explanation (විග්‍රහය):**
-* **Why A & B are CORRECT:** Choreography is decentralized event-driven coordination (services listen and react). Orchestration relies on a central coordinator that explicitly manages the workflow state machine and issues commands.
-* **Why C, D & E are INCORRECT:** Ballet, musical instruments, and computer monitors have nothing to do with distributed workflow patterns.
-
----
-
-### Question 6: The Circuit Breaker Pattern (පරිපථ බිඳින්නන්ගේ රටාව)
-What are the three operational states of the **Circuit Breaker Pattern**?  
+### Question 6: Determining Service Granularity: Three Key Factors (සේවා සියුම් බව තීරණය කිරීමේ මූලික සාධක)
+Determining the correct service granularity is one of the hardest parts of Microservices Architecture. According to the lecture, what **three key factors** should be considered when defining service boundaries?  
 *[Select THREE correct answers]*
 
-- [ ] **A.** **Closed (සංවෘත තත්ත්වය):** Normal operation; remote calls pass through to the target service.
-- [ ] **B.** **Open (විවෘත තත්ත්වය):** The target service has failed repeatedly; calls fail immediately (fast-fail) without making network requests, returning a cached/fallback response.
-- [ ] **C.** **Half-Open (අර්ධ-විවෘත තත්ත්වය):** After a cooldown period, the circuit allows a limited number of trial requests to test if the failing service has recovered.
-- [ ] **D.** **Quantum Superposition:** The circuit breaker exists simultaneously in 50 physical universes.
-- [ ] **E.** **Permanent Destruction:** The circuit breaker melts down all motherboard wires.
+- [ ] **A.** **Purpose (අරමුණ):** Ensuring the service represents a coherent, single business capability.
+- [ ] **B.** **Transactions (ගනුදෙනු සීමා):** Analyzing transactional boundaries and ACID requirements across operations.
+- [ ] **C.** **Choreography / Communication requirements (සන්නිවේදන අවශ්‍යතා):** Evaluating the communication overhead and dependencies between services.
+- [ ] **D.** The physical weight of the computer server in kilograms.
+- [ ] **E.** The alphabetical sorting order of developer usernames.
 
 **ANSWER:** A, B, C
 
 **Explanation (විග්‍රහය):**
-* **Why A, B & C are CORRECT:** Closed (healthy/passthrough), Open (tripped/fast-fail), and Half-Open (probing for recovery) are the three canonical states of the Circuit Breaker pattern.
-* **Why D & E are INCORRECT:** Superposition and wire meltdown are physics/hardware absurdities.
+* **Why A, B & C are CORRECT:** The lecture slide explicitly states: *"Service boundaries should consider Purpose, Transactions, Choreography (Communication requirements)."*
+* **Why D & E are INCORRECT:** Server hardware weight and alphabetical usernames have no architectural bearing on service boundary granularity.
 
 ---
 
@@ -120,147 +120,147 @@ What are the three operational states of the **Circuit Breaker Pattern**?
 
 ---
 
-### Question 7: Service Discovery: Client-Side vs. Server-Side (සේවා සොයාගැනීම)
-In a dynamic cloud environment where microservice container instances spin up and shut down with dynamically changing IP addresses, how does **Service Discovery** work?  
-*[Select TWO correct answers]*
-
-- [ ] **A.** **Client-Side Discovery (පාරිභෝගික පාර්ශ්වීය සොයාගැනීම):** The client queries a Service Registry (e.g., Netflix Eureka, Consul) to retrieve available service instance IP addresses and executes local load-balancing algorithms.
-- [ ] **B.** **Server-Side Discovery (සේවාදායක පාර්ශ්වීය සොයාගැනීම):** The client sends requests to a stable router / load balancer (e.g., AWS ALB, Kubernetes Service), which queries the registry and forwards the request to an available instance.
-- [ ] **C.** All microservices must have their IP addresses permanently carved into stone tablets.
-- [ ] **D.** Service discovery requires software engineers to manually edit `/etc/hosts` files on every server every 30 seconds.
-- [ ] **E.** Dynamic service discovery is strictly banned by cloud providers.
-
-**ANSWER:** A, B
-
-**Explanation (විග්‍රහය):**
-* **Why A & B are CORRECT:** Dynamic service instances require Service Discovery. Client-side discovery lets the client query the registry directly; Server-side discovery routes traffic through an intelligent load balancer (e.g., Kubernetes DNS/Service).
-* **Why C, D & E are INCORRECT:** Dynamic IPs change too fast for stone tablets or manual `/etc/hosts` editing, and clouds natively provide discovery tools.
-
----
-
-### Question 8: API Gateway / Backends for Frontends (BFF) Pattern
-Why do modern microservice architectures utilize an **API Gateway** or the **Backends for Frontends (BFF)** pattern?  
+### Question 7: The "Grains of Sand" Anti-Pattern (ක්ෂුද්‍ර සේවාවන්හි 'වැලි කැට' විරෝධී රටාව)
+What happens if an architecture team makes microservices **excessively fine-grained (too small)**, falling into the **"Grains of Sand" anti-pattern**?  
 *[Select THREE correct answers]*
 
-- [ ] **A.** **Request Aggregation / Fan-Out:** Aggregating data from multiple internal microservices into a single consolidated response, preventing mobile apps from making 30 separate network calls.
-- [ ] **B.** **Tailored Client Contracts:** Providing different specialized API endpoints optimized for different frontends (e.g., lightweight payloads for mobile apps vs. comprehensive payloads for desktop web).
-- [ ] **C.** **Centralized Edge Security:** Enforcing JWT token verification, rate-limiting, and TLS termination at the edge before traffic reaches internal services.
-- [ ] **D.** To replace all backend microservices with static text files.
-- [ ] **E.** To guarantee that external users can directly edit raw database tables.
+- [ ] **A.** Network communication and remote call volume increase significantly.
+- [ ] **B.** Workflows become much harder to coordinate and network latency increases.
+- [ ] **C.** Managing data consistency becomes harder, potentially creating a **Distributed Big Ball of Mud**.
+- [ ] **D.** The computer monitor automatically fills with physical beach sand.
+- [ ] **E.** Operational and infrastructure costs drop to exactly zero dollars.
 
 **ANSWER:** A, B, C
 
 **Explanation (විග්‍රහය):**
-* **Why A, B & C are CORRECT:** An API Gateway / BFF aggregates distributed responses, tailors payloads to specific client devices, and handles edge cross-cutting concerns (authentication, rate-limiting, SSL).
-* **Why D & E are INCORRECT:** Gateways do not replace services with text files, nor do they expose raw database tables to users.
+* **Why A, B & C are CORRECT:** The lecture slide specifies: *"If services are too fine-grained: Communication increases, Workflows become harder to coordinate, Latency increases, Data consistency becomes harder. Making services too small will result in the Grains of Sand antipattern... leading to a Distributed Big Ball of Mud situation."*
+* **Why D & E are INCORRECT:** Physical sand is an absurd metaphor literalization, and excessive fine granularity dramatically increases operational costs rather than reducing them to zero.
 
 ---
 
-### Question 9: The Bulkhead Pattern for Fault Isolation (බල්ක්හෙඩ් රටාව)
-Named after the watertight compartments in a ship's hull, how does the **Bulkhead Pattern** protect a microservice ecosystem?  
+### Question 8: Heavy Reliance on Operational Automation (මෙහෙයුම් ස්වයංක්‍රීයකරණය මත දැඩිව රඳා පැවතීම)
+The lecture highlights that *"Microservices gains flexibility only if the organisation can operate many independent services reliably."* Which operational automation capabilities are emphasized in the lecture?  
+*[Select FOUR correct answers]*
+
+- [ ] **A.** **Automated deployment (ස්වයංක්‍රීය ස්ථාපනය)** and deployment via **Containers or Virtual Machines**.
+- [ ] **B.** **Service discovery, Monitoring, and Failure recovery mechanisms**.
+- [ ] **C.** **Distributed logging and distributed tracing**.
+- [ ] **D.** **Configuration management** and **API gateways**.
+- [ ] **E.** Manual handwritten logging into paper ledgers for every HTTP request.
+
+**ANSWER:** A, B, C, D
+
+**Explanation (විග්‍රහය):**
+* **Why A, B, C & D are CORRECT:** Slide lines 343–358 explicitly list the operational automation requirements for Microservices: Automated deployment, Containers or virtual machines, Service discovery, Monitoring and Failure recovery mechanisms, Distributed logging and tracing, Configuration management, and API gateways.
+* **Why E is INCORRECT:** Manual paper ledgers directly contradict operational automation.
+
+---
+
+### Question 9: Data Ownership and Database per Service (දත්ත හිමිකාරිත්වය සහ සේවාවකට වෙනම දත්ත සමුදාය)
+How does Microservices Architecture manage data storage and cross-service data access according to the lecture?  
 *[Select TWO correct answers]*
 
-- [ ] **A.** It partitions system resources (e.g., thread pools, memory, CPU limits) into isolated pools so that an overloaded or failing downstream dependency cannot consume all server resources and crash the entire service.
-- [ ] **B.** If requests to an external slow third-party API exhaust their dedicated thread pool of 10 threads, other critical operations (using separate thread pools) continue functioning normally.
-- [ ] **C.** It causes the ship to sink immediately when an error is logged.
-- [ ] **D.** It completely eliminates the need for software to use computer memory.
-- [ ] **E.** It forces all microservices to be hosted on floating marine cargo ships.
+- [ ] **A.** It avoids shared schemas and shared databases as integration mechanisms, adopting a **Database per Service** approach where each service owns its data.
+- [ ] **B.** Other services access that data strictly through **APIs, Messages, or Events**, protecting the bounded context and limiting implementation coupling.
+- [ ] **C.** All microservices must directly execute SQL `JOIN` queries across each other's raw private database tables.
+- [ ] **D.** Microservices systems are prohibited from saving any data to persistent disk drives.
+- [ ] **E.** Every microservice must store all customer records inside local browser cookies only.
 
 **ANSWER:** A, B
 
 **Explanation (විග්‍රහය):**
-* **Why A & B are CORRECT:** Bulkheading isolates thread pools or connection limits per dependency. If one downstream service stalls, it exhausts only its designated pool, preventing catastrophic resource starvation of the entire application.
-* **Why C, D & E are INCORRECT:** Ships sinking, zero-memory software, and maritime hosting are humorous misunderstandings of the nautical metaphor.
+* **Why A & B are CORRECT:** The lecture states: *"Microservices tries to avoid shared schemas and shared databases as integration mechanisms. The usual approach is to have a Database per Service and Each service owning its data. Other services access that data through: APIs, Messages, Events. This protects the bounded context and limits implementation coupling."*
+* **Why C, D & E are INCORRECT:** Direct SQL joins across service tables break bounded contexts; data is stored persistently; and browser cookies cannot replace backend databases.
 
 ---
 
-### Question 10: Trade-Off Analysis: Choreographed vs. Orchestrated Sagas
-What are the respective trade-offs between Choreographed and Orchestrated Sagas?  
-*[Select TWO correct answers]*
-
-- [ ] **A.** **Choreography:** Simple to set up for small workflows and offers loose coupling, **but** becomes extremely difficult to track, understand, and debug as the number of steps grows (workflow logic is dispersed across services).
-- [ ] **B.** **Orchestration:** Centralizes workflow status, simplifies auditing, and makes complex error-handling clear, **but** risks turning the orchestrator into an overly smart "God Object" bottleneck that tightly couples domain logic.
-- [ ] **C.** Choreography requires all services to share a single physical hard drive.
-- [ ] **D.** Orchestration makes it impossible to use event queues.
-- [ ] **E.** Both types of sagas guarantee immediate ACID consistency across all databases.
-
-**ANSWER:** A, B
-
-**Explanation (විග්‍රහය):**
-* **Why A & B are CORRECT:** Choreography is decoupled but hard to visualize/debug in complex flows. Orchestration is clear and centralized but risks introducing an over-centralized bottleneck.
-* **Why C, D & E are INCORRECT:** Sagas use private databases (not shared disks); orchestrators use event queues; and sagas provide *eventual* consistency, not immediate ACID.
-
----
-
-### Question 11: CQRS (Command Query Responsibility Segregation) in Microservices
-Why is the **CQRS Pattern** frequently paired with Event-Driven Microservices?  
-*[Select TWO correct answers]*
-
-- [ ] **A.** It separates **Write Operations (Commands)** from **Read Operations (Queries)**, allowing the data models, database technologies, and scaling strategies for reads and writes to be optimized independently.
-- [ ] **B.** In a system with separate microservice databases, executing cross-service join queries is difficult; CQRS projects domain events into a denormalized read database optimized for fast querying.
-- [ ] **C.** It mandates that all database queries must be written in handwriting on paper.
-- [ ] **D.** It forces all software developers to execute SQL statements through Morse code.
-- [ ] **E.** CQRS guarantees that all data reads will always cost $1,000 per query.
-
-**ANSWER:** A, B
-
-**Explanation (විග්‍රහය):**
-* **Why A & B are CORRECT:** With database-per-service, cross-service queries are slow. CQRS solves this by listening to events and populating read-optimized views (e.g., Elasticsearch), cleanly decoupling write models from read models.
-* **Why C, D & E are INCORRECT:** Handwriting, Morse code, and query fees are absurd.
-
----
-
-### Question 12: Architectural Quanta in Microservices Architecture
-How many **Architectural Quanta** exist in a genuine Microservices Architecture containing 15 microservices, where each service owns its private database and communicates asynchronously via an event broker?  
-*[Select TWO correct answers]*
-
-- [ ] **A.** It represents **15 distinct Architectural Quanta (ගෘහ නිර්මාණ ක්වොන්ටා 15ක්)** because each microservice has independent deployability, separate data storage, and autonomous quality attributes.
-- [ ] **B.** Each quantum can scale independently (e.g., Service 1 can run 50 instances on high-memory nodes, while Service 2 runs 2 instances on lightweight nodes).
-- [ ] **C.** It represents exactly one single architectural quantum.
-- [ ] **D.** Microservices architectures are prohibited from possessing any architectural quanta.
-- [ ] **E.** It represents 0.5 quanta.
-
-**ANSWER:** A, B
-
-**Explanation (විග්‍රහය):**
-* **Why A & B are CORRECT:** When services own private databases and decouple communication asynchronously, each service forms an independent Architectural Quantum. Each can scale, deploy, and configure quality attributes autonomously.
-* **Why C, D & E are INCORRECT:** Separate databases and deployment boundaries create 15 quanta (not 1 or 0); and fractional quanta do not exist.
-
----
-
-### Question 13: Retry with Exponential Backoff and Jitter (නැවත උත්සාහ කිරීමේ උපායමාර්ග)
-When a microservice encounters a transient network timeout while calling another service, why should it use **Exponential Backoff with Jitter (අනුපාතික ප්‍රමාදය සහ අහඹු කාල විචලනය)** instead of immediate rapid retries?  
-*[Select TWO correct answers]*
-
-- [ ] **A.** **Exponential Backoff:** Progressively increases the delay between retries (e.g., 100ms, 200ms, 400ms, 800ms) to give the struggling downstream service time to recover.
-- [ ] **B.** **Jitter (Randomness):** Adds random variance to retry intervals, preventing the **"Thundering Herd Problem" (බිඳවැටුණු සේවා වෙත එකවර එල්ලවන ප්‍රහාරය)** where hundreds of clients retry at the exact same millisecond and re-crash the recovering service.
-- [ ] **C.** It forces the client's laptop to turn off automatically.
-- [ ] **D.** It ensures that network requests are transmitted via satellite lasers.
-- [ ] **E.** Immediate rapid retries in a tight loop are considered the best way to heal a crashed server.
-
-**ANSWER:** A, B
-
-**Explanation (විග්‍රහය):**
-* **Why A & B are CORRECT:** Exponential backoff spaces out retries, and jitter randomizes the timing, preventing synchronized retry stampedes (thundering herds) that repeatedly overwhelm a recovering service.
-* **Why C, D & E are INCORRECT:** Laptops do not turn off; satellite lasers are irrelevant; and tight-loop retries guarantee crashing the target service again.
-
----
-
-### Question 14: Characteristic Ratings of Microservices Style
-According to Richards & Ford's architectural rating matrix, what are the primary **weaknesses and operational penalties** of Microservices Architecture?  
+### Question 10: Trade-offs in Selecting Distributed Architecture (බෙදාහැරීමේ වාසි සහ අභියෝග)
+According to the lecture's trade-off analysis table on distribution, what does distribution **improve**, and what does it **usually increase**?  
 *[Select THREE correct answers]*
 
-- [ ] **A.** **High Overall Architectural & Operational Complexity:** Managing service discovery, distributed tracing, container orchestration (Kubernetes), and API gateways requires immense expertise.
-- [ ] **B.** **Low Performance / Latency Overhead:** Extensive network hops, JSON/gRPC serialization, and distributed security handshakes add latency compared to in-memory method calls.
-- [ ] **C.** **Challenging Testability:** End-to-end integration testing across 40 distributed services with eventual consistency is vastly harder than testing a local monolithic application.
-- [ ] **D.** Inability to deploy code to cloud servers.
-- [ ] **E.** Inability to run on Intel or AMD computer processors.
+- [ ] **A.** Distribution can improve **Scalability, Deployability, Fault tolerance, Team autonomy, and Evolvability**.
+- [ ] **B.** Distribution usually increases **Communication complexity, Infrastructure cost, Operational complexity, Testing difficulty, and Debugging difficulty**.
+- [ ] **C.** Distribution usually increases **Data consistency and workflow coordination problems**.
+- [ ] **D.** Distribution guarantees that network latency drops to 0.000 milliseconds.
+- [ ] **E.** Distribution eliminates the need for serialization, contracts, or security.
 
 **ANSWER:** A, B, C
 
 **Explanation (විග්‍රහය):**
-* **Why A, B & C are CORRECT:** Microservices excel in scalability and deployability, but suffer severe penalties in operational complexity, network latency overhead, and distributed testing difficulty.
-* **Why D & E are INCORRECT:** Microservices are built specifically for the cloud and run on all standard Intel/AMD/ARM processors.
+* **Why A, B & C are CORRECT:** The lecture table (slide line 117) clearly separates: Distribution can improve (Scalability, Deployability, Fault tolerance, Team autonomy, Evolvability, Technology flexibility) vs. Distribution usually increases (Communication complexity, Infrastructure cost, Operational complexity, Testing difficulty, Debugging difficulty, Data consistency and workflow coordination problems).
+* **Why D & E are INCORRECT:** Remote calls over networks introduce latency, serialization overhead, contract management, and security concerns.
+
+---
+
+### Question 11: Characteristic Ratings of Microservices Style (ක්ෂුද්‍ර සේවා ශෛලියේ ලාක්ෂණික තරු ශ්‍රේණිගත කිරීම්)
+According to the Richards & Ford characteristics ratings matrix presented in Lecture 05, what are the ratings for Microservices Architecture?  
+*[Select THREE correct answers]*
+
+- [ ] **A.** **5 Stars (☆☆☆☆☆):** Modularity, Maintainability, Testability, Deployability, Evolvability, Scalability, and Fault tolerance.
+- [ ] **B.** **1 Star (☆):** Simplicity (ඉතා අඩු සරල බව / අධික සංකීර්ණ බව).
+- [ ] **C.** **Overall Cost:** Ranked at the highest cost tier (**$$$$$**) with low Responsiveness (**☆☆**).
+- [ ] **D.** **Overall Cost:** Ranked at the lowest possible cost tier ($).
+- [ ] **E.** **Deployability:** Ranked at 1 star (☆).
+
+**ANSWER:** A, B, C
+
+**Explanation (විග්‍රහය):**
+* **Why A, B & C are CORRECT:** The rating table in Lecture 05 (Figure 18-16) assigns: Cost = $$$$$, Simplicity = 1 star, Responsiveness = 2 stars, Elasticity = 4 stars, and 5 stars for Modularity, Maintainability, Testability, Deployability, Evolvability, Scalability, and Fault tolerance.
+* **Why D & E are INCORRECT:** Cost is $$$$$ (not $) and Deployability is 5 stars (not 1 star).
+
+---
+
+### Question 12: Strengths vs. Weaknesses of Microservices (ක්ෂුද්‍ර සේවාවල ශක්තීන් සහ දුර්වලතා)
+According to the Strengths and Weaknesses summary table in Lecture 05, which of the following represent recognized **weaknesses** of the Microservices style?  
+*[Select THREE correct answers]*
+
+- [ ] **A.** High complexity, high overall cost, and high operational complexity.
+- [ ] **B.** Network communication overhead and additional endpoint-security latency.
+- [ ] **C.** Risk of excessive service granularity and excessive interservice communication.
+- [ ] **D.** Complete inability to scale any individual service.
+- [ ] **E.** Inability to deploy services on cloud platforms.
+
+**ANSWER:** A, B, C
+
+**Explanation (විග්‍රහය):**
+* **Why A, B & C are CORRECT:** The slide table explicitly identifies weaknesses: High complexity, High overall cost and operational complexity, Network communication overhead, Additional endpoint-security latency, Data latency across services, Risk of excessive service granularity, Excessive interservice communication, and Excessive data/code sharing weakening bounded contexts.
+* **Why D & E are INCORRECT:** Microservices provides excellent independent scalability (5 stars) and is tailored for cloud deployments.
+
+---
+
+### Question 13: When Microservices Architecture is Suitable vs. Less Suitable
+According to the lecture guidelines, when is Microservices Architecture **suitable**, and when is it **less suitable**?  
+*[Select THREE correct answers]*
+
+- [ ] **A.** **Suitable:** When the system has a high degree of functional modularity and data can be cleanly isolated along domain boundaries.
+- [ ] **B.** **Suitable:** When multiple teams require strong ownership boundaries and the organization has the engineering and operational maturity to support the style.
+- [ ] **C.** **Less Suitable:** When the domain is **highly semantically coupled**, or the organization lacks strong deployment and operational automation.
+- [ ] **D.** **Suitable:** When the system has a simple single-developer team with zero deployment automation and no cloud budget.
+- [ ] **E.** **Less Suitable:** Whenever the application requires high scalability or high deployability.
+
+**ANSWER:** A, B, C
+
+**Explanation (විග්‍රහය):**
+* **Why A, B & C are CORRECT:** The lecture explicitly notes: Microservices is suitable when functional modularity is high, clear bounded contexts can be established, multiple teams require strong ownership, and operational maturity is present. It is less suitable when the domain is highly semantically coupled and cannot be cleanly divided, or when deployment/operational automation is lacking.
+* **Why D & E are INCORRECT:** Lack of automation makes microservices unsuitable; high scalability and deployability are primary reasons to choose microservices.
+
+---
+
+### Question 14: Latency and Remote Interaction Concerns in Distributed Architectures
+Lecture 05 emphasizes that when transitioning from a monolith to a distributed architecture, local component calls become remote interactions. What concerns does this transition introduce?  
+*[Select THREE correct answers]*
+
+- [ ] **A.** **Network latency (ජාල ප්‍රමාදය)** and the need for remote communication protocols.
+- [ ] **B.** **Serialization and deserialization overhead (දත්ත පරිවර්තනය කිරීමේ පිරිවැය)**.
+- [ ] **C.** **Endpoint security, partial failures, contract management, and operational monitoring**.
+- [ ] **D.** Inability of computers to calculate mathematical operations.
+- [ ] **E.** Complete elimination of all operating system processes.
+
+**ANSWER:** A, B, C
+
+**Explanation (විග්‍රහය):**
+* **Why A, B & C are CORRECT:** Slide lines 93–114 explicitly list: *"A local component call becomes a remote interaction. This introduces many other concerns such as: Network latency, Remote communication protocols, Serialization and deserialization, Endpoint security, Partial failures, Contract management, Operational monitoring, Distributed data and transaction concerns etc."*
+* **Why D & E are INCORRECT:** Math calculations and operating systems function normally in distributed architectures.
 
 ---
 
@@ -268,139 +268,143 @@ According to Richards & Ford's architectural rating matrix, what are the primary
 
 ---
 
-### Scenario 1: E-Commerce Distributed Checkout Saga Failure
-In an e-commerce platform using microservices, an order checkout workflow executes the following steps:
-1. `OrderService`: Creates an `Order` record with status `PENDING`.
-2. `PaymentService`: Successfully charges $150 to the customer's credit card.
-3. `InventoryService`: Attempts to reserve the ordered item, but finds the item is out of stock, throwing an `InventoryExhaustedException`.
+### Scenario 1: Excessive Service Granularity & The Grains of Sand Anti-Pattern
+A software engineering team building an online retail platform decides to make services as small as possible. They create separate microservices for `CustomerFirstNameService`, `CustomerLastNameService`, `OrderTaxCalculationService`, `OrderDiscountValidationService`, and `OrderLineItemService`.
 
-#### Question 15: Executing the Compensating Transaction
-Under the Saga Pattern, what must the architecture do to restore business consistency?  
+During testing, fulfilling a single order requires 35 synchronous network hops between these tiny services. End-to-end response time exceeds 8 seconds, coordinating workflows is nearly impossible, and network timeouts frequently cause partial data inconsistencies.
+
+#### Question 15: Evaluating the Granularity Problem
+Based on Lecture 05, what architectural anti-pattern has this team fallen into, and what are its direct consequences?  
 *[Select TWO correct answers]*
 
-- [ ] **A.** `InventoryService` publishes an `InventoryReservationFailedEvent`.
-- [ ] **B.** `PaymentService` listens for this failure event and executes a **Compensating Transaction** that automatically refunds the $150 charge to the customer's credit card.
-- [ ] **C.** The system should ignore the error, keep the customer's $150, and never ship any item.
-- [ ] **D.** The system should lock the entire global banking network for 72 hours.
-- [ ] **E.** The system should force the customer to purchase an airline ticket.
+- [ ] **A.** The team has fallen into the **"Grains of Sand" anti-pattern** by creating excessively fine-grained services.
+- [ ] **B.** This extreme granularity causes communication volume to explode, increases network latency, makes workflows hard to coordinate, and can lead to a **"Distributed Big Ball of Mud"**.
+- [ ] **C.** The team has successfully applied Domain-Driven Design principles with perfect bounded contexts.
+- [ ] **D.** The problem is caused solely by slow computer keyboards and has nothing to do with service granularity.
+- [ ] **E.** The team should break each service down further into individual line-of-code microservices.
 
 **ANSWER:** A, B
 
 **Explanation (විග්‍රහය):**
-* **Why A & B are CORRECT:** When inventory fails, the saga triggers compensating transactions: an `InventoryReservationFailedEvent` prompts `PaymentService` to refund the customer and `OrderService` to mark the order `CANCELLED`.
-* **Why C, D & E are INCORRECT:** Keeping money without goods is theft; locking global networks is impossible; and airline tickets are irrelevant.
+* **Why A & B are CORRECT:** The lecture explicitly warns: *"If services are too fine-grained: Communication increases, Workflows become harder to coordinate, Latency increases, Data consistency becomes harder. Making services too small will result in the Grains of Sand antipattern... leading to a Distributed Big Ball of Mud situation."*
+* **Why C, D & E are INCORRECT:** Splitting first and last names into separate services violates DDD bounded context cohesion; keyboards are irrelevant; and further subdivision worsens the disaster.
 
 ---
 
-### Scenario 2: Cascading Outage via Thread Pool Exhaustion
-During a marketing flash sale, an external currency conversion service slows down from 50 ms to 30 seconds per request. Because the `CheckoutService` invokes this currency service synchronously using a shared thread pool with no timeouts or circuit breakers, all 200 worker threads in `CheckoutService` become blocked waiting for currency rates. Consequently, domestic customers paying in local currency (who do not even need currency conversion) receive HTTP 504 Gateway Timeout errors and cannot checkout.
+### Scenario 2: Shared Database Coupling & Bounded Context Violation
+A financial services firm splits its monolithic application into 12 separate microservices. However, to minimize data migration effort, all 12 services continue to read from and write to the same centralized relational database schema tables.
 
-#### Question 16: Remediating the Cascading Failure
-Which resilience patterns should the architecture team implement immediately?  
+When the `LoanService` team alters the columns and data types in the `customer_account` table, the `PaymentService`, `CardService`, and `AuditService` all instantly crash in production due to broken SQL queries.
+
+#### Question 16: Remediating the Data Coupling Flaw
+According to Lecture 05 principles of **Data Ownership and Bounded Contexts**, how must this architecture be restructured?  
 *[Select TWO correct answers]*
 
-- [ ] **A.** **Circuit Breaker & Strict Timeouts:** Wrap the currency conversion client in a Circuit Breaker with a 1-second timeout, failing fast and using fallback cached exchange rates if the service degrades.
-- [ ] **B.** **Bulkhead Pattern:** Isolate currency conversion requests to a dedicated, limited thread pool (e.g., max 10 threads), ensuring that a slow currency service can never starve the primary checkout thread pool.
-- [ ] **C.** Increase the thread timeout to 5 hours so that requests wait indefinitely.
-- [ ] **D.** Delete all payment methods and force customers to visit the company office in person.
-- [ ] **E.** Remove the internet connection from the web server.
+- [ ] **A.** Enforce the **Database-per-Service** approach where each service exclusively owns its data, avoiding shared schemas and shared databases as integration mechanisms.
+- [ ] **B.** Other services must access account data strictly through **APIs, Messages, or Events**, protecting the bounded context and preventing internal schema changes from breaking dependent services.
+- [ ] **C.** Force all 12 services to run inside the same database server using SQL stored procedures.
+- [ ] **D.** Instruct developers to never make any database schema changes ever again.
+- [ ] **E.** Eliminate all databases and store all banking transactions in text files on desktop screens.
 
 **ANSWER:** A, B
 
 **Explanation (විග්‍රහය):**
-* **Why A & B are CORRECT:** Timeouts + Circuit Breakers prevent calls from hanging, while Bulkheads isolate resources so that a slow third-party API cannot exhaust the main application thread pool.
-* **Why C, D & E are INCORRECT:** 5-hour timeouts worsen starvation; in-person visits destroy e-commerce; and removing the internet breaks the site.
+* **Why A & B are CORRECT:** Lecture 05 specifies: *"Microservices tries to avoid shared schemas and shared databases as integration mechanisms. The usual approach is to have a Database per Service and Each service owning its data. Other services access that data through: APIs, Messages, Events. This protects the bounded context and limits implementation coupling."*
+* **Why C, D & E are INCORRECT:** Stored procedures create monolithic database coupling; freezing schema evolution stops business growth; and desktop text files are unsafe for banking.
 
 ---
 
-### Scenario 3: Bounded Context Violation via Distributed Foreign Keys
-In an online food delivery microservices application, a developer in the `DeliveryTrackingService` directly stores the foreign key `restaurant_id` in its delivery table. To display the restaurant's phone number on the delivery tracker screen, `DeliveryTrackingService` makes a synchronous HTTP REST call to `RestaurantCatalogService` on every single GPS coordinate ping (every 2 seconds per driver for 20,000 drivers).
+### Scenario 3: Choreography vs. Orchestration for Order Fulfillment
+An architect is designing a multi-step order fulfillment workflow involving `OrderService`, `PaymentService`, `InventoryService`, and `NotificationService`. 
 
-During dinner rush, the `RestaurantCatalogService` crashes due to 10,000 requests per second of repetitive lookups.
+The business analysts require that the workflow must have clear visibility, explicit tracking of order completion status at every step, and centralized handling and recovery if a step fails.
 
-#### Question 17: Architectural Redesign via Data Replication / CQRS
-How should the architect redesign this interaction to eliminate the synchronous bottleneck?  
+#### Question 17: Selecting the Workflow Coordination Approach
+Based on the Lecture 05 comparison between **Choreography** and **Orchestration**, which approach should the architect select, and what is its primary trade-off?  
 *[Select TWO correct answers]*
 
-- [ ] **A.** Apply **Event-Driven Data Replication**: When an order is placed, replicate the snapshot of required restaurant metadata (name, phone number) directly into the `DeliveryTrackingService`'s local event payload or database.
-- [ ] **B.** Decouple the services so that `DeliveryTrackingService` reads locally from its own cached snapshot during tracking, eliminating all synchronous HTTP queries to `RestaurantCatalogService`.
-- [ ] **C.** Increase the GPS ping rate to 100 times per second to see if the catalog service recovers.
-- [ ] **D.** Force delivery drivers to memorize all restaurant phone numbers in their heads.
-- [ ] **E.** Merge all food delivery services into a single text file.
+- [ ] **A.** The architect should choose **Orchestration** because it uses a localized mediator/orchestration service that coordinates calls to participating services, providing better workflow control, state tracking, and error handling.
+- [ ] **B.** The trade-off is that Orchestration **concentrates workflow coordination in a single service** and **creates additional coupling** between participating services and the orchestrator.
+- [ ] **C.** The architect should choose Choreography because Choreography provides superior centralized state management and effortless error recovery.
+- [ ] **D.** Both approaches require that services communicate only by printing paper receipts.
+- [ ] **E.** Orchestration completely eliminates the need for any microservices.
 
 **ANSWER:** A, B
 
 **Explanation (විග්‍රහය):**
-* **Why A & B are CORRECT:** Synchronously querying catalog data on high-frequency tracking pings violates service independence. Replicating static snapshot data (name, phone) inside the delivery order record allows the tracking service to function autonomously without network calls.
-* **Why C, D & E are INCORRECT:** Increasing ping frequency worsens the crash; driver memorization is impossible; and single text files are not software architecture.
+* **Why A & B are CORRECT:** In the lecture comparison table: Orchestration uses a localized mediator/orchestration service, concentrates workflow coordination, and is useful when a complex business process requires explicit coordination and error handling. Its trade-off is creating additional coupling to the orchestrator. Choreography has no central coordinator and makes error handling/coordination more complex.
+* **Why C, D & E are INCORRECT:** Choreography makes state tracking and error handling harder (not effortless); paper receipts are absurd; and orchestration coordinates microservices (does not eliminate them).
 
 ---
 
 ### Scenario 4: The "Distributed Monolith" Anti-Pattern
-Company Z split its monolithic system into 30 microservices. However:
-1. All 30 services must be deployed together in a strict lockstep order every Tuesday night.
-2. A single user click on the frontend triggers a chain of 14 synchronous REST HTTP calls across 14 services.
-3. If any single service of the 14 is down, the user request fails completely.
-4. All services share a single Oracle database.
+Company Z decomposed its monolithic application into 25 microservices. However:
+1. All 25 services must be compiled, tested, and deployed together in a strict lockstep order every Thursday night.
+2. A single user click on the frontend triggers a synchronous chain of 10 REST HTTP calls across 10 services.
+3. If any single service in the chain is temporarily unavailable, the entire transaction fails immediately.
+4. All services share a single centralized database schema.
 
-#### Question 18: Architectural Assessment of Company Z
-What architecture has Company Z actually built, and what are its qualities?  
+#### Question 18: Architectural Diagnosis of Company Z
+What architecture has Company Z actually built, and what are its qualities according to lecture principles?  
 *[Select TWO correct answers]*
 
-- [ ] **A.** Company Z has built a **"Distributed Monolith" (බෙදාහැර ඇති ඒකශිලා විරෝධී රටාව)**, which combines the worst operational complexity of distributed systems with the worst deployment coupling of monoliths.
-- [ ] **B.** The system exhibits **low availability, high network latency, extreme fragility**, and zero true deployment independence.
-- [ ] **C.** Company Z has built a world-class, state-of-the-art microservices system that all companies should imitate.
-- [ ] **D.** The system has zero network latency because services use HTTP.
-- [ ] **E.** The system will automatically fix itself if the company buys more office desks.
+- [ ] **A.** Company Z has built a **"Distributed Monolith" (බෙදාහැර ඇති ඒකශිලා විරෝධී රටාව)**, which combines the high operational and communication complexity of distributed systems with the deployment coupling of monoliths.
+- [ ] **B.** The system suffers from **high network latency, fragile availability, and zero true deployment independence**, failing to achieve the core benefits of microservices.
+- [ ] **C.** Company Z has created the ideal microservices reference architecture recommended by all textbooks.
+- [ ] **D.** The system has zero communication complexity because services are separated into different folders.
+- [ ] **E.** Company Z will achieve 5-star simplicity with this architecture.
 
 **ANSWER:** A, B
 
 **Explanation (විග්‍රහය):**
-* **Why A & B are CORRECT:** A Distributed Monolith has all the downsides of microservices (network latency, distributed failures, complex ops) with none of the benefits (it cannot deploy independently, shares a database, and chains synchronous calls).
-* **Why C, D & E are INCORRECT:** It is an anti-pattern (not world-class); HTTP adds latency; and office desks do not solve code topology flaws.
+* **Why A & B are CORRECT:** When services cannot deploy independently, share a database, and rely on fragile synchronous request chains, the system becomes a Distributed Monolith. It incurs all the network overhead and operational complexity of distributed systems with none of the agility or deployability benefits.
+* **Why C, D & E are INCORRECT:** It is an anti-pattern (not an ideal reference architecture); network latency is high; and simplicity is 1 star (☆).
 
 ---
 
-### Scenario 5: Service Mesh for Infrastructure Concerns
-An enterprise operates 60 microservices written in a mix of Java, Go, Python, and Node.js. Developers spend weeks writing duplicate library code in four different languages to handle mTLS encryption, JWT token parsing, circuit breaking, distributed tracing (Zipkin/Jaeger headers), and request retries.
+### Scenario 5: Microservices Migration Without Operational Automation
+A software company with 6 developers attempts to rewrite their successful monolithic web app into 50 microservices. However:
+* Deployments are executed manually via FTP and SSH scripts.
+* They have no automated service discovery, centralized monitoring, or automated failure recovery.
+* There is no distributed logging or tracing; troubleshooting a failed customer transaction requires developers to manually SSH into 50 separate virtual machines and grep text log files.
 
-The lead architect introduces a **Service Mesh (e.g., Istio with Envoy Sidecar proxies)**.
+After three months, release velocity drops to near zero and developer burnout reaches crisis levels.
 
-#### Question 19: Evaluating the Service Mesh Impact
-What architectural benefit does the Service Mesh provide to the polyglot microservice ecosystem?  
+#### Question 19: Analyzing the Root Cause of Failure
+According to Lecture 05, what fundamental requirement for adopting Microservices Architecture was ignored?  
 *[Select TWO correct answers]*
 
-- [ ] **A.** It extracts cross-cutting operational and networking concerns (mTLS, telemetry, tracing, retries, traffic routing) out of the application code and pushes them into an external infrastructure sidecar proxy tier.
-- [ ] **B.** Developers can focus entirely on writing business domain logic in their respective programming languages without reimplementing networking and security libraries in each language.
-- [ ] **C.** It eliminates the need for computer servers by running code inside internet cables.
-- [ ] **D.** It automatically translates Python code into Java code at compile time.
-- [ ] **E.** It forces all microservices to use the same database password.
+- [ ] **A.** Microservices has a **heavy reliance on operational automation** (automated deployment, containers/VMs, service discovery, monitoring, failure recovery, distributed logging/tracing, configuration management).
+- [ ] **B.** Microservices gains flexibility **only if the organization has the engineering and operational maturity** to operate many independent services reliably.
+- [ ] **C.** Microservices can only succeed if all 50 services are rewritten in pure Assembly code.
+- [ ] **D.** The team failed because microservices systems do not require any logging or monitoring.
+- [ ] **E.** Microservices systems should never be deployed to virtual machines or containers.
 
 **ANSWER:** A, B
 
 **Explanation (විග්‍රහය):**
-* **Why A & B are CORRECT:** A Service Mesh deploys sidecar proxies alongside each service container, handling mTLS, telemetry, tracing, and retries transparently across polyglot languages, freeing engineers to focus on business domain logic.
-* **Why C, D & E are INCORRECT:** Software requires servers; service meshes do not transpile languages; and shared database passwords violate microservice security.
+* **Why A & B are CORRECT:** The lecture explicitly states: *"Microservices relies heavily on operational automation: Automated deployment, Containers or virtual machines, Service discovery, Monitoring and Failure recovery mechanisms, Distributed logging and tracing, Configuration management, API gateways etc. Microservices gains flexibility only if the organisation can operate many independent services reliably."*
+* **Why C, D & E are INCORRECT:** Assembly code is irrelevant; logging is essential; and containers/VMs are standard deployment units.
 
 ---
 
-### Scenario 6: Microservices Independent Scalability in Real Estate Portal
-A real estate property portal experiences asymmetric traffic:
-* **Property Search & Photo Browsing:** Experiences 1,000,000 requests per minute during evening hours.
-* **Mortgage Application Submissions:** Experiences only 50 requests per hour, but each requires intense background credit bureau checks.
+### Scenario 6: Independent Scalability Under Asymmetric Workloads
+A nationwide healthcare portal experiences heavily asymmetric traffic patterns:
+* **Appointment Search & Doctor Schedule Viewing:** Receives over 500,000 requests per minute during morning hours.
+* **Medical Record Archival & Regulatory Reporting:** Receives only 20 requests per day, but each request runs heavy background data aggregation.
 
-#### Question 20: Analyzing Independent Scalability
-How does Microservices Architecture support this asymmetric demand compared to a Monolith?  
+#### Question 20: Evaluating Independent Scalability
+How does Microservices Architecture accommodate this asymmetric workload compared to a Monolithic architecture according to the lecture?  
 *[Select TWO correct answers]*
 
-- [ ] **A.** The `SearchService` and `PhotoService` can be scaled horizontally to 200 container instances across multiple cloud availability zones, while `MortgageSubmissionService` runs on only 2 small instances, saving vast infrastructure costs.
-- [ ] **B.** In a monolith, the entire application (including heavy mortgage libraries and PDF generators) would have to be scaled to 200 full instances, wasting memory and cloud hosting budget.
-- [ ] **C.** Microservices require all services to run on the exact same number of instances regardless of load.
-- [ ] **D.** Photo browsing can only be supported if the application is written in Assembly language.
-- [ ] **E.** Monoliths scale 1,000 times cheaper than microservices under asymmetric load.
+- [ ] **A.** The `AppointmentSearchService` can be scaled horizontally to dozens of container instances to handle peak search traffic, while `ReportingService` runs on a single small instance, optimizing resource utilization.
+- [ ] **B.** In a monolithic architecture, the entire application (including the heavy reporting components) would have to be replicated across all high-capacity servers, resulting in wasteful resource consumption.
+- [ ] **C.** Microservices mandates that every service must always run on the exact same number of server instances regardless of traffic.
+- [ ] **D.** Monolithic architectures scale far more cost-effectively under asymmetric traffic than microservices.
+- [ ] **E.** Microservices architecture does not support horizontal scalability.
 
 **ANSWER:** A, B
 
 **Explanation (විග්‍රහය):**
-* **Why A & B are CORRECT:** Fine-grained elasticity is a crowning strength of microservices. Asymmetric workloads allow high-traffic services (search/photos) to scale independently without wasting compute resources replicating low-traffic services (mortgage submission).
-* **Why C, D & E are INCORRECT:** Services scale independently (not identically); assembly is unnecessary; and scaling entire monoliths under asymmetric load is far more wasteful.
+* **Why A & B are CORRECT:** Lecture 05 highlights **Independent Scalability** as a core driver for distribution and a hallmark strength of microservices (5-star scalability). High-traffic domain services scale independently without duplicating low-demand services, unlike monoliths where the entire unit must be replicated.
+* **Why C, D & E are INCORRECT:** Microservices scale independently (not identically); scaling whole monoliths for asymmetric load is wasteful; and microservices has 5-star scalability.

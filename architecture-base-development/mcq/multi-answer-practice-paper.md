@@ -23,15 +23,15 @@ According to Mark Richards and Neal Ford, software architecture is defined acros
 
 ---
 
-### Question 2: Coupling Metrics & Instability (පරායත්තතා මිනුම් සහ අස්ථාවරත්වය)
-An architect calculates code metrics for a package within a Java application. The package has **8 incoming connections ($C_a = 8$)** from other packages and **2 outgoing dependencies ($C_e = 2$)** to external utilities. Which of the following statements are **CORRECT**?  
+### Question 2: Coupling: Afferent vs. Efferent (පරායත්තතාව: ලැබෙන සහ පිටතට යන සබඳතා)
+In software architecture, coupling concerns dependencies between software elements and helps architects understand how changes propagate through a system. Which of the following statements are **CORRECT** regarding **Afferent Coupling ($C_a$)** and **Efferent Coupling ($C_e$)**?  
 *[Select TWO correct answers]*
 
-- [ ] **A.** The package possesses high Afferent Coupling ($C_a = 8$), meaning many other components depend on it.
-- [ ] **B.** The Instability Index ($I = \frac{C_e}{C_a + C_e}$) of this package is **0.20**, classifying it as a **highly stable (ස්ථාවර)** package that is resilient to external ripple effects.
-- [ ] **C.** The Instability Index ($I$) of this package is **0.80**, indicating that it is highly fragile and will break easily when other packages change.
-- [ ] **D.** The package has high Efferent Coupling ($C_e = 8$), indicating it is heavily burdened by external system calls.
-- [ ] **E.** A package with an Instability score close to 0 is an anti-pattern and should always be refactored to have higher outgoing dependencies.
+- [ ] **A.** **Afferent Coupling ($C_a$)** measures **incoming connections** to a software artifact (*"Who depends on this artifact?"*).
+- [ ] **B.** **Efferent Coupling ($C_e$)** measures **outgoing connections** from a software artifact (*"Who does this artifact depend on?"*).
+- [ ] **C.** Afferent coupling measures the physical temperature of the server room.
+- [ ] **D.** High efferent coupling means that many other packages depend on this artifact and changes will ripple out to them.
+- [ ] **E.** Afferent and efferent coupling only apply to hardware network cables and cannot be applied to software code.
 
 ---
 
@@ -166,12 +166,10 @@ Which of the following architectural tactics correctly address these required Qu
 ---
 
 ### Answer to Question 2: **A, B**
-* **Why A is CORRECT:** Afferent Coupling ($C_a$) measures **incoming dependencies** (how many other components call this package). Here $C_a = 8$, meaning 8 external packages rely on it.
-* **Why B is CORRECT:** The Robert C. Martin Instability formula is:
-  $$I = \frac{C_e}{C_a + C_e} = \frac{2}{8 + 2} = \frac{2}{10} = 0.20$$
-  An instability score of **$0.20$ (close to 0)** indicates a **highly stable package (ඉතා ස්ථාපිත සංරචකයක්)**. It is hard to change because many other modules depend on it, but it is not easily disrupted by changes in external packages.
-* **Why C & D are INCORRECT:** $C_e$ is 2 (not 8), and $I$ is 0.20 (not 0.80).
-* **Why E is INCORRECT:** Core framework packages and utility foundations naturally have $I \approx 0$; this is expected and healthy, not an anti-pattern.
+* **Why A & B are CORRECT:** In the lecture slides on coupling:
+  * **Afferent Coupling ($C_a$)** is defined as incoming connections to a software artifact (indicates responsibility; who depends on me).
+  * **Efferent Coupling ($C_e$)** is defined as outgoing connections from a software artifact (indicates dependencies on outside artifacts; who do I depend on).
+* **Why C, D & E are INCORRECT:** Server room temperature has nothing to do with coupling (C); high efferent coupling indicates that *this* artifact depends on outside components, not the other way around (D); and coupling metrics apply directly to software modules and packages (E).
 
 ---
 
@@ -233,7 +231,7 @@ Which of the following architectural tactics correctly address these required Qu
 
 ### Answer to Question 9: **A, C**
 * **Why A is CORRECT:** Moving client-specific plugins to remote microservices decouples deployment, but incurs the unavoidable penalty of network latency, serialization (JSON/Protobuf), and network failure modes (Distributed Computing Fallacies).
-* **Why C is CORRECT:** Operating separate remote microservices requires deploying API gateways, health check monitors, automated CI/CD pipelines, and circuit breakers, whereas local in-process plugins run inside the same memory space with simple local method calls.
+* **Why C is CORRECT:** Operating separate remote microservices requires deploying API gateways, health check monitors, automated CI/CD pipelines, and failure recovery mechanisms, whereas local in-process plugins run inside the same memory space with simple local method calls.
 * **Why B is INCORRECT:** Remote microservices do not provide zero latency or transactional simplicity; local plugins do.
 * **Why D is INCORRECT:** Code reusability is not eliminated by choosing remote services.
 * **Why E is INCORRECT:** Distributed networks add *more* failure points, not fewer.

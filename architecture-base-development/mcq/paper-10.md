@@ -98,21 +98,21 @@ What does an individual **Processing Unit (PU - සැකසුම් ඒකක�
 
 ---
 
-### Question 6: The Role of the Data Pump in Space-Based Architecture (දත්ත පොම්පය)
-In Space-Based Architecture, how does data eventually persist to a permanent relational database on physical disk?  
+### Question 6: Asynchronous Database Persistence in Space-Based Architecture (අසමමුහුර්ත දත්ත සමුදාය ස්ථීර කිරීම)
+According to the lecture, how does **Space-Based Architecture** handle transactional data and database persistence to eliminate the database bottleneck?  
 *[Select TWO correct answers]*
 
-- [ ] **A.** A **Data Pump (දත්ත පොම්පය)** asynchronously reads in-memory updates from the data grid and writes them to the persistent database out-of-band.
-- [ ] **B.** Because persistence occurs asynchronously in the background, user transactions do not wait for slow disk I/O, maintaining sub-millisecond response times.
-- [ ] **C.** The Data Pump is a mechanical water pump used to cool server rooms.
-- [ ] **D.** Persistent databases are never updated and all data is permanently lost when servers restart.
-- [ ] **E.** The data pump requires software developers to manually type database rows every night.
+- [ ] **A.** **Asynchronous Persistence (අසමමුහුර්ත ස්ථීර කිරීම):** Persistent database updates occur asynchronously in the background, so the database is no longer involved in every normal application transaction.
+- [ ] **B.** **In-Memory Caching (මතකයේ රඳවාගැනීම):** Transactional data is held primarily in memory, and replicated in-memory caching across Processing Units is the standard model.
+- [ ] **C.** The central database must execute synchronous row locks on every single web browser click.
+- [ ] **D.** Persistent databases are never updated and all transactions are permanently deleted upon server restart.
+- [ ] **E.** All database writes must be printed on physical paper rolls before transactions complete.
 
 **ANSWER:** A, B
 
 **Explanation (විග්‍රහය):**
-* **Why A & B are CORRECT:** The Data Pump asynchronously pushes in-memory updates to disk storage out-of-band. The user's transaction finishes in memory in microseconds, eliminating disk I/O wait times.
-* **Why C, D & E are INCORRECT:** It is a software component (not a water pump); data persists safely; and manual typing is absurd.
+* **Why A & B are CORRECT:** The lecture explicitly states: *"Space-Based Architecture removes the central database as a synchronous constraint in normal transaction processing. Instead: Requests are processed by Processing Units; Transactional data is held primarily in memory; Replicated in-memory caching is the standard model; Persistent database updates occur asynchronously; The database is no longer involved in every normal application transaction."*
+* **Why C, D & E are INCORRECT:** SBA explicitly eliminates synchronous database constraints from transactions; persistent updates occur asynchronously without data loss; and physical paper rolls are absurd.
 
 ---
 
@@ -174,21 +174,21 @@ Space-Based Architecture utilizes **Virtualized Middleware (ප්‍රතී�
 
 ---
 
-### Question 10: Event Sourcing Pattern (සිදුවීම් මූල්‍යකරණ රටාව)
-How does the **Event Sourcing Pattern** fundamentally alter traditional database state persistence?  
-*[Select TWO correct answers]*
+### Question 10: When to Choose Event-Driven Architecture vs. Request-Based Architecture (EDA සහ Request-Based අතර තෝරාගැනීම)
+According to Lecture 05, under what conditions is **Event-Driven Architecture (EDA)** suitable, and when is a **Request-Based model** preferable?  
+*[Select THREE correct answers]*
 
-- [ ] **A.** Instead of storing only the *current state* of an entity by overwriting rows (e.g., SQL `UPDATE`), the system appends every state-changing domain event to an immutable, append-only **Event Store**.
-- [ ] **B.** The current state of an entity is reconstructed at any point in time by replaying its historical stream of domain events from the beginning of time.
-- [ ] **C.** Event sourcing requires all database records to be wiped clean every 60 seconds.
-- [ ] **D.** Event sourcing proves that relational databases can never be used in software.
-- [ ] **E.** Event sourcing forces all events to be written in binary Morse code.
+- [ ] **A.** **EDA is Suitable:** When the business problem focuses on responding to things happening inside or outside the system, and processing is naturally asynchronous.
+- [ ] **B.** **EDA is Suitable:** When high responsiveness, performance, high scalability, and fault tolerance are required through parallel and decoupled processing.
+- [ ] **C.** **EDA is Suitable:** When processing flows are dynamic rather than strictly deterministic.
+- [ ] **D.** When well-structured, deterministic data-driven certainty and strict synchronous workflow control are required (this is when a request-based model is preferable instead).
+- [ ] **E.** When the system must run without using any computer CPU or network connections.
 
-**ANSWER:** A, B
+**ANSWER:** A, B, C
 
 **Explanation (විග්‍රහය):**
-* **Why A & B are CORRECT:** Event Sourcing records every state change as an immutable event stream. Current state is derived by replaying events, providing a 100% audit log, temporal queries (time-travel debugging), and zero lost historical data.
-* **Why C, D & E are INCORRECT:** Wiping databases is destructive, relational databases can store event streams, and Morse code is irrelevant.
+* **Why A, B & C are CORRECT:** Slide lines 566–582 explicitly state: *"EDA is suitable when: The business problem focuses on responding to things happening inside or outside the system; Processing is naturally asynchronous; High responsiveness and performance are required; High scalability and fault tolerance are important; The workflow benefits from parallel and decoupled processing; Processing flows are dynamic rather than strictly deterministic. For well-structured, data-driven requests where certainty and workflow control are more important, a request-based model is generally preferable."*
+* **Why D & E are INCORRECT:** Option D describes when a request-based model is preferable (not EDA); and computing without CPU or networks is impossible.
 
 ---
 
@@ -282,7 +282,7 @@ In the previous monolithic design, the relational database locked up immediately
 The lead architect refactors the ticketing engine into a **Space-Based Architecture (SBA)**:
 * Ticket inventory is loaded into an In-Memory Data Grid replicated across 30 Processing Units.
 * Seat reservation transactions execute directly in RAM in 200 microseconds.
-* A Data Pump asynchronously pushes confirmed purchases to a permanent MySQL database out-of-band.
+* Persistent database updates occur asynchronously to a permanent MySQL database out-of-band without blocking user transactions.
 
 #### Question 15: Evaluating the Space-Based Ticket Solution
 Why does Space-Based Architecture succeed where traditional database architectures fail?  

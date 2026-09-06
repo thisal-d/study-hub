@@ -13,7 +13,7 @@ What is the core distinction between an **Architectural Style (ගෘහ නි�
 *[Select TWO correct answers]*
 
 - [ ] **A.** An **Architectural Style** defines the overarching, macro-level structural topology and organizational shape of the entire software system (e.g., Layered, Microservices).
-- [ ] **B.** An **Architectural Pattern** provides a localized, reusable solution to a specific architectural problem within a system (e.g., Circuit Breaker, Saga, CQRS).
+- [ ] **B.** An **Architectural Pattern** provides a localized, reusable solution to a specific design or implementation problem within an architecture.
 - [ ] **C.** An architectural style only applies to hardware computer chips, while a pattern applies to CSS styling.
 - [ ] **D.** An architectural pattern can never be used inside an architectural style.
 - [ ] **E.** Architectural styles and patterns are identical terms with zero conceptual difference.

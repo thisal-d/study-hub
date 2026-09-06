@@ -124,7 +124,7 @@ How does the service granularity of **Service-Based Architecture** compare to **
 A primary defining trait of Service-Based Architecture is the **Shared Database**. What are the major **advantages and trade-offs** of this approach?  
 *[Select THREE correct answers]*
 
-- [ ] **A.** **Advantage:** Preserves simple **ACID Transactions** across services, avoiding complex distributed transaction patterns like Two-Phase Commit (2PC) or Sagas.
+- [ ] **A.** **Advantage:** Preserves simple **ACID Transactions** within domain boundaries using a shared database, avoiding complex distributed data consistency and workflow coordination problems.
 - [ ] **B.** **Advantage:** Lowers initial operational and infrastructure costs compared to managing dozens of distinct physical databases.
 - [ ] **C.** **Trade-off / Risk:** The shared database acts as a **Single Point of Failure (SPOF)** and a scalability bottleneck for the entire system.
 - [ ] **D.** **Advantage:** The shared database makes network latency drop to negative numbers.
@@ -232,7 +232,7 @@ How many **Architectural Quanta** exist in a standard Service-Based Architecture
 According to Richards & Ford's characteristic rating matrix, what are the primary **strengths** of Service-Based Architecture compared to Microservices?  
 *[Select TWO correct answers]*
 
-- [ ] **A.** **Lower Operational & Architectural Complexity:** SBA avoids the distributed transaction nightmares (Sagas), service mesh overhead, and multi-database eventual consistency challenges of microservices.
+- [ ] **A.** **Lower Operational & Architectural Complexity:** SBA provides a relatively simple distributed topology and lower cost ($$) than microservices, avoiding excessive service granularity, complex distributed workflow coordination, and heavy operational overhead.
 - [ ] **B.** **Easier Migration Path:** It is significantly easier and cheaper to migrate a legacy monolith to 6 coarse-grained services with a shared database than to 50 microservices with separate databases.
 - [ ] **C.** SBA provides infinite elasticity and 100% fault isolation on the data tier.
 - [ ] **D.** SBA completely eliminates the need for software developers.
@@ -272,9 +272,9 @@ What is the mathematical factor of slowdown, and what architectural lesson does 
 ### Scenario 1: Mitigating Network Unreliability (Fallacy 1)
 A banking frontend calls an external credit check service over the public internet. Occasionally, network packets drop, causing client requests to hang indefinitely and exhaust the web server's thread pool.
 
-The architecture team introduces two patterns:
-1. **Timeout Tactic:** Setting a strict 2-second timeout on all outbound HTTP calls.
-2. **Circuit Breaker Pattern:** If 5 consecutive outbound calls time out, the circuit "trips" open, instantly returning a graceful fallback response without hitting the failing network.
+The architecture team introduces two mechanisms:
+1. **Timeout Tactic:** Setting a strict 2-second timeout on all outbound remote calls.
+2. **Automated Fallback & Fault Recovery:** If remote calls fail or time out, the system automatically returns a cached graceful fallback response without stalling user requests.
 
 #### Question 15: Evaluating the Fault Tolerance Mechanism
 Which Distributed Computing Fallacy is directly addressed, and what architectural quality is protected?  
@@ -283,14 +283,14 @@ Which Distributed Computing Fallacy is directly addressed, and what architectura
 - [ ] **A.** It directly addresses **Fallacy 1 ("The network is reliable")** by acknowledging that networks fail and ensuring calls do not hang forever.
 - [ ] **B.** It protects **System Availability and Fault Tolerance**, preventing thread pool exhaustion from cascading into a total application outage.
 - [ ] **C.** It addresses Fallacy 4 by revealing all user passwords to the public.
-- [ ] **D.** The Circuit Breaker pattern guarantees that the external credit check service will never crash again.
+- [ ] **D.** The fallback mechanism guarantees that the external credit check network will never drop a packet again.
 - [ ] **E.** Timeouts cause the server's hard disk to be wiped clean.
 
 **ANSWER:** A, B
 
 **Explanation (විග්‍රහය):**
-* **Why A & B are CORRECT:** Networks are unreliable (Fallacy 1). Timeouts and Circuit Breakers prevent network stalls from exhausting server worker threads, protecting application availability.
-* **Why C, D & E are INCORRECT:** Circuit breakers protect data (not leak passwords); cannot prevent external server crashes; and do not wipe disks.
+* **Why A & B are CORRECT:** Networks are unreliable (Fallacy 1). Timeouts and automated fallback recovery prevent network stalls from exhausting server worker threads, protecting application availability.
+* **Why C, D & E are INCORRECT:** Fallback responses protect operations (not leak passwords); software mechanisms cannot magically prevent physical network packet drops; and do not wipe disks.
 
 ---
 

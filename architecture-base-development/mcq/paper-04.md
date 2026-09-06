@@ -44,39 +44,39 @@ What is the core distinction between **Cohesion (සංගතිභාවය)** 
 
 ---
 
-### Question 3: The Cohesion Spectrum (සංගතිතා මට්ටම් වර්ගීකරණය)
-Computer science recognizes a spectrum of cohesion types ranging from strongest (most desirable) to weakest (least desirable). Which cohesion type is recognized as the **Strongest and Most Desirable (ශක්තිමත්ම සහ වඩාත්ම යෝග්‍ය)**?  
-*[Select ONE correct answer]*
+### Question 3: Characteristics of a Highly Cohesive Module (ඉහළ සංගතිභාවයක් සහිත මොඩියුලයක ලක්ෂණ)
+According to the lecture, cohesion refers to how closely the parts of a module belong together. Which of the following are recognized as defining characteristics of a **highly cohesive module**?  
+*[Select THREE correct answers]*
 
-- [ ] **A.** Coincidental Cohesion (අහඹු සංගතිභාවය)
-- [ ] **B.** Logical Cohesion (තාර්කික සංගතිභාවය)
-- [ ] **C.** Functional Cohesion (ක්‍රියාකාරී සංගතිභාවය)
-- [ ] **D.** Temporal Cohesion (කාලීන සංගතිභාවය)
-- [ ] **E.** Procedural Cohesion (ක්‍රියාපටිපාටික සංගතිභාවය)
+- [ ] **A.** Contains strongly related behaviour (දැඩි ලෙස සම්බන්ධිත හැසිරීම් අඩංගු වේ).
+- [ ] **B.** Represents a meaningful purpose (අර්ථවත් අරමුණක් නියෝජනය කරයි).
+- [ ] **C.** Contains the elements necessary to perform that purpose (එම අරමුණ ඉටු කිරීමට අවශ්‍ය අංග අඩංගු වේ).
+- [ ] **D.** Contains 50 unrelated functions grouped together by coincidence.
+- [ ] **E.** Completely avoids having any internal classes or functions.
 
-**ANSWER:** C
+**ANSWER:** A, B, C
 
 **Explanation (විග්‍රහය):**
-* **Why C is CORRECT:** **Functional Cohesion** is the highest and most desirable form of cohesion, where every element inside the module contributes directly to performing a single, well-defined function (e.g., calculating compound interest).
-* **Why A, B, D & E are INCORRECT:** Coincidental cohesion is the worst/weakest form. Logical, temporal, and procedural cohesion represent lower, less cohesive levels.
+* **Why A, B & C are CORRECT:** The lecture slide on Cohesion explicitly states that a highly cohesive module: (1) contains strongly related behaviour, (2) represents a meaningful purpose, and (3) contains the elements necessary to perform that purpose.
+* **Why D & E are INCORRECT:** Grouping unrelated functions is an anti-pattern (Big Ball of Mud), and modules must contain the elements necessary to fulfill their purpose.
 
 ---
 
-### Question 4: The Weakest Form of Cohesion (දුර්වලම සංගතිතා මට්ටම)
-Which form of cohesion represents the **Weakest and Least Desirable (දුර්වලම සහ අවම යෝග්‍ය)** state, where parts of a module are grouped together purely by accident or convenience without any meaningful relationship?  
-*[Select ONE correct answer]*
+### Question 4: Modularity Versus Granularity (මොඩියුලර්භාවය සහ කැටිතිභාවය)
+What does the lecture identify as the critical trade-off when considering **Modularity Versus Granularity**?  
+*[Select TWO correct answers]*
 
-- [ ] **A.** Functional Cohesion
-- [ ] **B.** Sequential Cohesion
-- [ ] **C.** Coincidental Cohesion (අහඹු සංගතිභාවය - e.g., a generic "Utilities" or "Misc" class)
-- [ ] **D.** Communicational Cohesion
-- [ ] **E.** Object-Oriented Cohesion
+- [ ] **A.** Dividing something that is naturally cohesive may introduce **additional coupling** between the resulting modules.
+- [ ] **B.** The architectural goal is generally to create modules containing elements that **meaningfully belong together**.
+- [ ] **C.** Finer granularity always guarantees zero coupling across the entire system.
+- [ ] **D.** Dividing a module into 1,000 tiny classes automatically makes the system execute 10 times faster.
+- [ ] **E.** Granularity has no relationship to modularity or coupling.
 
-**ANSWER:** C
+**ANSWER:** A, B
 
 **Explanation (විග්‍රහය):**
-* **Why C is CORRECT:** **Coincidental Cohesion** occurs when tasks are thrown into a class simply because a developer did not know where else to put them (e.g., `GeneralHelper` containing print functions, tax calculations, and string reversals). It is an anti-pattern.
-* **Why A, B, D & E are INCORRECT:** Functional, sequential, and communicational cohesion exhibit structured relationships among their elements.
+* **Why A & B are CORRECT:** The lecture explicitly notes: *"Dividing something that is naturally cohesive may introduce additional coupling between the resulting modules (Modularity Versus Granularity). The architectural goal is generally to create modules containing elements that meaningfully belong together."*
+* **Why C, D & E are INCORRECT:** Finer granularity often increases communication and coupling between parts; splitting does not speed up CPU execution; and granularity directly impacts coupling.
 
 ---
 
@@ -98,21 +98,21 @@ In architectural code analysis, what do **Afferent Coupling ($C_a$)** and **Effe
 
 ---
 
-### Question 6: The Robert C. Martin Instability Index Formula (අස්ථාවරත්ව දර්ශක සූත්‍රය)
-What is the mathematical formula for the **Instability Index ($I$)** of a module as defined by Robert C. Martin, and what is its valid numerical range?  
+### Question 6: Change Propagation and Coupling (පරායත්තතාව සහ වෙනස්කම් පැතිරීම)
+Why is understanding coupling essential when evaluating software architecture?  
 *[Select TWO correct answers]*
 
-- [ ] **A.** Formula: $I = \frac{C_e}{C_a + C_e}$ (Efferent coupling divided by total coupling).
-- [ ] **B.** Range: $I$ ranges from **0.0 (Maximally Stable / අප්‍රතිරෝධී / ස්ථාවර)** to **1.0 (Maximally Instable / ඉතා අස්ථාවර)**.
-- [ ] **C.** Formula: $I = C_a \times C_e \times 100$.
-- [ ] **D.** Range: $I$ ranges from $-100$ to $+100$.
-- [ ] **E.** Formula: $I = \frac{C_a}{C_e}$.
+- [ ] **A.** Coupling concerns dependencies between software elements and helps architects understand **how changes can propagate through a system**.
+- [ ] **B.** High external coupling creates ripple effects where modifying one component forces changes and regressions in dependent components.
+- [ ] **C.** Coupling measures the electrical voltage running through the computer's CPU power cable.
+- [ ] **D.** High coupling guarantees that all software modules can be deployed completely independently without testing.
+- [ ] **E.** Coupling only exists if the software is written in Python.
 
 **ANSWER:** A, B
 
 **Explanation (විග්‍රහය):**
-* **Why A & B are CORRECT:** The Instability metric is defined as $I = \frac{C_e}{C_a + C_e}$. A value of 0 means zero outgoing dependencies (highly stable, independent). A value of 1 means zero incoming dependencies and all outgoing (highly instable, easily affected by changes).
-* **Why C, D & E are INCORRECT:** These represent incorrect formulas and invalid ranges.
+* **Why A & B are CORRECT:** As stated in the lecture, coupling concerns dependencies between software elements, and understanding coupling allows architects to trace and control how changes propagate through a system.
+* **Why C, D & E are INCORRECT:** Coupling is not electrical voltage; high coupling prevents independent deployment; and coupling applies to all software languages.
 
 ---
 
@@ -120,129 +120,111 @@ What is the mathematical formula for the **Instability Index ($I$)** of a module
 
 ---
 
-### Question 7: Identifying Sequential vs. Communicational Cohesion
-In a software component:
-* Subsystem 1: An image pipeline takes raw sensor pixels, outputs calibrated pixels, which are then passed to a contrast enhancer, which passes them to an edge detector (the output of one step is the direct input to the next).
-* Subsystem 2: A customer profile manager takes a `CustomerID` and uses it to fetch personal details, fetch purchase history, and fetch loyalty points (different operations operating on the exact same input data).
+### Question 7: Static Connascence Types (ස්ථිතික සහජාතීත්වය)
+Static connascence represents coupling that can be identified directly from the source code. Which of the following are recognized in the lecture as forms of **Static Connascence**?  
+*[Select THREE correct answers]*
 
-Which cohesion types are represented?  
-*[Select TWO correct answers]*
+- [ ] **A.** Connascence of Name (නම) & Connascence of Type (වර්ගය).
+- [ ] **B.** Connascence of Meaning (අර්ථය) & Connascence of Position (පිහිටුම).
+- [ ] **C.** Connascence of Algorithm (ඇල්ගොරිතමය).
+- [ ] **D.** Connascence of Quantum Gravity.
+- [ ] **E.** Connascence of Keyboard Layout.
 
-- [ ] **A.** Subsystem 1 exhibits **Sequential Cohesion (අනුක්‍රමික සංගතිභාවය)** because the output of one processing element is the input to the next element.
-- [ ] **B.** Subsystem 2 exhibits **Communicational Cohesion (සන්නිවේදනාත්මක සංගතිභාවය)** because multiple operations operate on the same input data or contribute to the same output data.
-- [ ] **C.** Subsystem 1 exhibits Coincidental Cohesion because image pixels are random.
-- [ ] **D.** Subsystem 2 exhibits Temporal Cohesion because customers have birthdates.
-- [ ] **E.** Both subsystems exhibit zero cohesion because they are written in Java.
-
-**ANSWER:** A, B
+**ANSWER:** A, B, C
 
 **Explanation (විග්‍රහය):**
-* **Why A & B are CORRECT:** Data pipelining (output becomes input) is **Sequential Cohesion**. Multiple methods operating on the same underlying data structure is **Communicational Cohesion**.
-* **Why C, D & E are INCORRECT:** Neither is coincidental or temporal; and programming language choice does not invalidate cohesion.
+* **Why A, B & C are CORRECT:** The lecture slide explicitly defines the five types of Static Connascence: Name, Type, Meaning, Position, and Algorithm.
+* **Why D & E are INCORRECT:** Quantum gravity and keyboard layouts are unrelated distractors.
 
 ---
 
-### Question 8: Calculating Instability ($I$) for Core Foundation Package
-Package `com.bank.core.model` contains central domain entities (`Account`, `Transaction`). 
-* There are **25 external packages** in the application that import and use these entity classes ($C_a = 25$).
-* The package imports **zero external packages** ($C_e = 0$).
+### Question 8: Dynamic Connascence Types (ගතික සහජාතීත්වය)
+Dynamic connascence concerns coupling that occurs during execution at runtime. Which of the following are recognized in the lecture as forms of **Dynamic Connascence**?  
+*[Select FOUR correct answers]*
 
-What is the **Instability Index ($I$)** of this package, and what does it indicate?  
-*[Select TWO correct answers]*
+- [ ] **A.** Connascence of Execution (ක්‍රියාත්මක අනුපිළිවෙල).
+- [ ] **B.** Connascence of Timing (කාල නියමය).
+- [ ] **C.** Connascence of Values (අගයන්).
+- [ ] **D.** Connascence of Identity (අනන්‍යතාවය).
+- [ ] **E.** Connascence of Optical Glass.
 
-- [ ] **A.** The Instability Index is $I = \frac{0}{25 + 0} = \mathbf{0.0}$.
-- [ ] **B.** An Instability of **$0.0$** indicates that the package is **Maximally Stable (උපරිම ලෙස ස්ථාවර)**; changing it is difficult because 25 other packages depend on it.
-- [ ] **C.** The Instability Index is $I = 1.0$, meaning it will break at any moment.
-- [ ] **D.** The package is an anti-pattern and must be immediately deleted.
-- [ ] **E.** An Instability of 0.0 indicates that no other code in the application can see this package.
-
-**ANSWER:** A, B
+**ANSWER:** A, B, C, D
 
 **Explanation (විග්‍රහය):**
-* **Why A & B are CORRECT:** With $C_e = 0$, $I = 0.0$. In Robert C. Martin's metric, $I = 0$ signifies maximum stability. A stable package is heavily depended upon, making it resilient to ripple effects but hard to alter without impacting dependents.
-* **Why C, D & E are INCORRECT:** $I$ is 0.0 (not 1.0); core entity models are naturally stable foundations (not anti-patterns); and other code can see it (proven by $C_a = 25$).
+* **Why A, B, C & D are CORRECT:** The lecture slide lists the four types of Dynamic Connascence: Execution, Timing, Values, and Identity, which arise from how software elements interact at runtime.
+* **Why E is INCORRECT:** Optical glass is a physical material, not an architectural connascence type.
 
 ---
 
-### Question 9: Calculating Instability ($I$) for UI Controller Package
-Package `com.bank.web.controllers` contains Spring MVC REST controllers:
-* No other packages in the system import these controllers ($C_a = 0$).
-* These controllers import **12 different services, DTOs, and utility packages** to handle requests ($C_e = 12$).
+### Question 9: Static vs. Dynamic Connascence (ස්ථිතික සහ ගතික සහජාතීත්වය සංසන්දනය)
+According to the comparison table in the lecture slides, how do **Static Connascence** and **Dynamic Connascence** compare?  
+*[Select THREE correct answers]*
 
-What is the **Instability Index ($I$)** of this package, and what does it indicate?  
-*[Select TWO correct answers]*
+- [ ] **A.** Static connascence exists at the **source-code level** and can be identified through code analysis.
+- [ ] **B.** Dynamic connascence exists at **runtime** and depends on execution behaviour.
+- [ ] **C.** Static forms are generally **easier to detect and refactor**, making weaker static forms preferred over stronger dynamic forms.
+- [ ] **D.** Dynamic connascence is always easier to manage than static connascence.
+- [ ] **E.** Static connascence can only be identified after the software is deployed to production.
 
-- [ ] **A.** The Instability Index is $I = \frac{12}{0 + 12} = \mathbf{1.0}$.
-- [ ] **B.** An Instability of **$1.0$** indicates that the package is **Maximally Instable / Flexible (උපරිම ලෙස අස්ථාවර / පහසුවෙන් වෙනස් කළ හැකි)**; it is easy to change because no other packages depend on it.
-- [ ] **C.** The package is completely broken and cannot compile.
-- [ ] **D.** The Instability Index is 0.0 because controllers run in web browsers.
-- [ ] **E.** The package should be forced to have 100 incoming dependencies to become stable.
-
-**ANSWER:** A, B
+**ANSWER:** A, B, C
 
 **Explanation (විග්‍රහය):**
-* **Why A & B are CORRECT:** With $C_a = 0$ and $C_e = 12$, $I = 1.0$. In metric terms, "instable" simply means *flexible and easy to change without breaking other components*, which is normal and desirable for top-level UI controllers.
-* **Why C, D & E are INCORRECT:** $I = 1.0$ does not mean broken code; controllers run on the server; and controllers should not be depended upon by lower tiers.
+* **Why A, B & C are CORRECT:** Directly from the lecture comparison table: Static is source-code level, identifiable via code analysis, and easier to detect/refactor; Dynamic is runtime, depends on execution, harder to manage, and can create significant runtime dependencies.
+* **Why D & E are INCORRECT:** Dynamic forms are harder to manage (not easier), and static forms are identified via source code analysis before runtime.
 
 ---
 
-### Question 10: The Abstractness Metric ($A$) (වියුක්තතා මිනුම)
-How is the **Abstractness ($A$)** of a software package calculated, and what do the values $A = 0$ and $A = 1$ represent?  
-*[Select TWO correct answers]*
+### Question 10: Properties of Connascence: Strength, Locality, and Degree (සහජාතීත්වයේ ලක්ෂණ)
+The lecture identifies three properties that help determine whether coupling is acceptable within a particular architectural boundary. What are these **Three Properties of Connascence**?  
+*[Select THREE correct answers]*
 
-- [ ] **A.** Formula: $A = \frac{\sum \text{Abstract Classes and Interfaces}}{\sum \text{Total Classes and Interfaces}}$.
-- [ ] **B.** A value of **$A = 0.0$** represents a **completely concrete package** (all implementations, no interfaces), while **$A = 1.0$** represents a **completely abstract package** (pure interfaces/abstract classes).
-- [ ] **C.** Abstractness measures the total number of spelling errors in variable names.
-- [ ] **D.** A value of $A = 1.0$ means the package can be run directly on a CPU without any concrete classes.
-- [ ] **E.** Abstractness is calculated by dividing the file size in megabytes by the price of the laptop.
+- [ ] **A.** **Strength (ශක්තිය):** How easy the coupling is to refactor.
+- [ ] **B.** **Locality (ප්‍රාදේශීයතාව):** How close the connascent elements are to each other.
+- [ ] **C.** **Degree (ප්‍රමාණය):** How many elements are affected by the dependency.
+- [ ] **D.** **Weight (බර):** The physical gravitational weight of the computer in kilograms.
+- [ ] **E.** **Color (වර්ණය):** The RGB color code of the IDE theme.
 
-**ANSWER:** A, B
+**ANSWER:** A, B, C
 
 **Explanation (විග්‍රහය):**
-* **Why A & B are CORRECT:** Abstractness ($A$) is the ratio of abstract classes/interfaces to total types, spanning from 0 (completely concrete code) to 1 (pure abstractions/interfaces).
-* **Why C, D & E are INCORRECT:** Spelling errors, pure interface execution, and laptop prices have no connection to Abstractness.
+* **Why A, B & C are CORRECT:** The lecture explicitly defines Strength (how easy to refactor), Locality (how close elements are to each other), and Degree (how many elements are affected).
+* **Why D & E are INCORRECT:** Physical weight and screen colors are irrelevant distractors.
 
 ---
 
-### Question 11: Distance from the Main Sequence ($D$) (ප්‍රධාන අනුක්‍රමයේ සිට දුර)
-Robert C. Martin defines the **Main Sequence** as the ideal balance between Abstractness ($A$) and Instability ($I$), defined by the line $A + I = 1$. The normalized **Distance ($D$)** is calculated as:
-$$D = |A + I - 1|$$
-What do the extreme zones represent when a package deviates significantly from the Main Sequence?  
-*[Select TWO correct answers]*
+### Question 11: Managing Degree of Connascence (Meilir Page-Jones Guidelines)
+Meilir Page-Jones, who put forward the concept of connascence, provides three fundamental guidelines for architects. What are these **Three Guidelines**?  
+*[Select THREE correct answers]*
 
-- [ ] **A.** **The Zone of Pain (වේදනා කලාපය - $A \approx 0, I \approx 0$):** Highly stable (many incoming dependents) but completely concrete (no interfaces), making it rigid, fragile, and painful to modify.
-- [ ] **B.** **The Zone of Uselessness (නිෂ්ඵල කලාපය - $A \approx 1, I \approx 1$):** Highly abstract (pure interfaces) but completely instable (no other packages depend on it), representing useless over-engineered abstractions.
-- [ ] **C.** **The Main Sequence:** An anti-pattern that all software architects must actively avoid.
-- [ ] **D.** The Zone of Pain is an area where software code runs twice as fast as normal code.
-- [ ] **E.** A distance of $D = 0$ indicates that the package should be deleted immediately.
+- [ ] **A.** **Minimize overall connascence** by creating encapsulated elements.
+- [ ] **B.** **Minimize connascence that crosses encapsulation boundaries.**
+- [ ] **C.** **Maximize connascence within encapsulation boundaries.**
+- [ ] **D.** Maximize connascence that crosses encapsulation boundaries to create global coupling.
+- [ ] **E.** Forbid any code from being encapsulated inside boundaries.
 
-**ANSWER:** A, B
+**ANSWER:** A, B, C
 
 **Explanation (විග්‍රහය):**
-* **Why A & B are CORRECT:** The **Zone of Pain** ($A=0, I=0$) is concrete and heavily depended upon, making changes painful. The **Zone of Uselessness** ($A=1, I=1$) is abstract with zero dependents, representing wasted boilerplate code.
-* **Why C, D & E are INCORRECT:** The Main Sequence ($D=0$) is the ideal balanced line; the Zone of Pain does not speed up code; and $D=0$ is the goal, not a reason for deletion.
+* **Why A, B & C are CORRECT:** As taught on the slide: (1) Minimize overall connascence by creating encapsulated elements, (2) Minimize connascence that crosses encapsulation boundaries, (3) Maximize connascence within encapsulation boundaries (where high cohesion and stronger internal relationships are acceptable).
+* **Why D & E are INCORRECT:** Crossing boundaries with strong connascence is an anti-pattern to be minimized, and encapsulation is essential.
 
 ---
 
-### Question 12: Cohesion: Temporal vs. Logical vs. Procedural
-Match the following scenarios with their corresponding cohesion type:
-1. An initialization routine that sets up the database connection, loads configuration files, and renders the startup splash screen because they all happen at application boot-up time.
-2. A single error-logging class containing a method `processInput(int flag)` with a huge switch statement that either formats dates, calculates VAT, or writes text to disk based on the integer `flag`.
-
-Which cohesion classifications are **CORRECT**?  
+### Question 12: Locality of Connascence (සහජාතීත්වයේ ප්‍රාදේශීයතාව)
+According to the lecture, how does the **distance** between software elements affect whether strong coupling is acceptable?  
 *[Select TWO correct answers]*
 
-- [ ] **A.** Scenario 1 exhibits **Temporal Cohesion (කාලීන සංගතිභාවය)** because the tasks are grouped together solely because they execute during the same timeframe (application startup).
-- [ ] **B.** Scenario 2 exhibits **Logical Cohesion (තාර්කික සංගතිභාවය)** because the operations are grouped into a single routine that selects an operation based on an arbitrary control flag.
-- [ ] **C.** Scenario 1 exhibits Functional Cohesion.
-- [ ] **D.** Scenario 2 exhibits Sequential Cohesion.
-- [ ] **E.** Both scenarios exhibit perfect Object-Oriented design.
+- [ ] **A.** Strong coupling is **less problematic** when the coupled elements are close together (e.g., **within the same module**).
+- [ ] **B.** As the distance between software elements increases (across separate modules or systems), **weaker forms of connascence should be preferred**.
+- [ ] **C.** Strong coupling across separate remote systems is always preferred over loose coupling.
+- [ ] **D.** Locality means all software must be developed in the same physical city.
+- [ ] **E.** Distance between software elements has zero architectural significance.
 
 **ANSWER:** A, B
 
 **Explanation (විග්‍රහය):**
-* **Why A & B are CORRECT:** Grouping tasks because they run at the same time (e.g., startup/shutdown routines) is **Temporal Cohesion**. Grouping unrelated tasks into one method controlled by a flag/switch is **Logical Cohesion**.
-* **Why C, D & E are INCORRECT:** Neither is functional or sequential; both represent lower, less desirable forms of cohesion.
+* **Why A & B are CORRECT:** The lecture slide states: *"Strong coupling is less problematic when the coupled elements are close together. Within the same module, strong coupling may be acceptable. Across separate modules or systems, the same coupling becomes more problematic. As the distance between software elements increases, weaker forms of connascence should be preferred."*
+* **Why C, D & E are INCORRECT:** Strong coupling across remote systems causes fragility; locality refers to code/architectural distance; and distance is fundamentally significant.
 
 ---
 
@@ -265,22 +247,21 @@ What is the proper architectural assessment of this change?
 
 ---
 
-### Question 14: The Law of Demeter (Least Knowledge Principle) (ඩිමීටර්ගේ නියමය)
-The **Law of Demeter (LoD)**, or the Principle of Least Knowledge, states that an object should only invoke methods on: (1) itself, (2) its parameters, (3) objects it instantiates, or (4) its direct components.  
-How does the Law of Demeter improve software architecture?  
-*[Select TWO correct answers]*
+### Question 14: Creating Good Modules (හොඳ මොඩියුල නිර්මාණය කිරීම)
+According to the lecture slide on "Creating Good Modules", what three goals should a good architectural boundary attempt to achieve?  
+*[Select THREE correct answers]*
 
-- [ ] **A.** It prevents **"Train Wreck" coupling calls** (e.g., `order.getCustomer().getAddress().getCity().getZipCode()`), significantly reducing structural coupling.
-- [ ] **B.** It ensures that a change to an internal intermediate class does not trigger ripple effects throughout remote parts of the codebase.
-- [ ] **C.** It mandates that all software must be written in the Demeter programming language.
-- [ ] **D.** It forbids software from having any object-oriented classes.
-- [ ] **E.** It forces all method calls to execute across public internet REST endpoints.
+- [ ] **A.** **Keep related behaviour together (High cohesion).**
+- [ ] **B.** **Keep strongly dependent elements together (Localize coupling).**
+- [ ] **C.** **Reduce dependencies crossing the boundary (Low external coupling).**
+- [ ] **D.** Spread related behaviour randomly across 50 separate servers.
+- [ ] **E.** Maximize external dependencies crossing the boundary.
 
-**ANSWER:** A, B
+**ANSWER:** A, B, C
 
 **Explanation (විග්‍රහය):**
-* **Why A & B are CORRECT:** The Law of Demeter prevents cascading dot-navigation ("train wrecks"), reducing knowledge of external object structures and lowering coupling.
-* **Why C, D & E are INCORRECT:** Demeter is not a programming language; it promotes clean OOP; and it does not force REST communication.
+* **Why A, B & C are CORRECT:** The lecture slide on Creating Good Modules specifies: (1) Keep related behaviour together (High cohesion), (2) Keep strongly dependent elements together (Localize coupling), (3) Reduce dependencies crossing the boundary (Low external coupling).
+* **Why D & E are INCORRECT:** Spreading related behaviour destroys cohesion, and maximizing external dependencies creates fragile, coupled systems.
 
 ---
 
@@ -288,82 +269,74 @@ How does the Law of Demeter improve software architecture?
 
 ---
 
-### Scenario 1: Refactoring a "God Object" Utility Class
-An enterprise codebase contains a single 12,000-line class named `AppUtils.java`. It contains 140 static methods, including:
-* `calculateEmployeeTax()`
-* `compressJpegImage()`
-* `validateCreditCardChecksum()`
-* `formatGermanCurrency()`
-* `parseFtpServerLogs()`
+### Scenario 1: Unmanaged Complexity and the "Big Ball of Mud"
+An enterprise software system has grown over 5 years without deliberate architectural governance. 
+* Business logic, UI formatting, and database queries are intertwined in the same source files.
+* Modifying a minor calculation in one feature breaks three unrelated features in production.
+* Developers fear touching legacy code because nobody understands how dependencies spread across the system.
 
-Every single team in the company imports `AppUtils.java`. When Team A modifies a date helper method in `AppUtils`, Team B's tax calculations fail to compile.
-
-#### Question 15: Architectural Diagnosis and Remediation
-What type of cohesion does `AppUtils` exhibit, and how should it be refactored?  
+#### Question 15: Diagnosis of the System's Structural Breakdown
+Based on the lecture slides on "Complexity in Software Systems", what has occurred in this system?  
 *[Select TWO correct answers]*
 
-- [ ] **A.** `AppUtils` exhibits severe **Coincidental Cohesion (අහඹු සංගතිභාවය)**; it is a "God Object" anti-pattern that bundles unrelated responsibilities together.
-- [ ] **B.** It should be decomposed into separate, highly cohesive, single-responsibility domain classes (e.g., `TaxCalculator`, `ImageProcessor`, `CardValidator`, `CurrencyFormatter`).
-- [ ] **C.** `AppUtils` exhibits textbook Functional Cohesion and should be expanded to 50,000 lines.
-- [ ] **D.** The developers should rename the file to `SuperUtils.java` to fix the compilation bugs.
-- [ ] **E.** The class cannot be refactored because Java prohibits having more than one utility class.
+- [ ] **A.** The system has degraded into a **"Big Ball of Mud" (අවුල් ජාලයක්)** because responsibilities became mixed together and dependencies spread across the system without deliberate structural control.
+- [ ] **B.** Software does not remain well structured by accident; architecture must actively impose and preserve organization through modularity.
+- [ ] **C.** The system is in perfect architectural health and needs no restructuring.
+- [ ] **D.** The bugs occurred because the developers did not use mechanical keyboards.
+- [ ] **E.** The system should be thrown away and replaced with a single static HTML page.
 
 **ANSWER:** A, B
 
 **Explanation (විග්‍රහය):**
-* **Why A & B are CORRECT:** A giant class with unrelated functions exhibits Coincidental Cohesion. Decomposing it into focused, single-responsibility modules restores high cohesion and reduces coupling.
-* **Why C, D & E are INCORRECT:** It is coincidental (not functional); renaming files changes nothing; and Java allows multiple classes.
+* **Why A & B are CORRECT:** The lecture explicitly teaches that without deliberate structure, responsibilities become mixed together, dependencies spread, changes produce unexpected side effects, and the system gradually degrades into a "Big Ball of Mud". Software does not stay structured by accident; architecture must impose and preserve organization.
+* **Why C, D & E are INCORRECT:** Mixing responsibilities is flawed architecture; keyboards are irrelevant; and enterprise systems cannot run on static HTML.
 
 ---
 
-### Scenario 2: Analyzing a Package in the "Zone of Pain"
-In an online banking application, package `com.bank.database.raw` contains 40 raw, concrete SQL access classes:
-* **Abstractness ($A = 0.0$):** Zero interfaces or abstract classes; everything is hardcoded concrete implementations.
-* **Afferent Coupling ($C_a = 60$):** 60 other packages across the bank depend directly on these concrete database classes.
-* **Efferent Coupling ($C_e = 0$):** The package depends on nothing except the basic JDK.
-* **Instability ($I = \frac{0}{60+0} = 0.0$):** Maximally stable.
-* **Distance from Main Sequence:** $D = |0.0 + 0.0 - 1| = \mathbf{1.0}$.
+### Scenario 2: Analyzing Afferent Coupling and Blast Radius
+Package `com.core.security` provides authentication and token validation:
+* **28 external services and modules** in the enterprise platform import and call methods in `com.core.security` ($C_a = 28$).
+* `com.core.security` imports **zero external business modules** ($C_e = 0$).
 
-#### Question 16: Evaluation of the Package's Health
-Where does this package reside on the Robert C. Martin metrics graph, and what are the architectural consequences?  
+#### Question 16: Architectural Assessment of Afferent Coupling
+What does this coupling profile reveal to the software architect?  
 *[Select TWO correct answers]*
 
-- [ ] **A.** The package sits directly in the **Zone of Pain (වේදනා කලාපය)** ($A=0, I=0, D=1.0$).
-- [ ] **B.** Because the package is completely concrete ($A=0$) yet heavily depended upon ($C_a=60$), making any modifications to database queries is terrifyingly difficult, rigid, and causes massive ripple breaks across the bank.
-- [ ] **C.** The package sits in the Zone of Uselessness and should be deleted immediately.
-- [ ] **D.** The package is in the ideal Main Sequence and represents world-class architecture.
-- [ ] **E.** The package will automatically convert into a microservice when compiled.
+- [ ] **A.** The security package has **high Afferent Coupling ($C_a = 28$)**, indicating that it carries high responsibility and that many parts of the system depend on it.
+- [ ] **B.** Any breaking change made to method signatures or contracts in `com.core.security` will have a wide **change propagation blast radius**, potentially impacting all 28 dependent modules.
+- [ ] **C.** The package is completely unreferenced by the rest of the application.
+- [ ] **D.** The package has high efferent coupling because it makes 28 outgoing network calls.
+- [ ] **E.** High afferent coupling means the package will automatically delete its source code on Mondays.
 
 **ANSWER:** A, B
 
 **Explanation (විග්‍රහය):**
-* **Why A & B are CORRECT:** $A=0, I=0$ puts the package squarely in the Zone of Pain ($D=1.0$). Being completely concrete and widely used makes it rigid and painful to change.
-* **Why C, D & E are INCORRECT:** The Zone of Uselessness is $A=1, I=1$; it is far from the Main Sequence ($D=1.0$ vs $D=0$); and compilation does not create microservices.
+* **Why A & B are CORRECT:** Afferent Coupling ($C_a$) represents incoming connections to a software artifact. A high $C_a$ indicates that many external modules depend on it, meaning modifications carry a wide change propagation risk.
+* **Why C, D & E are INCORRECT:** $C_a = 28$ proves 28 dependents exist; $C_e = 0$ means zero outgoing dependencies; and deletion is absurd.
 
 ---
 
-### Scenario 3: Eliminating the "Zone of Pain" via Interfaces
-To rescue the package from Scenario 2, the lead architect introduces an abstraction layer:
-1. Every concrete database class is extracted behind a public interface (e.g., `IAccountRepository`).
-2. Dependent packages now import and depend strictly on the interface abstractions.
-3. The package now contains 40 interfaces and 40 implementations, so $A = \frac{40}{80} = 0.50$.
-4. Instability remains $I = 0.50$.
+### Scenario 3: Modularity vs. Granularity Trap in Order Management
+A development team breaks up the checkout process into 6 tiny separate packages: `CartLoader`, `ItemValidator`, `PriceAdder`, `TaxLookup`, `DiscountDeductor`, and `TotalComputer`.
+* Each package contains only a single 5-line method.
+* Computing an order requires 18 cross-package method calls with tightly coupled data transfer objects passing back and forth.
+* Changes to billing rules require updating all 6 packages simultaneously.
 
-#### Question 17: Architectural Metric Impact
-What happened to the package's Distance from the Main Sequence ($D$)?  
+#### Question 17: Architectural Evaluation of Modularity vs. Granularity
+What architectural issue has the team encountered, and what is the proper solution?  
 *[Select TWO correct answers]*
 
-- [ ] **A.** The new distance is $D = |0.50 + 0.50 - 1| = \mathbf{0.0}$.
-- [ ] **B.** The package has moved directly onto the **Main Sequence**, achieving an optimal balance between Abstractness and Instability.
-- [ ] **C.** The distance increased to $D = 5.0$, making the package worse than before.
-- [ ] **D.** The package was forced into the Zone of Uselessness.
-- [ ] **E.** The database will now reject all incoming SQL connections.
+- [ ] **A.** The team fell into the **Modularity Versus Granularity trap**: dividing something that is naturally cohesive introduced excessive coupling between the resulting modules.
+- [ ] **B.** The architectural goal is to create modules containing elements that **meaningfully belong together**; the team should consolidate these tightly dependent pricing steps into a cohesive `OrderPricing` module.
+- [ ] **C.** The team has achieved world-class micro-architecture and should divide each method into 10 smaller packages.
+- [ ] **D.** The issue is caused by the operating system running out of disk space.
+- [ ] **E.** The packages should be deployed to 6 different public cloud providers to fix the coupling.
 
 **ANSWER:** A, B
 
 **Explanation (විග්‍රහය):**
-* **Why A & B are CORRECT:** With $A=0.5$ and $I=0.5$, $A + I = 1.0$, resulting in $D = |1.0 - 1.0| = 0.0$. The package has moved out of the Zone of Pain directly onto the ideal Main Sequence!
-* **Why C, D & E are INCORRECT:** $D$ cannot exceed 1.0; it is not in the Zone of Uselessness ($A=1, I=1$); and SQL connections are unaffected.
+* **Why A & B are CORRECT:** As taught in the lecture, dividing naturally cohesive logic into overly fine-grained units introduces additional coupling. The goal is to keep related behaviour together in modules that meaningfully belong together.
+* **Why C, D & E are INCORRECT:** Over-fragmentation worsens coupling; disk space is unrelated; and distributing over clouds increases network latency and operational complexity.
 
 ---
 
