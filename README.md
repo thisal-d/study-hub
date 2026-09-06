@@ -17,6 +17,7 @@
 | [💼 Professional Skills](./professional-skills/README.md) | Comprehensive lecture notes and concise summary notes |
 | [📏 Software Quality Management](./software-quality-management/README.md) | Cyclomatic Complexity, WCC metric, CFG drawing, and 25 practice questions (SE3110) |
 | [🏢 Modern Enterprise Management](./modern-enterprise-management/README.md) | Financial accounting, statements, and decision-making ratios (IT3120) |
+| [🏛️ Architecture Based Development](./architecture-base-development/README.md) | Software architecture fundamentals, quality attributes, styles, and patterns (SE3100) |
 
 ---
 
@@ -80,17 +81,29 @@ study-hub/
 │       ├── SE3110_Lecture_5_CFS_Questions_and_Answers.md ← 10 Lecture 5 Q&A
 │       └── SE3110_Comprehensive_MCQ_Exam.md            ← 60 MCQs + Answer Key
 │
-└── modern-enterprise-management/
-    ├── README.md                                       ← Subject overview & formula cheat-sheet
-    ├── lectures/
-    │   └── lecture-05.md                               ← Lecture 5: Intro to Financial Accounting
-    ├── short-notes/
-    │   └── IT3120_Lecture_05_Summary_CheatSheet.md     ← High-yield revision summary
-    └── practice/
-        ├── IT3120_Practice_Questions.md                ← 8-part comprehensive question set
-        ├── IT3120_Answer_Sheet.md                      ← Detailed step-by-step solutions
-        ├── IT3120_Comprehensive_MCQ_Exam.md            ← 35 MCQs (Self-Test Paper)
-        └── IT3120_Comprehensive_MCQ_Answers.md         ← Full MCQ Answer Key & Explanations
+├── modern-enterprise-management/
+│   ├── README.md                                       ← Subject overview & formula cheat-sheet
+│   ├── lectures/
+│   │   └── lecture-05.md                               ← Lecture 5: Intro to Financial Accounting
+│   ├── short-notes/
+│   │   └── IT3120_Lecture_05_Summary_CheatSheet.md     ← High-yield revision summary
+│   └── practice/
+│       ├── IT3120_Practice_Questions.md                ← 8-part comprehensive question set
+│       ├── IT3120_Answer_Sheet.md                      ← Detailed step-by-step solutions
+│       ├── IT3120_Comprehensive_MCQ_Exam.md            ← 35 MCQs (Self-Test Paper)
+│       └── IT3120_Comprehensive_MCQ_Answers.md         ← Full MCQ Answer Key & Explanations
+│
+└── architecture-base-development/
+    ├── README.md                                       ← Module overview & roadmap
+    ├── lecs/                                           ← 5 source lecture slide notes
+    ├── short-notes/                                    ← High-yield revision short notes
+    │   ├── README.md                                   ← Short notes catalog
+    │   └── lecture-01-short.md                         ← Lecture 1: Intro to Software Architecture
+    └── mcq/                                            ← Practice MCQ papers & exams (200+ Qs)
+        ├── README.md                                   ← 10-paper catalog & index
+        ├── example-paper.md                            ← Official sample paper from LIC
+        ├── multi-answer-practice-paper.md               ← Multi-answer diagnostic test
+        └── paper-01.md ... paper-10.md                 ← 10 full practice papers (20 Qs each)
 ```
 
 ---
