@@ -71,4 +71,4 @@ Fill the missing parameters.
 
 ---
 
-[View Solutions](../../answers/papers/paper3_sol.md) | [Back to README](../../README.md)
+[View Solutions](../answers/exam-papers/paper3_sol.md) | [Back to README](../../README.md)

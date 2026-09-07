@@ -1,6 +1,6 @@
 # ⚡ Architecture Based Development: Short Notes
 
-> Condensed, quick-review study guides of the Architecture Based Development (SE3100) lecture series. Ideal for exam preparation and quick concept revision.
+> Condensed, quick-review study guides of the Architecture Based Development lecture series. Ideal for exam preparation and quick concept revision.
 
 ---
 

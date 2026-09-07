@@ -10,14 +10,14 @@
 | Subject | Description |
 |---------|-------------|
 | [📊 Data Structures & Algorithms](./data-structures-and-algorithms/README.md) | Lecture notes, tutorials, exam papers, and Java implementations |
-| [🧩 Object-Oriented Programming](./object-oriented-programming/README.md) | Practice questions, concept exercises, and exam papers in Java |
-| [⚙️ Operating Systems](./operating-systems/README.md) | CPU scheduling, memory management, and 6 final practice exam papers |
+| [🧩 Object-Oriented Programming](./object-oriented-programming/README.md) | Practice questions, concept exercises, Java basics, and exam papers |
+| [⚙️ Operating Systems](./operating-systems/README.md) | CPU scheduling, memory management, UNIX/C, lectures, labs, and 6 final exam papers |
 | [🗄️ SQL](./sql/README.md) | SQL practice questions covering selection, triggers, procedures, and functions |
-| [🌐 Web & Mobile Technology](./web-and-mobile-technology/README.md) | HTML, CSS, JavaScript fundamentals and exam practice papers |
-| [💼 Professional Skills](./professional-skills/README.md) | Comprehensive lecture notes and concise summary notes |
-| [📏 Software Quality Management](./software-quality-management/README.md) | Cyclomatic Complexity, WCC metric, CFG drawing, and 25 practice questions (SE3110) |
-| [🏢 Modern Enterprise Management](./modern-enterprise-management/README.md) | Financial accounting, statements, and decision-making ratios (IT3120) |
-| [🏛️ Architecture Based Development](./architecture-base-development/README.md) | Software architecture fundamentals, quality attributes, styles, and patterns (SE3100) |
+| [🌐 Web & Mobile Technology](./web-and-mobile-technology/README.md) | HTML, CSS, JavaScript fundamentals, MERN learning path, and exam practice |
+| [💼 Professional Skills](./professional-skills/README.md) | Comprehensive lecture notes and concise summary notes across all 14 lectures |
+| [📏 Software Quality Management](./software-quality-management/README.md) | Cyclomatic Complexity, WCC metric, CFG drawing, CFS metric, and practice question sets |
+| [🏢 Modern Enterprise Management](./modern-enterprise-management/README.md) | Management concepts, economics, marketing, HRM, financial accounting, and MCQ suites |
+| [🏛️ Architecture Based Development](./architecture-based-development/README.md) | Software architecture fundamentals, quality attributes, tactics, and styles |
 
 ---
 
@@ -25,13 +25,28 @@
 
 ```
 study-hub/
+├── architecture-based-development/
+│   ├── lectures/              ← 5 lecture slide notes
+│   ├── short-notes/           ← High-yield revision short notes (01–05)
+│   ├── practice/              ← 10 practice MCQ exam papers + reference papers
+│   └── README.md
+│
 ├── data-structures-and-algorithms/
 │   ├── lectures/              ← 12 lecture notes
 │   ├── tutorials/             ← 10 tutorial exercises
 │   ├── exam-papers/           ← 5 practice exam papers
-│   └── java-data-structures/  ← Java code examples for all data structures
+│   ├── answers/               ← Solutions for exam papers
+│   ├── java-data-structures/  ← Java code examples for all data structures
+│   └── README.md
+│
+├── modern-enterprise-management/
+│   ├── lectures/              ← 6 comprehensive lecture notes (01–05, 07)
+│   ├── short-notes/           ← 6 quick revision short notes (01–05, 07)
+│   ├── practice/              ← 6 practice sets: theory, worked answers & MCQ suites
+│   └── README.md
 │
 ├── object-oriented-programming/
+│   ├── basics/                ← Java console I/O, Scanner, and loop examples
 │   ├── abstract-classes/
 │   ├── interfaces/
 │   ├── abstract-and-interface/
@@ -41,69 +56,49 @@ study-hub/
 │   ├── dependency/
 │   ├── exception-handling/
 │   ├── multi-concept/
-│   └── exam-papers/           ← 9 full OOP exam papers with answers
+│   ├── exam-papers/           ← 9 full OOP exam papers with answers & instructions
+│   └── README.md
 │
 ├── operating-systems/
+│   ├── lectures/              ← 6 lecture notes (Lectures 06–11)
+│   ├── lab-sheets/            ← 5 practical lab worksheets (Labs 06, 08–11)
+│   ├── reference-sheet-content/ ← Revision summaries and master layout guide
 │   ├── cpu-scheduling/        ← Questions, answers & exam papers for 5 algorithms
 │   ├── memory-addressing/     ← Beginner's guide, practice questions & worksheets
-│   ├── unix-and-c-programming/ ← Guides, lab sheets, questions & C code examples
+│   ├── unix-and-c-programming/ ← Guides, lab sheets, questions & C concepts
 │   ├── final-papers/          ← 6 final exam papers with diagrams (1 model + 5 predicted)
-│   ├── lab-sheets/            ← Source lab practicals for OSSA
-│   └── lectures/              ← Source lecture notes for OSSA
-│
-├── sql/
-│   ├── selection/             ← Single & multi-table SELECT queries
-│   ├── triggers/              ← Trigger practice problems
-│   ├── procedures/            ← Stored procedure exercises
-│   └── functions/             ← SQL function exercises
-│
-├── web-and-mobile-technology/
-│   ├── fundamentals/          ← HTML, CSS, JavaScript code examples
-│   ├── mern-learning/         ← Self-study MERN stack learning path
-│   ├── lab-test/              ← Lab test practice (5 MERN papers)
-│   ├── exam-practice/         ← Lectures, labs, tutorials & exam papers
-│   └── final-papers/          ← 5 final exam practice papers + model paper
+│   └── README.md
 │
 ├── professional-skills/
-│   ├── lectures/              ← Comprehensive lecture notes
-│   └── short-notes/           ← Condensed lecture summaries
+│   ├── lectures/              ← 14 full lecture notes (Lectures 01–14)
+│   ├── short-notes/           ← 14 condensed lecture summaries (Lectures 01–14)
+│   ├── learn/                 ← Quick revision guides and exam analysis
+│   ├── model-paper/           ← Sample exam paper with lecture mappings
+│   └── README.md
 │
 ├── software-quality-management/
-│   ├── SE3110_Lecture_3_Cyclomatic_Complexity.md       ← V(G), CFG, Vg
-│   ├── SE3110_Lecture_4_WCC_Metric.md                  ← S, Wc, Wn, Wi, Wt, WC, WCC
-│   ├── SE3110_Lecture_5_Cognitive_Functional_Size.md   ← BCS weights, Ni, No, Sf [CWU]
-│   ├── SE3110_WCC_Tokenisation_Guidelines.md           ← All 17 token rules
-│   └── SE3110_Practice/                                ← Practice papers & solutions
-│       ├── SE3110_Practice_Questions.md                ← 15 mixed questions
-│       ├── SE3110_Answer_Sheet.md                      ← Answers for 15 mixed
-│       ├── SE3110_Metrics_Calculation_10_Questions.md  ← 10 pure calculation Qs
-│       ├── SE3110_Metrics_Calculation_10_Answers.md    ← Answers for 10 calc Qs
-│       ├── SE3110_Lecture_5_CFS_Questions_and_Answers.md ← 10 Lecture 5 Q&A
-│       └── SE3110_Comprehensive_MCQ_Exam.md            ← 60 MCQs + Answer Key
+│   ├── lectures/              ← Lectures 03–05, tokenisation guidelines & metric guides
+│   ├── practice/              ← 6 practice sets: mixed, calculations & 60-MCQ exam
+│   └── README.md
 │
-├── modern-enterprise-management/
-│   ├── README.md                                       ← Subject overview & formula cheat-sheet
-│   ├── lectures/
-│   │   └── lecture-05.md                               ← Lecture 5: Intro to Financial Accounting
-│   ├── short-notes/
-│   │   └── IT3120_Lecture_05_Summary_CheatSheet.md     ← High-yield revision summary
-│   └── practice/
-│       ├── IT3120_Practice_Questions.md                ← 8-part comprehensive question set
-│       ├── IT3120_Answer_Sheet.md                      ← Detailed step-by-step solutions
-│       ├── IT3120_Comprehensive_MCQ_Exam.md            ← 35 MCQs (Self-Test Paper)
-│       └── IT3120_Comprehensive_MCQ_Answers.md         ← Full MCQ Answer Key & Explanations
+├── sql/
+│   ├── selection/             ← Single-table and multi-table SELECT queries
+│   ├── triggers/              ← Single-table and multi-table trigger problems
+│   ├── procedures/            ← Single-table and multi-table stored procedures
+│   ├── functions/             ← With-table and without-table functions
+│   ├── reference.md           ← SQL syntax quick reference
+│   └── README.md
 │
-└── architecture-base-development/
-    ├── README.md                                       ← Module overview & roadmap
-    ├── lecs/                                           ← 5 source lecture slide notes
-    ├── short-notes/                                    ← High-yield revision short notes
-    │   ├── README.md                                   ← Short notes catalog
-    │   └── lecture-01-short.md ... lecture-05-short.md ← Complete Lecture 01-05 Study Guides
-    └── mcq/                                            ← Practice MCQ papers & exams (200+ Qs)
-        ├── README.md                                   ← 10-paper catalog & index
-        ├── example-paper.md                            ← Official sample paper from LIC
-        ├── multi-answer-practice-paper.md               ← Multi-answer diagnostic test
-        └── paper-01.md ... paper-10.md                 ← 10 full practice papers (20 Qs each)
+└── web-and-mobile-technology/
+    ├── fundamentals/          ← HTML, CSS, JavaScript code examples
+    ├── lectures/              ← Comprehensive lecture notes (Lectures 01–13)
+    ├── lab-sheets/            ← Lab worksheets (Labs 01–10)
+    ├── tutorials/             ← Tutorial sheets (Tutorials 01–03)
+    ├── exam-practice/         ← Model paper, model-paper-based & old syllabus papers
+    ├── final-papers/          ← 5 final exam simulation papers + model paper
+    ├── mern-learning/         ← 15-module self-study MERN stack path
+    ├── lab-test/              ← 5 full MERN lab test practice papers
+    └── README.md
 ```
 
 ---
@@ -111,11 +106,11 @@ study-hub/
 ## 🧭 Naming Conventions
 
 - All folder names use **`kebab-case`** (lowercase, hyphens)
-- Lecture files: `lecture-NN.md`
-- Tutorial files: `tutorial-NN.md`
-- Question files: `question-NN.md` or `qN.md`
-- Answer files: `answer-NN.md` or `aN.md`
-- Paper files: `paper-NN.md`
+- Lecture files: `lecture-NN.md` or `NN-<descriptive-name>.md`
+- Short notes: `lecture-NN-short.md` or `NN-<descriptive-name>.md`
+- Practical / Lab files: `lab-NN.md`
+- Practice / Paper files: `0N-<name>.md` or `paper-NN.md`
+- Descriptive, readable names preferred over obscure codes
 
 ---
 

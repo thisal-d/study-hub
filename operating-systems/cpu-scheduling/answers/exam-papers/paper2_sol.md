@@ -83,4 +83,4 @@
 
 ---
 
-[Back to Paper](../../papers/paper2.md) | [Back to README](../../README.md)
+[Back to Paper](../../exam-papers/paper2.md) | [Back to README](../../README.md)

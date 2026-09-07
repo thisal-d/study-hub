@@ -19,22 +19,22 @@
 ## 🧭 Quick Navigation
 
 ### Selection Queries
-- [Single Table](./selection/single_table/README.md) — 11 progressive SELECT exercises
-- [Multiple Tables](./selection/multiple_table/README.md)
-  - [2-Table Joins](./selection/multiple_table/2-tables/)
-  - [3-Table Joins](./selection/multiple_table/3-tables/)
+- [Single Table](./selection/single-table/README.md) — 11 progressive SELECT exercises
+- [Multiple Tables](./selection/multiple-table/README.md)
+  - [2-Table Joins](./selection/multiple-table/2-tables/README.md)
+  - [3-Table Joins](./selection/multiple-table/3-tables/README.md)
 
 ### Triggers
-- [Single Table](./triggers/single_table/README.md)
-- [Multiple Table](./triggers/multiple_table/README.md)
+- [Single Table](./triggers/single-table/README.md)
+- [Multiple Table](./triggers/multiple-table/README.md)
 
 ### Procedures
-- [Single Table](./procedures/single_table/README.md)
-- [Multiple Table](./procedures/multiple_table/README.md)
+- [Single Table](./procedures/single-table/README.md)
+- [Multiple Table](./procedures/multiple-table/README.md)
 
 ### Functions
-- [Without Table](./functions/without_table/README.md)
-- [With Table](./functions/with_table/README.md)
+- [Without Table](./functions/without-table/README.md)
+- [With Table](./functions/with-table/README.md)
 
 ---
 

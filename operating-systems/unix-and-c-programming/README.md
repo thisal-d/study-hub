@@ -12,7 +12,6 @@
 | [🎓 Learn](./learn/README.md) | Step-by-step concept guides (Basics → Pipes) |
 | [🧪 Lab Sheets](./lab-sheets/README.md) | Original campus lab sheet activities |
 | [🚀 Practice Questions](./practice-questions/README.md) | 10 exam-style questions with expected outputs |
-| [💻 C Code Examples](./c-examples/) | Raw `.c` source files for reference |
 
 ---
 

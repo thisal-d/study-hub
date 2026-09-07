@@ -1,5 +1,5 @@
-# 📝 Architecture Based Development: MCQ Practice Exam Suite
-## SE3100 — 10 Comprehensive Practice Papers (200 Questions Total)
+# 📝 Architecture Based Development: Practice Exam Suite
+## 10 Comprehensive Practice Papers (200 Questions Total)
 
 > This examination preparation suite contains **10 full practice exam papers (20 questions each, totaling 200 questions)**.  
 > Modeled directly on the official Lecturer-In-Charge (LIC) sample paper style, featuring **Multi-Answer / Multi-Select questions** with answers and comprehensive rationales placed **immediately beneath each question**.

@@ -61,4 +61,4 @@ All arrive at $t=0$. Smaller number = Higher Priority.
 
 ---
 
-[View Solutions](../../answers/papers/paper1_sol.md) | [Back to README](../../README.md)
+[View Solutions](../answers/exam-papers/paper1_sol.md) | [Back to README](../../README.md)

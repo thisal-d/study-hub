@@ -60,4 +60,4 @@ Wait time for $P_3$ is 5ms. If $P_1$ is highest priority, find the missing Prior
 
 ---
 
-[View Solutions](../../answers/papers/paper2_sol.md) | [Back to README](../../README.md)
+[View Solutions](../answers/exam-papers/paper2_sol.md) | [Back to README](../../README.md)

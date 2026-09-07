@@ -1,5 +1,4 @@
 # 📏 Software Quality Management
-### SE3110 — Software Engineering Process and Quality Management
 
 > Lecture notes, tokenisation guidelines, and full practice question sets covering
 > **Cyclomatic Complexity** and the **Weighted Composite Complexity (WCC)** metric.
@@ -10,12 +9,12 @@
 
 | # | File | Type | What's inside |
 |---|------|------|---------------|
-| 1 | [📖 Lecture 3 — Cyclomatic Complexity](./SE3110_Lecture_3_Cyclomatic_Complexity.md) | Lecture | V(G) = e−n+2, d+1, Vg for classes, CFG drawing rules |
-| 2 | [📖 Lecture 4 — WCC Metric](./SE3110_Lecture_4_WCC_Metric.md) | Lecture | S, Wc, Wn, Wi, Wt, WC, WCC — full worked example |
-| 3 | [📋 WCC Tokenisation Guidelines](./SE3110_WCC_Tokenisation_Guidelines.md) | Reference | All 17 rules for counting tokens (what IS and is NOT a token) |
-| 4 | [📖 Lecture 5 — Cognitive Functional Size (CFS)](./SE3110_Lecture_5_Cognitive_Functional_Size.md) | Lecture | BCS cognitive weights, Ni, No, Sf = (Ni + No) × Wc [CWU] |
-| 5 | [🧠 The "Why" Behind Software Metrics Guide](./SE3110_Why_We_Calculate_Metrics_README.md) | Study Guide ⭐ | Explains WHY we calculate Wi, Wc, Wn, Wt, WCC, Sf, etc., rather than how to calculate them |
-| 6 | [📁 Practice Set →](./SE3110_Practice/) | Folder | All practice questions, calculations, and 60 MCQ exam |
+| 1 | [📖 Lecture 3 — Cyclomatic Complexity](./lectures/lecture-03-cyclomatic-complexity.md) | Lecture | V(G) = e−n+2, d+1, Vg for classes, CFG drawing rules |
+| 2 | [📖 Lecture 4 — WCC Metric](./lectures/lecture-04-wcc-metric.md) | Lecture | S, Wc, Wn, Wi, Wt, WC, WCC — full worked example |
+| 3 | [📋 WCC Tokenisation Guidelines](./lectures/tokenisation-guidelines.md) | Reference | All 17 rules for counting tokens (what IS and is NOT a token) |
+| 4 | [📖 Lecture 5 — Cognitive Functional Size (CFS)](./lectures/lecture-05-cognitive-functional-size.md) | Lecture | BCS cognitive weights, Ni, No, Sf = (Ni + No) × Wc [CWU] |
+| 5 | [🧠 The "Why" Behind Software Metrics Guide](./lectures/why-we-calculate-metrics.md) | Study Guide ⭐ | Explains WHY we calculate Wi, Wc, Wn, Wt, WCC, Sf, etc., rather than how to calculate them |
+| 6 | [📁 Practice Set →](./practice/README.md) | Folder | All practice questions, calculations, and 60 MCQ exam |
 
 ---
 
@@ -23,12 +22,12 @@
 
 | File | Type | Questions | Topics |
 |------|------|-----------|--------|
-| [SE3110_Practice_Questions.md](./SE3110_Practice/SE3110_Practice_Questions.md) | Mixed | **15 Qs** | Conceptual definitions, CFG drawing (3 Qs), WCC calculation (5 Qs), class Vg (2 Qs) |
-| [SE3110_Answer_Sheet.md](./SE3110_Practice/SE3110_Answer_Sheet.md) | Answers | 15 | Full step-by-step working for all 15 mixed questions |
-| [SE3110_Metrics_Calculation_10_Questions.md](./SE3110_Practice/SE3110_Metrics_Calculation_10_Questions.md) | Pure Calc | **10 Qs** | One question per control structure — compute Tokens, S, Wc, Wn, Wi, Wt, WC, WCC, V(G), Vg |
-| [SE3110_Metrics_Calculation_10_Answers.md](./SE3110_Practice/SE3110_Metrics_Calculation_10_Answers.md) | Answers | 10 | Token-by-token working, full WCC tables, CFG counts, rule citations |
-| [SE3110_Lecture_5_CFS_Questions_and_Answers.md](./SE3110_Practice/SE3110_Lecture_5_CFS_Questions_and_Answers.md) | Lecture 5 Q&A | **10 Qs** | Cognitive Functional Size, BCS weights, linear/nested Wc, Ni, No, Sf in CWU |
-| [SE3110_Comprehensive_MCQ_Exam.md](./SE3110_Practice/SE3110_Comprehensive_MCQ_Exam.md) | MCQ Exam ⭐ | **60 MCQs** | Full exam covering Lectures 3, 4, 5 & Token Guidelines + Answer Key |
+| [01-practice-questions.md](./practice/01-practice-questions.md) | Mixed | **15 Qs** | Conceptual definitions, CFG drawing (3 Qs), WCC calculation (5 Qs), class Vg (2 Qs) |
+| [02-answer-sheet.md](./practice/02-answer-sheet.md) | Answers | 15 | Full step-by-step working for all 15 mixed questions |
+| [03-metrics-calculation-questions.md](./practice/03-metrics-calculation-questions.md) | Pure Calc | **10 Qs** | One question per control structure — compute Tokens, S, Wc, Wn, Wi, Wt, WC, WCC, V(G), Vg |
+| [04-metrics-calculation-answers.md](./practice/04-metrics-calculation-answers.md) | Answers | 10 | Token-by-token working, full WCC tables, CFG counts, rule citations |
+| [05-cfs-questions-and-answers.md](./practice/05-cfs-questions-and-answers.md) | Lecture 5 Q&A | **10 Qs** | Cognitive Functional Size, BCS weights, linear/nested Wc, Ni, No, Sf in CWU |
+| [06-comprehensive-mcq-exam.md](./practice/06-comprehensive-mcq-exam.md) | MCQ Exam ⭐ | **60 MCQs** | Full exam covering Lectures 3, 4, 5 & Token Guidelines + Answer Key |
 
 ---
 
@@ -160,5 +159,5 @@ Ŝf = Σ Sf(k)                  (Component-based software system with p compone
 
 ---
 
-*Subject: SE3110 — Software Engineering Process and Quality Management*
+*Subject: Software Quality Management*
 *Last updated: 2026-08-30*

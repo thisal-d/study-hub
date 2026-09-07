@@ -9,6 +9,7 @@
 
 | Topic | Description |
 |-------|-------------|
+| [Java Basics](./basics/README.md) | Fundamental console I/O, Scanner, and loop patterns |
 | [Abstract Classes](./abstract-classes/README.md) | Abstract class definitions and usage |
 | [Interfaces](./interfaces/README.md) | Interface design and implementation |
 | [Abstract & Interface](./abstract-and-interface/README.md) | Combined abstract class + interface scenarios |

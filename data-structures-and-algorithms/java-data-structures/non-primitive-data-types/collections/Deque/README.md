@@ -48,7 +48,7 @@ Queue<Type> queue = new LinkedList<>();
     Deque<Integer> arrayIntegerDeque = new ArrayDeque<>();
     ```
 
-- Using [**`LinkedList`**](./Linked-List/) [<sub>LinkedListDataStructure.java</sub>](./Hash-Set/HashSetDataStructure.java)
+- Using [**`LinkedList`**](../List/Linked-List/) [<sub>LinkedListDataStructure.java</sub>](../List/Linked-List/LinkedListDataStructure.java)
 
     ```java
     Deque<String> linkedDeque = new LinkedList<>();

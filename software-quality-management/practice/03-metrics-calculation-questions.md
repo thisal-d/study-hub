@@ -427,5 +427,5 @@ public class Dog extends Animal {                    // (1st derived class: Wi =
 
 *End of 10 Calculation Questions*
 
-**File:** `SE3110_Metrics_Calculation_10_Questions.md`
-**Answers:** See `SE3110_Metrics_Calculation_10_Answers.md`
+**File:** `03-metrics-calculation-questions.md`
+**Answers:** See [04-metrics-calculation-answers.md](./04-metrics-calculation-answers.md)

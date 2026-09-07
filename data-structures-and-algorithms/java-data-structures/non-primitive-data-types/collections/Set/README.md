@@ -146,7 +146,7 @@ public class SetInterface {
 
 - [**`HashSet`**](./Hash-Set/) [<sub>HashSetDataStructure.java</sub>](./Hash-Set/HashSetDataStructure.java) 
  
-- [**`LinkedHashSet`**](./Linked-Hash-Set/) [<sub>LinkedHashSetDataStructure.java</sub>](./Linked-Hash-Set/HashSetDataStructure.java) 
+- [**`LinkedHashSet`**](./Linked-Hash-Set/) [<sub>LinkedHashSetDataStructure.java</sub>](./Linked-Hash-Set/LinkedHashSetDataStructure.java) 
  
 - [**`TreeSet`**](./Tree-Set/) [<sub>TreeSetDataStructure.java</sub>](./Tree-Set/TreeSetDataStructure.java)
 
