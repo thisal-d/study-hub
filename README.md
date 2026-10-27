@@ -41,6 +41,7 @@ study-hub/
 │
 ├── modern-enterprise-management/
 │   ├── lectures/              ← 12 comprehensive lecture notes (Lectures 01–12)
+│   ├── study-notes/           ← Complete 12-lecture study guide with Sinhala translations & worked examples
 │   ├── short-notes/           ← 12 quick revision short notes (Lectures 01–12)
 │   ├── practice/              ← 6 practice sets: theory, worked answers & MCQ suites
 │   └── README.md
