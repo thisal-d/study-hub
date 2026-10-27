@@ -119,3 +119,4 @@
 
 3. **What is the primary role of a Scrum Master compared to a Traditional Project Manager?**
    <details><summary>👉 Click to reveal answer</summary>A Scrum Master is a servant leader who facilitates the team and removes blockers, whereas a traditional manager directs tasks and strictly controls work.</details>
+

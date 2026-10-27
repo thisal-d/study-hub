@@ -130,3 +130,4 @@ $$\mathbf{\text{Net Cash Flow} = \text{Operating Cash Flow (CFO)} + \text{Invest
 
 4. **Which Income Statement level measures core operational health before interest and taxes are deducted?**
    <details><summary>👉 Click to reveal answer</summary>Operating Profit / EBIT (Earnings Before Interest and Taxes).</details>
+

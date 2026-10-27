@@ -1,717 +1,503 @@
-## IT3120- Lecture 1
+# Lecture 01: Introduction to Management Concepts
 
-## Introduction to Management Concepts
+**Module:** IT3120 – Modern Enterprise Management (නූතන ව්‍යවසාය කළමනාකරණය)  
+**Main Topic:** Management Approaches, Organizational Structures, Power Dynamics, and Motivational Strategies  
+**Target Audience:** Computing and Information Technology Undergraduates
 
-Management Approaches,
+---
 
-Organizational Structure, Concept of
+## 1. Introduction
 
-Power and Motivational Strategies
+Every software engineer, system architect, or IT professional works inside an **organization (සංවිධානය)**—whether it is a tech startup, a multinational software consultancy, or an IT department within a bank or university. Understanding how organizations operate, how people are coordinated, and how leaders motivate teams is just as essential for a successful IT career as writing clean code or designing robust databases.
 
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F202609020900047a3e144b62fb4833%2Fcrop_1_1788310829403.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=LStaouKKzNuuUogka1etYsmNZmg%3D&Expires=1788915629' alt='OCR图片'/></div>
+### Why This Topic Matters
+- In modern software engineering, brilliant technical solutions fail if teams are disorganized, lack clear direction, or suffer from toxic leadership and low morale.
+- Computing graduates frequently transition into roles like Scrum Master, Tech Lead, Engineering Manager, and Chief Technology Officer (CTO). These roles require solid managerial competence.
+- This lecture provides the bedrock terminology and historical foundations of management theory that underpin all subsequent business and project management topics in this course.
 
-## Lecture Objectives
+### Learning Objectives
+After studying these notes, you will be able to:
+1. Define an organization and trace the evolution of the concept.
+2. Formulate clear definitions of management using classic theorists (Henri Fayol and Mary Parker Follett).
+3. Distinguish clearly between **Effectiveness (ඵලදායීතාව)** and **Efficiency (කාර්යක්ෂමතාව)**.
+4. Detail the four core functions of management (**Planning, Organizing, Leading, Controlling**) and explain how the feedback loop operates.
+5. Contrast the responsibilities of managers across all four organizational tiers.
+6. Analyze organizational dynamics across the three levels of **Organizational Behavior (OB)** and seven OB perspectives.
+7. Compare the four primary **Management Approaches** (Classical, Behavioral, Quantitative, Modern).
+8. Evaluate the trade-offs of seven major **Organizational Structures** regarding communication, control, and agility.
+9. Differentiate the six sources of **Power (බලය)** in a workplace.
+10. Apply foundational motivation theories (**Maslow’s Hierarchy** and **Herzberg’s Two-Factor Theory**) to real-world IT team scenarios.
+
+---
+
+## 2. Main Concepts
+
+- **2.1 Understanding Organizations & Historical Roots**
+- **2.2 Defining Management: People vs. Process**
+- **2.3 The Four Management Functions (POLC Cycle)**
+- **2.4 Management Levels & The Effectiveness vs. Efficiency Distinction**
+- **2.5 Organizational Environment & Organizational Behavior (OB)**
+- **2.6 Evolution of Management Approaches**
+- **2.7 Organizational Structures & Reporting Relationships**
+- **2.8 The Concept and Sources of Power**
+- **2.9 Workplace Motivation Theories (Maslow & Herzberg)**
+- **2.10 Role of Digital Technologies in Modern Management**
 
-- What is an Organization?
+---
 
-- Primary Functions of Management
+## 3. Detailed Explanations
 
-- Types of managers and their roles
+### 3.1 What Is an Organization?
 
-- Key Management Approaches
+The word "organization" has deep historical origins:
+- **Medieval Latin:** *organizationem* = the act of organizing.
+- **Latin:** *organum* = instrument, tool, or organ.
+- **Greek:** *organon (ඔර්ගනන්)* = tool, instrument, implement.
 
-- Organizational Behavior
+**Evolution of Meaning:**
+- *Early 15th Century:* Referred to the bodily structure of living organs.
+- *Mid-15th Century:* The act of assembling separate parts into a functioning whole.
+- *18th–19th Centuries:* A formally structured group of people working together toward common objectives.
 
-- Organizational Structures
+#### Formal Definition
+> **Louis Allen Definition:**  
+> "Organization is the process of identifying and grouping work to be performed, defining and delegating responsibility and authority, and establishing relationships for the purpose of enabling people to work most effectively together in accomplishing objectives."
 
-- Concept of Power in Organizations
+#### Simple Modern Definition
+An **Organization (සංවිධානය)** is a structured group of people who collaborate purposefully to achieve shared goals. Every organization has:
+1. **A Defined Hierarchy (ධුරාවලිය):** A clear structure detailing who reports to whom.
+2. **Assigned Roles (පැවරුණු භූමිකා):** Clear duties and job titles for each individual.
+3. **Specific Rules and Processes (නීති සහ ක්‍රියාවලි):** Operating procedures that allow the enterprise to run smoothly.
 
-- Motivational Strategies in the Workplace
+---
 
-## ORGANIZATION
+**Concept: Organization (සංවිධානය)**
 
-## What is an Organization?
+**Meaning:** A collection of people, resources, and systems working together systematically to accomplish specific goals that individuals cannot achieve alone.
 
-The word organization comes from:
+**Simple Example (SLIIT as an Organization):**
+- **People (මිනිසුන්):** Lecturers, academic instructors, software engineering students, network administrators, and executive managers.
+- **Goals (ඉලක්ක):** Producing skilled computing graduates, conducting academic research, and offering professional IT certifications.
+- **Structure (ව්‍යුහය):** Faculties (Faculty of Computing), Academic Departments (Software Engineering, Cyber Security), and Administrative Divisions.
+- **Resources (සම්පත්):** High-speed computer labs, lecture theaters, learning management systems (Courseweb LMS), and academic databases.
+- **Rules & Processes (නීති හා ක්‍රියාපටිපාටි):** Student registration protocols, grading criteria, academic integrity policies, and examination regulations.
+- **Leadership (නායකත්වය):** Chancellor, Vice-Chancellor, Deans of Faculties, and Heads of Departments.
+
+**Why It Matters:** Without organizational structure, thousands of students and hundreds of lecturers would create chaos rather than education.
+
+---
+
+### 3.2 What Is Management?
+
+Management operates simultaneously on two distinct dimensions:
+1. **People Dimension:** The human beings who hold the authority and responsibility to guide the organization.
+2. **Process Dimension:** The systematic activities involved in deciding targets, allocating capital, and executing work.
+
+#### Classic Theorists
+- **Henri Fayol (1841–1925):** The father of administrative management. Defined management as:  
+  *"To manage is to forecast and to plan, to organize, to command, to coordinate, and to control."*
+- **Mary Parker Follett (1868–1933):** Pioneer of human-centric management. Defined management as:  
+  *"The art of getting things done through people."* She viewed management as a social philosophy grounded in collaboration and conflict resolution.
+
+#### Academic Definition
+**Management (කළමනාකරණය)** is the continuous process of **planning, organizing, leading, and controlling** people, financial capital, physical assets, and information to accomplish organizational goals effectively and efficiently.
+
+---
+
+### 3.3 The Four Management Functions (POLC Cycle)
+
+The four functions form an ongoing, dynamic cycle. Each function feeds directly into the next:
+
+```
+[ Planning (සැලසුම්කරණය) ] 
+         │
+         ▼
+[ Organizing (සංවිධානය කිරීම) ] 
+         │
+         ▼
+[ Leading (නායකත්වය දීම) ] 
+         │
+         ▼
+[ Controlling (පාලනය කිරීම) ] ── (Feedback Loop) ──► [ Planning ]
+```
 
-- Medieval Latin organizationem = the act of organizing.
-
-- Latin organum = "instrument, tool, organ."
-
-- Greek word *organon* = "tool, instrument, implement."
-
-- The historical meanings evolved as follows:
-
-- Early 15th century - "referred to the structure of a body or its organs"
-
-- Mid-15th century - "the act or process of arranging parts into a functioning whole"
-
-- Later (18th-19th centuries) - "a formally structured group of people working together toward common objectives"
-
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F202609020900047a3e144b62fb4833%2Fcrop_2_1788310829452.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=zc7NRW1J0inymw3SZntZ8komJOk%3D&Expires=1788915629' alt='OCR图片'/></div>
-
-## What is an Organization
-
-"Organization is the process of identifying and grouping work to be performed, defining and delegating responsibility and authority and establishing relationships for the purpose of enabling people to work most effectively together in accomplishing objectives." - Louis Allen
-
-An organization is a structured group of people who collaborate to achieve shared goals. It features a defined hierarchy, assigned roles, and specific rules or processes to function efficiently. The term also refers to the act of planning, creating order, or the structural framework of a system
-
-## SLIIT as an Organization
-
-<table border="1"><tr><td>People</td><td>Students, Lecturers, Instructors, Management Staff, Admin Staff</td></tr><tr><td>Goals</td><td>Providing Higher Education, Research, Professional Training, Graduate Development</td></tr><tr><td>Structure</td><td>Faculties, Departments, Programs, Non-academic units</td></tr><tr><td>Resources</td><td>Classrooms, Labs, Libraries, LMS, Technology, Finance, Staff Expertise</td></tr><tr><td>Rules&amp;Process</td><td>Admissions, lectures, Exams, Grading, Student Support, QA</td></tr><tr><td>Leadership</td><td>Senior Management, Deans, Heads, Program Coordinators</td></tr></table>
-
-MANAGEMENT
-
-## What is Management?
-
-Henri Fayol (1841-1925). "Management is the process of planning, organizing, leading, and controlling the efforts of organization members and of using all other organizational resources to achieve stated organizational goals".
-
-Mary Parker Follett (1868-1933), defined management as "The art of getting things done through people". She described management as a philosophy.
-
-Week 1 - Introduction to Management
-
-## What is Management?
-
-- The Definition of Management
-
-- Process of planning, organizing, leading, and controlling people in organization- effectively use resources to meet goals
-
-- The Two Aspects of Management
-
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F202609020900047a3e144b62fb4833%2Fcrop_1_1788310829458.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=bn8vLiLb4f9wyQ3vYiEPzlr9t%2FA%3D&Expires=1788915629' alt='OCR图片'/></div>
-
-- People
-
-- The people with the responsibility and authority to determine the overall direction of the organization
-
-- Decide what goals should be and defines them for the organization
-
-IT3120
-
-Week 1 - Introduction to Management
-
-## Practice Question 1
-
-In most cases, the management function includes which of the following?
-
-a) applying and distributing organizational resources effectively
-
-b) acquiring new resources when necessary
-
-c) analyzing and adapting to the ever-changing environment in which the organization operates
-
-d) complying with legal, ethical, and social responsibilities of the community
-
-e) developing relationships with and among people to execute the strategies and plans
-
-f) all of the above
-
-IT3120
-
-Week 1 - Introduction to Management Concepts
-
-## Management Functions
-
-Management can be understood through four key functions:
-
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F202609020900047a3e144b62fb4833%2Fcrop_2_1788310829462.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=G6ar9wzLnoiPGDITY6Z%2BeLkpyMY%3D&Expires=1788915629' alt='OCR图片'/></div>
-
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F202609020900047a3e144b62fb4833%2Fcrop_3_1788310829475.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=%2FyrSfDGo54OikPYIUT%2FzFV0vTgA%3D&Expires=1788915629' alt='OCR图片'/></div>
-
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F202609020900047a3e144b62fb4833%2Fcrop_4_1788310829481.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=VMGNRtLxBo9%2BT0qZnSfjKt0NwBE%3D&Expires=1788915629' alt='OCR图片'/></div>
-
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F202609020900047a3e144b62fb4833%2Fcrop_5_1788310829485.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=D2mbmgbOLoU4bByxiTs4FU2mawY%3D&Expires=1788915629' alt='OCR图片'/></div>
-
-Together, these four functions provide a structured framework for understanding how managers coordinate people and resources effectively within organizations.
-
-## Management Functions
-
-## Planning
-
-Planning involves setting organizational goals and determining the best course of action to achieve them. Managers identify objectives, develop strategies, and allocate resources in advance to guide future activities.
-
-## Leading
-
-Leading motivating, employees organizational communication creating a environment performance.
-
-involves guiding,
-
-and influencing
-
-to work toward
-
-goals. It includes
-
-in, leadership, and
-
-positive work
-
-to enhance
-
-## Organizing
-
-Organizing refers to arranging resources and tasks in a structured way. This includes assigning responsibilities, grouping activities, and establishing relationships among team members to ensure efficient workflow.
-
-## Controlling
-
-Controlling is the process of monitoring performance and ensuring that activities are aligned with planned objectives. Managers compare actual outcomes with expected results and take corrective actions when necessary.
-
-## 1 Planning
-
-- Defining goals and tackling them
-
-- Defines future of organization- long-term plans
-
-- Develops strategic plans
-
-- Long-term and effects entire organization
-
-- Bridges gap between what organization is and what it wants to be
-
-- Tactical plans
-
-- Translate strategic plans into specific actions- who, what, where, etc.
-
-Week 1 - Introduction to Management Concepts
-
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F202609020900047a3e144b62fb4833%2Fcrop_1_1788310829492.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=oCbrJrTpPJt01lkzRnmHgTOaCks%3D&Expires=1788915629' alt='OCR图片'/></div>
-
-## 2 Organizing
-
-- Decides how to best implement the plans
-
-- Assigns authority and responsibility
-
-- Decides how an organization is structured
-
-- Works to acquire resources
-
-- Decides coordination
-
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F202609020900047a3e144b62fb4833%2Fcrop_2_1788310829503.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=OZc%2B9FHkU%2BOqSQEdn98YVAkxQoQ%3D&Expires=1788915629' alt='OCR图片'/></div>
-
-Week 1 - Introduction to Management Concepts
-
-## 3 Leading
-
-- Uses knowledge, character, and charisma- inspire achievement of goals
-
-- Leads by communication,building commitment, creating shared values,and encouraging high performance
-
-- Uses the power of granting rewards and punishments
-
-Week 1 - Introduction to Management Concepts
-
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F202609020900047a3e144b62fb4833%2Fcrop_3_1788310829507.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=mwYCPwncABZLgqs0IUGXCch2ehk%3D&Expires=1788915629' alt='OCR图片'/></div>
-
-## 4 Controlling
-
-- Unexpected issues will arise
-
-- Controlling
-
-- Monitoring activities, measuring performance, comparing results, making corrections
-
-- Observing and responding to what happens
-
-- The feedback loop
-
-- most important aspect of controlling is that managers must be keep informed.
-
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F202609020900047a3e144b62fb4833%2Fcrop_4_1788310829512.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=BO7HrRCC9f7OOCtljcwRiEvEC4g%3D&Expires=1788915629' alt='OCR图片'/></div>
-
-IT3120
-
-Week 1 - Introduction to Management Concepts
-
-## TYPES OF MANAGEMENT
-
-## Types of Managers and Their Roles
-
-Describe the primary types of managers and the roles they play
-
-## 1. Differentiate between the
-
-functions of top managers middle managers, first-line
-
-managers, and team leaders
-
-## 2 Differentiate between
-
-Top Managers
-
-Middle Managers
-
-First-Line Managers
-
-Nonmanagerial Employees
-
-leadership, informational, and
-
-decision-making roles
-
-IT3120
-
-Week 1 - Introduction to Management
-
-Concepts
-
-18
-
-## Top-Level Management
-
-- What do these acronyms represent on a management team?
-
-- CEO, COO, CMO, CTO, CFO, CCO
-
-- Vice Presidents or division heads sometimes part of top management team
-
-- Responsible for long-term success
-
-- Responsible for long-term success
-
-- Set goals and pay careful attention to external environment
-
-- Economy,law proposals, consumer/public relations
-
-- Make financial investments
-
-IT3120
-
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F202609020900047a3e144b62fb4833%2Fcrop_1_1788310829516.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=vyg8u0BguuBf0XrqFSmvQdKdi1A%3D&Expires=1788915629' alt='OCR图片'/></div>
-
-## Middle Managers
-
-- Department heads, directors, chief supe
-
-- directors, chief supervisors
-
-- Links between top and firstline managers
-
-- Receives broad strategic plans with specific objectives
-
-- Encourages, supports, and fosters employees
-
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F202609020900047a3e144b62fb4833%2Fcrop_2_1788310829523.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=aV0LOtp8vmpX0nhnEISHZzGv7%2Bk%3D&Expires=1788915629' alt='OCR图片'/></div>
-
-- Provides leadership
-
-IT3120
-
-Week 1 - Introduction to Management Concepts
-
-## First-Line Managers
-
-- Entry level- "on the line"
-
-- close contact with workers
-
-- Responsible for organizational objectives and plans
-
-- Assistant managers, shift managers, foremen, section chiefs, office managers
-
-- Focuses on internal issues- must communicate
-
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F202609020900047a3e144b62fb4833%2Fcrop_3_1788310829529.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=nRjSMPZ0KhMjpmDWqNSmVZ1bolo%3D&Expires=1788915629' alt='OCR图片'/></div>
-
-## Team Leaders
-
-- Reports to first-line or middle manager
-
-- Develops timelines, specific work assignments, provides training to team, communicates clear instructions
-
-- Makes sure team is operating efficiently
-
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F202609020900047a3e144b62fb4833%2Fcrop_4_1788310829552.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=1gtZBzaWK8X4%2B9s5ItvwiZSf3tc%3D&Expires=1788915629' alt='OCR图片'/></div>
-
-- Positions may be eliminated when new team must be formed
-
-Week 1 - Introduction to Management Concepts
-
-## In Class Activity 1
-
-## Multiple Choice Question
-
-## Which of the following best describes effectiveness?
-
-A. Completing tasks quickly
-
-B. Using minimum resources
-
-C. Achieving the desired goal
-
-D. Reducing costs
-
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F202609020900047a3e144b62fb4833%2Fcrop_5_1788310829556.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=uTZx6eUP0YeMjYI8RQgjtSyK%2FnU%3D&Expires=1788915629' alt='OCR图片'/></div>
-
-## Short Answer Question
-
-Give one example of planning in a real-life situation.
-
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F202609020900047a3e144b62fb4833%2Fcrop_1_1788310829561.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=Djt6QvduGSScz1JW49EZ4kQhwaI%3D&Expires=1788915629' alt='OCR图片'/></div>
-
-## Organizational Environment
-
-## An organizational environmen
-
-refers to the internal and external forces, factors, and conditions that affect a company's operations, performance, and decision-making.
-
-Organizations constantly interact with its surroundings to survive.
-
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F202609020900047a3e144b62fb4833%2Fcrop_2_1788310829565.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=xjIZNQikZNHggoWgrs6hpXStxds%3D&Expires=1788915629' alt='OCR图片'/></div>
-
-## Organizational Behavior (OB)
-
-Organization behavior is the study of how individuals, groups, and organizations as a whole think and function within its environment
-
-## OB is broken down into three levels :
-
-The Individual Level - It looks at the personal drivers and characteristics that shape how someone handles tasks, approaches obstacles, and interacts with others
-
-The Group/Team Level - Investigates how people function in teams. It explores how individual behaviors shift when placed in a collective or team environment.
-
-The Organizational Level - Views the company as a whole and how the organization functions in the broader market
-
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F202609020900047a3e144b62fb4833%2Fcrop_3_1788310829572.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=00lzb4axu%2BEbzRzK4A4qYnWX8LA%3D&Expires=1788915629' alt='OCR图片'/></div>
-
-<div align="center">
-
-Key Perspectives in OB
-
-</div>
-
-<table border="1"><tr><td>Perspective</td><td>Focus</td></tr><tr><td>Scientific Management</td><td>Most efficient way to do a job by breaking tasks into small steps and setting clear rules. It aims to increase productivity</td></tr><tr><td>Human Relations</td><td>Employees are people with feelings and social needs. When employees feel respected, supported, and part of a team, they perform better.</td></tr><tr><td>Contingency Perspective</td><td>No single best way to manage. The right approach depends on the situation (type of work, environment, and people involved).</td></tr><tr><td>Systems Perspective</td><td>Organization is a group of connected parts. If one part changes, it affects the others, so everything must work together smoothly.</td></tr><tr><td>Cultural Perspective</td><td>Shared values, beliefs, and habits within an organization guide how employees behave, communicate, and make decisions.</td></tr><tr><td>Critical Perspective</td><td>Power, control, and fairness in organizations. It questions whether employees are treated equally and ethically</td></tr><tr><td>Symbolic Perspective</td><td>Symbols, stories, language, and traditions help employees make sense of their roles and the orga help employees make sense of their roles and the organization&#x27;s identity.</td></tr></table>
-
-## Management Approaches
-
-Classical Approach - The Classical approach focuses on improving efficiency and productivity through structure and control. It emphasizes having a clear organizational hierarchy, well-defined roles, strict rules, and standardized procedures.
-
-Behavioral Approach - This approach focuses on people, motivation, and behavior at work. It highlights that understanding employee needs, emotions, and relationships leads to higher satisfaction and better performance.
-
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F202609020900047a3e144b62fb4833%2Fcrop_4_1788310829590.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=nvziTQcmSnnuyT%2BJKNSr2gTfpis%3D&Expires=1788915629' alt='OCR图片'/></div>
-
-Quantitative Approach - This approach uses mathematics, statistics, and data analysis to support decision-making. It helps managers solve problems, optimize resources, and improve efficiency using models and calculations.
-
-Modern Approach - This approach combines different ideas and focuses on flexibility and adaptability. It includes concepts like contingency thinking (no one best way), systems thinking (everything is connected), and the importance of culture and environment in managing organizations.
-
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F202609020900047a3e144b62fb4833%2Fcrop_5_1788310829593.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=NmUSe8oCPjaV60GO7LPX3AXBg%2F8%3D&Expires=1788915629' alt='OCR图片'/></div>
-
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F202609020900047a3e144b62fb4833%2Fcrop_6_1788310829603.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=mWL0P35c7dzEbR3Ky5g%2FCap8ZCU%3D&Expires=1788915629' alt='OCR图片'/></div>
-
-## In Class Activity 2
-
-## Multiple Choice Question
-
-Which approach focuses on employee needs and motivation?
-
-A. Classical
-
-B. Behavioral
-
-C. Quantitative
-
-D. Modern
-
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F202609020900047a3e144b62fb4833%2Fcrop_1_1788310829607.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=PVvBAVu5qnK7svtAithK344EU6c%3D&Expires=1788915629' alt='OCR图片'/></div>
-
-## Short Answer Question
-
-Why is the contingency approach important in management?
-
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F202609020900047a3e144b62fb4833%2Fcrop_2_1788310829610.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=u%2FzTW5p3zGlmvnFCYeQ1DBFTJ9c%3D&Expires=1788915629' alt='OCR图片'/></div>
-
-ORGANIZATIONAL STRUCTURES
-
-## Types of Organizational Structures
-
-## Functional Structure
-
-Employees are grouped based on specialized functions such as marketing, finance, or IT. This improves efficiency and expertise but may reduce communication between departments.
-
-## Divisional Structure
-
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F202609020900047a3e144b62fb4833%2Fcrop_3_1788310829614.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=roOKXxTAMsA999avQQMrHlE%2BpD4%3D&Expires=1788915629' alt='OCR图片'/></div>
-
-The organization is divided into separate units based on products, services, or regions. Each division operates more independently, allowing better focus but sometimes causing duplication of resources.
-
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F202609020900047a3e144b62fb4833%2Fcrop_4_1788310829619.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=5Bmatt58CiqgAgxUoM%2FOX8VQvMk%3D&Expires=1788915629' alt='OCR图片'/></div>
-
-## Types of Organizational Structures
-
-## Matrix Structure
-
-Combines functional and divisional structures Employees report to more than one manager. It improves flexibility but can create confusion in authority.
-
-## Flat Structure
-
-Has fewer levels of management and a wider span of control. It encourages faster decision-making and better communication but may reduce clear supervision.
-
-## Tall Structure
-
-Has many levels of hierarchy with clear authority and control. It provides strong supervision but may slow down decision-making and communication.
-
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F202609020900047a3e144b62fb4833%2Fcrop_5_1788310829623.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=G0vkMXIe7ZAIZnDS5mXgoFqp%2BBQ%3D&Expires=1788915629' alt='OCR图片'/></div>
-
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F202609020900047a3e144b62fb4833%2Fcrop_6_1788310829627.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=kQGwKRkK0ZY8j6qA1AaK4qXeMF8%3D&Expires=1788915629' alt='OCR图片'/></div>
-
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F202609020900047a3e144b62fb4833%2Fcrop_7_1788310829631.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=VyRqwy3E9YAhvJ%2F28miXa6c%2FEQ4%3D&Expires=1788915629' alt='OCR图片'/></div>
-
-## Types of Organizational Structures
-
-## Centralized Structure
-
-Decision-making authority is concentrated at the top levels of management. It ensures consistency but may reduce employee involvement.
-
-## Decentralized Structure
-
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F202609020900047a3e144b62fb4833%2Fcrop_8_1788310829635.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=4acvFM7UFZzleSSoV%2Fsf2RcZyqw%3D&Expires=1788915629' alt='OCR图片'/></div>
-
-Decision-making is spread across different levels of the organization. It increases flexibility and employee participation but may reduce consistency.
-
-## POWER
-
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F202609020900047a3e144b62fb4833%2Fcrop_1_1788310829640.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=1prwpOYzCd9lYSorWEUb9m3iRpE%3D&Expires=1788915629' alt='OCR图片'/></div>
-
-## Concept of Power
-
-## 37
-
-Power in organizations refers to the capacity of individuals or groups to influence decisions, behaviors, and outcomes, often shaping how work is done and how resources are distributed.
-
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F202609020900047a3e144b62fb4833%2Fcrop_2_1788310829644.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=VdK7kqCMBiHBJ9pJTY8BqijwE0w%3D&Expires=1788915629' alt='OCR图片'/></div>
-
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F202609020900047a3e144b62fb4833%2Fcrop_3_1788310829652.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=FnMO86mpsn0YE%2FsFsczCPCblcos%3D&Expires=1788915629' alt='OCR图片'/></div>
-
-It arises from various sources such as position, expertise relationships, and access to information, and plays a key role in leadership, communication, and organizational dynamics.
-
-## 38
-
-## Types of Power
-
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F202609020900047a3e144b62fb4833%2Fcrop_4_1788310829661.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=O9ctly6I8N8nj2%2B9c5WPuMVjaY0%3D&Expires=1788915629' alt='OCR图片'/></div>
-
-## Legitimate Power
-
-Comes from a person's position or role in the organization (e.g., manager). Others follow because they recognize this authority.
-
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F202609020900047a3e144b62fb4833%2Fcrop_5_1788310829664.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=JjBK%2FiWxxdE0pjg8OEmOev%2BRpp8%3D&Expires=1788915629' alt='OCR图片'/></div>
-
-## Reward Power
-
-The ability to give rewards such as promotions, bonuses, or recognition to influence others.
-
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F202609020900047a3e144b62fb4833%2Fcrop_6_1788310829671.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=duZOqnQ9a8WuaFy4wn%2FYDx6%2Fcho%3D&Expires=1788915629' alt='OCR图片'/></div>
-
-## Corrective Power
-
-The ability to punish or discipline others (e.g., warnings, demotions), which creates compliance through fear.
-
-## Types of Power
-
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F202609020900047a3e144b62fb4833%2Fcrop_7_1788310829675.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=UcTKK2BkjhtJ8kBUlnJp4cMomh0%3D&Expires=1788915629' alt='OCR图片'/></div>
-
-## Expert Power
-
-Comes from a person's knowledge, skills, or expertise. Others followbecause they trust their competence.
-
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F202609020900047a3e144b62fb4833%2Fcrop_8_1788310829680.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=iVL5uxc0KszyIKiq3gs%2BfB7RZoQ%3D&Expires=1788915629' alt='OCR图片'/></div>
-
-## Referent Power
-
-Based on personal qualities, charisma, or relationships. People follow because they like or respect the individual.
-
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F202609020900047a3e144b62fb4833%2Fcrop_9_1788310829692.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=8OT5TMj2wMom3OiuJDUeDYiQQ7I%3D&Expires=1788915629' alt='OCR图片'/></div>
-
-## Information Power
-
-Comes from having access to important information and the ability to share or control it.
-
-## 40
-
-## MOTIVATION
-
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F202609020900047a3e144b62fb4833%2Fcrop_10_1788310829698.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=x8xld%2FrdJl0M%2BntH%2FPgCEn6MCv0%3D&Expires=1788915629' alt='OCR图片'/></div>
-
-## Motivation
-
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F202609020900047a3e144b62fb4833%2Fcrop_11_1788310829704.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=wIG26l3VwrV2Da%2BjYWLrYCVxzF4%3D&Expires=1788915629' alt='OCR图片'/></div>
-
-Motivation refers to the set of internal drives and external influences that initiate, direct, and sustain a person's behavior toward achieving goals.
-
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F202609020900047a3e144b62fb4833%2Fcrop_12_1788310829710.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=0pIIt2i93G9tfJShPon%2Bu%2BAYDV4%3D&Expires=1788915629' alt='OCR图片'/></div>
-
-It explains why individuals choose certain actions, how much effort they put into those actions, and how long they continue despite challenges or obstacles.
-
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F202609020900047a3e144b62fb4833%2Fcrop_13_1788310829730.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=YcP81Y46cOHseeI44NLkxrETs2k%3D&Expires=1788915629' alt='OCR图片'/></div>
-
-In an organizational context, motivation is shaped by factors such as individual needs, expectations, rewards, work environment, and leadership, and it plays a critical role in determining employee performance, commitment, and job satisfaction.
-
-## Types of Motivation
-
-## Intrinsic Motivation
-
-- Comes from within the individual.
-
-- Driven by internal rewards such as enjoyment, curiosity, learning, or personal growth.
-
-- Often leads to higher creativity better engagement,and long-term commitment.
-
-Example: An employee works on a project because they enjoy solving problems and learning new skills.
-
-## Extrinsic Motivation
-
-- Comes from external factors or rewards.
-
-- Driven by external rewards or pressures such as salary, bonuses, promotions, grades, or avoiding punishment.
-
-- Effective for short-term performance and structured tasks but may not always lead to deep engagement.
-
-Example: An employee works hard to earn a bonus or get promoted.
-
-## Key Aspects of Motivation
-
-## Direction of Behavior
-
-What a person chooses to do. Motivation influences the goals, that an individual focuses on. For eg, an employee may choose to focus on completing a project quickly or improving quality guided by their motivation.
-
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F202609020900047a3e144b62fb4833%2Fcrop_1_1788310829741.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=nXNz3114OGRBohukChCTVc%2Bb5MU%3D&Expires=1788915629' alt='OCR图片'/></div>
-
-## Level of Effort
-
-How hard a person tries to achieve a goal. Even if two people choose the same task, their level of motivation determines how much energy, time, and commitment they invest.
-
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F202609020900047a3e144b62fb4833%2Fcrop_2_1788310829750.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=wkf%2F2gXqdL3k9vngI6K3xTyF66M%3D&Expires=1788915629' alt='OCR图片'/></div>
-
-## Persistence
-
-How long a person continues to work toward a goal, especially when facing difficulties. Motivation helps individuals stay committed and not give up easily, even when tasks are challenging or progress is slow.
-
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F202609020900047a3e144b62fb4833%2Fcrop_3_1788310829754.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=qdiAXQ1fYWqBMTGjmRjFv%2BZKJWk%3D&Expires=1788915629' alt='OCR图片'/></div>
-
-## Maslow's Hierarchy of Needs
-
-(from basic to higher-level needs), and people are motivated to satisfy lower-level needs before moving to higher ones.
-
-Self-actualization desire to become the most that one can be
-
-Esteem respect, self-esteem, status, recognition, strength, freedom
-
-Love and belonging friendship, intimacy, family, sense of connection
-
-Safety needs personal security, employment, resources, health, property
-
-Physiological needs air, water, food, shelter, sleep, clothing, reproduction
-
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F202609020900047a3e144b62fb4833%2Fcrop_4_1788310829757.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=AOK4v%2BexwahwGF2vHw5NtjcbNTY%3D&Expires=1788915629' alt='OCR图片'/></div>
-
-## Five Levels of Needs - Maslow's Hierarchy
-
-1. Physiological Needs: Basic survival needs such as food, water, rest, and salary to meet daily living.
-
-2. Safety Needs: Need for security and stability, such as job security, safe working conditions, and financial protection.
-
-3. Social Needs: Need for belonging and relationships, including teamwork, friendships, and a sense of community at work.
-
-4. Esteem Needs: Need for respect, recognition, and achievement. Employees want to feel valued and appreciated.
-
-5. Self-Actualization: The highest level, where individuals seek personal growth, creativity, and reaching their full potential.
-
-## Herzberg's Two-Factor Theory
-
-Frederick Herzberg suggested that job satisfaction and dissatisfaction are driven by two entirely different sets of workplace factors:
-
-Hygiene Factors (which prevent dissatisfaction)
-
-Motivators (which actively drive engagement and satisfaction)
-
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F202609020900047a3e144b62fb4833%2Fcrop_5_1788310829761.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=tlORIqiKt0QAQeCVOF88Y0zxy6M%3D&Expires=1788915629' alt='OCR图片'/></div>
-
-## Herzberg's Two Types of Factors
-
-## 1. Hygiene Factors (Prevent Dissatisfaction)
-
-These are basic job conditions. If they are poor, employees become unhappy but improving them does not strongly motivate.
-
-## Examples:
-
-- Salary
-
-- Company policies
-
-- Working conditions
-
-- Job security
-
-- Relationships with supervisors
-
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F202609020900047a3e144b62fb4833%2Fcrop_6_1788310829773.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=uF2VVQyk62fP8cKy74IHEckhm%2Fc%3D&Expires=1788915629' alt='OCR图片'/></div>
-
-## Herzberg's Two Types of Factors
-
-## 2. Motivators (Create Satisfaction)
-
-These factors truly motivate employees and lead to higher performance and satisfaction.
-
-## Examples:
-
-- Achievement
-
-- Recognition
-
-- Responsibility
-
-- Personal growth
-
-- Meaningful work
-
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F202609020900047a3e144b62fb4833%2Fcrop_1_1788310829786.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=XAsTEHScGMMhkmkyUvX29DzRSKk%3D&Expires=1788915629' alt='OCR图片'/></div>
-
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F202609020900047a3e144b62fb4833%2Fcrop_2_1788310829790.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=e3kgZKqO%2Fo2I4LMQd8uJC0N3%2BUw%3D&Expires=1788915629' alt='OCR图片'/></div>
-
-## Applications of Digital Technologies in Management
-
-1. Decision-Making Support tools
-
-2. Performance Management tools
-
-3. Communication and Collaboration
-
-4. Automation of Routine Tasks (scheduling, reporting etc)
-
-5. Employee Motivation and Engagement (personal feedback etc)
-
-6. Predictive Analytics
-
-7. Learning and Development (training etc)
-
-8. Ethical and Control Considerations (privacy etc)
-
-## In Class Activity 3
-
-## Multiple Choice Question
-
-## Which of the following is an example of
-
-## intrinsic motivation?
-
-A. Working for a bonus
-
-B. Working to avoid punishment
-
-C. Working because you enjoy the task
-
-D. Working for promotion
-
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F202609020900047a3e144b62fb4833%2Fcrop_3_1788310829795.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=BhaKV0DJZU3PcnmE6YwXuw5iIHg%3D&Expires=1788915629' alt='OCR图片'/></div>
-
-## 51
-
-## Short Answer Question
-
-Name one type of power and give a simple example.
-
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F202609020900047a3e144b62fb4833%2Fcrop_4_1788310829799.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=JXWZxZQwpfwiIaOHPx8oTcR0eu0%3D&Expires=1788915629' alt='OCR图片'/></div>
-
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F202609020900047a3e144b62fb4833%2Fcrop_5_1788310829803.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=UvwSKTH1Gh801ryLor%2Fdl61SGTc%3D&Expires=1788915629' alt='OCR图片'/></div>
-
-## Homework
+#### 1. Planning (සැලසුම්කරණය)
+- Setting organizational objectives and deciding the precise actions, timelines, and resources required to achieve them.
+- **Strategic Plans (උපායමාර්ගික සැලසුම්):** Long-term plans (3–5 years) developed by top-level management. They chart where the company is today versus where it intends to be in the broader market.
+- **Tactical Plans (උපායික සැලසුම්):** Short- to medium-term plans developed by middle and lower management that translate strategic visions into concrete operational steps (who does what, by when, and with what budget).
+
+#### 2. Organizing (සංවිධානය කිරීම)
+- Arranging tasks, assigning responsibilities, and allocating equipment and personnel so that plans can become reality.
+- Involves defining reporting relationships, establishing departmental groupings, and granting formal authority.
+
+#### 3. Leading (නායකත්වය දීම)
+- Guiding, inspiring, and motivating employees to direct their energies enthusiastically toward organizational goals.
+- Achieved through transparent communication, emotional intelligence, resolving disputes, and utilizing reward mechanisms.
+
+#### 4. Controlling (පාලනය කිරීම)
+- Monitoring actual work performance against planned baselines, evaluating deviations, and taking corrective interventions.
+- **The Feedback Loop (ප්‍රතිපෝෂණ ලූපය):** The most critical element of controlling. If a software project falls behind schedule, the feedback loop notifies management to revise plans, reassign resources, or adjust feature scope.
+
+---
+
+**Concept: Feedback Loop in Controlling (පාලන ක්‍රියාවලියේ ප්‍රතිපෝෂණ ලූපය)**
+
+**Meaning:** The mechanism of collecting actual performance data, comparing it with the original plan, and feeding the findings back into the planning phase to make real-time corrections.
+
+**Simple Example:** An IT project manager sets a milestone to deliver a completed mobile payment module by Friday. During Thursday's code review, the team discovers 14 critical security bugs. Controlling identifies this variance. Through the feedback loop, the manager reschedules the release date and reassigns two senior developers to fix the bugs immediately.
+
+**Why It Matters:** Without the feedback loop, errors go unnoticed until catastrophe strikes (e.g., deploying vulnerable code into production).
+
+---
+
+### 3.4 Levels of Management & Managerial Competencies
+
+Organizations typically group managers into four hierarchical tiers:
+
+```
+           /─────────────────────────\
+          /   Top-Level Management    \  ── (Strategic Horizon: Long-term)
+         /   (CEO, CTO, CFO, Board)    \
+        /───────────────────────────────\
+       /        Middle Management        \  ── (Tactical Horizon: Medium-term)
+      /    (Department Heads, Directors)  \
+     /─────────────────────────────────────\
+    /         First-Line Management         \  ── (Operational Horizon: Short-term)
+   /      (Shift Leads, Office Managers)     \
+  /───────────────────────────────────────────\
+ /                Team Leaders                 \  ── (Task / Daily Horizon: Immediate)
+/         (Scrum Masters, Squad Leads)          \
+─────────────────────────────────────────────────
+```
+
+1. **Top-Level Management (ඉහළ පෙළ කළමනාකාරිත්වය):**
+   - *Key Titles:* CEO (Chief Executive Officer), CTO (Chief Technology Officer), CFO (Chief Financial Officer), COO (Chief Operating Officer).
+   - *Responsibilities:* Setting long-term strategic vision, monitoring external macroeconomic changes, making large-scale investment choices, and safeguarding corporate survival.
+2. **Middle Management (මධ්‍යම පෙළ කළමනාකාරිත්වය):**
+   - *Key Titles:* Department Heads, Regional Directors, Operations Managers.
+   - *Responsibilities:* Serving as the communication bridge between top executives and front-line workers. They translate high-level strategies into operational departmental goals.
+3. **First-Line Management (පළමු පෙළ කළමනාකාරිත්වය):**
+   - *Key Titles:* Shift Supervisors, Production Foremen, Office Managers, QA Leads.
+   - *Responsibilities:* Directly overseeing non-managerial operational workers, managing daily workloads, ensuring immediate schedule compliance, and addressing day-to-day employee grievances.
+4. **Team Leaders (කණ්ඩායම් නායකයින්):**
+   - *Key Titles:* Scrum Masters, Project Leads, Task Coordinators.
+   - *Responsibilities:* Facilitating day-to-day agile sprint activities, resolving immediate roadblocks, providing peer coaching, and reporting progress up to department heads. Team leader positions may change or disband once a specific project finishes.
+
+---
+
+### 3.5 Organizational Behavior (OB) and Theoretical Perspectives
+
+**Organizational Behavior (සංවිධානාත්මක චර්යාව - OB)** is the scientific study of how individuals, groups, and overall organizational structures think, behave, and interact within a workplace.
+
+#### The Three Levels of OB
+1. **Individual Level (පුද්ගල මට්ටම):** Focuses on personal traits, employee motivation, perception, learning styles, job satisfaction, and individual stress.
+2. **Group / Team Level (කණ්ඩායම් මට්ටම):** Focuses on team dynamics, peer communication, leadership influence, group conflict, power struggles, and decision-making styles.
+3. **Organizational Level (සංවිධාන මට්ටම):** Focuses on overall company culture, organizational structure, change management policies, and institutional strategy.
+
+#### Seven Perspectives in Organizational Behavior
+1. **Scientific Management (විද්‍යාත්මක කළමනාකරණය):** Founded by Frederick Winslow Taylor. Focuses on finding the single most efficient way to perform a manual task by breaking work into small, standardized steps.
+2. **Human Relations Perspective (මානව සබඳතා දෘෂ්ටිකෝණය):** Highlights that employees are social human beings with feelings, emotional needs, and interpersonal relationships that heavily dictate productivity.
+3. **Contingency Perspective (අවස්ථානුකූල දෘෂ්ටිකෝණය):** Argues there is no universal "one best way" to lead or manage. The ideal strategy depends strictly on situational variables (technology, workforce maturity, environment).
+4. **Systems Perspective (පද්ධතිමය දෘෂ්ටිකෝණය):** Views the firm as an interconnected ecosystem of interdependent components. Altering one department (e.g., changing IT security policies) triggers ripple effects across sales, HR, and operations.
+5. **Cultural Perspective (සංස්කෘතික දෘෂ්ටිකෝණය):** Focuses on the shared values, rituals, stories, assumptions, and workplace norms that govern how staff behave and communicate.
+6. **Critical Perspective (විවේචනාත්මක දෘෂ්ටිකෝණය):** Critically examines power imbalances, worker exploitation, authority abuses, and ethical fairness in organizational governance.
+7. **Symbolic Perspective (සංකේතාත්මක දෘෂ්ටිකෝණය):** Explores how corporate symbols, slogans, office layouts, and rituals give personal meaning and identity to employees.
+
+---
+
+### 3.6 Four Major Management Approaches
+
+| Approach | Core Philosophy | Primary Focus | Practical Application in IT |
+|---|---|---|---|
+| **Classical Approach (සම්ප්‍රදායික ප්‍රවේශය)** | Standardized procedures, strict hierarchy, and formal rules maximize efficiency. | High output, division of labor, clear authority lines. | Traditional Waterfall software projects with fixed scopes, rigid contracts, and strict sign-offs. |
+| **Behavioral Approach (චර්යාත්මක ප්‍රවේශය)** | People are the most vital corporate asset; emotional well-being drives output. | Employee satisfaction, intrinsic motivation, peer teamwork. | Agile teams, open-door management, mental health initiatives, psychological safety. |
+| **Quantitative Approach (ප්‍රමාණාත්මක ප්‍රවේශය)** | Mathematical models, statistical analytics, and algorithms guide management. | Resource optimization, predictive forecasting, data-driven decisions. | Cloud server capacity auto-scaling, algorithmic project risk estimation, EVM metrics. |
+| **Modern Approach (නූතන ප්‍රවේශය)** | Blends Systems and Contingency thinking; emphasizes agility and adaptability. | Environmental fit, continuous adaptation, complex systems. | DevSecOps environments combining automated continuous pipelines with flexible Scrum practices. |
+
+---
+
+### 3.7 Organizational Structures
+
+The structural framework dictates how tasks are divided, resources are allocated, and communication flows across departments.
+
+```
+1. Functional Structure:
+   [ CEO ] ──┬── [ Engineering / IT ]
+             ├── [ Marketing & Sales ]
+             └── [ Finance & Admin ]
+
+2. Matrix Structure:
+                   Functional Manager (IT)    Functional Manager (QA)
+   Project Alpha ────── Developer A ─────────────── Tester A
+   Project Beta  ────── Developer B ─────────────── Tester B
+```
+
+#### Detailed Breakdown of Structures
+- **Functional Structure (ක්‍රියාකාරී ව්‍යුහය):** Employees grouped by specialist function (Marketing, Engineering, HR, Finance).
+  - *Strength:* High functional expertise and operational efficiency.
+  - *Weakness:* Departmental silos (දෙපාර්තමේන්තු අතර සබඳතා බිඳවැටීම) and slow cross-department communication.
+- **Divisional Structure (කොට්ඨාසමය ව්‍යුහය):** Grouped by specific product lines, customer groups, or geographic territories.
+  - *Strength:* Strong customer and product focus; rapid local responsiveness.
+  - *Weakness:* Costly duplication of equipment, offices, and personnel across divisions.
+- **Matrix Structure (න්‍යාසගත ව්‍යුහය):** Employees report to two distinct bosses simultaneously (a functional department head and a project/product manager).
+  - *Strength:* Exceptional flexibility and seamless cross-disciplinary resource sharing.
+  - *Weakness:* Dual command violates unity of command, creating role ambiguity and power conflicts.
+- **Flat Structure (පැතලි ව්‍යුහය):** Very few management layers; wide span of control. Common in tech startups.
+  - *Strength:* Rapid decision-making, minimal bureaucracy, empowered employees.
+  - *Weakness:* Supervisors can become overwhelmed; career advancement paths are unclear.
+- **Tall Structure (උස් ව්‍යුහය):** Many hierarchical tiers; narrow span of control.
+  - *Strength:* Tight supervision, clear career advancement paths, well-defined authority.
+  - *Weakness:* Slow bureaucratic decision-making; top management is disconnected from the shop floor.
+- **Centralized vs. Decentralized Structure:**
+  - *Centralized (කේන්ද්‍රගත):* Strategic and operational decisions are strictly retained by top executives at headquarters.
+  - *Decentralized (විමධ්‍යගත):* Decision-making authority is pushed down to front-line engineers and local managers who interact directly with customers.
+
+---
+
+### 3.8 Power Dynamics in Organizations
+
+**Power (බලය)** is the capacity of an individual or group to influence the decisions, beliefs, behaviors, and actions of others within an enterprise.
+
+#### The Six Bases of Power (French & Raven Framework)
+
+1. **Legitimate Power (නීත්‍යානුකූල බලය):** Authority derived strictly from an individual's formal position or job title on the organizational chart.
+   - *Example:* An Engineering Director orders a software engineer to cease work on a custom prototype and focus on a high-priority customer defect.
+2. **Reward Power (ත්‍යාග බලය):** The ability to grant positive incentives such as pay rises, bonuses, promotions, or public commendations.
+   - *Example:* A Scrum Master promises team members two compensatory days off if they complete the sprint deliverables ahead of schedule.
+3. **Coercive / Corrective Power (දඬුවම් / නිවැරදි කිරීමේ බලය):** The capability to enforce compliance through threats of punishment, official reprimands, demotion, or termination.
+   - *Example:* A CTO issues an official written warning to a system administrator who repeatedly bypasses security protocol rules.
+4. **Expert Power (විශේෂඥ බලය):** Influence arising from possessing specialized technical knowledge, rare skills, or high competence that others lack and depend upon.
+   - *Example:* A senior cloud architect with 15 years of Kubernetes experience advises the team to restructure their microservices architecture; the team follows without hesitation because they respect her expertise.
+5. **Referent Power (ආදර්ශන / පුද්ගල ආකර්ෂණීය බලය):** Influence rooted in charisma, personal likability, integrity, and the desire of subordinates to emulate the leader.
+   - *Example:* Junior developers readily put in extra hours for a compassionate, highly respected tech lead who always supports and mentors them.
+6. **Information Power (තොරතුරු බලය):** Influence derived from having privileged access to, or control over, vital operational data and strategic organizational information.
+   - *Example:* A business systems analyst who alone understands the database schema and corporate sales figures influences budget meetings because others rely on his reports.
+
+---
+
+### 3.9 Motivation in the Workplace
+
+**Motivation (ප්‍රේරණය)** is the combination of internal drives and external stimuli that **initiate, direct, and sustain** human behavior toward achieving specific objectives.
+
+#### Three Dimensions of Motivation
+1. **Direction of Behavior (හැසිරීමේ දිශානතිය):** What a person actually chooses to focus their attention on (e.g., an engineer choosing to write thorough unit tests instead of rushing unchecked code into production).
+2. **Level of Effort (ප්‍රයත්නයේ මට්ටම):** How vigorously the individual works (how many hours, how much concentration, and how much energy they invest).
+3. **Persistence (නොපසුබට උත්සාහය):** Whether the person perseveres in solving difficult obstacles or surrenders at the first sign of technical frustration.
+
+#### Intrinsic vs. Extrinsic Motivation
+- **Intrinsic Motivation (අභ්‍යන්තර ප්‍රේරණය):** Originates within the individual. Driven by personal curiosity, love of problem-solving, pride in craftsmanship, and intellectual growth.  
+  *Example:* A programmer spending their weekend contributing code to an open-source security tool purely for personal enjoyment.
+- **Extrinsic Motivation (බාහිර ප්‍රේරණය):** Driven by tangible external rewards or the avoidance of negative repercussions.  
+  *Example:* An employee putting in overtime to win the "Employee of the Quarter" cash bonus of LKR 100,000.
+
+---
+
+### 3.10 Foundational Motivation Theories
+
+#### Abraham Maslow’s Hierarchy of Needs
+
+Maslow proposed that humans possess five tiers of needs arranged hierarchically in a pyramid. Lower-level survival needs must be satisfied before higher-order psychological and self-fulfillment needs can act as strong motivators:
+
+```
+           /\
+          /  \     5. Self-Actualization (ස්වයං-සාක්ෂාත්කරණය) ── Mastery, creative freedom
+         /────\
+        /      \   4. Esteem Needs (ආත්ම ගෞරව අවශ්‍යතා) ── Job title, peer recognition
+       /────────\
+      /          \ 3. Social Needs (සමාජීය අවශ්‍යතා) ── Supportive team culture, friendship
+     /────────────\
+    /              \ 2. Safety Needs (ආරක්ෂණ අවශ්‍යතා) ── Job stability, health insurance
+   /────────────────\
+  /                  \ 1. Physiological Needs (ශාරීරික අවශ්‍යතා) ── Living wage, food, shelter
+ /────────────────────\
+```
+
+1. **Physiological Needs (ශාරීරික අවශ්‍යතා):** Basic survival requirements—air, water, food, adequate sleep, and a basic salary that covers rent and food.
+2. **Safety Needs (ආරක්ෂණ සහ සුරක්ෂිතතා අවශ්‍යතා):** Protection from physical danger, financial security, safe working environments, and fair employment contracts.
+3. **Social / Belonging Needs (සමාජීය / බැඳීම් අවශ්‍යතා):** Workplace camaraderie, team acceptance, mutual trust, and healthy workplace relationships.
+4. **Esteem Needs (ආත්ම ගෞරවය සහ පිළිගැනීමේ අවශ්‍යතා):** Self-respect, status, professional appreciation, promotions, and recognition from management.
+5. **Self-Actualization Needs (ස්වයං-සාක්ෂාත්කරණය):** Reaching one's absolute highest potential, exercising autonomous creativity, and achieving personal mastery.
+
+---
+
+#### Frederick Herzberg’s Two-Factor (Motivator-Hygiene) Theory
+
+Herzberg discovered that the factors causing workplace dissatisfaction are completely distinct from the factors that generate genuine job satisfaction and high motivation:
+
+```
+[ Hygiene Factors (සනීපාරක්ෂක සාධක) ]
+Salary, Job Security, Company Policy, Working Conditions, Relationships
+      Poor ──► High Dissatisfaction (අතෘප්තිය)
+      Good ──► Neutral / No Dissatisfaction (අතෘප්තියක් නැත - But NOT motivated!)
+
+[ Motivators (ප්‍රේරක සාධක) ]
+Achievement, Recognition, Responsibility, Meaningful Work, Growth
+      Poor ──► Neutral / No Motivation
+      Good ──► High Motivation & High Job Satisfaction (ඉහළ තෘප්තිය සහ ප්‍රේරණය)
+```
+
+- **Hygiene Factors (සනීපාරක්ෂක සාධක):** Extrinsic, environmental conditions. When poor, employees become angry and demotivated. However, fixing hygiene factors merely eliminates complaints—it does **not** make people work harder.  
+  *Examples:* Fair salary, clean and air-conditioned offices, medical insurance, safe parking, job security.
+- **Motivator Factors (ප්‍රේරක සාධක):** Intrinsic job content factors. These genuinely inspire employees to strive for excellence.  
+  *Examples:* Intellectual achievement, public recognition, challenging responsibilities, autonomy, and career advancement.
+
+> [!IMPORTANT]
+> **Critical Exam Distinction:**  
+> Paying a software engineer a higher market salary will prevent them from quitting in frustration, but salary alone will **never** inspire them to build innovative software. Genuine motivation requires **motivators** like creative autonomy and meaningful recognition.
+
+---
+
+## 4. Comparison Tables
+
+### 4.1 Effectiveness vs. Efficiency
+
+| Dimension | Effectiveness (ඵලදායීතාව) | Efficiency (කාර්යක්ෂමතාව) |
+|---|---|---|
+| **Core Definition** | Doing the **right things** to achieve desired strategic targets. | Doing **things right** with the minimum consumption of resources. |
+| **Primary Focus** | The final objective, customer value, and outcome. | The input-to-output ratio, speed, and waste reduction. |
+| **Measurement** | Goal attainment (Did we hit the target?). | Cost and time spent (Did we minimize resource waste?). |
+| **Software Example** | Launching an enterprise mobile banking app that successfully meets 100% of Central Bank security standards. | Compiling and deploying a code module in 3 minutes using minimal cloud server CPU and memory. |
+| **Organizational Risk** | High efficiency with zero effectiveness means producing useless software with absolute perfection. | High effectiveness with zero efficiency means delivering the software successfully, but going bankrupt due to massive budget overruns. |
+
+### 4.2 Top, Middle, and First-Line Managers
+
+| Management Tier | Main Titles | Core Horizon & Scope | Primary Skill Set Required | Key Focus |
+|---|---|---|---|---|
+| **Top Management** | CEO, CTO, CFO, President | Long-term (3–5 years); Entire Organization | Conceptual & Strategic thinking | External environment, market competition, corporate survival. |
+| **Middle Management** | Department Head, IT Director | Medium-term (1–2 years); Departments | Human relations & Interpersonal skills | Bridging executive vision with departmental realities. |
+| **First-Line Management** | Shift Supervisor, QA Lead | Short-term (Days–Months); Operational Units | Technical & Tactical execution | Direct supervision, immediate task output, quality checking. |
+| **Team Leaders** | Scrum Master, Squad Lead | Immediate (Daily Sprints); Project Team | Facilitation, Coaching, Roadblock clearing | Day-to-day team efficiency, peer support, sprint velocity. |
+
+### 4.3 Maslow’s Hierarchy vs. Herzberg’s Two-Factor Theory
+
+| Dimension | Maslow's Hierarchy of Needs | Herzberg's Two-Factor Theory |
+|---|---|---|
+| **Structure** | Sequential pyramid with 5 distinct levels. | Dual-factor classification (Hygiene vs. Motivators). |
+| **Movement** | Linear progression from bottom (Physiological) to top (Self-actualization). | Simultaneous operation: hygiene factors eliminate dissatisfaction while motivators build satisfaction. |
+| **Money / Salary** | Placed at the lower levels (Physiological & Safety needs). | Classified strictly as a **Hygiene Factor** (cannot create long-term satisfaction). |
+| **Higher-Order Needs** | Esteem and Self-Actualization at the peak. | Corresponds directly to **Motivator Factors** (achievement, growth, recognition). |
+
+---
+
+## 5. Processes and Workflows
+
+### 5.1 The Management Control Cycle Workflow
+
+```
+1. Set Standards (ප්‍රමිතීන් සැකසීම)
+   └─► Define measurable performance targets and baseline KPIs (e.g., Code bug rate < 0.5 per 1,000 lines).
+         │
+         ▼
+2. Measure Actual Performance (යථාර්ථවාදී කාර්යසාධනය මැනීම)
+   └─► Collect operational data during execution (e.g., QA team logs 1.2 bugs per 1,000 lines during integration testing).
+         │
+         ▼
+3. Compare Performance with Standards (සංසන්දනය කිරීම)
+   └─► Calculate variance: 1.2 − 0.5 = +0.7 bug variance above acceptable threshold.
+         │
+         ▼
+4. Analyze Causes of Variance (හේතු විශ්ලේෂණය)
+   └─► Investigate root cause (e.g., junior engineers lacked unit testing training before writing code).
+         │
+         ▼
+5. Execute Corrective Action (නිවැරදි කිරීමේ ක්‍රියාමාර්ග ගැනීම)
+   └─► Initiate peer code reviews and conduct mandatory unit testing workshops.
+         │
+         ▼
+6. Feedback Loop Adjustment (ප්‍රතිපෝෂණ ලූපය මගින් සැලසුම් යාවත්කාලීන කිරීම)
+   └─► Update subsequent sprint estimates and review operational timelines.
+```
+
+---
+
+## 6. Practical Applications & Real-World Examples
+
+### Example: Handling Low Motivation in a Software Development Team
+- **Scenario:** A software house is experiencing high developer turnover and declining productivity. The CEO assumes developers are dissatisfied with their compensation and increases all developer salaries by 15% (Hygiene Factor).
+- **Result:** After three months, developers are still unhappy, cynical, and unproductive.
+- **Managerial Diagnosis via Herzberg's Theory:**
+  1. The salary increase merely removed financial frustration (hygiene factor addressed).
+  2. Developers were demotivated because their code was micromanaged, they had zero autonomy, their achievements were ignored by middle management, and they were stuck maintaining legacy systems with zero learning curve (lack of Motivators).
+- **Correct Management Intervention:**
+  1. Transition from micromanaged Waterfall to self-organizing Scrum teams (giving **Responsibility**).
+  2. Implement an internal "Demo Day" where engineers showcase their architectural innovations to executives (giving **Recognition**).
+  3. Sponsor cloud certifications (AWS/Azure) and allocate 10% of weekly work hours for exploratory tech spikes (giving **Personal Growth**).
+
+---
+
+## 7. Advantages and Limitations of Organizational Structures
+
+| Structure Type | Key Advantages (වාසි) | Critical Limitations (අවාසි / සීමා) |
+|---|---|---|
+| **Functional Structure** | • High operational efficiency through specialization.<br>• Clear career development ladder within each discipline. | • Severe departmental silos.<br>• Sluggish cross-departmental coordination.<br>• Tunnel vision focused on departmental goals rather than whole-company value. |
+| **Matrix Structure** | • Optimal sharing of highly specialized talent across multiple projects.<br>• Flexible resource reallocation when priorities shift. | • Dual-boss conflict (violates unity of command).<br>• High stress, role ambiguity, and political infighting among managers. |
+| **Flat Structure** | • Lightning-fast communication and decision-making.<br>• High employee empowerment, lower overhead expenses. | • Managers suffer from cognitive overload due to overly wide spans of control.<br>• Lack of clear managerial succession planning. |
+
+---
+
+## 8. Important Exam Points
+
+> [!IMPORTANT]
+> Keep these high-yield principles at the front of your mind during examination revision:
+> 1. **Henri Fayol vs. Mary Parker Follett:** Fayol focuses on the administrative process (Planning, Organizing, Leading, Controlling); Follett focuses on the social philosophy ("the art of getting things done through people").
+> 2. **Effectiveness vs. Efficiency:** Effectiveness = doing the right things (goal attainment); Efficiency = doing things right (least resource waste).
+> 3. **Contingency Theory:** There is no universally superior management style. The ideal choice always depends on situational context.
+> 4. **Herzberg's Hygiene Factors:** Improving hygiene factors (like salary or air conditioning) only moves an employee from *dissatisfied* to *neutral*. It does **not** create *motivation*.
+> 5. **Power Sources:** Expert power and Referent power stem from personal attributes; Legitimate, Reward, and Coercive power stem from organizational position.
+
+---
+
+## 9. Quick Revision Summary
+
+- **Organization:** A structured collective of people collaborating purposefully with defined hierarchies, assigned roles, and operating rules to accomplish shared goals.
+- **Management:** Coordinating human, capital, and technical resources through the cyclical functions of **Planning, Organizing, Leading, and Controlling**.
+- **Controlling & Feedback Loop:** Monitoring performance against baselines and adjusting the next planning cycle based on variances.
+- **OB Three Levels:** Individual, Group, and Organizational.
+- **Power Bases:** Legitimate (formal rank), Reward (incentives), Coercive (disciplinary threat), Expert (knowledge), Referent (respect/charisma), Information (data access).
+- **Maslow's Pyramid:** Physiological → Safety → Social → Esteem → Self-Actualization.
+- **Herzberg's Two Factors:** Hygiene factors prevent workplace dissatisfaction; Motivator factors generate genuine satisfaction and drive high performance.
+
+---
+
+## 10. Practice Questions & Answers
+
+### Multiple-Choice Questions (MCQs)
+
+**Q1:** An engineering team delivers an IT security audit on time and within budget, but completely overlooks the specific regulatory requirements mandated by the Central Bank. How should this project be categorized?  
+A. Efficient and Effective  
+B. Efficient but Ineffective  
+C. Inefficient but Effective  
+D. Inefficient and Ineffective  
+*Answer:* **B**  
+*Explanation:* The team used minimum resources, time, and budget (high efficiency), but failed to achieve the actual strategic goal of passing Central Bank compliance (ineffective).
+
+**Q2:** According to Frederick Herzberg, which of the following actions will actively inspire employees to achieve higher performance?  
+A. Providing ergonomic chairs and dual monitors  
+B. Offering competitive health insurance coverage  
+C. Granting autonomy and meaningful project ownership  
+D. Paying salaries exactly on the final working day of each month  
+*Answer:* **C**  
+*Explanation:* Ergonomic furniture, medical insurance, and timely pay are all Hygiene factors. Autonomy, responsibility, and meaningful work are Motivator factors.
+
+**Q3:** A lead cloud architect without formal managerial authority convinces the development team to adopt Docker containers purely because the team trusts his deep technical mastery. Which power base is being exercised?  
+A. Legitimate Power  
+B. Coercive Power  
+C. Reward Power  
+D. Expert Power  
+*Answer:* **D**  
+*Explanation:* Expert power originates from specialized skills, knowledge, and competence recognized by peers.
+
+---
+
+### Short-Answer & Scenario-Based Questions
+
+**Q4 (Explain-the-Difference):** Clearly contrast a Functional Organizational Structure with a Matrix Organizational Structure, focusing on reporting relationships.  
+*Model Answer:*  
+In a **Functional Structure**, employees have a single direct supervisor within their specialized discipline (e.g., a software developer reports only to the Head of Engineering). In a **Matrix Structure**, employees report simultaneously to two supervisors: their functional department head (who manages professional development and performance) and a project manager (who manages daily project deliverables and timelines).
+
+**Q5 (Scenario-Based):** A Sri Lankan fintech startup with 12 developers experiences communication slowdowns as it scales to 150 employees. Departments (Frontend, Backend, QA, and Marketing) are refusing to collaborate, blaming each other for delayed releases.  
+1. Identify the structural issue occurring here.  
+2. Recommend a structural change to resolve this issue and explain why it will help.  
+*Model Answer:*  
+1. **Identified Issue:** The company has developed severe **departmental silos (දෙපාර්තමේන්තු අතර සබඳතා බිඳවැටීම)** due to an overly rigid Functional Structure as it scaled.  
+2. **Recommendation:** Transition to a **Cross-Functional Matrix Structure** or **Product-Based Squads (Agile Divisional Structure)**. By grouping frontend developers, backend developers, QA testers, and product managers into dedicated product squads focused on single features (e.g., Payment Gateway Squad, User Onboarding Squad), reporting becomes collaborative and the focus shifts from defending departmental turf to delivering unified customer value.

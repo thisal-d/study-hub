@@ -16,7 +16,7 @@
 | [🌐 Web & Mobile Technology](./web-and-mobile-technology/README.md) | HTML, CSS, JavaScript fundamentals, MERN learning path, and exam practice |
 | [💼 Professional Skills](./professional-skills/README.md) | Comprehensive lecture notes and concise summary notes across all 14 lectures |
 | [📏 Software Quality Management](./software-quality-management/README.md) | Cyclomatic Complexity, WCC metric, CFG drawing, CFS metric, and practice question sets |
-| [🏢 Modern Enterprise Management](./modern-enterprise-management/README.md) | Management concepts, economics, marketing, HRM, financial accounting, and MCQ suites |
+| [🏢 Modern Enterprise Management](./modern-enterprise-management/README.md) | Complete 12-lecture university notes: management, economics, HRM, accounting, marketing, entrepreneurship, IT law, and PMBOK 7 project management (scope, schedule, CPM, EVM, risk, quality, integration) |
 | [🏛️ Architecture Based Development](./architecture-based-development/README.md) | Software architecture fundamentals, quality attributes, tactics, and styles |
 
 ---
@@ -40,8 +40,8 @@ study-hub/
 │   └── README.md
 │
 ├── modern-enterprise-management/
-│   ├── lectures/              ← 6 comprehensive lecture notes (01–05, 07)
-│   ├── short-notes/           ← 6 quick revision short notes (01–05, 07)
+│   ├── lectures/              ← 12 comprehensive lecture notes (Lectures 01–12)
+│   ├── short-notes/           ← 12 quick revision short notes (Lectures 01–12)
 │   ├── practice/              ← 6 practice sets: theory, worked answers & MCQ suites
 │   └── README.md
 │

@@ -1,7 +1,7 @@
-# 🏢 Modern Enterprise Management
+# 🏢 Modern Enterprise Management (IT3120)
 
 > Comprehensive study hub for the **Modern Enterprise Management** module.  
-> Includes detailed lecture notes, condensed table-wise revision summaries, calculation worksheets, and practice question sets.
+> Includes detailed university-level lecture notes, condensed table-wise revision summaries, calculation worksheets, and practice question sets.
 
 ---
 
@@ -11,10 +11,16 @@
 | :-: | :--- | :--- | :--- |
 | **01** | **Management Concepts** | [📖 Lecture 01](./lectures/01-management-concepts.md) | [⚡ Short Note](./short-notes/01-management-concepts.md) |
 | **02** | **Economics for Managers** | [📖 Lecture 02](./lectures/02-economics.md) | [⚡ Short Note](./short-notes/02-economics.md) |
-| **03** | **Marketing & Digital Strategy** | [📖 Lecture 03](./lectures/03-marketing.md) | [⚡ Short Note](./short-notes/03-marketing.md) |
-| **04** | **Human Resource Management** | [📖 Lecture 04](./lectures/04-human-resource-management.md) | [⚡ Short Note](./short-notes/04-human-resource-management.md) |
-| **05** | **Financial Accounting** | [📖 Lecture 05](./lectures/05-financial-accounting.md) | [⚡ Short Note](./short-notes/05-financial-accounting.md) |
+| **03** | **Human Resource Management (HRM)** | [📖 Lecture 03](./lectures/03-human-resource-management.md) | [⚡ Short Note](./short-notes/03-human-resource-management.md) |
+| **04** | **Financial Accounting** | [📖 Lecture 04](./lectures/04-financial-accounting.md) | [⚡ Short Note](./short-notes/04-financial-accounting.md) |
+| **05** | **Marketing & Digital Strategy** | [📖 Lecture 05](./lectures/05-marketing.md) | [⚡ Short Note](./short-notes/05-marketing.md) |
+| **06** | **Entrepreneurship & Innovation** | [📖 Lecture 06](./lectures/06-entrepreneurship.md) | [⚡ Short Note](./short-notes/06-entrepreneurship.md) |
 | **07** | **Legal & Ethical Issues in IT** | [📖 Lecture 07](./lectures/07-legal-and-ethical-issues.md) | [⚡ Short Note](./short-notes/07-legal-and-ethical-issues.md) |
+| **08** | **Introduction to Project Management** | [📖 Lecture 08](./lectures/08-project-management-introduction.md) | [⚡ Short Note](./short-notes/08-project-management-introduction.md) |
+| **09** | **Stakeholder & Communication Management** | [📖 Lecture 09](./lectures/09-stakeholder-and-communication-management.md) | [⚡ Short Note](./short-notes/09-stakeholder-and-communication-management.md) |
+| **10** | **Scope and Cost Management** | [📖 Lecture 10](./lectures/10-scope-and-cost-management.md) | [⚡ Short Note](./short-notes/10-scope-and-cost-management.md) |
+| **11** | **Procurement, Resource & Schedule Management** | [📖 Lecture 11](./lectures/11-procurement-resource-and-schedule-management.md) | [⚡ Short Note](./short-notes/11-procurement-resource-and-schedule-management.md) |
+| **12** | **Managing IT Projects: Risk, Quality & Integration** | [📖 Lecture 12](./lectures/12-risk-quality-and-integration-management.md) | [⚡ Short Note](./short-notes/12-risk-quality-and-integration-management.md) |
 
 ---
 
@@ -32,19 +38,34 @@
 
 ---
 
-## 🔑 Core Formula Reference (Lecture 05: Financial Accounting)
+## 🔑 Core Formula Reference Across the Module
 
-### 1. Fundamental Accounting Equation (Balance Sheet)
+### 1. Fundamental Accounting Equations (Lecture 04)
 $$\text{Assets} = \text{Liabilities} + \text{Equity}$$
-$$\text{Equity} = \text{Assets} - \text{Liabilities}$$
-
-### 2. Profit Levels (Income Statement / P&L)
 $$\text{Gross Profit} = \text{Revenue} - \text{Cost of Goods Sold (COGS)}$$
 $$\text{Operating Profit (EBIT)} = \text{Gross Profit} - \text{Operating Expenses}$$
-$$\text{Net Profit} = \text{Operating Profit} - (\text{Finance Costs/Interest} + \text{Taxes})$$
+$$\text{Net Profit} = \text{Operating Profit} - (\text{Finance Costs} + \text{Taxes})$$
+$$\text{Current Ratio} = \frac{\text{Current Assets}}{\text{Current Liabilities}} \qquad \text{Net Profit Margin (NPM)} = \frac{\text{Net Profit}}{\text{Revenue}} \times 100\%$$
 
-### 3. Three Cash Flow Activities
-$$\text{Net Cash Flow} = \text{Cash Flow from Operations (CFO)} + \text{Cash Flow from Investing (CFI)} + \text{Cash Flow from Financing (CFF)}$$
+### 2. Economics & Elasticity (Lecture 02)
+$$\text{Price Elasticity of Demand } (E_d) = \frac{\% \Delta Q}{\% \Delta P}$$
+$$\text{Average Total Cost } (ATC) = \frac{\text{Total Cost}}{Q} = AFC + AVC \qquad \text{Marginal Cost } (MC) = \frac{\Delta TC}{\Delta Q}$$
+
+### 3. Digital Marketing Metrics (Lecture 05)
+$$\text{Customer Acquisition Cost } (CAC) = \frac{\text{Total Marketing \& Sales Spend}}{\text{New Customers Acquired}}$$
+$$\text{Click-Through Rate } (CTR) = \frac{\text{Clicks}}{\text{Impressions}} \times 100\% \qquad \text{Conversion Rate } (CR) = \frac{\text{Conversions}}{\text{Clicks / Visitors}} \times 100\%$$
+
+### 4. Earned Value Management - EVM (Lecture 10)
+$$\text{Cost Variance } (CV) = EV - AC \qquad \text{Schedule Variance } (SV) = EV - PV$$
+$$\text{Cost Performance Index } (CPI) = \frac{EV}{AC} \qquad \text{Schedule Performance Index } (SPI) = \frac{EV}{PV}$$
+$$\text{Estimate at Completion } (EAC) = \frac{BAC}{CPI}$$
+
+### 5. Schedule & PERT (Lecture 11)
+$$\text{PERT Duration } (T_e) = \frac{O + 4M + P}{6} \qquad \text{Total Float (Slack)} = LS - ES = LF - EF$$
+
+### 6. Risk & Quality (Lecture 12)
+$$\text{Risk Score} = \text{Probability } (1–5) \times \text{Impact } (1–5) \qquad \text{Expected Monetary Value } (EMV) = P \times I$$
+$$\text{Cost of Quality } (CoQ) = (\text{Prevention} + \text{Appraisal}) + (\text{Internal Failures} + \text{External Failures})$$
 
 ---
 
